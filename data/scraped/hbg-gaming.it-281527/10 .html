@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+<!--link rel="icon" type="image/png"
+	ref="/image/favicon.ico" /-->
+<link href="/image/login.css"
+	rel="stylesheet" type="text/css" />
+<link rel="stylesheet" id="googlefonts-css"
+	href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&amp;subset=latin"
+	type="text/css" media="all" />
+
+<script type="text/javascript">
+	function validate() {
+		var invalidChars = /["\[\]:;\|=\+\*\?<>\/\\,]/;
+
+		var username = document.getElementsByName("j_username")[0].value;
+		if (username.match(invalidChars)) {
+			alert ("Lo username inserito non è valido.");
+			return false;
+		}
+		return true;
+	}
+</script>
+<title>*** Welcome to HBG ***</title>
+</head>
+<body>
+
+	<div class="page">
+	
+		<div class="subpage">
+
+			<header id="header">
+	<div id="headerbar" class="headerbar">
+	</div>
+		<a class="home-link" href="http://www.hbg-gaming.it/" title="HBG Gaming"
+			rel="home" style="float:left;position:relative;top:-120px;z-index:1000;"> <img src="/image/logo.png" />
+		</a>				
+</header>
+
+				<div class="section">
+					<div class="section-title">
+						<h2>Area Riservata</h2>
+					</div>
+					<div class="section-image">
+						<img src="/image/areariservata.png"
+							style="width: 100%; /*height: 150px;*/">
+					</div>
+					<div class="section-text">In questa sezione è possibile
+						accedere ai gestionali su piattaforma web che HBG Gaming mette a
+						disposizione dei propri business partner per garantire il completo
+						controllo remoto del parco macchine AWP e VLT, semplificare le
+						pratiche amministrative e monitorare la raccolta. In seguito al
+						login, l'utente verrà automaticamente indirizzato alla piattaforma
+						gestionale per la quale è abilitato.</div>
+					<form id="aree-riservate-loginform" name="aree-riservate-loginform" autocomplete="off"
+						method="post" action='j_security_check'>
+						<table style="margin-top: 20px;font-size:0.8em;">
+							<tr>
+								<td><b>Nome Utente</b></td>
+								<td><b>Password</b></td>
+							</tr>
+							<tr>
+								<td><input type="text" id="txtusername" name="j_username"
+									class="login_input"></td>
+								<td><input type="password" id="txtpassword"
+									name="j_password" class="login_input"></td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<a href="/authgui/privacy.action">Informativa Privacy e Cookie - Utenti Area Riservata</a>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="submit" class="login_button" value="entra" onclick="return validate();"></td>
+								<td style="text-align: right;"><a href="resetpassword/askForReset">Hai dimenticato la password?</a></td>
+							</tr>
+						</table>
+					</form>
+
+					<div style="width: 604px;height: 100px;" class="section-text">
+						<div style="font-size: .7em;float: left;">
+							<img src="/image/logo-ssl.png"
+								style="float: right; margin-top: 5px;">
+						</div>
+						<div style="font-size: .7em; width: 560px; float: right;">La
+							sicurezza dei dati che transitano sul sito è garantita
+							dall'utilizzo di certificati digitali a 128 bit rilasciati dalla
+							Thawte, una delle principali Certification Authority mondiali. La
+							protezione è attivata in automatico ed è confermata dalla
+							visualizzazione di un lucchetto chiuso nella finestra del browser
+							Internet. Quando tale protezione è attivata, le informazioni in
+							transito non potranno in nessun modo essere visualizzate da terzi.
+						</div>
+						
+					</div>
+				</div>
+
+			<footer>
+	<div class="footer">
+	</div>
+	<div class="footerContent">
+	     <div style="float:left;"><!-- <a href="http://www.hbg-gaming.it/?p=1000">Privacy Policy</a> --> <a href="http://www.hbg-gaming.it/privacy-policy-2/" target="_blank">Privacy Policy</a> 09426011004 - Copyright HBG Gaming 2013 - Credits</div>
+		<div style="float:right;">Il gioco è vietato ai minori di 18 anni. Il gioco può creare dipendenza patologica. Giocare con moderazione.</div>
+	</div>
+</footer>
+		</div>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-GB">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-GB">
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html lang="en-GB">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="http://medpan.org/xmlrpc.php" />
+<title>Institutional framework &#8211; MedPAN</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="MedPAN &raquo; Feed" href="http://medpan.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="MedPAN &raquo; Comments Feed" href="http://medpan.org/comments/feed/" />
+<!-- This site uses the Google Analytics by ExactMetrics plugin v6.2.2 - Using Analytics tracking - https://www.exactmetrics.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var em_version         = '6.2.2';
+	var em_track_user      = true;
+	var em_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-34828684-1';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+
+	if ( 'undefined' === typeof gaOptout ) {
+		function gaOptout() {
+			__gaTrackerOptout();
+		}
+	}
+	
+	if ( em_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+window.ga = __gaTracker;		__gaTracker('create', 'UA-34828684-1', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('send','pageview');
+		__gaTracker( function() { window.ga = __gaTracker; } );
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + em_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+			window.ga = __gaTracker;		})();
+		}
+</script>
+<!-- / Google Analytics by ExactMetrics -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/medpan.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.0.17"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])?!1:!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55358,56760,9792,65039],[55358,56760,8203,9792,65039])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css'  href='http://medpan.org/wp-includes/css/dist/block-library/style.min.css?ver=5.0.17' type='text/css' media='all' />
+<link rel='stylesheet' id='cookie-notice-front-css'  href='http://medpan.org/wp-content/plugins/cookie-notice/css/front.min.css?ver=5.0.17' type='text/css' media='all' />
+<link rel='stylesheet' id='spacious_style-css'  href='http://medpan.org/wp-content/themes/spacious-pro/style.css?ver=5.0.17' type='text/css' media='all' />
+<link rel='stylesheet' id='spacious-genericons-css'  href='http://medpan.org/wp-content/themes/spacious-pro/genericons/genericons.css?ver=3.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='spacious-font-awesome-css'  href='http://medpan.org/wp-content/themes/spacious-pro/font-awesome/css/font-awesome.min.css?ver=4.6.3' type='text/css' media='all' />
+<link rel='stylesheet' id='spacious_googlefonts-css'  href='//fonts.googleapis.com/css?family=Lato&#038;ver=5.0.17' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css'  href='http://medpan.org/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.15' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"zip,mp3,mpeg,pdf,docx,pptx,xlsx,rar","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"http:\/\/medpan.org","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://medpan.org/wp-content/plugins/google-analytics-dashboard-for-wp/assets/js/frontend.min.js?ver=6.2.2'></script>
+<script type='text/javascript' src='http://medpan.org/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://medpan.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://medpan.org/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var cnArgs = {"ajaxUrl":"http:\/\/medpan.org\/wp-admin\/admin-ajax.php","nonce":"9fa4ec3235","hideEffect":"fade","position":"bottom","onScroll":"0","onScrollOffset":"100","onClick":"0","cookieName":"cookie_notice_accepted","cookieTime":"2592000","cookieTimeRejected":"2592000","cookiePath":"\/","cookieDomain":"","redirection":"0","cache":"0","refuse":"0","revokeCookies":"0","revokeCookiesOpt":"automatic","secure":"0","coronabarActive":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://medpan.org/wp-content/plugins/cookie-notice/js/front.min.js?ver=1.3.2'></script>
+<!--[if lte IE 8]>
+<script type='text/javascript' src='http://medpan.org/wp-content/themes/spacious-pro/js/html5shiv.min.js?ver=5.0.17'></script>
+<![endif]-->
+<link rel='https://api.w.org/' href='http://medpan.org/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://medpan.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://medpan.org/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.0.17" />
+<link rel="canonical" href="http://medpan.org/marine-protected-areas/institutional-framework/" />
+<link rel='shortlink' href='http://medpan.org/?p=492' />
+<link rel="alternate" type="application/json+oembed" href="http://medpan.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fmedpan.org%2Fmarine-protected-areas%2Finstitutional-framework%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://medpan.org/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fmedpan.org%2Fmarine-protected-areas%2Finstitutional-framework%2F&#038;format=xml" />
+
+<script data-cfasync="false">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_localize = {
+	Share: "Share",
+	Save: "Save",
+	Subscribe: "Subscribe",
+	Email: "Email",
+	Bookmark: "Bookmark",
+	ShowAll: "Show All",
+	ShowLess: "Show less",
+	FindServices: "Find service(s)",
+	FindAnyServiceToAddTo: "Instantly find any service to add to",
+	PoweredBy: "Powered by",
+	ShareViaEmail: "Share via email",
+	SubscribeViaEmail: "Subscribe via email",
+	BookmarkInYourBrowser: "Bookmark in your browser",
+	BookmarkInstructions: "Press Ctrl+D or \u2318+D to bookmark this page",
+	AddToYourFavorites: "Add to your favourites",
+	SendFromWebOrProgram: "Send from any email address or email program",
+	EmailProgram: "Email program",
+	More: "More&#8230;",
+	ThanksForSharing: "Thanks for sharing!",
+	ThanksForFollowing: "Thanks for following!"
+};
+
+(function(d,s,a,b){a=d.createElement(s);b=d.getElementsByTagName(s)[0];a.async=1;a.src="https://static.addtoany.com/menu/page.js";b.parentNode.insertBefore(a,b);})(document,"script");
+</script>
+<link rel="alternate" href="http://medpan.org/fr/les-aires-marines-protegees/cadre-institutionnel/" hreflang="fr" />
+<link rel="alternate" href="http://medpan.org/marine-protected-areas/institutional-framework/" hreflang="en" />
+		<style type="text/css"> blockquote { border-left: 3px solid #0061a1; }
+			.spacious-button, input[type="reset"], input[type="button"], input[type="submit"], button { background-color: #0061a1; }
+			.previous a:hover, .next a:hover { 	color: #0061a1; }
+			a { color: #0061a1; }
+			#site-title a:hover,.widget_fun_facts .counter-icon,.team-title a:hover { color: #0061a1; }
+			.main-navigation ul li.current_page_item a, .main-navigation ul li:hover > a { color: #0061a1; }
+			.main-navigation ul li ul { border-top: 1px solid #0061a1; }
+			.main-navigation ul li ul li a:hover, .main-navigation ul li ul li:hover > a, .main-navigation ul li.current-menu-item ul li a:hover { color: #0061a1; }
+			.site-header .menu-toggle:hover.entry-meta a.read-more:hover,#featured-slider .slider-read-more-button:hover,.call-to-action-button:hover,.entry-meta .read-more-link:hover,.spacious-button:hover, input[type="reset"]:hover, input[type="button"]:hover, input[type="submit"]:hover, button:hover { background: #002f6f; }
+			.main-small-navigation li:hover { background: #0061a1; }
+			.main-small-navigation ul > .current_page_item, .main-small-navigation ul > .current-menu-item { background: #0061a1; }
+			.main-navigation a:hover, .main-navigation ul li.current-menu-item a, .main-navigation ul li.current_page_ancestor a, .main-navigation ul li.current-menu-ancestor a, .main-navigation ul li.current_page_item a, .main-navigation ul li:hover > a  { color: #0061a1; }
+			.small-menu a:hover, .small-menu ul li.current-menu-item a, .small-menu ul li.current_page_ancestor a, .small-menu ul li.current-menu-ancestor a, .small-menu ul li.current_page_item a, .small-menu ul li:hover > a { color: #0061a1; }
+			#featured-slider .slider-read-more-button { background-color: #0061a1; }
+			#controllers a:hover, #controllers a.active { background-color: #0061a1; color: #0061a1; }
+			.widget_service_block a.more-link:hover, .widget_featured_single_post a.read-more:hover,#secondary a:hover,logged-in-as:hover  a{ color: #002f6f; }
+			.breadcrumb a:hover { color: #0061a1; }
+			.tg-one-half .widget-title a:hover, .tg-one-third .widget-title a:hover, .tg-one-fourth .widget-title a:hover { color: #0061a1; }
+			.pagination span,.site-header .menu-toggle:hover,#team-controllers a.active, #team-controllers a:hover { background-color: #0061a1; }
+			.pagination a span:hover { color: #0061a1; border-color: #0061a1; }
+			.widget_testimonial .testimonial-post { border-color: #0061a1 #EAEAEA #EAEAEA #EAEAEA; }
+			.call-to-action-content-wrapper { border-color: #EAEAEA #EAEAEA #EAEAEA #0061a1; }
+			.call-to-action-button { background-color: #0061a1; }
+			#content .comments-area a.comment-permalink:hover { color: #0061a1; }
+			.comments-area .comment-author-link a:hover { color: #0061a1; }
+			.comments-area .comment-author-link spanm,.team-social-icon a:hover { background-color: #0061a1; }
+			.comment .comment-reply-link:hover { color: #0061a1; }
+			.team-social-icon a:hover{ border-color: #0061a1; }
+			.nav-previous a:hover, .nav-next a:hover { color: #0061a1; }
+			#wp-calendar #today { color: #0061a1; }
+			.widget-title span { border-bottom: 2px solid #0061a1; }
+			.footer-widgets-area a:hover { color: #0061a1 !important; }
+			.footer-socket-wrapper .copyright a:hover { color: #0061a1; }
+			a#back-top:before { background-color: #0061a1; }
+			.read-more, .more-link { color: #0061a1; }
+			.post .entry-title a:hover, .page .entry-title a:hover { color: #0061a1; }
+			.entry-meta .read-more-link { background-color: #0061a1; }
+			.entry-meta a:hover, .type-page .entry-meta a:hover { color: #0061a1; }
+			.single #content .tags a:hover { color: #0061a1; }
+			.widget_testimonial .testimonial-icon:before { color: #0061a1; }
+			a#scroll-up { background-color: #0061a1; }
+			#search-form span { background-color: #0061a1; }
+			.single #content .tags a:hover,.previous a:hover, .next a:hover{border-color: #0061a1;}
+			.widget_featured_posts .tg-one-half .entry-title a:hover,.main-small-navigation li:hover > .sub-toggle { color: #0061a1; }
+			.woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit, .woocommerce #content input.button, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button, .woocommerce-page #respond input#submit, .woocommerce-page #content input.button { background-color: #0061a1; }
+			.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover,.woocommerce #respond input#submit:hover,.woocommerce #content input.button:hover,.woocommerce-page a.button:hover,.woocommerce-page button.button:hover,.woocommerce-page input.button:hover,.woocommerce-page #respond input#submit:hover,.woocommerce-page #content input.button:hover { background-color: #0061a1; }
+			#content .wp-pagenavi .current, #content .wp-pagenavi a:hover,.sub-toggle { background-color: #0061a1; } #site-title a { font-family: "Lato"; } .post .entry-title, .page .entry-title, .widget_featured_posts .tg-one-half .entry-title{ font-size: 24px; } .comments-title, .comment-reply-title{ font-size: 20px; } #colophon .widget-title{ font-size: 18px; } #colophon, #colophon p{ font-size: 12px; } .header-post-title-container { background-color: #ffffff; } .footer-widgets-area, .footer-widgets-area .tg-one-fourth p { color: #fcfcfc; }.entry-meta .by-author{display:none;}</style>
+			<style type="text/css">
+			#site-title,
+		#site-description {
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		</style>
+	<link rel="icon" href="http://medpan.org/wp-content/uploads/2017/07/MedPAN-carré-contour-100x100.png" sizes="32x32" />
+<link rel="icon" href="http://medpan.org/wp-content/uploads/2017/07/MedPAN-carré-contour-200x200.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="http://medpan.org/wp-content/uploads/2017/07/MedPAN-carré-contour-200x200.png" />
+<meta name="msapplication-TileImage" content="http://medpan.org/wp-content/uploads/2017/07/MedPAN-carré-contour-270x270.png" />
+</head>
+
+<body class="page-template-default page page-id-492 page-child parent-pageid-502 wp-custom-logo cookies-not-set  better-responsive-menu">
+<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header clearfix">
+
+					<div id="header-meta" class="clearfix">
+				<div class="inner-wrap">
+					
+   
+	<div class="social-links clearfix">
+		<ul>
+		<li class="spacious-facebook"><a href="https://www.facebook.com/MedPAN.network/" target="_blank"></a></li><li class="spacious-twitter"><a href="https://twitter.com/MedPAN" target="_blank"></a></li><li class="spacious-linkedin"><a href="https://www.linkedin.com/company-beta/10410294/" target="_blank"></a></li><li class="spacious-mail"><a href="http://medpan@medpan.org" target="_blank"></a></li>      		</ul>
+	</div><!-- .social-links -->
+						<nav class="small-menu" class="clearfix">
+						<div class="menu-top-menu-en-container"><ul id="menu-top-menu-en" class="menu"><li id="menu-item-183" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183"><a href="http://medpan.org/contact/">Contact</a></li>
+</ul></div>	    			</nav>
+				</div>
+			</div>
+		
+		
+		<div id="header-text-nav-container">
+			<div class="inner-wrap">
+
+				<div id="header-text-nav-wrap" class="clearfix">
+					<div id="header-left-section">
+													<div id="header-logo-image">
+								
+								<a href="http://medpan.org/" class="custom-logo-link" rel="home" itemprop="url"><img width="336" height="89" src="http://medpan.org/wp-content/uploads/2021/09/cropped-MedPAN_new_in_dev.png" class="custom-logo" alt="MedPAN" itemprop="logo" srcset="http://medpan.org/wp-content/uploads/2021/09/cropped-MedPAN_new_in_dev.png 336w, http://medpan.org/wp-content/uploads/2021/09/cropped-MedPAN_new_in_dev-300x79.png 300w" sizes="(max-width: 336px) 100vw, 336px" /></a>							</div><!-- #header-logo-image -->
+												<div id="header-text" class="screen-reader-text">
+														<h3 id="site-title">
+									<a href="http://medpan.org/" title="MedPAN" rel="home">MedPAN</a>
+								</h3>
+															<p id="site-description">Le réseau des gestionnaires d&#039;Aires Marines Protégées en Méditerranée</p>
+													</div><!-- #header-text -->
+					</div><!-- #header-left-section -->
+					<div id="header-right-section">
+												<div id="header-right-sidebar" class="clearfix">
+						<aside id="polylang-3" class="widget widget_polylang"><ul>
+	<li class="lang-item lang-item-7 lang-item-fr lang-item-first"><a lang="fr-FR" hreflang="fr-FR" href="http://medpan.org/fr/les-aires-marines-protegees/cadre-institutionnel/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAGzSURBVHjaYiyeepkBBv79+Zfnx/f379+fP38CyT9//jAyMiq5GP77wvDnJ8MfoAIGBoAAYgGqC7STApL///3/9++/pCTv////Qdz/QO4/IMna0vf/z+9/v379//37bUUTQACBNDD8Z/j87fffvyAVX79+/Q8GQDbQeKA9fM+e/Pv18/+vnwzCIkBLAAKQOAY5AIAwCEv4/4PddNUm3ji0QJyxW3rgzE0iLfqDGr2oYuu0l54AYvnz5x9Q6d+/QPQfyAQqAin9B3EOyG1A1UDj//36zfjr1y8GBoAAFI9BDgAwCMIw+P8Ho3GDO6XQ0l4MN8b2kUwYaLszqgKM/KHcDXwBxAJUD3TJ779A8h9Q5D8SAHoARP36+Rfo41+/mcA2AAQQy49ff0Cu//MPpAeI/0FdA1QNYYNVA/3wmwEYVgwMAAHE8uPHH5BqoD1//gJJLADoJKDS378Z//wFhhJAALF8A3rizz8uTmYg788fJkj4QOKREQyYxSWBhjEC/fcXZANAALF8+/anbcHlHz9+ffvx58uPX9KckkCn/gby/wLd8uvHjx96k+cD1UGiGQgAAgwA7q17ZpsMdUQAAAAASUVORK5CYII=" title="Français" alt="Français" /><span style="margin-left:0.3em;"></span></a></li>
+</ul>
+</aside><aside id="search-9" class="widget widget_search"><form action="http://medpan.org/" class="search-form searchform clearfix" method="get">
+	<div class="search-wrap">
+		<input type="text" placeholder="Search" class="s field" name="s">
+		<button class="search-icon" type="submit"></button>
+	</div>
+</form><!-- .searchform --></aside>						</div>
+						
+													<nav id="site-navigation" class="main-navigation" role="navigation">
+								<p class="menu-toggle">Menu</p>
+								<div class="menu-primary-container"><ul id="menu-menu-superieur-en" class="menu"><li id="menu-item-179" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-179"><a href="http://medpan.org/about/">About MedPAN</a>
+<ul class="sub-menu">
+	<li id="menu-item-257" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-257"><a href="http://medpan.org/about/medpan/organisation/">The association</a></li>
+	<li id="menu-item-181" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-181"><a href="http://medpan.org/about/medpan/members-and-partners/">Members and partners</a></li>
+	<li id="menu-item-217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-217"><a href="http://medpan.org/about/medpan/join-us/">Join us</a></li>
+	<li id="menu-item-260" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260"><a href="http://medpan.org/about/medpan/history/">History</a></li>
+</ul>
+</li>
+<li id="menu-item-188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-188"><a href="http://medpan.org/main_activities/">MAIN ACTIVITIES</a>
+<ul class="sub-menu">
+	<li id="menu-item-324" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-324"><a href="http://medpan.org/main_activities/mpa-forum/">Mediterranean MPA Forum</a></li>
+	<li id="menu-item-862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-862"><a href="http://medpan.org/main_activities/mpa-status/">The system of Mediterranean MPAs in 2020</a></li>
+	<li id="menu-item-3192" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3192"><a href="http://medpan.org/main_activities/projects/">Projects</a>
+	<ul class="sub-menu">
+		<li id="menu-item-14488" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14488"><a href="http://medpan.org/the-rest-coast-project/">The REST-COAST Project</a></li>
+		<li id="menu-item-14480" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14480"><a href="http://medpan.org/the-mediterranean-islands-collective-project/">The Mediterranean Islands Collective Project</a></li>
+		<li id="menu-item-14249" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14249"><a href="http://medpan.org/enseres-project/">ENSERES Project</a></li>
+		<li id="menu-item-14205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14205"><a href="http://medpan.org/life-enable-project-creating-the-european-nature-academy-for-applied-blended-learning/">LIFE ENABLE project: Creating the European Nature Academy for applied Blended LEarning</a></li>
+		<li id="menu-item-14267" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14267"><a href="http://medpan.org/build-back-a-blue-and-stronger-mediterranean-gef-project/">Build back a blue and stronger Mediterranean – GEF project</a></li>
+		<li id="menu-item-12761" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12761"><a href="http://medpan.org/conservation-of-marine-turtles-in-the-mediterranean-region/">Conservation of Marine Turtles in the Mediterranean Region</a></li>
+		<li id="menu-item-11370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11370"><a href="http://medpan.org/co-managed-no-take-zones-mpas-project/">Co-managed No-Take Zones/MPAs project</a></li>
+		<li id="menu-item-11306" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11306"><a href="http://medpan.org/ocean-governance-project/">Ocean Governance Project</a></li>
+		<li id="menu-item-8556" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8556"><a href="http://medpan.org/main_activities/projects/mpa-networks-project/">MPA NETWORKS project</a></li>
+		<li id="menu-item-2589" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2589"><a href="http://medpan.org/main_activities/mava-project/">MAVA project</a></li>
+		<li id="menu-item-3534" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3534"><a href="http://medpan.org/main_activities/projects/cogito-project/">COGITO project</a></li>
+		<li id="menu-item-2936" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2936"><a href="http://medpan.org/main_activities/projet-pharos4mpas/">PHAROS4MPAs project</a></li>
+		<li id="menu-item-8564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8564"><a href="http://medpan.org/main_activities/projects/closed-projects/">Closed projects</a>
+		<ul class="sub-menu">
+			<li id="menu-item-3535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3535"><a href="http://medpan.org/fr/activites_principales/projets/projet-medmpa-network/">Projet &#8221; MedMPA Network &#8220;</a></li>
+			<li id="menu-item-321" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-321"><a href="http://medpan.org/main_activities/fishmpablue2-project/">FishMPABlue2 project</a></li>
+			<li id="menu-item-322" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="http://medpan.org/main_activities/destimed-project/">DESTIMED project</a></li>
+			<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://medpan.org/main_activities/act4litter-project/">ACT4LITTER project</a></li>
+			<li id="menu-item-3207" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3207"><a href="http://medpan.org/main_activities/projects/simwestmed-project/">SIMWESTMED project</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li id="menu-item-588" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-588"><a href="http://medpan.org/category/science/">Scientific watch</a></li>
+	<li id="menu-item-2208" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2208"><a href="http://medpan.org/main_activities/appels-a-petits-projets/">Small Projects</a></li>
+	<li id="menu-item-3191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3191"><a href="http://medpan.org/main_activities/management-tools/">Management tools</a></li>
+	<li id="menu-item-319" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-319"><a href="http://medpan.org/main_activities/workshops/">Workshops</a></li>
+	<li id="menu-item-13081" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13081"><a href="http://medpan.org/main_activities/regular-training-programme/">Regular Training Programme</a></li>
+	<li id="menu-item-320" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-320"><a href="http://medpan.org/main_activities/trainings/">Annual trainings</a></li>
+	<li id="menu-item-318" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-318"><a href="http://medpan.org/main_activities/exchange-visits/">Exchange visits</a></li>
+	<li id="menu-item-316" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-316"><a href="http://medpan.org/main_activities/mapamed/">MAPAMED</a></li>
+	<li id="menu-item-6486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6486"><a href="http://medpan.org/monitoring-resource-centre/">Monitoring resource centre</a></li>
+	<li id="menu-item-13777" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13777"><a href="http://medpan.org/alliances/">Alliances / Partnerships</a></li>
+	<li id="menu-item-3151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3151"><a href="http://medpan.org/main_activities/health-monitoring/">Health monitoring</a></li>
+</ul>
+</li>
+<li id="menu-item-504" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-504"><a href="http://medpan.org/marine-protected-areas/">MARINE PROTECTED AREAS</a>
+<ul class="sub-menu">
+	<li id="menu-item-574" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-574"><a href="http://medpan.org/mediterranean-realities/">Mediterranean challenges</a></li>
+	<li id="menu-item-623" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-623"><a href="http://medpan.org/marine-protected-areas/mediterranean-mpas/">MPAs in the Mediterranean</a></li>
+	<li id="menu-item-585" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-585"><a href="http://medpan.org/marine-protected-areas/themes-2/">Themes</a></li>
+	<li id="menu-item-497" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-492 current_page_item menu-item-497"><a href="http://medpan.org/marine-protected-areas/institutional-framework/">Institutional framework</a></li>
+</ul>
+</li>
+<li id="menu-item-2002" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2002"><a href="http://medpan.org/fr/category/nonclassefr/">NEWS &#038; AGENDA</a></li>
+</ul></div>							</nav>
+						
+			    	</div><!-- #header-right-section -->
+
+			   </div><!-- #header-text-nav-wrap -->
+
+			   
+			</div><!-- .inner-wrap -->
+		</div><!-- #header-text-nav-container -->
+
+		
+				<div class="header-post-title-container clearfix">
+			<div class="inner-wrap">
+				<div class="post-title-wrapper">
+									   	<h1 class="header-post-title-class entry-title">Institutional framework</h1>
+				   				</div>
+							</div>
+		</div>
+			</header>
+			<div id="main" class="clearfix">
+		<div class="inner-wrap">
+
+	
+	<div id="primary">
+		<div id="content" class="clearfix">
+			
+				
+<article id="post-492" class="post-492 page type-page status-publish hentry">
+		<div class="entry-content clearfix">
+				<p>The MedPAN network contributes to achieving the specific objectives set by the Convention on Biological Diversity (Rio de Janeiro, 1992) to establish and maintain comprehensive, effectively managed, and ecologically representative national and regional systems of MPAs. It also contributes:</p>
+<ul>
+<li>to the implementation of the Barcelona Convention, and in particular its protocol relating to Specially Protected Areas and Biological Diversity in the Mediterranean (Barcelona, 1995),</li>
+<li>to the implementation of the conservation plan of the Agreement on the Conservation of Cetaceans in the Black Sea Mediterranean Sea and Contigous Atlantic Area (ACCOBAMS)</li>
+<li>to the implementation of related European policies (Habitats Directive, Biodiversity Action Plan, Marine Directive, Common Fisheries Policy, Maritime Policy&#8230;) and their application in the related countries</li>
+</ul>
+<p>In more details:</p>
+<h2>On an international level applicable to all Mediterranean countries</h2>
+<p>Within the Convention on Biological Diversity (CBD) framework, countries have committed to the “Aichi targets“ which aim to ensure a better protection of biodiversity via a strategic plan, for the 2011-2020 period.</p>
+<p>Through the <strong>Aichi Target 11 of the Strategic Plan for Biodiversity </strong>2011-2020, countries have pledged to improve the state of biodiversity by protecting ecosystems, species and genetic diversity.</p>
+<p>Moreover, MPAs, through their multiple functions, are important tools to achieve the Aichi target n°14 by highlighting the benefits of biodiversity and ecosystem services.</p>
+<p>In addition to the Aichi targets, the commitments made at the 11th Conference of the Parties to the CBD in Hyderabad (8-19 October 2012) confirmed the importance of developing</p>
+<p>economic approaches, of better promoting ecosystem services and of strengthening national and international funding mechanisms for biodiversity. A decision was taken to double the funding linked to biodiversity in developing countries by 2015 and maintain it to 2020 and to strengthen national policies and plans for biodiversity.</p>
+<p>One of the elements at the CBD Conference in Hyderabad was also to recognise the importance of local governments in supporting policies that integrate biodiversity. Moreover, the</p>
+<p>parties formally adopted the work on the Status of inventories of Ecological or Biologically Significant Areas (EBSA) and helped to show the importance of quality information on Mediterranean EBSAs in order to achieve an effective set-up of a global scientific inventory of these areas. In 2014, <strong>15 EBSA</strong> descriptions were accepted at the 18<sup>th</sup> meeting of the CBD SBSTTA and the 12<sup>th</sup> meeting of the Conference of Parties to the CBD (October 2014).</p>
+<p>In 2014, the CBD also elaborated the Action Plan of the <strong>Sustainable Ocean Initiative</strong> (SOI) for 2015-2020. The Sustainable Ocean Initiative focuses on the commitments of CBD Parties and the work undertaken through the CBD on marine and coastal biodiversity to identify opportunities to address capacity needs to achieve the Aichi Biodiversity Targets.</p>
+<p>The <strong>Millennium Development Goals</strong> (MDGs) are strong international commitments that shape development policies in southern and eastern Mediterranean countries. The targets and indicators of Goal 7 “Ensure environmental sustainability“ will be adjusted in 2014 and 2015 to integrate MDG and CBD targets and indicators within a sustainable development indicator framework. These adjustments will no doubt have an impact on the regional variations of these commitments, especially in the Mediterranean.</p>
+<p>The United Nations Conference on Sustainable Development and the new global development agenda for the period 2015-2030 adopted in New York on 26 September 2015: &#8220;Transforming our World: The 2030 Agenda for Sustainable Development&#8221;: <strong>UN Sustainable Development Goal</strong> on the Oceans (Sustainable Development Goal 14)</p>
+<p>UN &#8211; Goal 13 in the SDG to 2030 &#8211; “13.a Implement the commitment undertaken by developed-country parties to the United Nation Framework Convention on Climate Change to a goal of mobilizing jointly $100 billion annually by 2020 from all sources to address the needs of developing countries in the context of meaningful mitigation actions and transparency on implementation and fully operationalize the Green Climate Fund through its capitalization as soon as possible “.</p>
+<p>The <strong>Montego Bay Convention </strong>(1982) on the Law of the Sea (UNCLOS) declared that marine resources are a shared resource and committed States to protect and preserve the marine environment and to cooperate globally for this purpose. However, the development of ecosystem-based approaches, gaps in legal texts are regularly singled out demonstrating the difficulty to reach regional agreements and the risks in the context of a growing appeal for deep sea resources.</p>
+<p>The <strong>international fisheries regulations </strong>plan and implement, through RFMOs such as the GFCM in the Mediterranean, the rules of exploitation/extraction in open sea areas and make it possible to assess whether these States comply with the regulations (prohibition of bottom trawling deeper than 1 000m,</p>
+<p>The limitations and challenges in <strong>developing MPAs in the open sea </strong>are important and are primarily of an institutional, political and regulatory nature. State positions are very varied and many discussions are underway to change measures or test options in certain sub-regions. Heads of State and governments made a commitment in the <strong>“Rio+20 Declaration“ </strong>(paragraph 162) to implement the appropriate international instrument under the auspices of the United Nations Convention on the Law of the Sea (UNCLOS).</p>
+<p>The UN is in the process of complementing the UNCLOS (UN GA Resolution 69/292, June 2015) on the “Development of an international legally binding instrument under the UNCLOS on the conservation and sustainable use of marine biological diversity of ABNJ”, also recalled by the SDG-14c.</p>
+<p>Biodiversity Beyond National Jurisdictions (BBNJ) implementing agreement under the UN Convention on the Law of the Sea to be adopted by the UN General Assembly in 2018.</p>
+<p><strong>United National Framework Convention on Climate Change</strong> Conference of the Parties (COP21), Paris, 2015: the Paris Agreement, includes consideration of the “Oceans” in the preamble.</p>
+<p>Within the context of COP21, the Because the Ocean Declaration was signed in Paris during COP21 by Heads of State and Government and ministers from Aruba, Australia, Canada, Chile, Colombia, Costa Rica, Dominican Republic, Fiji, France, Guinea Bissau, Kiribati, Madagascar, Mexico, Monaco, Morocco, Netherlands, New Zealand, Palau, Senegal, Seychelles, Spain, Sweden. It focuses on the ocean as a relevant climate regulator and on the critical role it will play in the implementation of the Paris Agreement on climate change.</p>
+<p>The <strong>Blue Carbon Initiative</strong>, (UNESCO Intergovernmental Oceanographic Commission, UNEP, IUCN, CI), supported by GEF-5, aims at developing global partnerships to mitigate climate change through the restoration and sustainable use of coastal and marine ecosystems.</p>
+<p><strong>The IUCN World Conservation Congress 2016 (Hawaii) motions</strong>:</p>
+<ul>
+<li><a href="https://portals.iucn.org/congress/motion/053">Increasing marine protected area coverage for effective marine biodiversity conservation</a></li>
+<li><a href="https://portals.iucn.org/congress/motion/049">Advancing conservation and sustainable use of biological diversity in areas beyond national jurisdiction</a></li>
+<li><a href="https://portals.iucn.org/congress/motion/042">Protected areas as natural solutions to climate change</a></li>
+</ul>
+<p><strong> </strong><strong>The “Promise of Sydney”</strong> (IUCN World Park Congress, Sydney, 2014) calling for least 30% of each marine habitat to be protected International Marine Protected Areas Agenda (IMPANA)</p>
+<p>Recommendations of the <strong>4th Marine Protected Areas Agency Partnership </strong>Meeting held in 2015, December 1, Jeddah, Saudi Arabia, on MPAs as natural solutions for building climate resilience.</p>
+<p>The 3rd International MPA Congress (IMPAC3) recommendations and the Ajaccio Declaration (Marseille 2013).</p>
+<p>Finally, Ramsar Convention adopted a Strategic plan for the period 2016-2024.</p>
+<h2>On a Mediterranean level</h2>
+<p>It is obvious that one of the challenges for Mediterranean States in the coming years is to <strong>combine their efforts to reverse the degradation trends </strong>in the marine and coastal environment and ensure the long-term conservation of biodiversity. This needs a multi-sector governance approach using the most appropriate tools, in accordance with the globally and regionally agreed targets for the conservation and sustainable use of natural resources.</p>
+<p>In this context, Mediterranean countries have embarked since 1975, through the <strong>Barcelona Convention</strong> and its Protocols, on a series of cooperative, coordinative and mutual assisted processes aimed at protecting the Mediterranean, conserving its biological diversity and combating pollution.</p>
+<p>Mediterranean countries thus dedicated one of the Convention’s Protocols to the conservation of biodiversity, especially by developing MPAs. This protocol (SPA/BD) enables the creation of Specially Protected Areas of Mediterranean Importance which include areas beyond national jurisdiction.</p>
+<p>Resolved to give new life to their collaborative effort, the Parties to the Barcelona Convention started in 2008 a process that led in 2012 to a high level of commitment by riparian States to apply an ecosystem-based approach to the management of the Mediterranean  marine environment.</p>
+<p>In parallel to this process, the development of a strategy has been underway since 2008 to promote protected areas incorporating areas beyond national  jurisdiction.</p>
+<p>An important effort has been made by Mediterranean States to ensure a harmonisation with the European Union’s Marine Strategy Framework Directive (MSFD).</p>
+<p>In February 2016, the 19th Meeting of the Contracting Parties to the Barcelona Convention endorsed a Regional Climate Change Adaptation Framework for the Mediterranean Marine and Coastal Areas as a contribution to the Mid-Term Strategy in particular to the Core and Cross-cutting themes on Land-Sea interaction and Processes and Cross-Cutting themes ICZM and Climate Change Adaptation.</p>
+<p>The Barcelona Convention COP 19 also adopted the UNEP/MAP Mid-Term Strategy 2016-2021 as the framework for the development and implementation of the Programme of Work of UNEP/MAP.</p>
+<p>Based on the Antalya Roadmap (Mediterranean MPA Forum, 2012), the SPA/RAC prepared, in 2015, in consultation with relevant regional organizations, a “Roadmap for a Comprehensive Coherent Network of Well-Managed MPAs to Achieve Aichi Target 11 in the Mediterranean”. <a href="http://www.rac-spa.org/sites/default/files/doc_cop/decision_22.13_en.pdf" target="_blank" rel="noopener">This Roadmap, meant as guidance to update and timely implement the “Regional Working Programme for the Coastal and Marine Protected Areas in the Mediterranean including the High Sea” (COP 16, Marrakesh, November 2009), was officially adopted by the Contracting Parties of the Barcelona Convention at their COP 19</a> (Athens, February 2016).</p>
+<p>The Mediterranean Strategy for Sustainable Development (MSSD) 2016-2025, adopted by Barcelona Convention COP19 (in 2016),  provides a strategic policy framework for securing a sustainable future for the Mediterranean region consistent with Sustainable Development Goals.</p>
+<p>The report on the Mid-term Evaluation of the Action Plan for the implementation of the ICZM Protocol for the Mediterranean (2012-2019)  was presented to the Barcelona Convention COP 19.</p>
+<p>There are other agreements which are applicable to the Mediterranean Sea and promote MPAs among the tools required to achieve their objectives.</p>
+<p>The <strong>ACCOBAMS</strong>1 agreement provides for the establishment of MPAs in areas which serve as habitats for cetaceans and/or which provide important food resources for them.</p>
+<p>The <strong>General Fisheries Commission for the Mediterranean </strong>(GFCM), one of the regional fishery management organisations (RFMOs) created under the auspices of the FAO, recommends establishing <strong>fishing reserves and Fisheries Restricted Areas (FRAs) </strong>as tools for the management of fisheries and for the preservation of the marine environment, including in areas beyond States’ jurisdiction. To date, four FRAs have been established by the GFCM. ICCAT (another RFMO to manage tuna) has established, particularly for bluefin tuna, various restrictions associated with stock recovery. Discussions among its members regularly address whether the “MPA“ tool should be used for the management of large pelagic species. In 2016, the GFCM developed a mid-term strategy 2017-2020 towards the sustainability of Mediterranean and Black Sea fisheries</p>
+<p>A <strong>Joint Cooperation Strategy </strong>is under development on Spatial-based Protection and Management Measures for Marine Biodiversity  among the Secretariats of ACCOBAMS, GFCM, IUCN-Med, UNEP/MAP  through SPA/RAC and in collaboration with MedPAN.</p>
+<p>The first <strong>Union for the Mediterranean</strong> (UfM) Ministerial Declaration on Environment and Climate Change was adopted in May 2014 (with two associated bodies, namely the UfM Working Group on Environment and Climate Change; and the UfM Expert Group on Climate Change).</p>
+<p>In 2015, the Union for the Mediterranean Ministerial Conference on Blue Economy made a declaration with support from the associated UfM Working Group on Blue Economy.</p>
+<p>The UfM Water Expert Group (WEG), mandated by the Euro-Mediterranean Ministerial Conference on Water (22 December 2008, Dead Sea, Jordan) was established; a new UfM Ministerial Declaration is under preparation.</p>
+<p>The <strong>Convention on Wetlands</strong>, commonly known as the Ramsar Convention is an international treaty which was adopted in 1971 and entered into force in 1975. Its purpose is the conservation and sustainable use of wetlands and aims to halt their degradation or disappearance by recognising their ecological functions and their economic, cultural, scientific and recreational value. A Mediterranean initiative for these wetlands called “MedWet“ was started in 1991 and aims, under</p>
+<p>the Ramsar Convention, to stop the erosion and degradation of Mediterranean wetlands and promote their sustainable use. All Mediterranean countries, the European Union, UNDP, NGOs and international scientists are involved in this initiative towards the conservation and management of these areas, several of which are key interfaces between land and sea.</p>
+<p>In 2016, THE 10&#215;20 INITIATIVE- Conference on “Marine Protected Areas: An Urgent Imperative, A Dialogue Between Scientists and Policymaker”, launched the Rome Call to Action.</p>
+<p>The Representatives of the Governments of the following EU Member States: Greece, Spain, France, Croatia, Italy, Cyprus,Malta, Portugal, Romania, and Slovenia, meeting in Venice on October 2015 on the occasion of the high level event “The BLUEMED Initiative for Blue Growth and Jobs in the Mediterranean” at the Aquae Venice 2015 Pavillion, made a declaration the <strong>Venice Declaration</strong> on Mediterranean Sea Cooperation &#8211; Launching a Strategic Marine and Maritime Research and Innovation Agenda for Blue Growth.</p>
+<p><strong>CIESM </strong>is a scientific commission set up at the States’ initiative and which has grown from its original eight founding countries to 22 Member States today. These support a network of several thousand marine researchers, applying the latest scientific tools to better understand, monitor and protect a fast-changing, highly impacted Mediterranean Sea. Its aim is to enhance knowledge, promote exchanges between scientists, improve the quality of scientific output in the region and give impartial advice on various topics relevant to the Mediterranean’s marine area.</p>
+<h2>On a European level</h2>
+<p>As members of the European Union, 7 Mediterranean countries1 are also bound to the European Directives applicable to the preservation and sustainable use of the marine environment.</p>
+<p>The Marine Strategy Framework Directive (MSFD) is the most recent of them. It aims to achieve by 2020 a <strong>Good Ecological Status </strong>for the marine environment in European waters by following an integrated process involving initial assessments, descriptors, indicators, measures and monitoring programmes on a national level. It includes steps for establishing a network of MPAs, which will reconcile the protection of the environment with sustainable fishing practices.</p>
+<p>This directive also complements the measures taken under the <strong>Water Framework Directive </strong>(WFD) and in the forthcoming years it will be necessary to develop strong synergies between the following two directives.</p>
+<p>Faced with a significant erosion of marine biodiversity, the European Union has decided to develop an examplary network of Marine Protected Areas, the Natura 2000 at sea network, that extends at sea, the biodiversity conservation policy which relies on the <strong>two European Directives: “Birds“ (EC 79/409) and “habitats“ (92/43). </strong>The Natura 2000 at sea network is a network of sites which are of European interest and whose management will balance the conservation of biodiversity and maintaining human activities through a local think tank consisting of all the stakeholders within each site. This network will complement the other networks of existing reserves or national parks.</p>
+<p><strong>The European Union’s Biodiversity Strategy </strong>for 2020 shows the importance of protecting biodiversity, developing networks of MPAs and managing Natura 2000 sites (Objective 1). It also reflects a desire to integrate biodiversity and other policies and tools by specifying in one of its objectives (e.g. Objective 4) the importance of developing ambitious sustainable fisheries objectives, managing stocks “through fisheries management without adverse effects on other stocks, species and ecosystems, in order to achieve a good ecological status by 2020, complying with the marine strategy framework directive“. In 2015, the EU mid-term review of the biodiversity strategy to 2020 was done.</p>
+<p>The EU Strategy for the Adriatic and Ionian Region was endorsed by the Representatives of the participating Countries1 on 18 November 2014.</p>
+<p>The <strong>Common Fisheries Policy </strong>(CFP) is another instrument that involves binding measures and rules for the sustainable management of European fisheries for countries belonging to the European Union. Established in 1983, the CFP has been revised to reverse the decline of European fish stocks and reduce the negative impact of fishing on the marine environment. The new CFP will enter into force in 2013 and specific measures are being finalised and raise many technical and political arbitrations.</p>
+<p>In 2014, a new EU Directive establishing a framework for <strong>maritime spatial planning</strong> was adopted.</p>
+<p>The European Commission adopted in April 2013 the EU Strategy on Adaptation to Climate Change.</p>
+<p>In 2013, the EU developed the Blue Growth strategy to create growth and jobs in the marine and maritime sectors.</p>
+<p>In 2016, the European Commission and the EU&#8217;s High Representative set out a joint agenda for the future of our oceans, proposing 50 actions for safe, secure, clean and sustainably managed oceans in Europe and around the world. The Joint Communication on <strong>international ocean governance</strong> builds on a widely shared understanding that the ocean governance framework needs to be strengthened, that pressures on the oceans need to be reduced and that the world&#8217;s oceans must be used sustainably. It also stresses that a better understanding about the oceans is necessary to achieve these objectives.</p>
+<div class="addtoany_share_save_container addtoany_content addtoany_content_bottom"><div class="a2a_kit a2a_kit_size_20 addtoany_list" data-a2a-url="http://medpan.org/marine-protected-areas/institutional-framework/" data-a2a-title="Institutional framework"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=http%3A%2F%2Fmedpan.org%2Fmarine-protected-areas%2Finstitutional-framework%2F&amp;linkname=Institutional%20framework" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=http%3A%2F%2Fmedpan.org%2Fmarine-protected-areas%2Finstitutional-framework%2F&amp;linkname=Institutional%20framework" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=http%3A%2F%2Fmedpan.org%2Fmarine-protected-areas%2Finstitutional-framework%2F&amp;linkname=Institutional%20framework" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a></div></div>			</div>
+	<footer class="entry-meta-bar clearfix">
+		<div class="entry-meta clearfix">
+       			</div>
+	</footer>
+	</article>
+
+
+				
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+	
+<div id="secondary">
+			
+				<aside id="recent-posts-10" class="widget widget_recent_entries">		<h3 class="widget-title"><span>Recent articles</span></h3>		<ul>
+											<li>
+					<a href="http://medpan.org/call-for-tenders-to-support-the-global-alliance-for-marine-protection/">Call for tenders to support the Global Alliance for Marine Protection</a>
+											<span class="post-date">27 September 2022</span>
+									</li>
+											<li>
+					<a href="http://medpan.org/la-science-pour-la-gestion-des-amp-numero-12-la-cogestion-dans-les-amp-de-mediterranee-une-voie-a-suivre/">Science for MPA management issue 12 &#8211; Co-management in Mediterranean MPAs: the way forward</a>
+											<span class="post-date">26 September 2022</span>
+									</li>
+											<li>
+					<a href="http://medpan.org/a-new-medpan-collection-guide-on-monitoring-fisheries-in-mediterranean-mpas-is-now-available/">A new MedPAN Collection guide on monitoring fisheries in Mediterranean MPAs is now available</a>
+											<span class="post-date">26 September 2022</span>
+									</li>
+											<li>
+					<a href="http://medpan.org/le-rapport-dactivite-2021-est-disponible/">The 2021 Activity Report is available</a>
+											<span class="post-date">23 September 2022</span>
+									</li>
+											<li>
+					<a href="http://medpan.org/news-mpa-networks-project-outcomes/">MPA NETWORKS project outcomes</a>
+											<span class="post-date">19 September 2022</span>
+									</li>
+											<li>
+					<a href="http://medpan.org/have-your-say-european-commission-dg-mare-call-for-evidence/">Have your say! European Commission (DG MARE) call for evidence</a>
+											<span class="post-date">9 September 2022</span>
+									</li>
+											<li>
+					<a href="http://medpan.org/low-hanging-fruits-from-the-mpa-networks-project-inca-and-its-exemplary-capitalisation-works-in-albania/">Low hanging fruits from the MPA NETWORKS project: INCA and its exemplary capitalisation works in Albania</a>
+											<span class="post-date">2 September 2022</span>
+									</li>
+											<li>
+					<a href="http://medpan.org/scientific-watch-a-look-back-over-the-past-few-months-2/">Scientific watch: the latest papers selected</a>
+											<span class="post-date">2 September 2022</span>
+									</li>
+					</ul>
+		</aside>	</div>
+	
+
+		</div><!-- .inner-wrap -->
+	</div><!-- #main -->
+			<footer id="colophon" class="clearfix">
+			<div class="footer-widgets-wrapper">
+	<div class="inner-wrap">
+		<div class="footer-widgets-area clearfix">
+			<div class="tg-one-third">
+				<aside id="nav_menu-3" class="widget widget_nav_menu"><h3 class="widget-title"><span>Site map</span></h3><div class="menu-menu-superieur-en-container"><ul id="menu-menu-superieur-en-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-179"><a href="http://medpan.org/about/">About MedPAN</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-257"><a href="http://medpan.org/about/medpan/organisation/">The association</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-181"><a href="http://medpan.org/about/medpan/members-and-partners/">Members and partners</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-217"><a href="http://medpan.org/about/medpan/join-us/">Join us</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-260"><a href="http://medpan.org/about/medpan/history/">History</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-188"><a href="http://medpan.org/main_activities/">MAIN ACTIVITIES</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-324"><a href="http://medpan.org/main_activities/mpa-forum/">Mediterranean MPA Forum</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-862"><a href="http://medpan.org/main_activities/mpa-status/">The system of Mediterranean MPAs in 2020</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3192"><a href="http://medpan.org/main_activities/projects/">Projects</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14488"><a href="http://medpan.org/the-rest-coast-project/">The REST-COAST Project</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14480"><a href="http://medpan.org/the-mediterranean-islands-collective-project/">The Mediterranean Islands Collective Project</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14249"><a href="http://medpan.org/enseres-project/">ENSERES Project</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14205"><a href="http://medpan.org/life-enable-project-creating-the-european-nature-academy-for-applied-blended-learning/">LIFE ENABLE project: Creating the European Nature Academy for applied Blended LEarning</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14267"><a href="http://medpan.org/build-back-a-blue-and-stronger-mediterranean-gef-project/">Build back a blue and stronger Mediterranean – GEF project</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12761"><a href="http://medpan.org/conservation-of-marine-turtles-in-the-mediterranean-region/">Conservation of Marine Turtles in the Mediterranean Region</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11370"><a href="http://medpan.org/co-managed-no-take-zones-mpas-project/">Co-managed No-Take Zones/MPAs project</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11306"><a href="http://medpan.org/ocean-governance-project/">Ocean Governance Project</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8556"><a href="http://medpan.org/main_activities/projects/mpa-networks-project/">MPA NETWORKS project</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2589"><a href="http://medpan.org/main_activities/mava-project/">MAVA project</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3534"><a href="http://medpan.org/main_activities/projects/cogito-project/">COGITO project</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2936"><a href="http://medpan.org/main_activities/projet-pharos4mpas/">PHAROS4MPAs project</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8564"><a href="http://medpan.org/main_activities/projects/closed-projects/">Closed projects</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3535"><a href="http://medpan.org/fr/activites_principales/projets/projet-medmpa-network/">Projet &#8221; MedMPA Network &#8220;</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-321"><a href="http://medpan.org/main_activities/fishmpablue2-project/">FishMPABlue2 project</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="http://medpan.org/main_activities/destimed-project/">DESTIMED project</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://medpan.org/main_activities/act4litter-project/">ACT4LITTER project</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3207"><a href="http://medpan.org/main_activities/projects/simwestmed-project/">SIMWESTMED project</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-588"><a href="http://medpan.org/category/science/">Scientific watch</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2208"><a href="http://medpan.org/main_activities/appels-a-petits-projets/">Small Projects</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3191"><a href="http://medpan.org/main_activities/management-tools/">Management tools</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-319"><a href="http://medpan.org/main_activities/workshops/">Workshops</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13081"><a href="http://medpan.org/main_activities/regular-training-programme/">Regular Training Programme</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-320"><a href="http://medpan.org/main_activities/trainings/">Annual trainings</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-318"><a href="http://medpan.org/main_activities/exchange-visits/">Exchange visits</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-316"><a href="http://medpan.org/main_activities/mapamed/">MAPAMED</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6486"><a href="http://medpan.org/monitoring-resource-centre/">Monitoring resource centre</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13777"><a href="http://medpan.org/alliances/">Alliances / Partnerships</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3151"><a href="http://medpan.org/main_activities/health-monitoring/">Health monitoring</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor current-menu-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-504"><a href="http://medpan.org/marine-protected-areas/">MARINE PROTECTED AREAS</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-574"><a href="http://medpan.org/mediterranean-realities/">Mediterranean challenges</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-623"><a href="http://medpan.org/marine-protected-areas/mediterranean-mpas/">MPAs in the Mediterranean</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-585"><a href="http://medpan.org/marine-protected-areas/themes-2/">Themes</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-492 current_page_item menu-item-497"><a href="http://medpan.org/marine-protected-areas/institutional-framework/">Institutional framework</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2002"><a href="http://medpan.org/fr/category/nonclassefr/">NEWS &#038; AGENDA</a></li>
+</ul></div></aside>			</div>
+							<div class="tg-one-third tg-column-2">
+					<aside id="custom_html-4" class="widget_text widget widget_custom_html"><h3 class="widget-title"><span>Facebook</span></h3><div class="textwidget custom-html-widget"><iframe style="border: none; overflow: hidden;" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMedPAN.network%2F&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false&amp;appId" width="340" height="500" frameborder="0" scrolling="no"></iframe></div></aside>				</div>
+										<div class="tg-one-third tg-after-two-blocks-clearfix">
+					<aside id="text-41" class="widget widget_text"><h3 class="widget-title"><span>Twitter</span></h3>			<div class="textwidget"><p><a class="twitter-timeline" data-height="500" data-theme="light" href="https://twitter.com/MedPAN">Tweets by MedPAN</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+</div>
+		</aside>				</div>
+								</div>
+	</div>
+</div>
+			<div class="footer-socket-wrapper clearfix">
+				<div class="inner-wrap">
+					<div class="footer-socket-area">
+						<div class="copyright"><p>Copyright © 2022 <a href="http://medpan.org/" title="MedPAN" ><span>MedPAN</span></a> </p></div>						<nav class="small-menu clearfix">
+									    			</nav>
+					</div>
+				</div>
+			</div>
+		</footer>
+					<a href="#masthead" id="scroll-up"></a>
+			</div><!-- #page -->
+	<script type='text/javascript' src='http://medpan.org/wp-content/themes/spacious-pro/js/theia-sticky-sidebar/theia-sticky-sidebar.min.js?ver=5.0.17'></script>
+<script type='text/javascript' src='http://medpan.org/wp-content/themes/spacious-pro/js/theia-sticky-sidebar/ResizeSensor.min.js?ver=5.0.17'></script>
+<script type='text/javascript' src='http://medpan.org/wp-content/themes/spacious-pro/js/navigation.min.js?ver=5.0.17'></script>
+<script type='text/javascript' src='http://medpan.org/wp-content/themes/spacious-pro/js/spacious-custom.min.js?ver=5.0.17'></script>
+<script type='text/javascript' src='http://medpan.org/wp-includes/js/wp-embed.min.js?ver=5.0.17'></script>
+
+		<!-- Cookie Notice plugin v1.3.2 by Digital Factory https://dfactory.eu/ -->
+		<div id="cookie-notice" role="banner" class="cookie-notice-hidden cookie-revoke-hidden cn-position-bottom" aria-label="Cookie Notice" style="background-color: rgba(0,0,0,1);"><div class="cookie-notice-container" style="color: #fff;"><span id="cn-notice-text" class="cn-text-container">Nous utilisons des cookies pour vous garantir la meilleure expérience sur notre site web. Si vous continuez à utiliser ce site, nous supposerons que vous en êtes satisfait.</span><span id="cn-notice-buttons" class="cn-buttons-container"><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button bootstrap" aria-label="Ok">Ok</a></span><a href="javascript:void(0);" id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" aria-label="Ok"></a></div>
+			
+		</div>
+		<!-- / Cookie Notice plugin --></body>
+</html>

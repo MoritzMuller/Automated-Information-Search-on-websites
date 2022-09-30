@@ -1,0 +1,1130 @@
+
+
+<!DOCTYPE html>
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head><meta charset="utf-8" /><title>
+	Check for active session
+</title><meta name="author" content="Impexium" /><meta name="keywords" content="CRM, CMS, Memberships, Subscriptions, Events, Exhibits, E-Commerce" /><meta name="description" content="Impexium Association Management Software " /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="MobileOptimized" content="320" /><link href="/bundles/css/plugins.css?v=Yml6BBPwP_Iq8SswX0of7s7KgJt0lLe4wqaIHOH4Slw1" rel="stylesheet"/>
+<link href="/bundles/css/custom.css?v=Qibj17wKUs5DiX1064Ro43BWx9CwM-3Cz9Nhau4637o1" rel="stylesheet"/>
+<link id="main_site_theme" rel="stylesheet" type="text/css" href="assets/css/themes/light.css" />
+<script type="text/javascript">window.appInsightsInstrumentationKey='421e74a2-4f8e-404f-9d48-74b42dc1b66e';</script>
+<script type="text/javascript" src="/scripts/quattro-app-insights.js"></script><script src="/bundles/js/plugins.js?v=JyIvx7Gru6Kdg8g0Ty8LCHCshtJNPO-AP_E6-f8AhZU1"></script>
+<script type="text/javascript">
+	window.sessionTimeoutInMinutes=null;
+	window.enableSignalR=false;
+	window.location.appPath='';
+	window.location.myProfilePath='~/my-account/my-autocare-profile/';
+	window.location.myShoppingCartPath='~/pages/checkout.aspx';
+	window.cultureInfo={
+		numberFormat:{CurrencyDecimalSeparator:'.',CurrencyGroupSeparator:',',CurrencySymbol:'$'},
+		dateTimeFormat:{MonthDayPattern:'MMMM d',YearMonthPattern:'MMMM yyyy',ShortDatePattern:'M/d/yyyy',ShortTimePattern:'h:mm tt',LongDatePattern:'dddd, MMMM d, yyyy',LongTimePattern:'h:mm:ss tt',FullDateTimePattern:'dddd, MMMM d, yyyy h:mm:ss tt',DayNames:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],MonthNames:['January','February','March','April','May','June','July','August','September','October','November','December','']}
+	};
+</script>
+<script src="/bundles/js/custom.js?v=QsBokhPbJjjOVMsxKKr9HXQgQVHlmtWE5S9L1eY4oQA1"></script>
+<!-- JS for BODY Tag-->
+<script type="text/javascript">
+    page.load(function (){
+        $('.no-js').addClass('js');
+        
+        //John McAndrew added this for payment wizard. 
+        let acaBlackMessage = `Please note you will see open balances for you or your organization based on the selected "Pay For" below. In most cases, your organization should be selected, not you.`
+        $('#main_content_ctlPaymentWizard_wizPayment_pnlLookup').prepend(acaBlackMessage);
+        let acaOrangeMessage = `Please click "Next" to provide payment details.`
+        $('#main_content_ctlPaymentWizard_wizPayment_SelectOrganizationRow > div.margin-20 > h4').html(acaOrangeMessage)
+    });
+</script>
+
+<link rel="shortcut icon" href="https://www.autocare.org/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://autocare.org/Stylesheets/AutoCareMain/e3874882-56ab-4062-af35-1e9de1429148?version=1518">
+
+<style type="text/css">
+    .site-template-header.col-md-12, .site-template-footer.col-md-12 { 
+        padding: 0; 
+    }
+    .page-content {
+        border-left: none !important;
+        border-bottom: none !important;
+    }
+    table td {
+        border: none;
+    }
+    .page-header {
+        position: relative;
+    }
+    [class^="icon-"]:before, [class*=" icon-"]:before {
+        font-family: 'Font Awesome 5 Free';
+    }
+    a:hover, a:focus {
+        text-decoration: none;
+    }
+    @media (min-width: 960px) {
+        .login-status .dropdown {
+            width: auto;
+            right: 0;
+        }
+    }
+    .icon-facebook:before, .icon-twitter:before, .icon-linkedin:before, .icon-youtube:before {
+        font-family: "Font Awesome 5 Brands" !important;
+        font-weight: 400;
+        font-size: 20px;
+    }
+    .icon-facebook-square:before, .icon-twitter-square:before, .square.icon-linkedin:before {
+        font-family: "Font Awesome 5 Brands" !important;
+        font-size: 28px;
+        
+    }
+    .icon-envelope-square:before {
+        font-size: 28px;
+    }
+    .icon-language:before {
+        content: '\f1ab';
+    }
+    .progress-foreground td {
+        vertical-align: middle;
+    }
+    .login .content {
+        padding: 0;
+    }
+    .translate.sf-lang-selector {
+        display: none;
+    }
+    .aca-header-social {
+        display: none;
+    }
+    input[type="text"]:not(:last-child), input[type="email"]:not(:last-child), input[type="password"]:not(:last-child), input[type="number"]:not(:last-child), input[type="tel"]:not(:last-child), textarea:not(:last-child), select:not(:last-child) {
+        margin-bottom: 0;
+    }
+    .payment-icons img {
+        display: inline-block;
+    }
+    .page-title small {
+        padding-top: 15px;
+    }
+    body {
+        background-color: #fff !important;
+    }
+    @media (max-width: 767px) {
+        body {
+            background-color: #fff !important;
+        }
+    }
+    @media (min-width: 960px){
+        .page-header {
+            border-top: 8px solid transparent;
+        }
+        .header-nav > ul > li:hover > ul, .header-nav div > ul > li:hover > ul {
+            display: none;
+        }
+    }
+    @media (min-width: 960px) {
+        .header-user {
+            position: absolute;
+            right: 50px;
+            top: -37px;
+            z-index: 10;
+        }
+    }
+    @font-face {
+    font-family: 'fontello';
+    src: url("/files/622f9fca-eb9d-41fc-996b-b908b4519306.bin");
+    src: url("/files/ea91d5d3-ec9a-4acb-b0f7-abfac2a31b4e.bin") format("woff2"),
+         url("/files/5641fd38-8d99-4798-a683-28849efba50d.bin") format("woff"),
+         url("/files/c159d7cb-7903-4bb7-9b72-8bcc5672275e.bin") format("truetype"),
+    font-weight: normal;
+    font-style: normal;
+    }
+    
+    /*2021.04.09*/
+    .login-status .username {
+	    color: #4d5362!important;
+    }
+</style>
+
+</head>
+
+<body id="main_body" class="page-header-fixed cms-page cms-page-checking-active-session  public-body">
+    <form method="post" action="./checking-active-session" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm" enctype="multipart/form-data" class="form-horizontal" style="width:100% !important;">
+<div class="aspNetHidden">
+<input type="hidden" name="__NAVLINKID" id="__NAVLINKID" value="" />
+<input type="hidden" name="__BROWSERID" id="__BROWSERID" value="1090193a-9d8e-461d-8340-e9fa9a0e979e" />
+<input type="hidden" name="__ADMINSITE" id="__ADMINSITE" value="0" />
+<input type="hidden" name="__MINESWEEPER" id="__MINESWEEPER" value="0" />
+<input type="hidden" name="__READONLY" id="__READONLY" value="0" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZH6Hf7jkL-Zm3OyqT-bquqUVfjvmjKulWtJIuUpNalOy79vsJg2&amp;t=637814660020000000" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvuBP81t6P5M8V27poqkXBUHMDyGvKWyyJW0aM7O5WTLvdA2eRw37y6dsTgzOX9HUg44JlH7uJhlwATEGijR2RzzJgg3WQ08uLfxcAtoe6v1DIazuZqTuKQGOaTdsAHz66vRlax01&amp;t=49337fe8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8OKX9M_6iK91EL0prdnD9CO3krfCUbkuwpqnPyNB1UwglwEhsc16NRED1nYZNC4ymeYeTJVaILZTYh5ZEWTJ1r0h74hG6881WbRomWo5-exewroyLjB6htBEPfOQ7MgW4o1SxxVE1&amp;t=49337fe8" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+page.handleBeforeSubmitEvents();
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('main$sm', 'aspnetForm', ['tmain$updTitle','','tmain$updContent','','tmain$updPostBack','','tmain$content$ctl01$upCustomLoginStatus','','tmain$content$ctl01$ctl01','','tmain$ctl14$ctl00','','tmain$ctl15$status$upLoginStatus','','tmain$ctl15$ctl00','','tmain$ctl17$ctl00',''], ['main$sm',''], [], 300, 'main');
+//]]>
+</script>
+<input type="hidden" name="main$sm" id="main_sm" />
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.setServerId("main_sm", "main$sm");
+Sys.Application._enableHistoryInScriptManager();
+//]]>
+</script>
+
+        
+
+
+<div class="clearfix"></div>
+
+        <div id="main_divPageContainer" class="page-container page-container-no-header">
+            <div id="main_pnlSiteTemplateHeader" class="site-template-header col-md-12">
+	<div id="main_ctl14_ctl00">
+		<span id="main_ctl14_MC"></span>
+	</div><header class="page-header" role="banner"> <div class="page-bounds"> <div class="header-logo">
+
+<div>
+    <div class="sfContentBlock sf-Long-text"><a href="https://www.autocare.org/"><img src="https://www.autocare.org/images/default-source/siteimages/logo" alt="Auto Care Association logo" title="Image: https://prod.autocare.org/images/default-source/siteimages/logo"/></a></div>    
+</div>
+
+</div> <button class="page-header__toggle mobile-menu-was-open" id="menu" role="button" aria-expanded="false" aria-controls="main_body" tabindex="0">
+                Menu
+                <span class="toggle-indicator"> <span class="toggle-indicator__piece toggle-indicator__piece--1"></span> <span class="toggle-indicator__piece toggle-indicator__piece--2"></span> <span class="toggle-indicator__piece toggle-indicator__piece--3"></span> </span> </button> <div class="page-header__content mobile-menu-was-open" id="menu--pane-1" aria-labelledby="menu" aria-hidden="true"> <div class="header-utility header-utility__secondary">
+
+<ul class="header-utility__list">
+    <li class="header-utility__item">
+        <a href="http://autocarevip.com/" target="_blank">Auto Care VIP</a>
+    </li>
+    <li class="header-utility__item">
+        <a href="http://digital.autocare.org" target="_blank">Digital Hub</a>
+    </li>
+    <li class="header-utility__item">
+        <a href="http://trendlens.autocare.org" target="_blank">TrendLens</a>
+    </li>
+</ul>
+
+
+
+
+
+</div> <div class="header-utility">
+
+
+
+<div class="translate sf-lang-selector">
+
+
+<ul class="header-list header-translate">
+
+        <li class="header-list__item">
+
+<a href="#0">Translate <span class="icon-language header-utility__icon"></span>
+    <label>
+        
+            <select onchange="openLink(value)" class="normal-color">
+
+
+                <option value="en" selected="selected">English</option>
+                <option value="es">español</option>
+                <option value="zh-CHS">中文(简体) 旧版</option>
+        </select>
+    </label>
+    
+    </a>
+    
+    </li>
+    
+    </ul>
+    
+</div>
+
+
+<div class="aca-header-social">
+    <div class="sfContentBlock sf-Long-text"><ul class="header-list header-share"><li class="header-list__item"><a href="#0">Share <span class="icon-share-alt header-utility__icon" aria-hidden="true"></span></a>
+
+ <ul class="header-user__actions"><div data-share-to="facebook twitter linkedin email" class="display-inline"><a target="_blank" class="share-buttons__button" title="Share via Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fprod.autocare.org&amp;title=Auto%20Care%20Association%20-%20Automobile%20Industry%20Analysis%20%26%20Advocacy&amp;description=Independence%20drives%20us%3A%20our%20global%20member%20companies%20manufacture%2C%20distribute%2C%20and%20sell%20vehicle%20parts%20and%20components%20as%20well%20as%20perform%20services%2C%20maintenance%2C%20and%20repairs%20on%20every%20class%20of%20vehicle%20on%20the%20road.&amp;caption=Default"><span class="icon-facebook-square" aria-hidden="true"></span></a><a target="_blank" class="share-buttons__button" title="Share via Twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fprod.autocare.org"><span class="icon-twitter-square" aria-hidden="true"></span></a><a target="_blank" class="share-buttons__button" title="Share via LinkedIn" href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fprod.autocare.org&amp;mini=true&amp;title=Auto%20Care%20Association%20-%20Automobile%20Industry%20Analysis%20%26%20Advocacy&amp;summary=Independence%20drives%20us%3A%20our%20global%20member%20companies%20manufacture%2C%20distribute%2C%20and%20sell%20vehicle%20parts%20and%20components%20as%20well%20as%20perform%20services%2C%20maintenance%2C%20and%20repairs%20on%20every%20class%20of%20vehicle%20on%20the%20road.&amp;source=Default"><span class="square icon-linkedin" aria-hidden="true"></span></a><a target="MailToIframe" class="share-buttons__button" title="Share via Email" href="mailto:?subject=Auto%20Care%20Association%20-%20Automobile%20Industry%20Analysis%20%26%20Advocacy&amp;body=https%3A%2F%2Fprod.autocare.org%0A"><span class="icon-envelope-square" aria-hidden="true"></span></a><a target="_blank" class="share-buttons__button" title="Share via Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmy.autocare.org%2Faccount%2Fprofile.aspx&amp;title=Auto%20Care%20Association&amp;description=Impexium%20Association%20Management%20Software%20"><span class="fab fa-facebook-square"></span></a><a target="_blank" class="share-buttons__button" title="Share via Twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fmy.autocare.org%2Faccount%2Fprofile.aspx"><span class="fab fa-twitter-square"></span></a><a target="_blank" class="share-buttons__button" title="Share via LinkedIn" href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fmy.autocare.org%2Faccount%2Fprofile.aspx&amp;mini=true&amp;title=Auto%20Care%20Association&amp;summary=Impexium%20Association%20Management%20Software%20"><span class="fab fa-linkedin"></span></a><a target="MailToIframe" class="share-buttons__button" title="Share via Email" href="mailto:?subject=Auto%20Care%20Association&amp;body=https%3A%2F%2Fmy.autocare.org%2Faccount%2Fprofile.aspx%0A"><span class="fas fa-envelope-square"></span></a></div></ul></li></ul></div>    
+</div>
+<ul class="header-utility__list header-utility__list">
+    <li class="header-utility__item">
+        <a href="https://www.autocare.org/about-us" target="_self">About Us</a>
+    </li>
+    <li class="header-utility__item">
+        <a href="https://www.autocare.org/contact" target="_self">Contact</a>
+    </li>
+    <li class="header-utility__item">
+        <a href="https://www.autocare.org/membership" target="_self">Membership</a>
+    </li>
+</ul>
+
+
+
+
+
+</div>  <div class="header-user">
+
+
+
+<div>
+  <div data-sf-role="sf-logged-in-view" style="/* display: none */">
+  
+  
+   <a href="/my-autocare-profile"><span class="header-user__welcome"><em class="icon-user-circle" aria-hidden="true" style="
+    font-size: 28px;
+"></em><span class="screenreaders-only">User Profile</span></span></a>
+   
+  
+  </div>
+
+  <div data-sf-role="sf-logged-out-view" style="">
+    <a href="https://prod.autocare.org/account/login?redirect_uri=%2f"><span class="header-user__welcome"><em class="fas fa-user-circle" aria-hidden="true"></em><span class="screenreaders-only">User Profile</span></span></a>
+  </div>
+</div>
+
+<input type="hidden" data-sf-role="sf-status-json-endpoint-url" value="/rest-api/rd-login-status/FullName" class="has-content"/>
+<input type="hidden" data-sf-role="sf-allow-windows-sts-login" value="False" class="has-content"/>
+<input type="hidden" data-sf-role="sf-logout-redirect-url" value="https://prod.autocare.org/account/logout" class="has-content"/>
+<input type="hidden" data-sf-role="sf-is-design-mode-value" value="False" class="has-content"/>
+
+</div> <nav class="header-nav" role="navigation">
+
+<ul class="header-nav__sf-list">
+    <li class="  ">
+
+                
+        <a href="https://www.autocare.org/data-and-information" target="_self">Data and Information</a>
+            <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane" aria-labelledby="expand-subnavigation-for" aria-hidden="true" tabindex="-1">
+                        
+        
+        
+        
+        
+        
+        
+
+
+            <div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/data-and-information/data-standards" target="_self">Data Standards</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-1" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-1" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-1" aria-labelledby="expand-subnavigation-for-1" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/data-and-information/data-standards/aftermarket-catalog-exchange-standard-(aces)" target="_self">Aftermarket Catalog Exchange Standard (ACES)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/product-information-exchange-standard-(pies)" target="_self">Product Information Exchange Standard (PIES)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/databases" target="_self">Databases</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-2" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-2" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-2" aria-labelledby="expand-subnavigation-for-2" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/data-and-information/data-standards/databases/vehicle-configuration-database-(vcdb)" target="_self">Vehicle Configuration database (VCdb)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/databases/qualifier-database-(qdb)" target="_self">Qualifier database (Qdb)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/databases/product-classification-database-(pcdb)" target="_self">Product Classification database (PCdb)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/databases/product-attribute-database-(padb)" target="_self">Product Attribute database (PAdb)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/databases/brand-table" target="_self">Brand Table</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/internet-parts-ordering-(ipo)" target="_self">Internet Parts Ordering (IPO)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/integrated-shop-standard-(ishop)" target="_self">Integrated Shop Standard (iShop)</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/data-standards/super-spec" target="_self">Super Spec</a>
+        </li>
+
+                </ul>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/data-and-information/trendlens" target="_self">TrendLens: Interactive Data</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-3" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-3" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-3" aria-labelledby="expand-subnavigation-for-3" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/data-and-information/trendlens/demand-index" target="_self">Demand Index</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/trendlens/imr-data" target="_blank">Automotive Research Data</a>
+        </li>
+
+                </ul>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/data-and-information/market-research" target="_self">Market Research</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-4" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-4" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-4" aria-labelledby="expand-subnavigation-for-4" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/data-and-information/market-research/Auto-Care-Factbook" target="_self">Auto Care Factbook</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/market-research/global-automotive-aftermarket-report" target="_self">Global Automotive Aftermarket Report</a>
+        </li>
+        <li class="  ">
+            <a href="/data-and-information/market-research/state-of-auto-care" target="_blank">State of Auto Care</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/data-and-information/market-research/market-insights-with-mike" target="_self">Market Insights with Mike</a>
+        </li>
+
+                </ul>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/data-and-information/emerging-transportation-technologies" target="_self">Emerging Transportation Technologies</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-5" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-5" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-5" aria-labelledby="expand-subnavigation-for-5" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/data-and-information/emerging-transportation-technologies/innovative-solutions-for-tomorrow-s-industry" target="_self">Innovative Solutions for Tomorrow’s Industry</a>
+        </li>
+
+                </ul>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/data-and-information/global-vehicle-identifier" target="_self">UniLink: Your Global Vehicle Identifier</a>
+        </li><li class="  ">
+            <a href="/data-and-information/glossary-of-terms" target="_self">Glossary of Terms</a>
+        </li><li class="  ">
+            <a href="/data-and-information/industry-acronyms" target="_self">Industry Acronyms</a>
+        </li></div></div></ul>
+    </li>
+    <li class="  ">
+
+                
+        <a href="https://www.autocare.org/events-search" target="_self">Events</a>
+            <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-6" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-6" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-6" aria-labelledby="expand-subnavigation-for-6" aria-hidden="true" tabindex="-1">
+                        
+        
+        
+        
+        
+
+
+            <div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/events-search/trade-shows" target="_self">Trade Shows</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-7" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-7" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-7" aria-labelledby="expand-subnavigation-for-7" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/events-search/trade-shows/automotive-aftermarket-products-expo-(aapex)" target="_self">Automotive Aftermarket Products Expo (AAPEX)</a>
+        </li>
+        <li class="  ">
+            <a href="/events-search/trade-shows/heavy-duty-aftermarket-week-(hdaw)" target="_self">Heavy Duty Aftermarket Week (HDAW)</a>
+        </li>
+
+                </ul>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/events-search/conferences" target="_self">Conferences</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-8" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-8" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-8" aria-labelledby="expand-subnavigation-for-8" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/events-search/conferences/leadership-days" target="_self">Leadership Days</a>
+        </li>
+        <li class="  ">
+            <a href="/events-search/conferences/auto-care-connect" target="_self">Auto Care Connect</a>
+        </li>
+        <li class="  ">
+            <a href="/events-search/conferences/paint-body-and-equipment-specialists-(pbes)-conference" target="_self">Paint, Body and Equipment Specialists (PBES) Conference</a>
+        </li>
+        <li class="  ">
+            <a href="/events-search/conferences/upholstery-and-trim-international-council-(utic)-convention" target="_self">Upholstery and Trim International Council (UTIC) Convention</a>
+        </li>
+        <li class="  ">
+            <a href="/events-search/conferences/women-in-auto-care-week" target="_self">Women in Auto Care Week</a>
+        </li>
+        <li class="  ">
+            <a href="/events-search/conferences/legislative-summit" target="_self">Legislative Summit</a>
+        </li>
+
+                </ul>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/events-search/international-events" target="_self">International Events</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-9" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-9" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-9" aria-labelledby="expand-subnavigation-for-9" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/events-search/international-events/trade-missions" target="_self">Trade Missions</a>
+        </li>
+
+                </ul>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/events-search/full-industry-events-calendar" target="_self">Industry Calendar</a>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/events-search/webinars" target="_self">Webinars</a>
+        </li></div></div></ul>
+    </li>
+    <li class="  ">
+
+                
+        <a href="https://www.autocare.org/networking-and-development" target="_self">Networking and Development</a>
+            <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-10" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-10" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-10" aria-labelledby="expand-subnavigation-for-10" aria-hidden="true" tabindex="-1">
+                        
+        
+        
+        
+        
+        
+        
+
+
+            <div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/networking-and-development/communities" target="_self">Communities</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-11" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-11" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-11" aria-labelledby="expand-subnavigation-for-11" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/networking-and-development/communities/automotive-content-professionals-network" target="_self">Automotive Content Professionals Network</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-12" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-12" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-12" aria-labelledby="expand-subnavigation-for-12" aria-hidden="true" tabindex="-1">
+                            <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/automotive-content-professionals-network/awards" target="_self">Awards</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/automotive-content-professionals-network/designations" target="_self">Designations</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/automotive-content-professionals-network/acpn-knowledge-exchange-conference" target="_self">Knowledge Exchange Conference</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/automotive-content-professionals-network/scholarships" target="_self">Scholarships</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/automotive-content-professionals-network/about-us" target="_self">About Us</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/communities/aftermarket-warehouse-distributors" target="_self">Aftermarket Warehouse Distributors</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-13" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-13" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-13" aria-labelledby="expand-subnavigation-for-13" aria-hidden="true" tabindex="-1">
+                            <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/aftermarket-warehouse-distributors/events" target="_self">Events</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/aftermarket-warehouse-distributors/awards" target="_self">Awards</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/aftermarket-warehouse-distributors/about-us" target="_self">About Us</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/communities/car-care-professionals-network" target="_self">Car Care Professionals Network</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/communities/filter-manufacturers-community" target="_self">Filter Manufacturers Community</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/communities/import-vehicle-community" target="_self">Import Vehicle Community</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-14" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-14" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-14" aria-labelledby="expand-subnavigation-for-14" aria-hidden="true" tabindex="-1">
+                            <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/import-vehicle-community/events" target="_self">Events</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/import-vehicle-community/awards" target="_self">Awards</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-15" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-15" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-15" aria-labelledby="expand-subnavigation-for-15" aria-hidden="true" tabindex="-1">
+                            <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/import-vehicle-community/awards/import-product-and-marketing" target="_self">Import Product and Marketing Awards</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/import-vehicle-community/awards/import-vehicle-community-people" target="_self">Import Vehicle Community People Awards</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/import-vehicle-community/sponsorships" target="_self">Sponsorships</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/import-vehicle-community/about-us" target="_self">About Us</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/communities/manufacturers'-representatives" target="_self">Manufacturers' Representatives</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-16" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-16" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-16" aria-labelledby="expand-subnavigation-for-16" aria-hidden="true" tabindex="-1">
+                            <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/manufacturers'-representatives/rep-match" target="_blank">Rep Match</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/manufacturers'-representatives/events" target="_self">Why Use a Rep?</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/manufacturers'-representatives/about-us" target="_self">About Us</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/communities/paint-body-equipment-specialists" target="_self">Paint, Body, &amp; Equipment Specialists</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-17" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-17" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-17" aria-labelledby="expand-subnavigation-for-17" aria-hidden="true" tabindex="-1">
+                            <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/paint-body-equipment-specialists/pbes-conference" target="_self">PBES Conference</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/paint-body-equipment-specialists/about-us" target="_self">About Us</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/communities/tool-and-equipment" target="_self">Tool and Equipment</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/communities/upholstery-and-trim-international-council" target="_self">Upholstery and Trim International Council</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-18" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-18" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-18" aria-labelledby="expand-subnavigation-for-18" aria-hidden="true" tabindex="-1">
+                            <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/upholstery-and-trim-international-council/events" target="_self">Upholstery and Trim International Council Convention</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/upholstery-and-trim-international-council/about-us" target="_self">About Us</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/communities/women-in-auto-care" target="_self">Women in Auto Care</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-19" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-19" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-19" aria-labelledby="expand-subnavigation-for-19" aria-hidden="true" tabindex="-1">
+                            <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/women-in-auto-care/events" target="_self">Events</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/women-in-auto-care/awards" target="_self">Awards</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/women-in-auto-care/mentoring" target="_self">Mentoring</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/women-in-auto-care/scholarships" target="_self">Scholarships</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/women-in-auto-care/sponsorships" target="_self">Sponsorships</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/women-in-auto-care/about-us" target="_self">About Us</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/women-in-auto-care/women-in-auto-care-champions" target="_self">Women in Auto Care Champions</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/communities/young-auto-care-network-group" target="_self">Young Auto Care Network Group</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-20" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-20" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-20" aria-labelledby="expand-subnavigation-for-20" aria-hidden="true" tabindex="-1">
+                            <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/young-auto-care-network-group/yang-leadership-conference" target="_self">YANG Leadership Conference</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/young-auto-care-network-group/scholarships" target="_self">Scholarships</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/young-auto-care-network-group/sponsorships" target="_self">Sponsorships</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/communities/young-auto-care-network-group/about-us" target="_self">About Us</a>
+        </li>
+
+                </ul>
+        </li>
+
+                </ul>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/networking-and-development/committees" target="_self">Committees</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-21" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-21" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-21" aria-labelledby="expand-subnavigation-for-21" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/networking-and-development/committees/board-of-directors-244" target="_self">board of directors</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/committees/audit-committee-239" target="_self">audit committee</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/committees/category-management-committee-241" target="_self">category management committee</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/committees/education-committee-242" target="_self">education committee</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/committees/emerging-technologies-committee-4366" target="_self">emerging technologies committee</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-22" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-22" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-22" aria-labelledby="expand-subnavigation-for-22" aria-hidden="true" tabindex="-1">
+                            <li class=" hide-nav ">
+            <a href="/networking-and-development/committees/emerging-technologies-committee-4366/emerging-technologies-5394" target="_self">emerging technologies</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/committees/events-committee-316" target="_self">events committee</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/committees/finance-committee-2858" target="_self">finance committee</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/committees/government-affairs-committee-326" target="_self">government affairs committee</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/committees/international-trade-committee-2520" target="_self">international trade committee</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/committees/market-intelligence-committee-247" target="_self">market intelligence committee</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/committees/marketing-and-communications-committee-248" target="_self">marketing and communications committee</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/committees/technology-standards-committee-249" target="_self">technology standards committee</a>
+        </li>
+
+                </ul>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/networking-and-development/international-business-development" target="_self">International Business Development Opportunities</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-23" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-23" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-23" aria-labelledby="expand-subnavigation-for-23" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/networking-and-development/international-business-development/explore-international-markets" target="_self">Explore International Markets</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/international-business-development/matchmaking-program-at-AAPEX-3203" target="_self">Matchmaking Program at AAPEX</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/international-business-development/partnerships" target="_self">International Partnerships</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/international-business-development/international-trade-resources" target="_self">International Trade Resources</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/international-business-development/data-standards-seminars" target="_self">Data Standards Seminars</a>
+        </li>
+
+                </ul>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/networking-and-development/awards-and-scholarships" target="_self">Awards and Scholarships</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-24" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-24" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-24" aria-labelledby="expand-subnavigation-for-24" aria-hidden="true" tabindex="-1">
+                            <li class=" hide-nav ">
+            <a href="/networking-and-development/awards-and-scholarships/impact-awards" target="_self">Impact Awards</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/awards-and-scholarships/world-class-technician" target="_self">World Class Technician</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/awards-and-scholarships/auto-care-career-and-education-award" target="_self">Auto Care Career and Education Award</a>
+        </li>
+        <li class=" hide-nav ">
+            <a href="/networking-and-development/awards-and-scholarships/mort-schwartz-excellence-in-education-award" target="_self">Mort Schwartz Excellence in Education Award</a>
+        </li>
+
+                </ul>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/networking-and-development/career-tools-and-resources" target="_self">Career Tools and Resources</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-25" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-25" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-25" aria-labelledby="expand-subnavigation-for-25" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/networking-and-development/career-tools-and-resources/continuing-education" target="_self">Continuing Education</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/career-tools-and-resources/hiring-technicians" target="_self">Hiring Technicians</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/career-tools-and-resources/student-scholarships" target="_self">Student Scholarships</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/career-tools-and-resources/career-options" target="_self">Career Options</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/career-tools-and-resources/hiring-veterans" target="_self">Hiring Veterans</a>
+        </li>
+        <li class="  ">
+            <a href="/networking-and-development/career-tools-and-resources/careers-on-campus-order-form" target="_self">Careers On Campus Order Form</a>
+        </li>
+
+                </ul>
+        </li><li class="  ">
+            <a href="/networking-and-development/auto-care-jobs" target="_blank">Auto Care Jobs</a>
+        </li><li class="  ">
+            <a href="/networking-and-development/mentoring-toolkit" target="_self">Mentoring Toolkit</a>
+        </li></div></div></ul>
+    </li>
+    <li class="  ">
+
+                
+        <a href="https://www.autocare.org/government-relations" target="_self">Government Relations</a>
+            <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-26" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-26" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-26" aria-labelledby="expand-subnavigation-for-26" aria-hidden="true" tabindex="-1">
+                        
+        
+        
+
+
+            <div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/government-relations/be-an-industry-advocate" target="_self">Be an Industry Advocate</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-27" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-27" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-27" aria-labelledby="expand-subnavigation-for-27" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/government-relations/be-an-industry-advocate/advocacy-101" target="_self">Advocacy 101</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/be-an-industry-advocate/become-an-advocate" target="_blank">Become an Advocate</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/be-an-industry-advocate/economic-data-222" target="_self">District Impact Data</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/be-an-industry-advocate/join-acpac" target="_blank">Join ACPAC</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/be-an-industry-advocate/attend-the-legislative-summit" target="_self">Auto Care Legislative Summit</a>
+        </li>
+
+                </ul>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/government-relations/current-issues" target="_self">Current Issues</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-28" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-28" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-28" aria-labelledby="expand-subnavigation-for-28" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/government-relations/current-issues/access-to-and-control-of-vehicle-data" target="_self">Access to and Control of Vehicle Data</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/covid-19-relief" target="_self">COVID-19 Relief</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/healthcare" target="_self">Healthcare</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/Magnuson-Moss-Warranty-Act" target="_self">Magnuson-Moss Warranty Act</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/tariffs-and-trade" target="_self">Tariffs and Trade</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-29" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-29" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-29" aria-labelledby="expand-subnavigation-for-29" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/government-relations/current-issues/tariffs-and-trade/steel-and-aluminum-imports-232-tariffs" target="_self">Steel and Aluminum Imports 232 Tariffs</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/tariffs-and-trade/auto-imports-232-investigation" target="_self">Auto Imports 232 Investigation</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/tariffs-and-trade/chinese-imports-301-tariffs" target="_self">Chinese Imports 301 Tariffs</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/tariffs-and-trade/usmca" target="_self">USMCA</a>
+        </li>
+
+                </ul>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/oem-repair-procedure" target="_self">OEM Repair Procedure</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/Proposition-65" target="_self">Proposition 65</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/right-to-repair" target="_self">Right to Repair</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/taxes" target="_self">Taxes</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/technician-shortage" target="_self">Technician Shortage</a>
+        </li>
+        <li class="  ">
+            <a href="/government-relations/current-issues/vehicle-safety-inspections" target="_self">Vehicle Safety Inspections</a>
+        </li>
+
+                </ul>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/government-relations/state-associations" target="_self">State Associations</a>
+        </li></div></div></ul>
+    </li>
+    <li class="  ">
+
+                
+        <a href="https://www.autocare.org/news" target="_self">News</a>
+            <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-30" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-30" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-30" aria-labelledby="expand-subnavigation-for-30" aria-hidden="true" tabindex="-1">
+                        
+        
+        
+        
+        
+        
+        
+
+
+                    
+            <div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/news/latest-news" target="_self">Latest News</a>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class=" hide-nav ">
+            <a href="/news/test-hide-from-nav" target="_self">Test hide from Nav</a>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/news/media-coverage" target="_self">Media Coverage</a>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/news/media-kit" target="_self">Media Kit</a>
+        </li></div></div><div class="generated-column generated-column--1-5"><div class="generated-column generated-column--1-5"><li class="  ">
+            <a href="/news/auto-care-insider" target="_blank">Auto Care Insider</a>
+        </li><li class="  ">
+            <a href="/news/blog" target="_self">Auto Care Blog</a>
+                <button class="header-nav__toggle" type="button" data-toggle-target="next" id="expand-subnavigation-for-31" role="button" aria-expanded="false" aria-controls="expand-subnavigation-for-pane-31" tabindex="0">Expand subnavigation for previous item</button><ul id="expand-subnavigation-for-pane-31" aria-labelledby="expand-subnavigation-for-31" aria-hidden="true" tabindex="-1">
+                            <li class="  ">
+            <a href="/news/blog/market-insights-with-mike" target="_self">Market Insights with Mike</a>
+        </li>
+        <li class="  ">
+            <a href="/news/blog/meet-a-staffer" target="_self">Meet a Staffer</a>
+        </li>
+
+                </ul>
+        </li><li class="  ">
+            <a href="/news/media-contacts" target="_self">Media Contacts</a>
+        </li><li class="header-nav__callout">
+                            <a href="/news/latest-news" class="header-nav__callout-link">
+                            
+                                <img src="https://autocare.org/images/default-source/sitedesign/infographic.jpg?sfvrsn=3abab20b_0" alt="" class="header-nav__callout-image"/>
+                                
+                                 <div class="header-callout-text"> Stay Informed of our impact</div>
+                                 
+                                 <span class="button button--highlight__invert small-invert">All news</span>
+                                 
+                            </a>
+                    </li></div></div></ul>
+    </li>
+</ul>
+
+
+
+
+
+
+</nav> </div> </div> </header>
+<div id="main_ctl15_ctl00">
+		<span id="main_ctl15_MC"></span>
+	</div><span id="main_ctl15_status_upLoginStatus">
+        <div class="login-status">
+            <ul id="main_ctl15_status_topHeaderUl" class="nav navbar-nav pull-right">
+                
+                <li id="main_ctl15_status_liSignUp" class="dropdown page-header-link">
+                        <a href="/account/login.aspx?signup=yes" class="dropdown-toggle"><i class="icon-key"></i><span>Sign Up</span></a>
+                    </li><li id="main_ctl15_status_liLogin" class="dropdown page-header-link">
+                        <a href="/account/login.aspx" class="dropdown-toggle"><i class="icon-lock"></i><span>Login</span></a>
+                    </li>
+                
+            </ul>
+        </div>
+    </span>
+<div class="clearfix"></div>
+</div>
+            
+            <div id="main_divPageContent" class="page-content page-content-no-left">
+                
+                <div id="main_pnlSiteTemplateContent" class="site-template-content col-md-12">
+	
+                    
+                    <div id="main_topbar" class="page-toolbar">
+                        <div id="main_divPageTitle" class="col-md-12">
+                            <div id="main_updTitle">
+		
+                                    <h1 id="main_hPageTitle" class="page-title">
+                                        
+                                        Check for active session
+                                        
+                                        <small></small>
+                                    </h1>
+                                
+	</div>
+                            
+                            
+
+                        </div>
+                    </div>
+                    <div id="main_prgContent" style="display:none;">
+		<div class="progress-background"></div><div class="progress-foreground"><table>
+			<tr>
+				<td align="center" valign="middle"><div class="progress-container"><table>
+					<tr>
+						<td id="main_progress_image_cell" align="center" valign="middle"><i class="progress-icon icon-refresh icon-spin white"></i></td>
+						<td align="center" valign="middle"><a href="javascript:void(0);" class="progress-cancel" title="Abort/Hide Progress" onclick="javascript:page.abortProgress();"><i class="icon-remove"></i></a><div class="progress-text">
+							Please wait ...
+						</div></td>
+					</tr>
+				</table>
+				</div></td>
+			</tr>
+		</table>
+		</div>
+	</div>
+                    <div id="main_updContent">
+		
+                            <div class="form-content">
+                                
+    
+    <div id="main_content_Content" class="content-banner">
+			
+    <div class="col-md-12 content-banner-main"><div id="main_content_ctl01_ctl01">
+				<span id="main_content_ctl01_MC"></span>
+			</div><div id="main_content_ctl01_BaseValidationSummary" class="alert alert-danger" style="display:none;">
+
+			</div><span id="main_content_ctl01_upCustomLoginStatus">
+        <script type="text/javascript">
+    page.load(function () {
+        RedirectHandler();
+    });
+    
+    function RedirectHandler() {
+        page.navigate('https://digital.autocare.org/authcallback/_/remoteAuthenticationAgent?login-status=logged-out');
+    }
+
+
+</script>
+    </span>
+</div><div class="clearfix"></div>
+		</div>
+    
+    
+
+                                <div class="clearfix"></div>
+                            </div>
+                        
+	</div>
+                
+</div>
+                
+                <div class="clearfix"></div>
+            </div>
+            <div id="main_pnlSiteTemplateFooter" class="site-template-footer col-md-12">
+	<div id="main_ctl17_ctl00">
+		<span id="main_ctl17_MC"></span>
+	</div><footer class="page-footer" role="contentinfo" id="footer"> <!-- <div class="page-bounds"> --> <div class="footer-tagline">
+
+<div>
+    <div class="sfContentBlock sf-Long-text">Thank you for trusting us.</div>    
+</div></div> <div class="footer-logo">
+
+<div>
+    <div class="sfContentBlock sf-Long-text"><a href="https://www.autocare.org/"><img src="https://www.autocare.org/images/default-source/siteimages/logo" alt="Auto Care Association logo" title="Image: https://prod.autocare.org/images/default-source/siteimages/logo-2"/></a></div>    
+</div></div> <div class="page-footer__content"> <div class="footer-contact">
+
+<div>
+    <div class="sfContentBlock sf-Long-text"><p>7101 Wisconsin Ave, Suite 1300<br/>Bethesda, MD 20814<br/>(301) 654-6664</p></div>    
+</div></div> <div class="footer-social">
+
+<div>
+    <div class="sfContentBlock sf-Long-text"><span class="screenreaders-only">Visit us on</span>
+<a href="https://www.facebook.com/autocareorg" class="footer-social__icon"><i class="icon-facebook" aria-hidden="true"></i><span class="screenreaders-only">Facebook</span></a>
+<a href="https://twitter.com/autocareorg" class="footer-social__icon"><i class="icon-twitter" aria-hidden="true"></i><span class="screenreaders-only">Twitter</span></a>
+<a href="https://www.linkedin.com/company/autocareorg" class="footer-social__icon"><i class="icon-linkedin" aria-hidden="true"></i><span class="screenreaders-only">LinkedIn</span></a>
+<a href="https://www.youtube.com/user/AAIAssociation" class="footer-social__icon"><i class="icon-youtube" aria-hidden="true"></i><span class="screenreaders-only">YouTube</span></a></div>    
+</div></div> <div class="footer-utility">
+
+<ul class="footer-utility__list footer-utility__list">
+    <li class="footer-utility__item">
+        <a href="https://autocare.org/privacy-policy" target="_self">Privacy Policy</a>
+    </li>
+    <li class="footer-utility__item">
+        <a href="https://autocare.org/contact-us" target="_self">Contact</a>
+    </li>
+    <li class="footer-utility__item">
+        <a href="https://autocare.org/site-map" target="_self">Site Map</a>
+    </li>
+</ul>
+
+
+
+</div> </div> <div class="footer-copyright">
+
+<div>
+    <div class="sfContentBlock sf-Long-text">© 2021 Auto Care Association</div>    
+</div></div> <!-- </div> --> </footer>
+
+
+<script type="text/javascript" src="https://autocare.org/ResourcePackages/AutoCare/assets/scripts/polyfills.min.js"></script>
+<script type="text/javascript" src="https://autocare.org/ResourcePackages/AutoCare/assets/scripts/lodash.custom.min.js"></script>
+<script type="text/javascript" src="https://autocare.org/ResourcePackages/AutoCare/assets/scripts/scripts.js"></script>
+<div class="clearfix"></div>
+</div>
+        </div>
+        
+        <span id="main_updPostBack" class="display-none">
+                <input type="hidden" name="main$isPostBack" id="main_isPostBack" value="0" />
+                <input type="hidden" name="main$lastFocusControl" id="main_lastFocusControl" />
+                <input type="hidden" name="main$browserNavigationWarning" id="main_browserNavigationWarning" />
+                
+                <a id="main_lnkPostBack" class="display-none" href="javascript:__doPostBack(&#39;main$lnkPostBack&#39;,&#39;&#39;)"></a>
+            </span>
+        <input type="hidden" name="main$isFirstTime" id="main_isFirstTime" />
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("main_content_ctl01_BaseValidationSummary"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var main_content_ctl01_BaseValidationSummary = document.all ? document.all["main_content_ctl01_BaseValidationSummary"] : document.getElementById("main_content_ctl01_BaseValidationSummary");
+main_content_ctl01_BaseValidationSummary.validationGroup = "BaseValidationGroup";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+window.trackingInfo={
+	host: 'my.autocare.org',
+	location: '/checking-active-session',
+	path: '/checking-active-session',
+	query: '',
+	site: 'public',
+	title: 'Check for active session',
+	postback: false,
+	dialog: false,
+	content: null,
+	page: '/checking-active-session',
+	purchases: [],
+	subtotal: '0',
+	shipping: '0',
+	tax: '0',
+	total: '0',
+	orders: [],
+	invoices: []
+};
+
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('main_content_ctl01_BaseValidationSummary');
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":"main_updContent","displayAfter":1000,"dynamicLayout":true}, null, null, $get("main_prgContent"));
+});
+//]]>
+</script>
+</form>
+    
+    
+</body>
+
+</html>
+

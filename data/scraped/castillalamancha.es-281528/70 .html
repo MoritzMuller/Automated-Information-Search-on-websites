@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+<link rel="shortcut icon" href="https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega_jccm/images/favicon.ico" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+  <title>Fondos Estructurales</title>  
+  <style media="all">
+@import url("https://fondosestructurales.castillalamancha.es/modules/system/system.base.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/modules/system/system.menus.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/modules/system/system.messages.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/modules/system/system.theme.css?r47dey");
+</style>
+<style media="all">
+@import url("https://fondosestructurales.castillalamancha.es/modules/aggregator/aggregator.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/contrib/date/date_api/date.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/contrib/date/date_popup/themes/datepicker.1.7.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/modules/field/theme/field.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/contrib/geofield_gmap/geofield_gmap.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/modules/node/node.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/modules/search/search.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/modules/user/user.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/contrib/views/css/views.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/contrib/ckeditor/css/ckeditor.css?r47dey");
+</style>
+<style media="all">
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/contrib/colorbox/styles/default/colorbox_style.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/contrib/ctools/css/ctools.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/custom/jccm_custom/jccm_custom.css?r47dey");
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" media="all" />
+<style media="all">
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/contrib/tb_megamenu/css/bootstrap.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/contrib/tb_megamenu/css/base.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/contrib/tb_megamenu/css/default.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/contrib/tb_megamenu/css/compatibility.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/contrib/custom_search/custom_search.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/modules/custom/jccm_imagen/skins/portadas/jcarousel-portadas.css?r47dey");
+</style>
+<style media="all">
+<!--/*--><![CDATA[/*><!--*/
+div.block-menu-men-temas ul.menu li a{background:url(/profiles/jccm/themes/omega_jccm/images/menu_item_verde.png) no-repeat left 0.2em;padding-right:12px;}div.block-menu-men-temas ul.menu li a:hover{background-color:#00A99D;color:white;}
+
+/*]]>*/-->
+</style>
+<style media="all">
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/alpha/css/alpha-reset.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/alpha/css/alpha-mobile.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/alpha/css/alpha-alpha.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/omega/css/formalize.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/omega/css/omega-text.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/omega/css/omega-branding.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/omega/css/omega-menu.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/omega/css/omega-forms.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/omega/css/omega-visuals.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega_jccm/css/global.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/themes/jccm_subtema/css/jccmsubtema.css?r47dey");
+</style>
+
+<!--[if lte IE 8]>
+<link rel="stylesheet" href="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/themes/jccm_subtema/css/ie.css?r47dey" media="all" />
+<![endif]-->
+
+<!--[if (lt IE 9)&(!IEMobile)]>
+<style media="all">
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega_jccm/css/omega-jccm-alpha-default.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/alpha/css/grid/alpha_default/fluid/alpha-default-fluid-16.css?r47dey");
+</style>
+<![endif]-->
+
+<!--[if gte IE 9]><!-->
+<style media="all and (min-width: 320px) and (min-device-width: 320px), (max-device-width: 800px) and (min-width: 740px) and (orientation:landscape)">
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega_jccm/css/omega-jccm-alpha-default.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/alpha/css/grid/alpha_default/fluid/alpha-default-fluid-16.css?r47dey");
+</style>
+<!--<![endif]-->
+
+<!--[if gte IE 9]><!-->
+<style media="all and (max-width: 1024px), (max-device-width: 800px) and (min-width: 740px) and (orientation:landscape)">
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega_jccm/css/omega-jccm-alpha-default.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega_jccm/css/omega-jccm-alpha-default-narrow.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/alpha/css/grid/alpha_default/narrow/alpha-default-narrow-16.css?r47dey");
+</style>
+<!--<![endif]-->
+
+<!--[if gte IE 9]><!-->
+<style media="all and (min-width: 320px) and (min-device-width: 320px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)">
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega_jccm/css/omega-jccm-alpha-default.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega_jccm/css/omega-jccm-alpha-default-normal.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/alpha/css/grid/alpha_default/normal/alpha-default-normal-16.css?r47dey");
+</style>
+<!--<![endif]-->
+
+<!--[if gte IE 9]><!-->
+<style media="all and (min-width: 1220px)">
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega_jccm/css/omega-jccm-alpha-default.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega_jccm/css/omega-jccm-alpha-default-wide.css?r47dey");
+@import url("https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega/alpha/css/grid/alpha_default/wide/alpha-default-wide-16.css?r47dey");
+</style>
+<!--<![endif]-->
+  <script src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/js/js_TPRZmUmeC1mz3SQ7t4xnN3gdUVEXqJt0x0Q63NzH9Qs.js"></script>
+<script src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/js/js_obxkt1ccDklpqIdQuKW9M1CFTklo1lLvh4PKuqxQb-k.js"></script>
+<script src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/js/js_tPwa10VTYhG92Ffc3w3ucA4GErxqXRyXZzJsFORXR2c.js"></script>
+<script src="http://maps.google.com/maps/api/js"></script>
+<script src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/js/js_iN7MOWoVmUmyCn4AR1yid-dy84qiF6sPoSI5BwwZbvc.js"></script>
+<script>
+var _paq = _paq || [];(function(){var u=(("https:" == document.location.protocol) ? "https://piwik.jccm.es/" : "http://piwik.jccm.es/");_paq.push(["setSiteId", "79"]);_paq.push(["setTrackerUrl", u+"piwik.php"]);_paq.push(["setDoNotTrack", 1]);_paq.push(["trackPageView"]);_paq.push(["setIgnoreClasses", ["no-tracking","colorbox"]]);_paq.push(["enableLinkTracking"]);var d=document,g=d.createElement("script"),s=d.getElementsByTagName("script")[0];g.type="text/javascript";g.defer=true;g.async=true;g.src=u+"piwik.js";s.parentNode.insertBefore(g,s);})();
+</script>
+<script src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/js/js_86vDmQlZ5oLrpu15KrxhFlo57BcAQe917EfcasYL70o.js"></script>
+<script src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/js/js_43n5FBy8pZxQHxPXkf-sQF7ZiacVZke14b0VlvSA554.js"></script>
+<script>
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"jccm_subtema","theme_token":"MXyVsAptVDfsXuqwpFI8ig67NYQG1Er2-eSP4k3_cAg","js":{"profiles\/jccm\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"profiles\/jccm\/modules\/contrib\/geofield_gmap\/geofield_gmap.js":1,"public:\/\/languages\/es_0rKuJ4sNdLsdzKHBwwxsOAwSu5vnv4ygeQx-43x-gM4.js":1,"profiles\/jccm\/libraries\/colorbox\/jquery.colorbox-min.js":1,"profiles\/jccm\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"profiles\/jccm\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"http:\/\/maps.google.com\/maps\/api\/js":1,"profiles\/jccm\/modules\/contrib\/custom_search\/js\/custom_search.js":1,"profiles\/jccm\/modules\/custom\/jccm_custom\/jccm_custom.js":1,"profiles\/jccm\/modules\/contrib\/tb_megamenu\/js\/tb-megamenu-frontend.js":1,"profiles\/jccm\/modules\/contrib\/tb_megamenu\/js\/tb-megamenu-touch.js":1,"profiles\/jccm\/modules\/contrib\/jcarousel\/js\/jquery.jcarousel.min.js":1,"profiles\/jccm\/modules\/contrib\/jcarousel\/js\/jcarousel.js":1,"profiles\/jccm\/modules\/contrib\/piwik\/piwik.js":1,"0":1,"sites\/fondosestructurales.castillalamancha.es\/themes\/jccm_subtema\/js\/slidingbox.js":1,"profiles\/jccm\/themes\/omega_jccm\/js\/fbisCarousel.js":1,"profiles\/jccm\/themes\/omega_jccm\/js\/menuCarousel.js":1,"profiles\/jccm\/themes\/omega\/omega\/js\/jquery.formalize.js":1,"profiles\/jccm\/themes\/omega\/omega\/js\/omega-mediaqueries.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/aggregator\/aggregator.css":1,"profiles\/jccm\/modules\/contrib\/date\/date_api\/date.css":1,"profiles\/jccm\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"profiles\/jccm\/modules\/contrib\/geofield_gmap\/geofield_gmap.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"profiles\/jccm\/modules\/contrib\/views\/css\/views.css":1,"profiles\/jccm\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"profiles\/jccm\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"profiles\/jccm\/modules\/contrib\/ctools\/css\/ctools.css":1,"profiles\/jccm\/modules\/custom\/jccm_custom\/jccm_custom.css":1,"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/font-awesome\/4.4.0\/css\/font-awesome.min.css":1,"profiles\/jccm\/modules\/contrib\/tb_megamenu\/css\/bootstrap.css":1,"profiles\/jccm\/modules\/contrib\/tb_megamenu\/css\/base.css":1,"profiles\/jccm\/modules\/contrib\/tb_megamenu\/css\/default.css":1,"profiles\/jccm\/modules\/contrib\/tb_megamenu\/css\/compatibility.css":1,"profiles\/jccm\/modules\/contrib\/custom_search\/custom_search.css":1,"profiles\/jccm\/modules\/custom\/jccm_imagen\/skins\/portadas\/jcarousel-portadas.css":1,"0":1,"profiles\/jccm\/themes\/omega_jccm\/slidingbox.css":1,"sites\/fondosestructurales.castillalamancha.es\/themes\/jccm_subtema\/jccmsubtema.css":1,"profiles\/jccm\/themes\/omega\/alpha\/css\/alpha-reset.css":1,"profiles\/jccm\/themes\/omega\/alpha\/css\/alpha-mobile.css":1,"profiles\/jccm\/themes\/omega\/alpha\/css\/alpha-alpha.css":1,"profiles\/jccm\/themes\/omega\/omega\/css\/formalize.css":1,"profiles\/jccm\/themes\/omega\/omega\/css\/omega-text.css":1,"profiles\/jccm\/themes\/omega\/omega\/css\/omega-branding.css":1,"profiles\/jccm\/themes\/omega\/omega\/css\/omega-menu.css":1,"profiles\/jccm\/themes\/omega\/omega\/css\/omega-forms.css":1,"profiles\/jccm\/themes\/omega\/omega\/css\/omega-visuals.css":1,"profiles\/jccm\/themes\/omega_jccm\/css\/global.css":1,"sites\/fondosestructurales.castillalamancha.es\/themes\/jccm_subtema\/css\/jccmsubtema.css":1,"sites\/fondosestructurales.castillalamancha.es\/themes\/jccm_subtema\/css\/ie.css":1,"ie::fluid::profiles\/jccm\/themes\/omega_jccm\/css\/omega-jccm-alpha-default.css":1,"ie::fluid::profiles\/jccm\/themes\/omega\/alpha\/css\/grid\/alpha_default\/fluid\/alpha-default-fluid-16.css":1,"fluid::profiles\/jccm\/themes\/omega_jccm\/css\/omega-jccm-alpha-default.css":1,"profiles\/jccm\/themes\/omega\/alpha\/css\/grid\/alpha_default\/fluid\/alpha-default-fluid-16.css":1,"narrow::profiles\/jccm\/themes\/omega_jccm\/css\/omega-jccm-alpha-default.css":1,"narrow::profiles\/jccm\/themes\/omega_jccm\/css\/omega-jccm-alpha-default-narrow.css":1,"profiles\/jccm\/themes\/omega\/alpha\/css\/grid\/alpha_default\/narrow\/alpha-default-narrow-16.css":1,"normal::profiles\/jccm\/themes\/omega_jccm\/css\/omega-jccm-alpha-default.css":1,"normal::profiles\/jccm\/themes\/omega_jccm\/css\/omega-jccm-alpha-default-normal.css":1,"profiles\/jccm\/themes\/omega\/alpha\/css\/grid\/alpha_default\/normal\/alpha-default-normal-16.css":1,"wide::profiles\/jccm\/themes\/omega_jccm\/css\/omega-jccm-alpha-default.css":1,"wide::profiles\/jccm\/themes\/omega_jccm\/css\/omega-jccm-alpha-default-wide.css":1,"profiles\/jccm\/themes\/omega\/alpha\/css\/grid\/alpha_default\/wide\/alpha-default-wide-16.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true},"jcarousel":{"ajaxPath":"\/jcarousel\/ajax\/views","carousels":{"jcarousel-dom-1":{"view_options":{"view_args":"","view_path":"node","view_base_path":"carrusel-de-portada","view_display_id":"block","view_name":"carrusel_de_portada","jcarousel_dom_id":1},"wrap":"circular","skin":"portadas","visible":1,"auto":5,"autoPause":1,"start":1,"scroll":1,"selector":".jcarousel-dom-1"}}},"custom_search":{"form_target":"_self","solr":0},"urlIsAjaxTrusted":{"\/":true},"piwik":{"trackMailto":1,"trackColorbox":1},"omega":{"layouts":{"primary":"fluid","order":["fluid","narrow","normal","wide"],"queries":{"fluid":"all and (min-width: 320px) and (min-device-width: 320px), (max-device-width: 800px) and (min-width: 740px) and (orientation:landscape)","narrow":"all and (max-width: 1024px), (max-device-width: 800px) and (min-width: 740px) and (orientation:landscape)","normal":"all and (min-width: 320px) and (min-device-width: 320px), all and (max-device-width: 1024px) and (min-width: 1024px) and (orientation:landscape)","wide":"all and (min-width: 1220px)"}}}});
+</script>
+  <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script type="text/javascript" src="//accesible-fondosestructurales.castillalamancha.es/i4tservice/jscm_loader.js"></script>
+</head>
+<body class="html front not-logged-in page-node portada i18n-es">
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Pasar al contenido principal</a>
+  </div>
+    <div class="page clearfix" id="page">
+      <header id="section-header" class="section section-header">
+    
+  <div id="zone-cabecera" class="zone zone-cabecera clearfix container-16">
+    <div class="grid-16 region region-cabecera2015" id="region-cabecera2015">
+  <div class="region-inner region-cabecera2015-inner">
+    <div class="block block-block block-4 block-block-4 odd block-without-title" id="block-block-4">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div id="logojccm"><a href="http://www.castillalamancha.es/" title="Ir al portal institucional de la Junta de Comunidades de Castilla-La Mancha"><img alt="Logo de JCCM" src="/profiles/jccm/themes/omega_jccm/images/logo-jccm-cabecera.png" /> </a></div>    </div>
+  </div>
+</div><div class="block block-delta-blocks block-logo block-delta-blocks-logo even block-without-title" id="block-delta-blocks-logo">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div class="logo-img"><a href="/" id="logo" title="Ir a la página de inicio de los Fondos Estructurales" class="active"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/ue_cuatricromia_1.png" alt="Fondos Estructurales" /></a></div>    </div>
+  </div>
+</div><div class="block block-tb-megamenu menu2015 block-menu-men-perfiles block-tb-megamenu-menu-men-perfiles odd block-without-title" id="block-tb-megamenu-menu-men-perfiles">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div  class="tb-megamenu tb-megamenu-menu-men-perfiles" class="tb-megamenu tb-megamenu-menu-men-perfiles">
+      <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar tb-megamenu-button" type="button">
+      <i class="fa fa-reorder"></i>
+    </button>
+    <div class="nav-collapse  always-show">
+    <ul  class="tb-megamenu-nav nav level-0 items-8" class="tb-megamenu-nav nav level-0 items-8">
+  <li  data-id="1048" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega active active-trail" class="tb-megamenu-item level-1 mega active active-trail">
+  <a href="/" >
+        
+    FONDOS ESTRUCTURALES          </a>
+  </li>
+
+<li  data-id="639" data-level="1" data-type="menu_item" data-class="opcion-buscador" data-xicon="" data-caption="" data-alignsub="right" data-group="0" data-hidewcol="0" data-hidesub="0" class="tb-megamenu-item level-1 mega opcion-buscador mega-align-right dropdown" class="tb-megamenu-item level-1 mega opcion-buscador mega-align-right dropdown">
+  <a href="/search/content"  class="dropdown-toggle">
+        
+    Buscar          <span class="caret"></span>
+          </a>
+  <div  data-class="" data-width="400" style="width: 400px;" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid" class="tb-megamenu-row row-fluid">
+  <div  data-showblocktitle="1" data-class="" data-width="12" data-hidewcol="" id="tb-megamenu-column-1" class="tb-megamenu-column span12  mega-col-nav" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <div  data-type="block" data-block="search--form" class="tb-megamenu-block tb-block tb-megamenu-block" class="tb-megamenu-block tb-block tb-megamenu-block">
+  <div class="block-inner">
+    <div class="block block-search block-form block-search-form odd block-without-title" id="block-search-form">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <form class="search-form" action="/" method="post" id="search-block-form--2" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Formulario de búsqueda</h2>
+    <div class="form-item form-type-searchfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--4">Search this site </label>
+ <input title="Escriba lo que quiere buscar." class="custom-search-box form-text form-search" placeholder="Busca aquí lo que necesites ...." type="search" id="edit-search-block-form--4" name="search_block_form" value="" size="15" maxlength="128" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions--2"><input alt="Buscar" class="custom-search-button form-submit" type="image" id="edit-submit--2" name="op" value="Buscar" src="https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega_jccm/images/searchButtom2015.png" /></div><input type="hidden" name="form_build_id" value="form-puNfuHyxNP8NJQWNo9g-dcDofAu--Vhq6CUQsTa0OJ0" />
+<input type="hidden" name="form_id" value="search_block_form" />
+<input type="hidden" name="custom_search_paths" value="search/content/[key]" />
+</div>
+</div></form>    </div>
+  </div>
+</div>  </div>
+</div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</li>
+</ul>
+      </div>
+  </div>
+    </div>
+  </div>
+</div>  </div>
+</div>  </div>
+</header>    
+      <section id="section-content" class="section section-content">
+    
+  <div id="zone-contenido" class="zone zone-contenido clearfix container-16">
+    <div class="grid-4 prefix-1 region region-contenido-menu" id="region-contenido-menu">
+  <div class="region-inner region-contenido-menu-inner">
+    <div class="block block-imageblock gif_animado block-2 block-imageblock-2 odd block-without-title" id="block-imageblock-2">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+        <div class="block-image">
+    <img class="imageblock-image" src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/imageblock/ue-clm_2.gif" alt="Fondos Estructurales" title="Fondos Estructurales" />  </div>
+
+    </div>
+  </div>
+</div><div class="block block-menu-block block-1 block-menu-block-1 even block-without-title" id="block-menu-block-1">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div class="menu-block-wrapper menu-block-1 menu-name-menu-fondos-estructurales-home parent-mlid-0 menu-level-1">
+  <ul class="menu"><li class="first expanded menu-mlid-1300"><a href="/programacion-2021-2027/fondos-estructurales-2021-2027">FONDOS ESTRUCTURALES 2021-2027</a><ul class="menu"><li class="first leaf menu-mlid-1301"><a href="/programacion-2021-2027/feder" title="FEDER">FEDER</a></li>
+<li class="last leaf menu-mlid-1302"><a href="/programacion-2021-2027/fondo-social-europeo-fse">FSE+</a></li>
+</ul></li>
+<li class="expanded menu-mlid-1261"><a href="/programacion-2014-2020/fondos-estructurales-2014-2020">FONDOS ESTRUCTURALES 2014-2020</a><ul class="menu"><li class="first leaf menu-mlid-1262"><a href="/fondo-europeo-de-desarrollo-regional-feder">FEDER</a></li>
+<li class="last leaf menu-mlid-1263"><a href="/programacion-2014-2020/fondo-social-europeo-fse">FSE</a></li>
+</ul></li>
+<li class="last expanded menu-mlid-1264"><a href="/programacion-2007-2013/politica-regional-de-la-ue-2007-2013">FONDOS ESTRUCTURALES 2007-2013</a><ul class="menu"><li class="first leaf menu-mlid-1265"><a href="/programacion-2007-2013/mision-y-objetivos-1">FEDER</a></li>
+<li class="last leaf menu-mlid-1266"><a href="/programacion-2007-2013/fondo-social-europeo-fse">FSE</a></li>
+</ul></li>
+</ul></div>
+    </div>
+  </div>
+</div><div class="block block-views destacados block-enlaces-block-1 block-views-enlaces-block-1 odd block-without-title" id="block-views-enlaces-block-1">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div class="view view-enlaces view-id-enlaces view-display-id-block_1 enlaces-de-interes enlaces-de-interes-portada view-dom-id-2d8931523bb8aba8a740618c76dc0d4f">
+            <div class="view-header">
+      <h2>Información destacada</h2>
+    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://participacion.castillalamancha.es/sites/default/files/documentos/retorno/ANEXO%20INFORME%20DE%20RETORNO_0.pdf" target="_blank">Informe de Resultados del Proceso Participativo sobre la Encuesta Pública sobre la nueva programación del FSE+ 2021-2027</a></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://participacion.castillalamancha.es/sites/default/files/documentos/retorno/Anexo-Informe_Participaci%C3%B3n_Ciudadana_FEDER.pdf" target="_blank">- Informe final sobre la participación ciudadana en la programación FEDER 2021-27.</a></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://c.ramboll.com/local-support-new-european-bauhaus?utm_source=direct-email&amp;utm_medium=email&amp;utm_campaign=nebspa" target="_blank">Apoyo a las iniciativas locales de la Nueva Bauhaus Europea</a></span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://forocohesion.castillalamancha.es/sites/default/files/2021-01/Informe%20Final%20Conclusiones_Foro.pdf" target="_blank">- Conclusiones del Foro 2020 para la Cohesión y el Desarrollo Regional de Castilla- La Mancha.</a></span>  </div>  </div>
+  <div class="views-row views-row-5 views-row-odd">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/documentos/pdf/Guía_BF_Expresiones_Interés_v2.pdf" target="_blank">- Guía de beneficiarios de expresiones de interés en el marco del PO FEDER Castilla-La Mancha.</a></span>  </div>  </div>
+  <div class="views-row views-row-6 views-row-even views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/documentos/pdf/20191230/orden_hfp_1979_2016_de_las_normas_de_subvencionalidad.pdf" target="_blank">Normas de subvencionalidad</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>    </div>
+  </div>
+</div><div class="block block-views block-enlaces-banners-de-portada block-views-enlaces-banners-de-portada even block-without-title" id="block-views-enlaces-banners-de-portada">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div class="view view-enlaces view-id-enlaces view-display-id-banners_de_portada banners banners-portada view-dom-id-eef6884cc348648c85a922daa5fe0493">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-banner-enlace">        <div class="field-content"><a href="http://fondosestructurales.castillalamancha.es/programacion-2014-2020/descargas/Boletines" title="Boletínes de los Fondos Estructurales" class="banner"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/styles/banner/public/boletin_electronico_informativo.png?itok=C_MwOVQE" width="280" height="80" alt="Boletínes de los Fondos Estructurales" title="Boletínes de los Fondos Estructurales" /></a></div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>    </div>
+  </div>
+</div><div class="block block-block block-5 block-block-5 odd block-without-title" id="block-block-5">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <p><strong><a href="https://fondosestructurales.castillalamancha.es/programacion-2014-2020/solicitud-de-consentimiento-para-el-tratamiento-de-sus-datos-personales"><span style="color:#000080">SUSCRÍBETE <u>aquí</u></span></a></strong></p>
+<p><strong><a href="mailto:fondosestructuralesclm@jccm.es?subject=BAJA%20-%20Suscripci%C3%B3n%20Boletines"><span style="color:#000080">ANULA la suscripción <u>aquí</u></span></a></strong></p>
+    </div>
+  </div>
+</div><div class="block block-views block-d42290a2d8d99bbdff063612fac8cba6 block-views-d42290a2d8d99bbdff063612fac8cba6 even block-without-title" id="block-views-d42290a2d8d99bbdff063612fac8cba6">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div class="view view-enlaces view-id-enlaces view-display-id-enlaces_de_interes_portada enlaces-de-interes enlaces-de-interes-portada view-dom-id-31a8475b675e9bc8b451d82851582258">
+            <div class="view-header">
+      <h2>Enlaces de interés</h2>
+    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://ec.europa.eu/commission/index_es " target="_blank">Comisión Europea</a></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://pagina.jccm.es/europa/asuntoseurop.htm" target="_blank">Dirección General de Asuntos Europeos</a></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.uclm.es/" target="_blank">Universidad de Castilla-La Mancha</a></span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://www.sodicaman.com/" target="_blank">Sociedad para el Desarrollo Industrial de Castilla-La Mancha (SODICAMAN)</a></span>  </div>  </div>
+  <div class="views-row views-row-5 views-row-odd">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://www.icmf.es/es" target="_blank">Instituto de Finanzas de Castilla-La Mancha</a></span>  </div>  </div>
+  <div class="views-row views-row-6 views-row-even">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.mites.gob.es/uafse/es/properativos/poej/index.htm" target="_blank">Unidad Administradora del Fondo Social Europeo. Empleo Juvenil</a></span>  </div>  </div>
+  <div class="views-row views-row-7 views-row-odd views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://forocohesion.castillalamancha.es/" target="_blank">Foro por la Cohesión y el Desarrollo Regional de Castilla-La Mancha</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>    </div>
+  </div>
+</div>  </div>
+</div><div class="grid-10 suffix-1 region region-contenido-subportada" id="region-contenido-subportada">
+  <div class="region-inner region-contenido-subportada-inner">
+    <div class="block block-views block-carrusel-de-portada-block block-views-carrusel-de-portada-block odd block-without-title" id="block-views-carrusel-de-portada-block">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div class="view view-carrusel-de-portada view-id-carrusel_de_portada view-display-id-block carrusel carrusel-portada view-dom-id-eb85bb58f6d9663499ce86b7f9068c19">
+        
+  
+  
+      <div class="view-content">
+      <ul class="jcarousel jcarousel-view--carrusel-de-portada--block jcarousel-dom-1 jcarousel-skin-portadas">
+      <li class="jcarousel-item-1 odd">  
+  <div class="views-field views-field-field-enlaza-a">        <div class="field-content"><a href="https://www.youtube.com/watch?v=QfFWQ5zgUHg" target="_blank" title="Programa de capacitación digital para personas mayores de 55 años"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/styles/carrusel/public/imagenes_galerias/capacitatic_0.jpg?itok=Ex8jGxyE" width="1030" height="210" alt="Programa de capacitación digital para personas mayores de 55 años" /></a></div>  </div></li>
+      <li class="jcarousel-item-2 even">  
+  <div class="views-field views-field-field-enlaza-a">        <div class="field-content"><a href="https://participacion.castillalamancha.es/participacion/proceso-participativo-sobre-la-nueva-programacion-del-fondo-europeo-de-desarrollo" target="_blank" title="Proceso participativo sobre la nueva programación del Fondo Europeo de Desarrollo Regional (FEDER) 2021-2027 de Castilla-La Mancha"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/styles/carrusel/public/imagenes_galerias/sin_nombre_0.png?itok=Ed9WYIFw" width="1030" height="210" alt="Proceso participativo sobre la nueva programación del Fondo Europeo de Desarrollo Regional (FEDER) 2021-2027 de Castilla-La Mancha" /></a></div>  </div></li>
+      <li class="jcarousel-item-3 odd">  
+  <div class="views-field views-field-field-enlaza-a">        <div class="field-content"><a href="http://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/documentos/pdf/20180704/guia_bf_expresiones_interes.pdf" target="_blank" title="Guía de beneficiarios de expresiones de interés en el marco del PO FEDER Castilla-La Mancha"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/styles/carrusel/public/imagenes_galerias/imagen_expresiones_interes.png?itok=Pj7bsI2x" width="1030" height="210" alt="" /></a></div>  </div></li>
+      <li class="jcarousel-item-4 even">  
+  <div class="views-field views-field-field-enlaza-a">        <div class="field-content"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/styles/carrusel/public/imagenes_galerias/shutterstock_168157241_3.jpg?itok=RNCs8LU4" width="1030" height="210" alt="" /></div>  </div></li>
+      <li class="jcarousel-item-5 odd">  
+  <div class="views-field views-field-field-enlaza-a">        <div class="field-content"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/styles/carrusel/public/imagenes_galerias/shutterstock_381648412.jpg?itok=Qs4FVzQK" width="1030" height="210" alt="" /></div>  </div></li>
+      <li class="jcarousel-item-6 even">  
+  <div class="views-field views-field-field-enlaza-a">        <div class="field-content"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/styles/carrusel/public/imagenes_galerias/shutterstock_144963658.jpg?itok=-A57XbKu" width="1030" height="210" alt="" /></div>  </div></li>
+      <li class="jcarousel-item-7 odd">  
+  <div class="views-field views-field-field-enlaza-a">        <div class="field-content"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/styles/carrusel/public/imagenes_galerias/shutterstock_391709347.jpg?itok=6af9BrI8" width="1030" height="210" alt="" /></div>  </div></li>
+      <li class="jcarousel-item-8 even">  
+  <div class="views-field views-field-field-enlaza-a">        <div class="field-content"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/styles/carrusel/public/imagenes_galerias/shutterstock_574057807.jpg?itok=cgHVsWBE" width="1030" height="210" alt="" /></div>  </div></li>
+      <li class="jcarousel-item-9 odd">  
+  <div class="views-field views-field-field-enlaza-a">        <div class="field-content"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/styles/carrusel/public/imagenes_galerias/shutterstock_365270297.jpg?itok=g9aIGjcd" width="1030" height="210" alt="" /></div>  </div></li>
+      <li class="jcarousel-item-10 even">  
+  <div class="views-field views-field-field-enlaza-a">        <div class="field-content"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/styles/carrusel/public/imagenes_galerias/shutterstock_181840031.jpg?itok=ZmFSCUO1" width="1030" height="210" alt="" /></div>  </div></li>
+      <li class="jcarousel-item-11 odd">  
+  <div class="views-field views-field-field-enlaza-a">        <div class="field-content"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/styles/carrusel/public/imagenes_galerias/shutterstock_115239742.jpg?itok=CuLxkgjo" width="1030" height="210" alt="" /></div>  </div></li>
+      <li class="jcarousel-item-12 even">  
+  <div class="views-field views-field-field-enlaza-a">        <div class="field-content"><img src="https://fondosestructurales.castillalamancha.es/sites/fondosestructurales.castillalamancha.es/files/styles/carrusel/public/imagenes_galerias/shutterstock_598805078.jpg?itok=Gc6Bc7ph" width="1030" height="210" alt="Guía de beneficiarios de las convocatorias de expresiones de interés, para la selección y ejecución de proyectos, en el marco del Programa Operativo FEDER Castilla-La Mancha 2014-2020" /></div>  </div></li>
+  </ul>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>    </div>
+  </div>
+</div><div class="block block-block block-6 block-block-6 even block-without-title" id="block-block-6">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <!--
+<p><p>&nbsp;</p>
+<div class="bloque-aviso"><strong><a href="https://www.mites.gob.es/uafse/videos/VIDEO_FSE_MAIN.mp4" target="_blank">Video Día de Europa - Mayo 2021: “Homenaje a una ciudadanía heroica. El FSE te respalda”</a></strong>&nbsp;&nbsp;&nbsp;</div>
+<p>-->
+    </div>
+  </div>
+</div><div class="block block-views destacados block-enlaces-block-2 block-views-enlaces-block-2 odd block-without-title" id="block-views-enlaces-block-2">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div class="view view-enlaces view-id-enlaces view-display-id-block_2 enlaces-de-interes enlaces-de-interes-portada view-dom-id-b5bbac54c6622d232a3a71f7cc1b98c1">
+            <div class="view-header">
+      <h2>Consultas y debates públicos</h2>
+    </div>
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://participacion.castillalamancha.es/participacion/proceso-participativo-sobre-la-nueva-programacion-del-fondo-social-europeo-plus-fse" target="_blank">Proceso participativo sobre la nueva programación del Fondo Social Europeo Plus (FSE+) 2021-2027 de Castilla-La Mancha: El formulario permanecerá abierto hasta el próximo 22 de enero de 2021</a></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://forocohesion.castillalamancha.es/" target="_blank">Foro por la Cohesión de Castilla-La Mancha: 21, 22 y 23 de octubre de 2020. INSCRÍBETE</a></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://participacion.castillalamancha.es/participacion/proceso-participativo-sobre-la-nueva-programacion-del-fondo-europeo-de-desarrollo" target="_blank">Proceso participativo sobre la programación del Fondo Europeo de Desarrollo Regional (FEDER) 2021-2027 en Castilla-La Mancha</a></span>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://www.youtube.com/watch?v=ynwx6_wEcxA" target="_blank">Jornada de Fondos Europeos y la Política Regional y de Cohesión; un relato para Europa</a></span>  </div>  </div>
+  <div class="views-row views-row-5 views-row-odd">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="https://forocohesion.castillalamancha.es/" target="_blank">Foro por la Cohesión y el Desarrollo Regional de Castilla-La Mancha</a></span>  </div>  </div>
+  <div class="views-row views-row-6 views-row-even views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/consulta-debate/consulta-publica-sobre-la-integracion-y-la-inclusion-de-migrantes-y-personas-de-origen-migrante" target="_blank">Consulta pública sobre la integración y la inclusión de migrantes y personas de origen migrante: Hasta el 21 de octubre de 2020</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>    </div>
+  </div>
+</div><section class="block block-views block-691c875e8137f7aa1ad36961281d8d8c block-views-691c875e8137f7aa1ad36961281d8d8c even" id="block-views-691c875e8137f7aa1ad36961281d8d8c">
+  <div class="block-inner clearfix">
+              <h2 class="block-title">Últimas notas de prensa</h2>
+            
+    <div class="content clearfix">
+      <div class="view view-notas-de-prensa view-id-notas_de_prensa view-display-id-notas_prensa_bloque_ambas ndp ndp-ambas ndp-bloque view-dom-id-d97f0c63e9cd78d4e79b98e026c61859">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row-odd views-row-first">
+    <div class="ds-1col node node-nota-de-prensa node-teaser view-mode-teaser clearfix">
+
+  
+  <div class="field field-name-field-fecha-nota field-type-date field-label-hidden"><div class="field-items"><div class="field-item even"><span class="date-display-single">20/09/2022</span></div></div></div><h3><a href="https://fondosestructurales.castillalamancha.es/notas-de-prensa/el-consejo-de-gobierno-aprueba-un-gasto-de-597-millones-de-euros-para-la-atencion">El Consejo de Gobierno aprueba un gasto de 59,7 millones de euros para la atención a personas con discapacidad de la región</a></h3><div class="field field-name-entradilla-cuerpo-recortado-ndp field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><p class="rtejustify">La consejera de Bienestar Social, Bárbara García Torijano, ha señalado que esta convocatoria ha tenido un incremento de 3,7...</p></div></div></div></div>
+
+  </div>
+  <div class="views-row-even">
+    <div class="ds-1col node node-nota-de-prensa node-teaser view-mode-teaser clearfix">
+
+  
+  <div class="field field-name-field-fecha-nota field-type-date field-label-hidden"><div class="field-items"><div class="field-item even"><span class="date-display-single">11/08/2022</span></div></div></div><h3><a href="https://fondosestructurales.castillalamancha.es/notas-de-prensa/el-gobierno-regional-refuerza-su-compromiso-con-la-insercion-laboral-de-personas-c-0">El Gobierno regional refuerza su compromiso con la inserción laboral de personas con discapacidad a través de ayudas por más de 24 millones de euros</a></h3><div class="field field-name-entradilla-cuerpo-recortado-ndp field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><p class="rtejustify">El director general de Programas de Empleo, José Luis Cabezas, ha destacado la labor que realizan los centros especiales de...</p></div></div></div></div>
+
+  </div>
+  <div class="views-row-odd">
+    <div class="ds-1col node node-nota-de-prensa node-teaser view-mode-teaser clearfix">
+
+  
+  <div class="field field-name-field-fecha-nota field-type-date field-label-hidden"><div class="field-items"><div class="field-item even"><span class="date-display-single">08/08/2022</span></div></div></div><h3><a href="https://fondosestructurales.castillalamancha.es/notas-de-prensa/el-gobierno-de-castilla-la-mancha-incorpora-este-ano-65-nuevas-plazas-la-red-publica">El Gobierno de Castilla-La Mancha incorpora este año 65 nuevas plazas a la red pública de servicios de capacitación sociolaboral</a></h3><div class="field field-name-entradilla-cuerpo-recortado-ndp field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><p class="rtejustify">La consejera de Bienestar Social, Bárbara García Torijano, ha señalado que es un “servicio innovador” que trata, básicamente,...</p></div></div></div></div>
+
+  </div>
+  <div class="views-row-even views-row-last">
+    <div class="ds-1col node node-nota-de-prensa node-teaser view-mode-teaser clearfix">
+
+  
+  <div class="field field-name-field-fecha-nota field-type-date field-label-hidden"><div class="field-items"><div class="field-item even"><span class="date-display-single">04/08/2022</span></div></div></div><h3><a href="https://fondosestructurales.castillalamancha.es/notas-de-prensa/el-gobierno-regional-subraya-su-compromiso-con-la-cualificacion-y-el-empleo-con-una">El Gobierno regional subraya su compromiso con la cualificación y el empleo con una nueva convocatoria de programas duales dotada con 24,4 millones de euros</a></h3><div class="field field-name-entradilla-cuerpo-recortado-ndp field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even"><p class="rtejustify">La directora general de Formación Profesional para el Empleo, Marta Roldán, ha remarcado el compromiso del Gobierno regional...</p></div></div></div></div>
+
+  </div>
+    </div>
+  
+  
+  
+      
+<div class="more-link">
+  <a href="/secciones-secundarias/notas-de-prensa">
+    Ver más  </a>
+</div>
+  
+  
+  
+</div>    </div>
+  </div>
+</section>  </div>
+</div>  </div>
+</section>    
+  
+      <footer id="section-footer" class="section section-footer">
+    
+  <div id="zone-pie" class="zone zone-pie clearfix container-16">
+    <div class="grid-2 prefix-1 region region-pie-instituciones" id="region-pie-instituciones">
+  <div class="region-inner region-pie-instituciones-inner">
+    <div class="block block-block block-2 block-block-2 odd block-without-title" id="block-block-2">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <div id="logocertificados">
+<a href="http://www.castillalamancha.es/certificados"> <img src="https://fondosestructurales.castillalamancha.es/profiles/jccm/themes/omega_jccm/images/certificaciones.png" alt="Logo de certificación Aenor" /></a>
+</div>
+    </div>
+  </div>
+</div>  </div>
+</div><div class="grid-12 suffix-1 region region-pie-enlaces" id="region-pie-enlaces">
+  <div class="region-inner region-pie-enlaces-inner">
+    <div class="block block-menu block-menu-men-pie-enlaces block-menu-menu-men-pie-enlaces odd block-without-title" id="block-menu-menu-men-pie-enlaces">
+  <div class="block-inner clearfix">
+                
+    <div class="content clearfix">
+      <ul class="menu"><li class="first leaf"><a href="http://www.w3.org/WAI/WCAG1AA-Conformance" title="W3C-WAII">W3C-WAII</a></li>
+<li class="leaf"><a href="http://www.castillalamancha.es/protecciondedatos" title="Página para consultar información relacionada con la protección de datos">Protección de datos</a></li>
+<li class="leaf"><a href="http://www.castillalamancha.es/clm/instituciones" title="Ir a una página de enlaces de instituciones relacionadas">Otras instituciones</a></li>
+<li class="leaf"><a href="/sitemap" title="Ir al mapa del sitio" name="Mapa del sitio" accesskey="3">Mapa del sitio</a></li>
+<li class="leaf"><a href="https://webmail.jccm.es" title="Ir a Webmail" name="Correo web">Correo web</a></li>
+<li class="leaf"><a href="http://www.castillalamancha.es/avisolegal" title="Consultar el aviso legal" accesskey="7">Aviso Legal</a></li>
+<li class="last leaf"><a href="/accesibilidad" title="Ir a la página explicativa de accesibilidad" id="enlaceaccesibilidad">Accesibilidad</a></li>
+</ul>    </div>
+  </div>
+</div>  </div>
+</div>  </div>
+</footer>  </div>  <div class="region region-page-bottom" id="region-page-bottom">
+  <div class="region-inner region-page-bottom-inner">
+      </div>
+</div></body>
+</html>
+

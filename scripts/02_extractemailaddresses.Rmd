@@ -1,0 +1,326 @@
+---
+title: "Collect all email addresses"
+author: "Moritz Müller"
+date: "6/3/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Load Libraries
+NOTE: Data is in the RProject "sampling", just tranferred this here after running all below in the other project folder!
+```{r}
+library(stringr)
+library(tidyverse)
+library(dplyr)
+```
+
+# Read in all email addresses and combine them in one file
+```{r}
+#now extract addresses
+folders.website <- data.frame(list.files("./data/scraped/extracted"), stringsAsFactors = F)
+
+#initialize list for email collection
+all_emails <- list()
+
+for(i in 1:nrow(folders.website)){ 
+  tryCatch({
+    print(paste("Next Website:", folders.website[i,], "Number:", i))
+    emails <- read.csv(file=paste0("./data/scraped/extracted/", folders.website[i,])) 
+    emails <- emails %>% group_by(emails) %>% tally()
+    emails$website <- str_extract(folders.website[i,], ".+?(?=-[0-9])")
+    website_name <- str_extract(folders.website[i,], ".+?(?=-[0-9])")
+    if(nrow(emails)>0){
+      all_emails[[website_name]] <- as.data.frame(emails)}
+  }, error = function(e){cat("ERROR: ", conditionMessage(e), "\n")})
+  #, warning = function(e){cat("Warning: ", conditionMessage(e), "\n")})
+}
+
+#save(all_emails, file="data/all_emails")
+load(file="data/all_emails")
+```
+# Create combindes dataframe with transparency database data and email of websites
+```{r}
+all_dfs = bind_rows(all_emails, .id = 'source')
+all_dfs = all_dfs[!is.na(all_dfs$emails),]
+
+##merge transparency dataset and scraped dataset
+url_pattern <- "(?<=http[s]?://[www.]?)(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
+smpl_rmng$website = str_extract(smpl_rmng$Website.address., url_pattern)
+smpl_rmng$website=gsub("www.", "", smpl_rmng$website)
+
+for (i in 1:nrow(smpl_rmng)){
+  smpl_rmng$website[i]=strsplit(smpl_rmng$website[i], "/")[[c(1, 1)]]
+}
+
+### combine dfs from recommended.emails to dataframe, with website as column name
+combined$website = gsub('.{7}$', '', combined$website)
+
+mrg_data = inner_join(all_dfs, smpl_rmng, by="website")
+```
+
+# Match names
+## Nitty gritty approach: All possible name combinations
+```{r}
+##match names and emails of PER organization
+mrg_data$last = str_extract(mrg_data$Person.in.charge.of.EU.relations, '[^ ]+$')
+mrg_data$first = word(mrg_data$Person.in.charge.of.EU.relations, 1)
+
+# Other name combinations (courtesy of Saar Alon-Barkat's Github)
+t1 <- str_split(mrg_data$last,"-", simplify = TRUE) %>% 
+  data.frame() %>% 
+  mutate(last.v1 = X1 %>% as.character(),
+         last.v2 = X2 %>% as.character()) %>%
+  select(-X1,
+         -X2) %>% 
+  mutate(last.v2 = na_if(last.v2,""))
+mrg_data$last.v1 = t1$last.v1
+mrg_data$last.v2 = t1$last.v2
+
+
+mrg_data$first.v1 = str_split(mrg_data$first,"-", simplify = TRUE)
+
+library(textclean)
+mrg_data <- mrg_data %>% 
+  #cleaning first and last names
+  mutate(first.v1.clean = first.v1 %>% replace_non_ascii() %>% str_to_lower() %>% str_replace_all("\\W",""),
+         last.v1.clean = last.v1 %>% replace_non_ascii() %>% str_to_lower() %>% str_replace_all("\\W",""),
+         last.v2.clean = last.v2 %>% replace_non_ascii() %>% str_to_lower() %>% str_replace_all("\\W",""))
+
+
+##Creating acronyms of participant names:
+t1 <- str_split(mrg_data$Person.in.charge.of.EU.relations," |-", simplify = TRUE) %>% 
+  data.frame() %>% 
+  mutate_all(funs(str_sub(.,1,1) %>%  str_to_lower())) %>% 
+  mutate(person.name.acronym.v1 = str_c(X1,X2,X3,X4,X5)) %>% 
+  mutate(person.name.acronym.v2 = str_c(str_sub(person.name.acronym.v1,1,1),
+                                        str_sub(person.name.acronym.v1,-1,-1)))
+
+t1 <- t1 %>% 
+  mutate(person.name.acronym.v1 = t1$person.name.acronym.v1 %>% replace_non_ascii() %>% str_replace_all("\\W",""),
+         person.name.acronym.v2 = t1$person.name.acronym.v2 %>% replace_non_ascii() %>% str_replace_all("\\W",""))
+mrg_data$acronym.v1 = t1$person.name.acronym.v1
+mrg_data$acronym.v2 = t1$person.name.acronym.v2
+
+t1$person.name.acronym.v3 = paste0(t1$X1, ".", t1$X2, ".", t1$X3, ".", t1$X4)
+t1$person.name.acronym.v3 = gsub("..", ".", t1$person.name.acronym.v3, fixed=T)
+t1$person.name.acronym.v3 = t1$person.name.acronym.v3 %>% replace_non_ascii()
+mrg_data$acronym.v3 =t1$person.name.acronym.v3
+
+# Match
+cmplt = mrg_data#[,c(1:3,57:63)]
+cmplt$match = as.numeric(1)
+cmplt = as.data.frame(cmplt)
+library(stringi)
+cmplt$emails_p = stri_extract_first_regex(cmplt$emails, "^[^@]+")
+
+for (i in 1:nrow(cmplt)) {
+  mrg_data$match[i] = sum(stri_detect_fixed(
+    pattern = c(
+      ifelse(is.na(tolower(mrg_data$last.v1.clean[i])), "jhgaskhdsg", tolower(mrg_data$last.v1.clean[i])),
+      ifelse(is.na(tolower(mrg_data$last.v2.clean[i])), "jhgaskhdsg", tolower(mrg_data$last.v2.clean[i])),
+      ifelse(is.na(tolower(mrg_data$first.v1.clean[i])), "jhgaskhdsg", tolower(mrg_data$first.v1.clean[i])),
+      ifelse(is.na(tolower(mrg_data$first.v2.clean[i])), "jhgaskhdsg", tolower(mrg_data$first.v2.clean[i])),
+      ifelse(is.na(tolower(mrg_data$acronym.v1[i])), "jhgaskhdsg", tolower(mrg_data$acronym.v1[i])),
+      ifelse(is.na(tolower(mrg_data$acronym.v2[i])), "jhgaskhdsg", tolower(mrg_data$acronym.v2[i])),
+      ifelse(is.na(tolower(mrg_data$acronym.v3[i])), "jhgaskhdsg", tolower(mrg_data$acronym.v3[i]))
+    ),
+    str = cmplt$emails_p[i]
+  ))
+}
+
+test= mrg_data[mrg_data$match!=0,]
+test= as.data.frame(test)
+test =test[!is.na(test$emails),]
+
+test %>% distinct()
+
+write.csv(test, file="data/greedy_approach.csv")
+```
+### Check validity
+```{r}
+coded <- read.csv(file="data/greedy_approach_coded.csv", stringsAsFactors = F)
+coded <- coded[!is.na(coded$valid),]
+
+table(coded$valid)
+
+paste0("Precision of greedy approach is ", (table(coded$valid)[1]/sum(table(coded$valid)))*100, "%")
+```
+
+## More conservative approach
+Check only against first and last name
+```{r}
+# Match
+cmplt = mrg_data#[,c(1:3,57:63)]
+cmplt$match = as.numeric(1)
+cmplt = as.data.frame(cmplt)
+cmplt$emails_p = stri_extract_first_regex(cmplt$emails, "^[^@]+")
+
+# replica mrg_data to see the difference between the two approaches
+mrg_replica = mrg_data
+for (i in 1:nrow(cmplt)) {
+  mrg_replica$match[i] = sum(stri_detect_fixed(
+    pattern = c(
+      ifelse(is.na(tolower(mrg_replica$last.v1.clean[i])), "jhgaskhdsg", tolower(mrg_replica$last.v1.clean[i])),
+      ifelse(is.na(tolower(mrg_replica$first.v1.clean[i])), "jhgaskhdsg", tolower(mrg_replica$first.v1.clean[i]))
+    ),
+    str = cmplt$emails_p[i]
+  ))
+}
+
+test_conservative= mrg_replica[mrg_replica$match!=0,]
+test_conservative= as.data.frame(test_conservative)
+test_conservative =test_conservative[!is.na(test_conservative$emails),]
+
+test_conservative %>% distinct()
+
+write.csv(test_conservative, file="data/conservative_approach.csv")
+
+# Not bad, from a first quick check: almost all valid
+```
+### Check validity
+```{r}
+coded_conservative <- read.csv(file="data/conservative_approach_coded.csv", stringsAsFactors = F)
+coded_conservative <- coded_conservative[!is.na(coded_conservative$valid),]
+
+table(coded_conservative$valid)
+
+paste0("Precision of conservative approach is ", (table(coded_conservative$valid)[1]/sum(table(coded_conservative$valid)))*100, "%")
+```
+
+# Full dataset 
+I am using the conservative approach since it will drastically reduce manual coding labour whilst still yielding a large number of valid email addresses.
+
+## Including the names of EU and legal individuals 
+```{r}
+# Match
+cmplt = mrg_data#[,c(1:3,57:63)]
+cmplt$match = as.numeric(1)
+cmplt = as.data.frame(cmplt)
+cmplt$emails_p = stri_extract_first_regex(cmplt$emails, "^[^@]+")
+
+# replica mrg_data to see the difference between the two approaches
+mrg_final = mrg_data
+
+
+# Create name search fields for both EU as well as legal staff
+##match names and emails of PER organization
+mrg_final$last.EU = str_extract(mrg_final$Person.in.charge.of.EU.relations, '[^ ]+$')
+mrg_final$first.EU = word(mrg_final$Person.in.charge.of.EU.relations, 1)
+mrg_final$last.legal = str_extract(mrg_final$Person.with.legal.responsibility, '[^ ]+$')
+mrg_final$first.legal = word(mrg_final$Person.with.legal.responsibility, 1)
+# Other name combinations (courtesy of Saar Alon-Barkat's Github)
+## first EU people
+t1 <- str_split(mrg_final$last.EU,"-", simplify = TRUE) %>% 
+  data.frame() %>% 
+  mutate(last.EU.v1 = X1 %>% as.character(),
+         last.EU.v2 = X2 %>% as.character()) %>%
+  select(-X1,
+         -X2) %>% 
+  mutate(last.EU.v2 = na_if(last.EU.v2,""))
+mrg_final$last.EU.v1 = t1$last.EU.v1
+mrg_final$last.EU.v2 = t1$last.EU.v2
+
+t1_first.EU <- str_split(mrg_final$first.EU,"-", simplify = TRUE) %>% 
+  data.frame() %>% 
+  mutate(first.EU.v1 = X1 %>% as.character(),
+         first.EU.v2 = X2 %>% as.character()) %>%
+  select(-X1,
+         -X2) %>% 
+  mutate(first.EU.v2 = na_if(first.EU.v2,""))
+mrg_final$first.EU.v1 = t1_first.EU$first.EU.v1
+mrg_final$first.EU.v2 = t1_first.EU$first.EU.v2
+
+mrg_final <- mrg_final %>% 
+  #cleaning first.EU and last.EU names
+  mutate(first.EU.v1.clean = first.EU.v1 %>% replace_non_ascii() %>% str_to_lower() %>% str_replace_all("\\W",""),
+         first.EU.v2.clean = first.EU.v2 %>% replace_non_ascii() %>% str_to_lower() %>% str_replace_all("\\W",""),
+         last.EU.v1.clean = last.EU.v1 %>% replace_non_ascii() %>% str_to_lower() %>% str_replace_all("\\W",""),
+         last.EU.v2.clean = last.EU.v2 %>% replace_non_ascii() %>% str_to_lower() %>% str_replace_all("\\W",""))
+
+## now legal people
+t1 <- str_split(mrg_final$last.legal,"-", simplify = TRUE) %>% 
+  data.frame() %>% 
+  mutate(last.legal.v1 = X1 %>% as.character(),
+         last.legal.v2 = X2 %>% as.character()) %>%
+  select(-X1,
+         -X2) %>% 
+  mutate(last.legal.v2 = na_if(last.legal.v2,""))
+mrg_final$last.legal.v1 = t1$last.legal.v1
+mrg_final$last.legal.v2 = t1$last.legal.v2
+
+t1_first.legal <- str_split(mrg_final$first.legal,"-", simplify = TRUE) %>% 
+  data.frame() %>% 
+  mutate(first.legal.v1 = X1 %>% as.character(),
+         first.legal.v2 = X2 %>% as.character()) %>%
+  select(-X1,
+         -X2) %>% 
+  mutate(first.legal.v2 = na_if(first.legal.v2,""))
+mrg_final$first.legal.v1 = t1_first.legal$first.legal.v1
+mrg_final$first.legal.v2 = t1_first.legal$first.legal.v2
+
+mrg_final <- mrg_final %>% 
+  #cleaning first.legal and last.legal names
+  mutate(first.legal.v1.clean = first.legal.v1 %>% replace_non_ascii() %>% str_to_lower() %>% str_replace_all("\\W",""),
+         first.legal.v2.clean = first.legal.v2 %>% replace_non_ascii() %>% str_to_lower() %>% str_replace_all("\\W",""),
+         last.legal.v1.clean = last.legal.v1 %>% replace_non_ascii() %>% str_to_lower() %>% str_replace_all("\\W",""),
+         last.legal.v2.clean = last.legal.v2 %>% replace_non_ascii() %>% str_to_lower() %>% str_replace_all("\\W",""))
+
+# Do matching for both legal as well as EU staff
+for (i in 1:nrow(cmplt)) {
+  mrg_final$match[i] = sum(stri_detect_fixed(
+    pattern = c(
+      ifelse(is.na(tolower(mrg_final$last.EU.v1.clean[i])), "jhgaskhdsg", tolower(mrg_final$last.EU.v1.clean[i])),
+      ifelse(is.na(tolower(mrg_final$first.EU.v1.clean[i])), "jhgaskhdsg", tolower(mrg_final$first.EU.v1.clean[i])),
+      ifelse(is.na(tolower(mrg_final$last.legal.v1.clean[i])), "jhgaskhdsg", tolower(mrg_final$last.legal.v1.clean[i])),
+      ifelse(is.na(tolower(mrg_final$first.legal.v1.clean[i])), "jhgaskhdsg", tolower(mrg_final$first.legal.v1.clean[i]))
+    ),
+    str = cmplt$emails_p[i]
+  ))
+}
+
+# Indicate if the person is a legal staffer with $match_legal
+for (i in 1:nrow(cmplt)) {
+  mrg_final$match.legal[i] = sum(stri_detect_fixed(
+    pattern = c(
+      ifelse(is.na(tolower(mrg_final$last.legal.v1.clean[i])), "jhgaskhdsg", tolower(mrg_final$last.legal.v1.clean[i])),
+      ifelse(is.na(tolower(mrg_final$first.legal.v1.clean[i])), "jhgaskhdsg", tolower(mrg_final$first.legal.v1.clean[i]))
+    ),
+    str = cmplt$emails_p[i]
+  ))
+}
+
+#Create dataset with all matches
+test_final= mrg_final[mrg_final$match!=0,]
+test_final= as.data.frame(test_final)
+test_final =test_final[!is.na(test_final$emails),]
+
+#remove or correct faulty emails
+test_final$emails = str_remove(test_final$emails, "\\.$") # remove emails that end on a dot
+test_final$emails = str_remove(test_final$emails, ".+?\\.png$") # remove image addresses
+test_final =test_final[!is.na(test_final$emails),]
+test_final =test_final[test_final$emails!="",]
+
+#remove duplicates
+test_final = test_final %>% distinct()
+
+
+#save dataset
+write.csv(test_final, file="data/transparency_emails_final.csv")
+```
+# Check representativeness of email sample
+```{r}
+rprs = test_final%>% distinct(website, .keep_all = T)
+# Original
+prpt = trns %>% 
+  group_by(Section) %>% 
+  summarise(n=n()) %>% 
+  mutate(freq = n/sum(n)) 
+# Sample
+prpt_smpl = rprs %>% 
+  group_by(Section) %>% 
+  summarise(n=n()) %>% 
+  mutate(freq = n/sum(n))
+```
+

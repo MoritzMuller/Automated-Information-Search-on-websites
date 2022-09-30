@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assofin - Mutui Immobiliari</title>
+  <link href="/MIWeb2017/Content/css?v=1LPVcwJ9IB5kJ9h40dRLWqdj1ffmpL_NhXxQOvW07hc1" rel="stylesheet"/>
+
+  <link href="/MIWeb2017/Content/af2017site.css?637999760686885685" rel="stylesheet" />
+  <link href="/MIWeb2017/Content/layout2018.css?637999760686885685" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet" />
+  <link href="/MIWeb2017/Content/fileupload?v=icDEQ5C5EKKyPLouwdy9ziOdVzgzdYjlphYLSqFHqzA1" rel="stylesheet"/>
+
+  <script src="/MIWeb2017/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+  <script src="/MIWeb2017/bundles/jquery?v=41iFwBVd0S3vJj79zO3W7SLfTqJWkRnIdihwLUIgm-w1"></script>
+
+  <script src="/MIWeb2017/bundles/jqueryval?v=ewwbEwxCzNIunbw9c2Y5X5_ldbOkIBIkUo-LvchX7I81"></script>
+
+  <script src="/MIWeb2017/bundles/bootstrap?v=fUhHvIdNp9l3we3GNerNkAR0DI-TLkBw4X-H4VyYEc81"></script>
+
+  
+  <meta name="description" content="ASSOFIN - Osservatorio sui Mutui Immobiliari" />
+</head>
+<body>
+  
+
+
+
+  <div class="container-fluid body-content">
+    <!-- Modal -->
+<div class="modal modal-wide fade" id="ModalMultipurpose" role="dialog" data-backdrop="static" tabindex="-1">
+  <div id="ModalMultiDialog" class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="upperPopupCloseButton" type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div id="multiModalContent">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <input id="hidCheckDuplication" name="hidCheckDuplication" type="hidden" value="" />
+    <div id="mainContent">
+      
+
+
+
+<div class="logo"><img src="/MIWeb2017/Images/Loghi/LogoAssofin2018_H140.png" alt="banner" /></div>
+<div class="row font-barlow">
+  <div class="col-lg-offset-3 col-lg-6">
+    <div class="well well-sm form-title"><span>INPUT DATI MUTUI IMMOBILIARI</span></div>
+<form action="/MIWeb2017/Login/Login" id="form-login" method="post"><input name="__RequestVerificationToken" type="hidden" value="SIIR0Qg_sZw1x_oYk_wgvBMmmd7yTp5ffmA_4Qux9XpqjRiHigYfoUrEtpwSmIW0P4nfJVCZBMHcbc07wGHf5SabmVoKzAaRraKltqs-3wk1" /><input id="TipoUtente" name="TipoUtente" type="hidden" value="Amministrazione" />      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <span class="login-label">USERNAME</span>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input autofocus="autofocus" class="form-control fullwidth text-box single-line" data-val="true" data-val-required="Il campo Nome di accesso è obbligatorio." id="UserName" name="UserName" placeholder="Utente" type="text" value="" />
+              </div>
+              <span class="field-validation-valid text-danger" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+            </div>
+
+            <div class="form-group">
+              <span class="login-label">PASSWORD</span>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input class="form-control fullwidth text-box single-line password" data-val="true" data-val-required="Il campo Password è obbligatorio." id="Password" name="Password" placeholder="Password" type="password" />
+              </div>
+              <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+            </div>
+
+
+
+            <div class="form-group vert-offset-bottom-0">
+              <div class="controls">
+                <button type="submit" class="submit-btn">
+                  <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> LOGIN
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</form>
+    <hr class="login-divider" />
+    <a class="login-label" data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-success="openMultipurposePopupNormal" data-ajax-update="#multiModalContent" href="/MIWeb2017/Login/RichiestaResetPassword?TipoUtente=Associata">HAI DIMENTICATO LA PASSWORD?</a>
+    <span style="float: right;">Il browser deve avere i cookies abilitati</span>
+  </div>
+</div>
+
+
+
+    </div>
+    <hr />
+    <footer>
+      <div class="navbar navbar-default navbar-fixed-bottom" role="navigation" hidden="true">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarBottom">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div id="navbarBottom" class="navbar-collapse collapse">
+      <p class="text-center vert-offset-top-0 vert-offset-bottom-0">Puntodoc S.r.l.</p>
+    </div>
+  </div>
+</div>
+
+
+    </footer>
+  </div>
+  <img id="ajaxLoading" alt="" src="/MIWeb2017/Images/Preloaders/preloader.gif" class="ajaxprogress" style="display: none;" />
+  <script src="/MIWeb2017/bundles/plugins?v=NNpxfL_CojqD1Ak1ER6n4tT2hi1SIN8Va2udbgWr1Gs1"></script>
+
+  <script src="/MIWeb2017/bundles/fileupload?v=fzucoUIH6Acy6MpXrhyqqWUVRRDYV35zj5eFucOO7OY1"></script>
+
+  <script src="/MIWeb2017/App_Scripts/mi2017.js?637999760686885685"></script>
+  <script src="/MIWeb2017/App_Scripts/rilevazioni.js?637999760686885685"></script>
+  <script src="/MIWeb2017/App_Scripts/uploadManager.js?637999760686885685"></script>
+  <script src="/MIWeb2017/App_Scripts/utility.js?637999760686885685"></script>
+  
+
+
+  <script type="text/javascript">
+    globalSiteRoot = '/MIWeb2017/';
+    objCostanti = new Object();
+    objCostanti.dataSections = 'sections';
+    objCostanti.dataValueType = 'valuetype';
+    objCostanti.dataShowZero = 'showzero';
+    objCostanti.dataSumSections = 'sumsections';
+    objCostanti.dataSumOffset = 'sumoffset';
+    objCostanti.dataSectionDescription = 'sectiondescription';
+    objCostanti.dataLabelSectionDescription = 'labelsectiondescription';
+    objCostanti.dataStatusDescription = 'statusdescription';
+    objCostanti.dataLabelStatusDescription = 'labelstatusdescription';
+    objCostanti.dataNumerator = 'numerator';
+    objCostanti.dataDenominator = 'denominator';
+    objCostanti.dataDecimalPlaces = 'decimalplaces';
+    objCostanti.dataAllowEmpty = 'allowempty';
+    objCostanti.dataMultiply = 'multiply';
+    objCostanti.typeLong = 'longvalue';
+    objCostanti.typeDecimal = 'decimalvalue';
+    objCostanti.codiceConfermata = 'CONFERMATA';
+  </script>
+
+</body>
+</html>
+

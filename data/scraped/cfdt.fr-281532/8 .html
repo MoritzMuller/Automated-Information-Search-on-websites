@@ -1,0 +1,1457 @@
+
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html>
+    <head>
+        <title>FCE | Page d'accueil</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+        <script type="text/javascript" src="/minified/js-jquery"></script>
+        <script type="text/javascript" src="/minified/js-constructed"></script>
+        
+    <script language="JavaScript">
+        var JsSlices = {
+            zone: "",
+            menu: "",
+            page: "",
+            mode: "public",
+            list: [""]
+        };
+        var JsToken = {
+            zone: "accueil",
+            menu: "accueil",
+            page: "accueil",
+            kind: "page",
+            id: "5",
+            path: [""]
+        };
+        var JsRechercher = {
+            chaine: $('<div/>').html("").text()
+        };
+
+        function cookies_hide() {
+            cookies(0);
+        }
+
+        function cookies(accept) {
+            if (accept) {
+                $("#span-accept-cookies").html("✔");
+                $("#span-dont-accept-cookies").html("");
+            }
+            var oReq = new XMLHttpRequest();
+            oReq.onload = function () {
+            };
+            oReq.open("post", "/index.cookies.php?ok=" + accept, true);
+            oReq.send();
+            setTimeout(function () {
+                $("#accept-cookies-popup").css("display", "none");
+            }, 800);
+        }
+        $(document).ready(function() {
+            $("#span-accept-cookies").html("");
+            $("#span-dont-accept-cookies").html("✔");
+        })
+    </script>
+    <script type="text/javascript" src="/minified/js-public"></script>
+    
+
+
+        
+    <link href='//fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css' data-norem>
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' data-norem>
+
+
+        <link rel="stylesheet" href="/minified/css-jquery" type="text/css"/>
+        <link rel="stylesheet" href="/minified/css-kafka" type="text/css"/>
+        <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <![endif]-->
+
+        
+    <link rel="stylesheet" href="/minified/css-public" type="text/css"/>
+
+    </head>
+
+    <body class="public zone-accueil menu-accueil page-">
+    
+    
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-56185047-8', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+    
+
+
+    <div id="container">
+        
+
+    <div id="top-logo"></div>
+    <div id="menu-mask"></div>
+    
+        <div id="accept-cookies-popup"
+             style="position: fixed; z-index:10000; width: 100%; height: 100%; top:0; left:0; background-color: rgba(255,255,255,0.6); pointer-events: all;   display: flex; align-items: center; justify-content: center;">
+            <div style="width: 450px; background-color: white; text-align: center; justify-content: center; display: table; border: solid 1px #ccc; padding: 40px 20px; filter: drop-shadow(0px 0px 4px #ccccccdd); position: relative;">
+                <a style="position: absolute; top: 10px; right:10px; border:solid 2px #ccc; font-weight: bolder; border-radius: 100px; width: 21px; height: 21px; padding: 2px 0; cursor: pointer;"
+                   href="javascript:cookies_hide()">X</a>
+                <div style="display:table-cell; text-align: center; vertical-align: middle; font-size: 14pt;">
+                    <div>
+                        <p>Acceptez-vous que notre site utilise des cookies
+                            afin de collecter des informations purement statistiques ?</p>
+                    </div>
+                    <hr style="margin-top: 20px; margin-bottom: 20px;"/>
+                    <div>
+                        <a style="white-space:pre; display: inline-block; width:150px; text-align:center; padding: 10px; margin: 0 10px; cursor: pointer;"
+                           href="javascript:cookies(1)"><span id="span-accept-cookies"></span>&nbsp;Oui, j'accepte.</a> |
+                        <a style="white-space:pre; display: inline-block; width:150px; text-align:center; padding: 10px; margin: 0 10px; cursor: pointer;"
+                           href="javascript:cookies(0)"><span id="span-dont-accept-cookies"></span>&nbsp;Non, merci.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+
+
+
+    <div id="menus">
+        <div id="zones">
+            <div class="zone home">
+                <h2>&nbsp;</h2>
+                <ul>
+                    <li><a href="/accueil"><span>Accueil</span></a></li>
+                </ul>
+            </div>
+            
+                
+            
+                
+                    <div class="zone fce">
+                        <h2 class="label ">FCE<span
+                                    class="overflown fontello">d</span></h2>
+                        <ul>
+                            
+                            
+                            
+                                
+                                <li id="li-fce-qui-sommes-nous"
+                                    class=" ">
+                                    <a href="/fce/qui-sommes-nous">Qui sommes-nous?</a></li>
+                            
+                                
+                                <li id="li-fce-notre-organisation"
+                                    class=" ">
+                                    <a href="/fce/notre-organisation">Notre organisation</a></li>
+                            
+                                
+                                <li id="li-fce-nos-syndicats"
+                                    class=" ">
+                                    <a href="/fce/nos-syndicats">Nos syndicats</a></li>
+                            
+                                
+                                <li id="li-fce-nos-publications"
+                                    class=" ">
+                                    <a href="/fce/nos-publications">Nos publications</a></li>
+                            
+                                
+                                <li id="li-fce-nos-liaisons"
+                                    class=" ">
+                                    <a href="/fce/nos-liaisons">Nos liaisons</a></li>
+                            
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                    <div class="wall wall-2">
+                        <div class="in-wall"></div>
+                    </div>
+                
+            
+                
+                    <div class="zone branches">
+                        <h2 class="label ">Branches<span
+                                    class="overflown fontello">d</span></h2>
+                        <ul>
+                            
+                            
+                            
+                                
+                                <li id="li-branches-caoutchouc"
+                                    class=" ">
+                                    <a href="/branches/caoutchouc">Caoutchouc</a></li>
+                            
+                                
+                                <li id="li-branches-chimie"
+                                    class=" ">
+                                    <a href="/branches/chimie">Chimie</a></li>
+                            
+                                
+                                <li id="li-branches-ieg"
+                                    class=" ">
+                                    <a href="/branches/ieg">IEG</a></li>
+                            
+                                
+                                <li id="li-branches-papier-carton"
+                                    class=" ">
+                                    <a href="/branches/papier-carton">Papier-carton</a></li>
+                            
+                                
+                                <li id="li-branches-pharmacie"
+                                    class=" ">
+                                    <a href="/branches/pharmacie">Pharmacie</a></li>
+                            
+                                
+                                <li id="li-branches-plasturgie"
+                                    class=" ">
+                                    <a href="/branches/plasturgie">Plasturgie</a></li>
+                            
+                                
+                                <li id="li-branches-petrole"
+                                    class=" ">
+                                    <a href="/branches/petrole">Pétrole</a></li>
+                            
+                                
+                                <li id="li-branches-verre"
+                                    class=" ">
+                                    <a href="/branches/verre">Verre</a></li>
+                            
+                                
+                                <li id="li-branches-uf-retraites"
+                                    class=" ">
+                                    <a href="/branches/uf-retraites">U.F. Retraites</a></li>
+                            
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                    <div class="wall wall-3">
+                        <div class="in-wall"></div>
+                    </div>
+                
+            
+                
+                    <div class="zone axes">
+                        <h2 class="label ">Axes<span
+                                    class="overflown fontello">d</span></h2>
+                        <ul>
+                            
+                            
+                            
+                                
+                                <li id="li-axes-apld"
+                                    class=" ">
+                                    <a href="/axes/apld">APLD</a></li>
+                            
+                                
+                                <li id="li-axes-covid-19"
+                                    class=" ">
+                                    <a href="/axes/covid-19">COVID-19</a></li>
+                            
+                                
+                                <li id="li-axes-cadre"
+                                    class=" ">
+                                    <a href="/axes/cadre">Cadre</a></li>
+                            
+                                
+                                <li id="li-axes-congres"
+                                    class=" ">
+                                    <a href="/axes/congres">Congres</a></li>
+                            
+                                
+                                <li id="li-axes-condition-de-travail-temps-de-travail-discrimination"
+                                    class=" ">
+                                    <a href="/axes/condition-de-travail-temps-de-travail-discrimination">Condition de travail / Temps de travail / Discrimination</a></li>
+                            
+                                
+                                <li id="li-axes-dialogue-social"
+                                    class=" ">
+                                    <a href="/axes/dialogue-social">Dialogue social</a></li>
+                            
+                                
+                                <li id="li-axes-droits"
+                                    class=" ">
+                                    <a href="/axes/droits">Droits</a></li>
+                            
+                                
+                                <li id="li-axes-developpement-election"
+                                    class=" ">
+                                    <a href="/axes/developpement-election">Développement / Election</a></li>
+                            
+                                
+                                <li id="li-axes-developpement-durable"
+                                    class=" ">
+                                    <a href="/axes/developpement-durable">Développement durable</a></li>
+                            
+                                
+                                <li id="li-axes-economie"
+                                    class=" ">
+                                    <a href="/axes/economie">Economie</a></li>
+                            
+                                
+                                <li id="li-axes-egalite-professionnelle"
+                                    class=" ">
+                                    <a href="/axes/egalite-professionnelle">Egalité professionnelle</a></li>
+                            
+                                
+                                <li id="li-axes-emploi-restructuration"
+                                    class=" ">
+                                    <a href="/axes/emploi-restructuration">Emploi / Restructuration</a></li>
+                            
+                                
+                                <li id="li-axes-europe-international"
+                                    class=" ">
+                                    <a href="/axes/europe-international">Europe / International</a></li>
+                            
+                                
+                                <li id="li-axes-formation-syndicale"
+                                    class=" ">
+                                    <a href="/axes/formation-syndicale">Formation syndicale</a></li>
+                            
+                                
+                                <li id="li-axes-fpc-gpec"
+                                    class=" ">
+                                    <a href="/axes/fpc-gpec">FPC / GPEC</a></li>
+                            
+                                
+                                <li id="li-axes-jeunes"
+                                    class=" ">
+                                    <a href="/axes/jeunes">Jeunes</a></li>
+                            
+                                
+                                <li id="li-axes-politique-industrielle"
+                                    class=" ">
+                                    <a href="/axes/politique-industrielle">Politique industrielle</a></li>
+                            
+                                
+                                <li id="li-axes-protection-sociale-prevoyance"
+                                    class=" ">
+                                    <a href="/axes/protection-sociale-prevoyance">Protection sociale / Prévoyance</a></li>
+                            
+                                
+                                <li id="li-axes-retraites"
+                                    class=" ">
+                                    <a href="/axes/retraites">Retraites</a></li>
+                            
+                                
+                                <li id="li-axes-remuneration"
+                                    class=" ">
+                                    <a href="/axes/remuneration">Rémunération</a></li>
+                            
+                                
+                                <li id="li-axes-sante-au-travail-risques-industriels"
+                                    class=" ">
+                                    <a href="/axes/sante-au-travail-risques-industriels">Santé au travail / Risques industriels</a></li>
+                            
+                                
+                                <li id="li-axes-teletravail"
+                                    class=" ">
+                                    <a href="/axes/teletravail">Télétravail</a></li>
+                            
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                    <div class="wall wall-4">
+                        <div class="in-wall"></div>
+                    </div>
+                
+            
+                
+                    <div class="zone liaisons">
+                        <h2 class="label ">Liaisons<span
+                                    class="overflown fontello">d</span></h2>
+                        <ul>
+                            
+                            
+                            
+                                
+                                <li id="li-liaisons-enedis"
+                                    class=" ">
+                                    <a href="/liaisons/enedis">Enedis</a></li>
+                            
+                                
+                                <li id="li-liaisons-grdf"
+                                    class=" ">
+                                    <a href="/liaisons/grdf">GRDF</a></li>
+                            
+                                
+                                <li id="li-liaisons-michelin"
+                                    class=" ">
+                                    <a href="/liaisons/michelin">Michelin</a></li>
+                            
+                                
+                                <li id="li-liaisons-sanofi"
+                                    class=" ">
+                                    <a href="/liaisons/sanofi">Sanofi</a></li>
+                            
+                                
+                                <li id="li-liaisons-solvay"
+                                    class=" ">
+                                    <a href="/liaisons/solvay">Solvay</a></li>
+                            
+                                
+                                <li id="li-liaisons-st-gobain"
+                                    class=" ">
+                                    <a href="/liaisons/st-gobain">St-Gobain</a></li>
+                            
+                                
+                                <li id="li-liaisons-rte"
+                                    class=" ">
+                                    <a href="/liaisons/rte">RTE</a></li>
+                            
+                                
+                                <li id="li-liaisons-total"
+                                    class=" ">
+                                    <a href="/liaisons/total">Total</a></li>
+                            
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                    <div class="wall wall-5">
+                        <div class="in-wall"></div>
+                    </div>
+                
+            
+                
+            
+                
+                    <div class="zone dossiers">
+                        <h2 class="label ">Dossiers<span
+                                    class="overflown fontello">d</span></h2>
+                        <ul>
+                            
+                            
+                            
+                                
+                                <li id="li-dossiers-fiches-pratiques"
+                                    class=" ">
+                                    <a href="/dossiers/fiches-pratiques">Fiches pratiques</a></li>
+                            
+                                
+                                <li id="li-dossiers-les-comites-d-entreprise-europeens"
+                                    class=" ">
+                                    <a href="/dossiers/les-comites-d-entreprise-europeens">Comités d'entreprise Européens</a></li>
+                            
+                                
+                                <li id="li-dossiers-liens-utiles"
+                                    class=" ">
+                                    <a href="/dossiers/liens-utiles">Liens utiles</a></li>
+                            
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                    <div class="wall wall-7">
+                        <div class="in-wall"></div>
+                    </div>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+
+            <div class="zone contact">
+                <h2 class='label'>Nous contacter</h2>
+                <ul>
+                    <li><span>01.56.41.53.00</span></li>
+                    <li><span><a href="mailto:fce@fce.cfdt.fr"
+                                 class="e-mail">fce@fce.cfdt.fr</a></span></li>
+                    <li class="last-item">
+                        <span>
+                        <a href="https://www.cfdt.fr/portail/adhesion/adherez-en-ligne/vos-informations-jca_221327"
+                           class="adherer" target="_blank">Adhérer en ligne</a>
+                            <div class="clear" style="height:2px"></div>
+                        <a href="https://twitter.com/fce_cfdt" target="_blank" class="twitter"><span>Twitter</span></a>
+                        <a href="https://plus.google.com/111901326247680537074/posts" target="_blank"
+                           class="google"><span>Google Plus</span></a>
+                        </span>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="sub-menu">
+            <ul>
+                <li class="zone-menu">ACCUEIL <span
+                            class="fontello">></span> Accueil <span
+                            class="fontello">></span></li>
+                
+            </ul>
+        </div>
+
+
+    </div>
+
+
+    <div id="page">
+        <div id="left"><div id="news-left" class="widget-left">
+    
+        
+    
+        
+    
+        
+    
+        
+        <div class="actu actu-link" onclick="window.location.href='http://www.fce.cfdt.fr/accueil/accueil/'">
+    
+    <p class="title">Partenaires</p>
+    
+
+    
+    
+    <div class="border"></div>
+</div>
+
+        
+    
+        
+    
+        
+    
+        
+        <div class="actu actu-link" onclick="window.location.href='/page/nos-partenaires'">
+    
+    <p class="title">Nos partenaires</p>
+    
+
+    
+        <p class="text">Les partenaires de la fédération</p>
+    
+    
+    <div class="border"></div>
+</div>
+
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <div class="actu actu-link" onclick="window.location.href='/page/mentions-legales'">
+    
+    <p class="title">Mentions legales</p>
+    
+
+    
+    
+    <div class="border"></div>
+</div>
+
+        
+    
+        
+    
+</div>
+<div id="rechercher">
+    <form>
+        <input type="text" value="Rechercher..."/>
+        <input type="submit" value="" class="magnifier"/>
+    </form>
+    <div id="link-recherche-avancee"><a href="/page/recherche-avancee">Recherche avancée</a></div>
+    <div class="help">
+        <div class="help-inside">
+            <div class="arrow"></div>
+            <div class="arrow arrow-white"></div>
+            <div class="retour-left"></div>
+            Entrez un ou plusieurs mots et la recherche s'effectuera sur l'ensemble des pages du site.
+        </div>
+    </div>
+</div>
+
+<div id="france-title" class="widget-left">
+    <h2>Carte des syndicats
+        <div class="arrow"></div>
+        <div class="arrow white-arrow"></div>
+    </h2>
+</div>
+<div id="france-all">
+    <div id="france-map">
+        <div id="france-container">
+            <div id="france-shadow"></div>
+            <div id="france-syndicats"></div>
+            <div id="france">
+                <div id="france-under"></div>
+                <div id="france-over"></div>
+                <div id="departements">
+                    <div id="d01"></div>
+                    <div id="d02"></div>
+                    <div id="d03"></div>
+                    <div id="d04"></div>
+                    <div id="d05"></div>
+                    <div id="d06"></div>
+                    <div id="d07"></div>
+                    <div id="d08"></div>
+                    <div id="d09"></div>
+                    <div id="d10"></div>
+
+                    <div id="d11"></div>
+                    <div id="d12"></div>
+                    <div id="d13"></div>
+                    <div id="d14"></div>
+                    <div id="d15"></div>
+                    <div id="d16"></div>
+                    <div id="d17"></div>
+                    <div id="d18"></div>
+                    <div id="d19"></div>
+
+                    <div id="d21"></div>
+                    <div id="d22"></div>
+                    <div id="d23"></div>
+                    <div id="d24"></div>
+                    <div id="d25"></div>
+                    <div id="d26"></div>
+                    <div id="d27"></div>
+                    <div id="d28"></div>
+                    <div id="d29"></div>
+                    <div id="d30"></div>
+
+                    <div id="d31"></div>
+                    <div id="d32"></div>
+                    <div id="d33"></div>
+                    <div id="d34"></div>
+                    <div id="d35"></div>
+                    <div id="d36"></div>
+                    <div id="d37"></div>
+                    <div id="d38"></div>
+                    <div id="d39"></div>
+                    <div id="d40"></div>
+
+                    <div id="d41"></div>
+                    <div id="d42"></div>
+                    <div id="d43"></div>
+                    <div id="d44"></div>
+                    <div id="d45"></div>
+                    <div id="d46"></div>
+                    <div id="d47"></div>
+                    <div id="d48"></div>
+                    <div id="d49"></div>
+                    <div id="d50"></div>
+
+                    <div id="d51"></div>
+                    <div id="d52"></div>
+                    <div id="d53"></div>
+                    <div id="d54"></div>
+                    <div id="d55"></div>
+                    <div id="d56"></div>
+                    <div id="d57"></div>
+                    <div id="d58"></div>
+                    <div id="d59"></div>
+                    <div id="d60"></div>
+
+                    <div id="d61"></div>
+                    <div id="d62"></div>
+                    <div id="d63"></div>
+                    <div id="d64"></div>
+                    <div id="d65"></div>
+                    <div id="d66"></div>
+                    <div id="d67"></div>
+                    <div id="d68"></div>
+                    <div id="d69"></div>
+                    <div id="d70"></div>
+
+                    <div id="d71"></div>
+                    <div id="d72"></div>
+                    <div id="d73"></div>
+                    <div id="d74"></div>
+                    <div id="d75"></div>
+                    <div id="d76"></div>
+                    <div id="d77"></div>
+                    <div id="d78"></div>
+                    <div id="d79"></div>
+                    <div id="d80"></div>
+
+                    <div id="d81"></div>
+                    <div id="d82"></div>
+                    <div id="d83"></div>
+                    <div id="d84"></div>
+                    <div id="d85"></div>
+                    <div id="d86"></div>
+                    <div id="d87"></div>
+                    <div id="d88"></div>
+                    <div id="d89"></div>
+                    <div id="d90"></div>
+
+                    <div id="d91"></div>
+                    <div id="d92"></div>
+                    <div id="d93"></div>
+                    <div id="d94"></div>
+                    <div id="d95"></div>
+                    <div id="d2a"></div>
+                    <div id="d2b"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="france-help is-hidden">
+            <div class="arrow"></div>
+            <div class="arrow arrow-white"></div>
+            <div class="retour-top"></div>
+            <div class="help-content"></div>
+        </div>
+    </div>
+</div>
+
+<div id="identification" class="widget-left">
+    
+    <h2>Accès adhérent
+        <div class="arrow"></div>
+        <div class="arrow white-arrow"></div>
+    </h2>
+    <div class="formulaire">
+        <input type="text" name="identifiant" id="identifiant" value="Nom"/>
+        <input type="text" name="pass" id="pass" value="Numéro d'adhérent"/>
+        <div class="remember"><input type="checkbox" name="remember" id="remember" /><label for="remember">Rester connecté.</label></div>
+        <div class="tools"><a href="javascript:void(0);"><span class="fontello">></span>Connexion</a></div>
+        <div class="help">
+            <div class="help-inside">
+                <div class="arrow"></div>
+                <div class="arrow arrow-white"></div>
+                <div class="retour-left"></div>
+                Veuillez entrer votre <b>nom</b> comme identifiant,
+                et votre <b>numéro d'adhérent</b> comme mot de passe.
+            </div>
+        </div>
+
+    </div>
+    
+</div>
+
+<div id="militant" class="widget-left">
+    <h2>Cfdt
+        <div class="arrow"></div>
+        <div class="arrow white-arrow"></div>
+    </h2>
+    <div class="link"><a href="http://www.cfdt.fr/" target="_blank"><span class="fontello">&gt;</span>Site confédéral</a></div>
+    <div class="link"><a href="http://interne.cfdt.fr/simplyWelcome.do" target="_blank"><span class="fontello">&gt;</span>Espace militant</a></div>
+</div>
+</div>
+        <div class="wall">
+            <div class="in-wall"></div>
+        </div>
+        <div id="middle" class="with-toolbar">
+
+            
+                <div class="article">
+    
+        
+
+
+
+
+
+
+<div id="toolbar">
+    
+    
+    <div class="icon twitter" target="_blank">
+        <span class="fontello">R</span>
+        <span class="help">
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-hashtags="fcecfdt"
+           data-show-count="false">Tweeter</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"
+                    onload="$('.icon.twitter').attr('style','position:absolute; top:-99999px;'); $('.icon.twitter .help').css('display','block'); setTimeout(function() {$('.icon.twitter .help').css('display',''); $('.icon.twitter').attr('style',''); },1000);"></script>
+        </span>
+    </div>
+
+
+    
+    
+    
+    
+    
+    
+    
+    <a href="javascript:void(0);" class="icon mail"><span class="fontello">M</span><span
+                class="help">Envoyer par mail</span></a>
+    <a href="javascript:void(0);" class="icon print"><span class="fontello">P</span><span
+                class="help">Imprimer</span></a>
+    <a href="javascript:void(0);" id="heart"
+       class="icon heart hearted">
+        <span class="fontello heart">H</span><span class="help">
+                <span class="not-hearted">Définir cette page comme page de démarrage.</span>
+                <span class="hearted">Cette page est votre page de démarrage.</span>
+            </span></a>
+    <a href="javascript:void(0);" class="icon star ">
+        <span class="fontello">*</span><span class="help">J'aime (
+                <span class="count-starred">3</span>)
+            </span>
+    </a>
+
+    
+</div>
+
+
+        
+
+
+        
+            
+        
+            
+            
+                
+                
+                    <div class="extrait">
+    <p class="titre">Encore 1000 ans ?</p>
+
+    <p class="extrait">Chaque année plusieurs journées annuelles de manifestation sont organisées pour dénoncer les inégalités salariales entre les femmes et les hommes...</p>
+
+    <p class="suite">
+        <a href="/accueil/accueil/actualites/article/encore-1000-ans">
+            <span class="fontello">.</span>
+            Lire la suite
+        </a>
+    </p>
+</div>
+<div class="hr"></div>
+                
+                
+            
+            
+        
+            
+            
+                
+                    
+
+                    
+
+                    
+
+                    
+
+
+                    
+                    
+                        <p class="soustitre">Derniers articles parus</p>
+                    
+
+                
+            
+            
+        
+            
+            
+                
+                
+                    
+
+
+    <div class="list">
+    <div class="item mod-0">
+        <h3>IEG - CP Interfédéral du 26-09-22 : Augmentation du SNB   La proposition des employeurs est toujours inacceptable !</h3>
+
+        <p>Pour ramener les employeurs des IEG à la raison, la FNME-CGT, la CFE Energies, la FCE CFDT et FO Energie et Mines appellent dès à présent l’ensemble des salariés des IEG à se mobiliser en grève lors de la prochaine journée de négociation de la CPPNI le ¬6 octobre 2022 (*) et soutiennent les mouvements déjà existants ou à venir dans les entreprises des IEG.
+
+Seule une mobilisation massive permettra d’aboutir sur les légitimes revendications de tous les salariés, comme elle a déjà abouti à des résultats dans certaines entreprises de la Branche.</p>
+
+        <p>
+            <a href="/accueil/accueil/actualites/article/ieg-cp-interfederal-du-26-09-22-augmentation-du-snb-la-proposition-des-employeurs-est-toujours-inacceptable">
+                
+                    <span class="fontello">.</span>
+                
+                Lire la suite
+            </a>
+        </p>
+    </div>
+    
+    
+        <div class="spacer">
+            <div class="in-spacer"></div>
+        </div>
+    
+    
+
+    
+    <div class="item mod-1">
+        <h3>IEG - Tract suite CPPNI du 22-09-22 : Négociations salariales : les employeurs commencent à bouger, mais le compte n’y est pas, et de loin !</h3>
+
+        <p>L’augmentation du SNB doit être la réponse centrale face au pouvoir d’achat. Elle doit être complétée d’une revalorisation de la grille salariale pour répondre au pouvoir de vivre !</p>
+
+        <p>
+            <a href="/accueil/accueil/actualites/article/ieg-tract-suite-cppni-du-22-09-22-negociations-salariales-les-employeurs-commencent-a-bouger-mais-le-compte-n-y-est-pas-et-de-loin">
+                
+                    <span class="fontello">.</span>
+                
+                Lire la suite
+            </a>
+        </p>
+    </div>
+    
+    
+    
+
+    
+    <div class="item mod-2">
+        <h3>RJF : accompagner l’inaptitude, l’incapacité et l’invalidité</h3>
+
+        <p>A la demande de certains Syndicats, ce RJF de rentrée était dédié à l’accompagnement juridique et 	syndical des salariés confrontés à l’inaptitude, l’incapacité ou l’invalidité, d’origine professionnelle ou non...</p>
+
+        <p>
+            <a href="/accueil/accueil/actualites/article/rjf-accompagner-l-inaptitude-l-incapacite-et-l-invalidite">
+                
+                    <span class="fontello">.</span>
+                
+                Lire la suite
+            </a>
+        </p>
+    </div>
+    
+    
+        <div class="spacer">
+            <div class="in-spacer"></div>
+        </div>
+    
+    </div>
+
+    <div class="list">
+    <div class="item mod-0">
+        <h3>Faire en sorte que les cadres nous rejoignent, notre priorité</h3>
+
+        <p>Les dernières élections dans les Industries électriques et gazières (IEG) ont vu l’électorat CFDT Cadres s’éroder. Les prochaines se dérouleront en novembre 2023...</p>
+
+        <p>
+            <a href="/accueil/accueil/actualites/article/faire-en-sorte-que-les-cadres-nous-rejoignent-notre-priorite">
+                
+                    <span class="fontello">.</span>
+                
+                Lire la suite
+            </a>
+        </p>
+    </div>
+    
+    
+        <div class="spacer">
+            <div class="in-spacer"></div>
+        </div>
+    
+    
+
+    
+    <div class="item mod-1">
+        <h3>Une proposition décevante pour les producteurs de papier</h3>
+
+        <p>A la suite de la revoyure des salaires au sein des entreprises de la Production et de la Transformation du papier, à hauteur de 3 à 4% pour ce dernier semestre 2022, l’ensemble des organisations de la branche se sont réunies, le 16 septembre, pour trouver une issue après leur échec lors de la négociation, en juillet dernier...</p>
+
+        <p>
+            <a href="/accueil/accueil/actualites/article/une-proposition-decevante-pour-les-producteurs-de-papier">
+                
+                    <span class="fontello">.</span>
+                
+                Lire la suite
+            </a>
+        </p>
+    </div>
+    
+    
+    
+
+    
+    <div class="item mod-2">
+        <h3>Une action pour un dialogue social « fortifié »</h3>
+
+        <p>Lundi 12 septembre 2022, les militants du Syndicat Chimie Energie Champagne-Ardenne sont allés à la rencontre des salariés de 3P Langres pour la restitution des résultats de l’enquête sur les conditions de travail dans leur entreprise...</p>
+
+        <p>
+            <a href="/accueil/accueil/actualites/article/une-action-pour-un-dialogue-social-fortifie">
+                
+                    <span class="fontello">.</span>
+                
+                Lire la suite
+            </a>
+        </p>
+    </div>
+    
+    
+        <div class="spacer">
+            <div class="in-spacer"></div>
+        </div>
+    
+    </div>
+
+
+
+    <div id="more-list">
+        <a href="javascript:void(0);">
+            <span class="more-list-data more-list-root">/accueil/accueil/actualites</span>
+            <span class="more-list-data more-list-count">10950</span>
+            <span class="more-list-data more-list-command">liste</span>
+            <span class="more-list-data more-list-parameter">familles</span>
+            <span class="fontello">+</span>
+            Plus d'articles ...
+        </a>
+    </div>
+
+
+                
+                
+            
+            
+        
+    
+
+</div>
+            
+            
+
+        </div>
+        <div class="wall">
+            <div class="in-wall"></div>
+        </div>
+        <div id="right"><div id="news">
+    
+        
+            <div class="actu actu-link" onclick="window.location.href='/page/abonnement-newsletter'">
+    
+    <p class="title">Abonnez-vous !</p>
+    
+
+    
+        <p class="text">Notre newsletter est hebdomadaire et vous pouvez la personnaliser en indiquant les rubriques qui vous concernent plus particulièrement.</p>
+    
+    
+        <img src="/images/widgets/widget-94b9563f65.png"/>
+    
+    <div class="border"></div>
+</div>
+
+        
+    
+        
+            <div class="actu actu-link" onclick="window.location.href='https://www.fce.cfdt.fr/accueil/accueil/actualites/article/place-au-dialogue-social'">
+    
+    <p class="title">A la Une</p>
+    
+
+    
+        <p class="text">Place au dialogue social !
+Syndicalisme Hebdo N°1010</p>
+    
+    
+        <img src="/images/widgets/widget-ec99ffea8d.png"/>
+    
+    <div class="border"></div>
+</div>
+
+        
+    
+        
+            <div class="actu actu-link" onclick="window.location.href='/page/toutes-nos-affiches'">
+    
+    <p class="title">Toutes nos affiches</p>
+    
+
+    
+        <p class="text">Les affiches de la FCE sont là.</p>
+    
+    
+    <div class="border"></div>
+</div>
+
+        
+    
+        
+    
+        
+            <div class="actu actu-video" onclick="window.location.href='/accueil/accueil/actualites/article/7e-congres-de-la-fce-cfdt-troisieme-jour-premiere-partie-presentation-du-projet-d-orientation-generale-et-les-4-premiers-debats-sur-4-premiers-amendements'">
+    <p class="info">En video</p>
+    <p class="title">7e congres de la FCE-CFDT troisième jour  première partie Présentation du projet d'orientation générale et les 4 premiers débats sur les 4 premiers amendements</p>
+    <div id="7e-congres-de-la-fce-cfdt-troisieme-jour-premiere-partie-presentation-du-projet-d-orientation-generale-et-les-4-premiers-debats-sur-4-premiers-amendements-vimeo" class="vimeo-preview" style="padding-top:56%;"><div class="player"></div></div>
+    <div class="border"></div>
+</div>
+
+
+<script language="JavaScript">
+    $("document").ready(function () {
+        $.ajax({
+            type: 'GET',
+            url: '//vimeo.com/api/v2/video/509680397.json',
+            jsonp: 'callback',
+            // dataType: 'jsonp',
+            success: function (data) {
+                var thumbnail_src = data[0].thumbnail_large;
+                $('#7e-congres-de-la-fce-cfdt-troisieme-jour-premiere-partie-presentation-du-projet-d-orientation-generale-et-les-4-premiers-debats-sur-4-premiers-amendements-vimeo').append('<img src="' + thumbnail_src + '"/>');
+            }
+        });
+    });
+</script>
+
+        
+    
+        
+            <div class="actu actu-link" onclick="window.location.href='http://www.fce.cfdt.fr/accueil/accueil/actualites/article/le-trombinoscope-federal'">
+    
+    <p class="title">Le Trombi</p>
+    
+
+    
+        <p class="text">Retrouvez tous les membres de la FCE-CFDT</p>
+    
+    
+        <img src="/images/widgets/widget-81743b9b0b.png"/>
+    
+    <div class="border"></div>
+</div>
+
+        
+    
+        
+    
+        
+            <div class="actu actu-link" onclick="window.location.href='/page/toutes-nos-videos'">
+    
+    <p class="title">Toutes nos vidéos</p>
+    
+
+    
+        <p class="text">Les vidéos de la FCE sont là.</p>
+    
+    
+    <div class="border"></div>
+</div>
+
+        
+    
+        
+            
+
+    <div class="actu actu-link" onclick="window.location.href='/accueil/accueil/actualites/article/sanofi-entre-incoherence-et-aberration'">
+        <p class="info">
+            <span class="famille">Communiqué de presse</span>
+            <span class="autres">Pharmacie, Condition de travail / Temps de travail / Discrimination, Dialogue social, Emploi / Restructuration</span>
+        </p>
+
+        <p class="title">Sanofi : entre incohérence et aberration !</p>
+
+        <p class="text">Le 20 septembre, la direction du groupe Sanofi a convoqué les organisations syndicales représentatives pour aborder la négociation d’un accord de méthode visant à définir une méthodologie sur les conséquences du projet dit « ALFA » de fusion juridique des sociétés SAG, SAF, Genzyme, Chimie et Vaccin au sein de Sanofi Winthrop Industries (SWI).</p>
+
+        <div class="border"></div>
+    </div>
+
+
+
+    <div class="actu actu-link" onclick="window.location.href='/accueil/accueil/actualites/article/les-federations-syndicales-de-l-energie-demandent-au-gouvernement-de-s-attaquer-aux-racines-de-la-crise-et-non-a-ses-symptomes'">
+        <p class="info">
+            <span class="famille">Communiqué de presse</span>
+            <span class="autres">IEG, Europe / International, Politique industrielle, Economie</span>
+        </p>
+
+        <p class="title">Les fédérations syndicales de l’énergie demandent au Gouvernement de s’attaquer aux racines de la crise, et non à ses symptômes</p>
+
+        <p class="text">Communiqué interfédéral / Depuis de nombreuses années, l’Interfédérale composée des fédérations syndicales représentatives des industries électriques et gazières (FNME-CGT, CFE-CGC Énergies, FCECFDT et FO Énergie et Mines) demande un bilan honnête et sans concession de la libéralisation des marchés européens de l’énergie.</p>
+
+        <div class="border"></div>
+    </div>
+
+
+
+        
+    
+        
+            
+
+    <div class="actu actu-link" onclick="window.location.href='/accueil/accueil/actualites/article/verre-accord-collectif-de-branche-relatif-au-parcours-syndical-des-representants-du-personnel-et-a-sa-valorisation'">
+        <p class="info">
+            <span class="famille">Accord de branche</span>
+            <span class="autres">Verre, Dialogue social</span>
+        </p>
+
+        <p class="title">VERRE Accord collectif de branche relatif au Parcours syndical des représentants du personnel et à sa valorisation</p>
+
+        <p class="text">Accord collectif de branche en date du 20 juillet 2022 relatif au Parcours syndical des représentants du personnel et à sa valorisation
+CCN Fabrication mécanique du verre</p>
+
+        <div class="border"></div>
+    </div>
+
+
+
+    <div class="actu actu-link" onclick="window.location.href='/accueil/accueil/actualites/article/verre-accord-du-20-juillet-2022-relatif-au-positionnement-conventionnel-des-certificats-de-qualification-professionnelle'">
+        <p class="info">
+            <span class="famille">Accord de branche</span>
+            <span class="autres">Verre, Condition de travail / Temps de travail / Discrimination, FPC / GPEC</span>
+        </p>
+
+        <p class="title">VERRE Accord du 20 juillet 2022 relatif au positionnement conventionnel des certificats de qualification professionnelle</p>
+
+        <p class="text">Accord du 20 juillet 2022 relatif au positionnement conventionnel des certificats de qualification professionnelle (CQP)</p>
+
+        <div class="border"></div>
+    </div>
+
+
+
+        
+    
+        
+    
+        
+            <div class="actu actu-link" onclick="window.location.href='/adherents/petites-annonces'">
+    
+    <p class="title">Petite annonces</p>
+    
+
+    
+        <p class="text">Postez vos petites annonces ou consultez celle de nos adhérents...</p>
+    
+    
+    <div class="border"></div>
+</div>
+
+        
+    
+</div>
+</div>
+        <div class="clear"></div>
+    </div>
+
+    <div id="bottom-left">
+        <div id="bottom-left-rechercher"><a href="/page/recherche-avancee"><span class="fontello">S</span>Rechercher sur
+                le
+                site</a></div>
+        <div id="bottom-left-connection">
+            
+                <a href="/adherents/connexion">Accès adhérents<span class="fontello">L</span></a>
+            
+        </div>
+
+    </div>
+
+    <div id="bottom-menu">
+        
+    
+
+    
+        <h2 class="label">FCE</h2>
+        
+            <a href="/fce/qui-sommes-nous">Qui sommes-nous?</a>
+        
+            <a href="/fce/notre-organisation">Notre organisation</a>
+        
+            <a href="/fce/nos-syndicats">Nos syndicats</a>
+        
+            <a href="/fce/nos-publications">Nos publications</a>
+        
+            <a href="/fce/nos-liaisons">Nos liaisons</a>
+        
+    
+
+    
+        <h2 class="label">Branches</h2>
+        
+            <a href="/branches/caoutchouc">Caoutchouc</a>
+        
+            <a href="/branches/chimie">Chimie</a>
+        
+            <a href="/branches/ieg">IEG</a>
+        
+            <a href="/branches/papier-carton">Papier-carton</a>
+        
+            <a href="/branches/pharmacie">Pharmacie</a>
+        
+            <a href="/branches/plasturgie">Plasturgie</a>
+        
+            <a href="/branches/petrole">Pétrole</a>
+        
+            <a href="/branches/verre">Verre</a>
+        
+            <a href="/branches/uf-retraites">U.F. Retraites</a>
+        
+    
+
+    
+        <h2 class="label">Axes</h2>
+        
+            <a href="/axes/apld">APLD</a>
+        
+            <a href="/axes/covid-19">COVID-19</a>
+        
+            <a href="/axes/cadre">Cadre</a>
+        
+            <a href="/axes/congres">Congres</a>
+        
+            <a href="/axes/condition-de-travail-temps-de-travail-discrimination">Condition de travail / Temps de travail / Discrimination</a>
+        
+            <a href="/axes/dialogue-social">Dialogue social</a>
+        
+            <a href="/axes/droits">Droits</a>
+        
+            <a href="/axes/developpement-election">Développement / Election</a>
+        
+            <a href="/axes/developpement-durable">Développement durable</a>
+        
+            <a href="/axes/economie">Economie</a>
+        
+            <a href="/axes/egalite-professionnelle">Egalité professionnelle</a>
+        
+            <a href="/axes/emploi-restructuration">Emploi / Restructuration</a>
+        
+            <a href="/axes/europe-international">Europe / International</a>
+        
+            <a href="/axes/formation-syndicale">Formation syndicale</a>
+        
+            <a href="/axes/fpc-gpec">FPC / GPEC</a>
+        
+            <a href="/axes/jeunes">Jeunes</a>
+        
+            <a href="/axes/politique-industrielle">Politique industrielle</a>
+        
+            <a href="/axes/protection-sociale-prevoyance">Protection sociale / Prévoyance</a>
+        
+            <a href="/axes/retraites">Retraites</a>
+        
+            <a href="/axes/remuneration">Rémunération</a>
+        
+            <a href="/axes/sante-au-travail-risques-industriels">Santé au travail / Risques industriels</a>
+        
+            <a href="/axes/teletravail">Télétravail</a>
+        
+    
+
+    
+        <h2 class="label">Liaisons</h2>
+        
+            <a href="/liaisons/enedis">Enedis</a>
+        
+            <a href="/liaisons/grdf">GRDF</a>
+        
+            <a href="/liaisons/michelin">Michelin</a>
+        
+            <a href="/liaisons/sanofi">Sanofi</a>
+        
+            <a href="/liaisons/solvay">Solvay</a>
+        
+            <a href="/liaisons/st-gobain">St-Gobain</a>
+        
+            <a href="/liaisons/rte">RTE</a>
+        
+            <a href="/liaisons/total">Total</a>
+        
+    
+
+    
+        <h2 class="label">Syndicats</h2>
+        
+            <a href="/syndicats/adour-pyrenees">Adour Pyrénées</a>
+        
+            <a href="/syndicats/ain-deux-savoie">Ain-Deux Savoie</a>
+        
+            <a href="/syndicats/alpes-mediterranee">Alpes Méditerranée</a>
+        
+            <a href="/syndicats/alsace">Alsace</a>
+        
+            <a href="/syndicats/artois-val-de-lys">Artois Val de Lys</a>
+        
+            <a href="/syndicats/auvergne-limousin">Auvergne Limousin</a>
+        
+            <a href="/syndicats/basse-normandie">Basse Normandie</a>
+        
+            <a href="/syndicats/bourgogne">Bourgogne</a>
+        
+            <a href="/syndicats/bretagne">Bretagne</a>
+        
+            <a href="/syndicats/centre-val-de-loire">Centre Val de Loire</a>
+        
+            <a href="/syndicats/champagne-ardenne">Champagne Ardenne</a>
+        
+            <a href="/syndicats/dauphine-vivarais">Dauphiné-Vivarais</a>
+        
+            <a href="/syndicats/franche-comte">Franche Comté</a>
+        
+            <a href="/syndicats/haute-normandie">Haute Normandie</a>
+        
+            <a href="/syndicats/ile-de-france">Ile de France</a>
+        
+            <a href="/syndicats/languedoc-roussillon">Languedoc Roussillon</a>
+        
+            <a href="/syndicats/lille-sambre-escaut">Lille Sambre Escaut</a>
+        
+            <a href="/syndicats/littoral-nord">Littoral Nord</a>
+        
+            <a href="/syndicats/lorraine">Lorraine</a>
+        
+            <a href="/syndicats/maine-anjou">Maine Anjou</a>
+        
+            <a href="/syndicats/midi-pyrenees">Midi Pyrénées</a>
+        
+            <a href="/syndicats/nord-aquitaine">Nord Aquitaine</a>
+        
+            <a href="/syndicats/picardie">Picardie</a>
+        
+            <a href="/syndicats/poitou-charentes">Poitou Charentes</a>
+        
+            <a href="/syndicats/provence-corse">Provence Corse</a>
+        
+            <a href="/syndicats/rhone-alpes-ouest">Rhône Alpes Ouest</a>
+        
+            <a href="/syndicats/vendee-loire-atlantique">Vendée Loire-Atlantique</a>
+        
+    
+
+    
+        <h2 class="label">Dossiers</h2>
+        
+            <a href="/dossiers/fiches-pratiques">Fiches pratiques</a>
+        
+            <a href="/dossiers/les-comites-d-entreprise-europeens">Comités d'entreprise Européens</a>
+        
+            <a href="/dossiers/liens-utiles">Liens utiles</a>
+        
+    
+
+    
+        <h2 class="label">Publications</h2>
+        
+            <a href="/publications/initiatives-syndicales">Initiatives syndicales</a>
+        
+            <a href="/publications/gaz-electricite-retraites">Gaz Electricité Retraites</a>
+        
+            <a href="/publications/magazine-chimie-energie">Magazine Chimie Energie</a>
+        
+            <a href="/publications/syndicalisme-hebdo">Syndicalisme Hebdo</a>
+        
+    
+
+    
+
+    
+
+    
+
+
+    </div>
+
+    <div id="bottom-adresse">
+        Fédération Chimie Energie CFDT | 47-49, avenue Simon Bolivar | 75950 Paris Cedex 19
+    </div>
+
+
+    </div>
+    </body>
+
+    <!--[if IE 8]>
+    <script type="text/javascript" src="/minified/js-rem"></script>
+    <![endif]-->
+    </html>
+
+
+

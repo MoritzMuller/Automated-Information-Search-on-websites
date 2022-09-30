@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="ctl00_head"><title>
+	SNOMED - SNOMED in Action
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Google Tag Manager -->
+        <script>(function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer','GTM-MVC93QP');</script>
+        <!-- End Google Tag Manager -->
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6341856/6344592/css/fonts.css" /><link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" /><link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png" /><link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114.png" /><link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png" /><link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png" /><link rel="apple-touch-icon-precomposed" sizes="60x60" href="/apple-touch-icon-60x60.png" /><link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120.png" /><link rel="apple-touch-icon-precomposed" sizes="76x76" href="/apple-touch-icon-76x76.png" /><link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.png" /><link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196" /><link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" /><link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" /><link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" /><link rel="icon" type="image/png" href="/favicon-128.png" sizes="128x128" /><meta name="application-name" content=" " /><meta name="msapplication-TileColor" content="#FFFFFF" /><meta name="msapplication-TileImage" content="/mstile-144x144.png" /><meta name="msapplication-square70x70logo" content="/mstile-70x70.png" /><meta name="msapplication-square150x150logo" content="/mstile-150x150.png" /><meta name="msapplication-wide310x150logo" content="/mstile-310x150.png" /><meta name="msapplication-square310x310logo" content="/mstile-310x310.png" /><link rel="stylesheet" type="text/css" href="/Content/combined/site_6E453FD797707451FA49C85E31012EAA.css" /><meta name="description" content="SNOMED CT global case studies and implementations. Search our case study and register your own with SNOMED International." /> 
+<meta charset="UTF-8" /> 
+<meta name="keywords" content="implementation, global, information sharing, learning, register, category, region, americas, EMEA, asia pacific, case studies, case study, search" /> 
+ 
+<link href="/App_Themes/Default/Images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
+<link href="/App_Themes/Default/Images/favicon.ico" type="image/x-icon" rel="icon"/>
+
+
+        <meta property="og:site_name" content="SNOMED" />
+
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="" />
+
+        <meta name="ROBOTS" content="" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content="" />
+        <meta name="twitter:title" content="" />
+        
+        <meta name="twitter:image" content="" />
+
+    </head>
+<body class="ty9">
+    
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVC93QP"
+                height="0" width="0" style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    
+    <form method="post" action="/snomed-ct/snomed-in-action" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm" class="">
+<div class="aspNetHidden">
+<input type="hidden" name="__CMSCsrfToken" id="__CMSCsrfToken" value="xqK4S6B5Gyb/qaxNAkQD7AGuvW1eADlsB0C/s+n07SZvwcc8hgeV/E89fVzC08qcAq0PxWHvoXjSQVYzfUZuBdiftnI4BL3RlAlYB6F5f78=" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="aJ+e2DuBbQuOpxCsY3CI8StTU/hoHhhFOZ+5gAkGx3x5PL7xD7LeHDK1RJoN0JZcBgrbTO+AI/u/UZ8+XV7jiAdpSk6dbp3zHScCFiaSyT5Jk0V1FjMKs69OQQ0hRGM0UVvWtzCs1RvrwviE4un884SYn4v14DfqOCShguRPIgqq7roeljXM9p7YAsLnwQq2of1ZpKBjqz/GmouA0rfT27/h35VJEhfClrdex0rQQlHXeOOtI3j6lyMi0gL9a0O2SzbTcTJJR2YcSExsv1ylXDAktWj+0Sl7TtV0RN/VBc9+9QWk8Om2XykCJ34us/PqpPXtLe74EQ0DnrbEQiJtFtyRbFEaDYojpn5kd82nf7L5dyfLs72mRuqKvJhItB5+2pfrJcPA3w23/QNjwyanUXft1QSyVMFCi29RqlEmPJN6P9eoHm8QhkeTQFhVakd424/GxcWtmg8mD9/3IyYfOOIH4o9Tr+4dm0FVKkzHSaAXnM6meYkZ1Hax5OvNwyN7hAea5phI2CHdTeoaekN//s16j3x7970KWdr1bQruBO8Q9OscXiJ1qiedMeUSLG+VK6wsRYCq6eQSc/Uzmy9XOBY8XetPufVOHA+Nz88ybPyaXBZxeq67VjOmd0DDCyeF1Mp6AjwaaZv9hTP1KmNRfT61IGh9Kw8oRx88lzltKWOvRAvxQOwH1GO+ANuxNyhUyZS7FLf3Zg384PiQAEVgOgNQjqFCJnvl76mbwUH8nk6tPFTfQybiPsSNRiBb4M0XbHf9Tp/Km0MpEf9A5130+w1WJCLHsTUcy1wi0bqKW2sYBbUQJO6CokqalXpJMI80W6/47+Mwoy6DOCH3Yx8n0u+rswPKFft8myQjCYVagHB+HaW1+McIVZ0tGDTyDk9gplJBVU5inmJQ1ABmT6ovusbrdq5RYx0PlAp/IVUwTuZuLPIrOjAst3JYRY4dz+ZySQshSYWwqaiaPelhkb3Jy2MejE0btwmNInPy8v/0b6qjf6MW6zIxVNU3KXjc9EMz3l3g8ByBcbHx64sykIDkHSTvEGqtX5iBLVwdKHlQcifcikuwIcTg0Nkkeue0Xb7Oq8rI0cW5POabbxxGw6XGJwUP4r+MJPfwmLZrdAIUwnOtHMEMaFf5ufDePfQvGUNNcYc/wpRdOXLNy8Cm5E2HsKJI/75OoaKFcNv347mItFmrI3Hne/DcW48dkjm/QFvl3fP0kmwKtnKSySHbdfa6t+ct5bQcdq5Aviac63JNlkuxZixrFx0h4+wQFAeY9Ikr56Qz2ui5z9Grt2HT0uNHeTTSLWnSbyfqxVPI9fG28MglHFl6jEIGrFloD6hresTfFUIRQxJY5eqXL5nCMpTB6IdSOkQ5DayVZYF14idHqSZ50oMSHh/27dmSUrVIzD3XTA7LLLRUdZxZkN06KwaSg1yVHoyLSiEo7n7iF9nFaEiCumFIiVOdyPwmTZhOl0SspXrQAkkCyAtoi7sqq4mSBB9IzI57Hum14C0zrtNi6zTCgpb/woGph0aMG/A//7D7NSHl6GKs9+Kng7Z+avD96eF+gDW2HbXPA7K4ocM+F7o=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZOq-5HY3W5BE0D27rNxZoKPZ8aZsvHVt5IK72oFZMpX2VgQ2lRKtKhL0q6NDifCepw2&amp;t=637823365705833095" type="text/javascript"></script>
+
+<input type="hidden" name="lng" id="lng" value="en-GB" />
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fjquery%2fjquery-core.js" type="text/javascript"></script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSScripts%2fjquery%2fjquery-cmscompatibility.js" type="text/javascript"></script>
+<script src="/CMSPages/GetResource.ashx?scriptfile=%7e%2fCMSWebParts%2fSmartSearch%2fSearchBox_files%2fPredictiveSearch.js" type="text/javascript"></script>
+<script type="text/javascript">
+	//<![CDATA[
+
+function PM_Postback(param) { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080); } if(window.CMSContentManager) { CMSContentManager.allowSubmit = true; }; __doPostBack('ctl00$m$am',param); }
+function PM_Callback(param, callback, ctx) { if (window.top.HideScreenLockWarningAndSync) { window.top.HideScreenLockWarningAndSync(1080); }if (window.CMSContentManager) { CMSContentManager.storeContentChangedStatus(); };WebForm_DoCallback('ctl00$m$am',param,callback,ctx,null,true); }
+//]]>
+</script>
+<script src="/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvg1fj7ktPtEd4okmN6zMK0dFsDzgGBSKc4ufwaqIptqZkXbrY1MT_xpDMnSN7SMER_W3Q7B6vBJVqOhB5O1pJhkRxPCeHkaiXRdtKX4WWjeUOnjpqFrW-bteetw7qTanGh7LlZAjkVERbRbe8BGdCnQ1&amp;t=ffffffffaa493ab8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8OAVQ_xEXGicjePSDyRWrp5vzPartgwOL4mLQg6oR6vKj8DJi9zzw8neVXecKSIKvvhAaiW77kSilA25V8WDTYPvLYLpSIec0n201fHizdn1yXMCZrRw2AkT0pA3_k1EuzBraCzFUSQOpdafZIIeAGfo1&amp;t=ffffffffaa493ab8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=eE6V8nDbUVn0gtG6hKNX_E2QyfDzLXcOL5d033k179UEyJdyxmZLJttbj979fT-KqvBW30iDWMnzK-9bN2TV4ofyJCbH_BkH8MqUTELm2kv6nTLVSjalqN-qyG4sAOB00&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=mcAASOSteirJeuV-3by3UUmkjBsnW5SD0SiEH8rlKOXujnXm8CqwGTjFvPCq3x5Ifw39LIfBjZtQ6YpMZgWaCdM1JldAQ5XjE7TiqLREITY1&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=jwf4VSQi7LeShc44FJ-gAfFAc60xzNpPD9NsaRsyhuwjRyPVfTPek0bCKLfen8mg5v2WbHCZXgV-XH4njsCUHOsm8N_FI0SP8aGQDDFwK-qFnx3o5CpV-kwHUe2ggiGm0&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=HEFpVKbnoeQjkjHkFKu3MKVWJjUTz1FP_fnNSdFzZQLuLrZf9riD1bLDfOGndmkfMKCr4G9TjZVta4tGG8QaYAmNwbdbu9GDTaO1gewPw3CuNkkV-gO8DwVOl9kNRfMc0&amp;t=27679117" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=X6kQKInQS5YQqruiTh57iPzLvbqAXNrBaz6VnSjSO51tB37gcoYiwgtMDUfijn_lsf1hP5fqI477cCPpcT7PH-5ZqoSrXmKqoJlUNUCQBdvhfKeSxSz9BAhq-aD0Lsrd0&amp;t=27679117" type="text/javascript"></script>
+<script type="text/javascript">
+	//<![CDATA[
+
+var CMS = CMS || {};
+CMS.Application = {
+  "language": "en",
+  "imagesUrl": "/CMSPages/GetResource.ashx?image=%5bImages.zip%5d%2f",
+  "isDebuggingEnabled": false,
+  "applicationUrl": "/",
+  "isDialog": false,
+  "isRTL": "false"
+};
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+null;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="65B97FBD" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="V1vdoxpl7Cvh97NqjmapOHceO84MWW1/nv0nc3J0iqAggo4f5nWRXMvig+D6Ript0Od/7h4iIEZHz11Q1vwTxS688lZt9QhIzYnl/My3f5B4/eafxKaJi26WnLTR/cwmlsAkFG/Uxtr4H4EUwITAaX/3HSH7gq7fcYEQ98YApOVmIjnXMiV+323W56+XCBfJTbJP4Lpxnm+MluorKORckeYY8IMfMPwYPew3TjekbYK+OfnRq8QJElih+NzBvU+qM4BDwbdZU0j2BypcqoVkUr9o6R0/qOa/5fC1uxCs7VLCc8ZkHJ5ayYVy2hQ4qFtacwyJIgeujqBh7skUhvtaV2uHDKFn4lAHRhTDFRgPwOc/yobUdzq6HSozwZUFl8MiFInTxGSr/IsfYLJqg3uNbB9NvrF42CXWi5hNvIXOoZuB7XSHzKXSsSzwb+FjM1MOKBN+ElI100gaD1cQm1MPzzJ0BmyI9BEFHclvazrAzJ8KpJuuJlmGvKws15qB8/RrwJamLRURZGwUMkvIzOQDKlIv/FPKwn5AHfyfeJezBhxVDbjBXH6SOe53kgsWGc0BhEIG7FUXDqLUQ1I+kn6j1jOQ7Tirli4P0yuBk5xPXHVfgOOWi6TLAZ4JsB+fsDwl1Jg7rIAUL2MxWPnyQh9jS48Ahn0azW2TemzPJ90i0PQWHeYgAC7yLUgaDpqw9+NwBrPCy5ENFGc6uqrkZNkGbzmyPuTY5Zgigu+QqTlQ/ZU=" />
+</div>
+        <!--
+        
+        
+        
+        
+        
+            -->
+        
+<header class="gutterb2New">
+    <div class="grey-strip">
+        <div class="inner">
+            
+            <a href="https://confluence.ihtsdotools.org/display/snomed/SNOMED+CT+COVID-19+Related+Content" class="ty10 downloadLink">Review our COVID-19 content</a>
+            <div id="SearchPanel" class="hidden absolute">
+                <div id="ctl00_header_search_SearchBox_border" class="WebPartBorder"><div id="ctl00_header_search_SearchBox" ><div class="PredictiveSearchBox"><div id="ctl00_header_search_SearchBox_pnlSearch" class="searchBox" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;ctl00_header_search_SearchBox_btnSearch&#39;)">
+	
+    
+    <input type="hidden" name="ctl00$header$search$SearchBox$txtWord_exWatermark_ClientState" id="ctl00_header_search_SearchBox_txtWord_exWatermark_ClientState" /><input name="ctl00$header$search$SearchBox$txtWord" type="text" maxlength="23" id="ctl00_header_search_SearchBox_txtWord" class="form-control" placeholder="Search our organisation, products and services" />
+    <input type="submit" name="ctl00$header$search$SearchBox$btnSearch" value="Search" id="ctl00_header_search_SearchBox_btnSearch" class="btn btn-default" />
+    
+    <div id="ctl00_header_search_SearchBox_pnlPredictiveResultsHolder" class="predictiveSearchHolder">
+
+	</div>
+
+</div>
+</div></div></div>
+
+                <img src="/assets/search_new.svg" alt="search" id="SubmitSearch" class="pointer">
+                <span id="CloseSearch" class="ty10 pointer">Close search</span>
+            </div>
+
+            <div class="navigation-container floatR" id="secondaryNav">
+                <ul class="secondary-nav list-reset">
+                    
+                    <li class="inline-block phablet-hide"><a href="/" class="ty10" target="_self">Home</a><span class="">|</span></li>
+                    
+                    <li class="inline-block phablet-hide"><a href="/our-organization/our-organization" class="ty10" target="_self">Our organization</a><span class="">|</span></li>
+                    
+                    <li class="inline-block phablet-hide"><a href="/news-and-events/news" class="ty10" target="_self">News</a><span class="">|</span></li>
+                    
+                    <li class="inline-block phablet-hide"><a href="/news-and-events/events" class="ty10" target="_self">Events</a><span class="">|</span></li>
+                    
+                    <li class="inline-block phablet-hide"><a href="/resources/resources" class="ty10" target="_self">Resources</a><span class="hide">|</span></li>
+                    
+                </ul>
+                <div class="searchButton">
+                    <span>Search...</span>
+                    <img src="/assets/search_new.svg" alt="search" id="OpenSearch" />
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    <div class="white-strip">
+        <div class="inner">
+            <a href="/" id="top" class="new-logo">
+                <img src="/assets/SNOMED_logo_200pc.png" class="snomed-logo" alt="Snomed - Leading healthcare terminology worldwide" />
+
+            </a>
+
+            <div class="navigation-containerNew floatR">
+                
+                
+                <div class="containerPrimaryNav phablet-hide firstItems" data-menunew="SNOMED International">
+                    <div class="topItem">
+                        <a href="#" class="ty6 blue  phablet-hide topItemA" target="_self">SNOMED International</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/snomed-international/who-we-are" class="ty6 blue  phablet-hide" target="_self">Who we are</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/snomed-international/our-partners" class="ty6 blue  phablet-hide" target="_self">Our partners</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/our-customers/vendors/marketplace" class="ty6 blue  phablet-hide" target="_self">Our marketplace</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/snomed-international/get-involved" class="ty6 blue  phablet-hide" target="_self">Get involved</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/snomed-international/learn-more" class="ty6 blue  phablet-hide" target="_self">Learn more</a>
+                    </div>
+                    
+
+                    
+                </div>
+                
+                
+                <div class="containerPrimaryNav phablet-hide firstItems" data-menunew="SNOMED CT">
+                    <div class="topItem">
+                        <a href="#" class="ty6 blue  phablet-hide topItemA" target="_self">SNOMED CT</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/snomed-ct/why-snomed-ct" class="ty6 blue  phablet-hide" target="_self">The value of SNOMED CT</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/snomed-ct/five-step-briefing" class="ty6 blue  phablet-hide" target="_self">SNOMED CT: a five-step briefing</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/snomed-ct/snomed-in-action" class="ty6 blue  phablet-hide" target="_self">SNOMED in Action</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/snomed-ct/get-snomed" class="ty6 blue  phablet-hide" target="_self">Get SNOMED CT</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/snomed-ct/Use-SNOMED-CT" class="ty6 blue  phablet-hide" target="_self">Use SNOMED CT</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/snomed-ct/education" class="ty6 blue  phablet-hide" target="_self">Education</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/snomed-ct/software-tools" class="ty6 blue  phablet-hide" target="_self">Software and tools</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/snomed-ct/other-snomed-products" class="ty6 blue  phablet-hide" target="_self">Other SNOMED products</a>
+                    </div>
+                    
+
+                    
+                </div>
+                
+                
+                <div class="containerPrimaryNav phablet-hide last" data-menunew="Our stakeholders">
+                    <div class="topItem">
+                        <a href="#" class="ty6 blue  phablet-hide topItemA" target="_self">Our stakeholders</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/our-stakeholders/members" class="ty6 blue  phablet-hide" target="_self">Members</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/our-stakeholders/clinicians" class="ty6 blue  phablet-hide" target="_self">Clinicians</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/our-stakeholders/vendors" class="ty6 blue  phablet-hide" target="_self">Vendors</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/our-stakeholders/implementers" class="ty6 blue  phablet-hide" target="_self">Implementers</a>
+                    </div>
+                    
+                    <div class="navItem">
+                        <a href="/our-stakeholders/other-stakeholders" class="ty6 blue  phablet-hide" target="_self">Other stakeholders</a>
+                    </div>
+                    
+
+                    
+                </div>
+                
+                <a href="home" class="ty6 deep-grey padding1 desktop-hide hamburger" data-menu="mobile">&equiv;</a>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="relative outer-margin">
+
+        <div class="navigation-container absolute">
+        </div>
+    </div>
+
+    
+<div data-menu="SNOMED International" class="dropdown-primary clearfix bg-light-blue deep-grey mx-auto">
+    <a href="#" class="ty6 deep-grey desktop-hide paddingx1" data-menu="mobile">SNOMED International</a>
+    <div class="sm-hide lg-col lg-col-2">&nbsp;</div>
+    <div class="sm-col sm-col-12 lg-col lg-col-4 paddingx1 first-nav-column">
+        <ul class="list-reset">
+            
+            <li><a href="/snomed-international/who-we-are" class="ty6 deep-grey" target="_self">Who we are</a></li>
+            
+            <li><a href="/snomed-international/our-partners" class="ty6 deep-grey" target="_self">Our partners</a></li>
+            
+            <li><a href="/our-customers/vendors/marketplace" class="ty6 deep-grey" target="_self">Our marketplace</a></li>
+            
+            <li><a href="/snomed-international/get-involved" class="ty6 deep-grey" target="_self">Get involved</a></li>
+            
+            <li><a href="/snomed-international/learn-more" class="ty6 deep-grey" target="_self">Learn more</a></li>
+            
+        </ul>
+    </div>
+    <div class="sm-col sm-col-12 lg-col lg-col-4 second-nav-column">
+        
+        <ul class="list-reset">
+            
+        </ul>
+        
+    </div>
+    <div class="sm-hide lg-col lg-col-2">&nbsp;</div>
+</div>
+
+<div data-menu="SNOMED CT" class="dropdown-primary clearfix bg-light-blue deep-grey mx-auto">
+    <a href="#" class="ty6 deep-grey desktop-hide paddingx1" data-menu="mobile">SNOMED CT</a>
+    <div class="sm-hide lg-col lg-col-2">&nbsp;</div>
+    <div class="sm-col sm-col-12 lg-col lg-col-4 paddingx1 first-nav-column">
+        <ul class="list-reset">
+            
+            <li><a href="/snomed-ct/why-snomed-ct" class="ty6 deep-grey" target="_self">The value of SNOMED CT</a></li>
+            
+            <li><a href="/snomed-ct/five-step-briefing" class="ty6 deep-grey" target="_self">SNOMED CT: a five-step briefing</a></li>
+            
+            <li><a href="/snomed-ct/snomed-in-action" class="ty6 deep-grey" target="_self">SNOMED in Action</a></li>
+            
+            <li><a href="/snomed-ct/get-snomed" class="ty6 deep-grey" target="_self">Get SNOMED CT</a></li>
+            
+            <li><a href="/snomed-ct/Use-SNOMED-CT" class="ty6 deep-grey" target="_self">Use SNOMED CT</a></li>
+            
+            <li><a href="/snomed-ct/education" class="ty6 deep-grey" target="_self">Education</a></li>
+            
+            <li><a href="/snomed-ct/software-tools" class="ty6 deep-grey" target="_self">Software and tools</a></li>
+            
+            <li><a href="/snomed-ct/other-snomed-products" class="ty6 deep-grey" target="_self">Other SNOMED products</a></li>
+            
+        </ul>
+    </div>
+    <div class="sm-col sm-col-12 lg-col lg-col-4 second-nav-column">
+        
+        <ul class="list-reset">
+            
+        </ul>
+        
+    </div>
+    <div class="sm-hide lg-col lg-col-2">&nbsp;</div>
+</div>
+
+<div data-menu="Our stakeholders" class="dropdown-primary clearfix bg-light-blue deep-grey mx-auto">
+    <a href="#" class="ty6 deep-grey desktop-hide paddingx1" data-menu="mobile">Our stakeholders</a>
+    <div class="sm-hide lg-col lg-col-2">&nbsp;</div>
+    <div class="sm-col sm-col-12 lg-col lg-col-4 paddingx1 first-nav-column">
+        <ul class="list-reset">
+            
+            <li><a href="/our-stakeholders/members" class="ty6 deep-grey" target="_self">Members</a></li>
+            
+            <li><a href="/our-stakeholders/clinicians" class="ty6 deep-grey" target="_self">Clinicians</a></li>
+            
+            <li><a href="/our-stakeholders/vendors" class="ty6 deep-grey" target="_self">Vendors</a></li>
+            
+            <li><a href="/our-stakeholders/implementers" class="ty6 deep-grey" target="_self">Implementers</a></li>
+            
+            <li><a href="/our-stakeholders/other-stakeholders" class="ty6 deep-grey" target="_self">Other stakeholders</a></li>
+            
+        </ul>
+    </div>
+    <div class="sm-col sm-col-12 lg-col lg-col-4 second-nav-column">
+        
+        <ul class="list-reset">
+            
+        </ul>
+        
+    </div>
+    <div class="sm-hide lg-col lg-col-2">&nbsp;</div>
+</div>
+
+
+    <div class="dropdown-primary-mobile dropdown-primary clearfix bg-light-blue deep-grey mx-auto" data-menu="mobile">
+        <div class="topBlueSpot">
+            &nbsp;
+        </div>
+        <ul class="primary-nav-mobile list-reset">
+            
+<li class="mobileMainEle marginr1 block fit "><a href="#" class="ty6 white has-secondary" target="_self">SNOMED International</a>
+    <ul class="dropdown-secondary list-reset">
+        
+        <li><a href="/snomed-international/who-we-are" class="ty6 deep-grey" target="_self">Who we are</a></li>
+        
+        <li><a href="/snomed-international/our-partners" class="ty6 deep-grey" target="_self">Our partners</a></li>
+        
+        <li><a href="/our-customers/vendors/marketplace" class="ty6 deep-grey" target="_self">Our marketplace</a></li>
+        
+        <li><a href="/snomed-international/get-involved" class="ty6 deep-grey" target="_self">Get involved</a></li>
+        
+        <li><a href="/snomed-international/learn-more" class="ty6 deep-grey" target="_self">Learn more</a></li>
+        
+    </ul>
+</li>
+
+<li class="mobileMainEle marginr1 block fit "><a href="#" class="ty6 white has-secondary" target="_self">SNOMED CT</a>
+    <ul class="dropdown-secondary list-reset">
+        
+        <li><a href="/snomed-ct/why-snomed-ct" class="ty6 deep-grey" target="_self">The value of SNOMED CT</a></li>
+        
+        <li><a href="/snomed-ct/five-step-briefing" class="ty6 deep-grey" target="_self">SNOMED CT: a five-step briefing</a></li>
+        
+        <li><a href="/snomed-ct/snomed-in-action" class="ty6 deep-grey" target="_self">SNOMED in Action</a></li>
+        
+        <li><a href="/snomed-ct/get-snomed" class="ty6 deep-grey" target="_self">Get SNOMED CT</a></li>
+        
+        <li><a href="/snomed-ct/Use-SNOMED-CT" class="ty6 deep-grey" target="_self">Use SNOMED CT</a></li>
+        
+        <li><a href="/snomed-ct/education" class="ty6 deep-grey" target="_self">Education</a></li>
+        
+        <li><a href="/snomed-ct/software-tools" class="ty6 deep-grey" target="_self">Software and tools</a></li>
+        
+        <li><a href="/snomed-ct/other-snomed-products" class="ty6 deep-grey" target="_self">Other SNOMED products</a></li>
+        
+    </ul>
+</li>
+
+<li class="mobileMainEle marginr1 block fit "><a href="#" class="ty6 white has-secondary" target="_self">Our stakeholders</a>
+    <ul class="dropdown-secondary list-reset">
+        
+        <li><a href="/our-stakeholders/members" class="ty6 deep-grey" target="_self">Members</a></li>
+        
+        <li><a href="/our-stakeholders/clinicians" class="ty6 deep-grey" target="_self">Clinicians</a></li>
+        
+        <li><a href="/our-stakeholders/vendors" class="ty6 deep-grey" target="_self">Vendors</a></li>
+        
+        <li><a href="/our-stakeholders/implementers" class="ty6 deep-grey" target="_self">Implementers</a></li>
+        
+        <li><a href="/our-stakeholders/other-stakeholders" class="ty6 deep-grey" target="_self">Other stakeholders</a></li>
+        
+    </ul>
+</li>
+
+<li class="mobileMainEle marginr1 block fit  mobile-show"><a href="/our-organization/our-organization" class="ty6 white " target="_self">Our organization</a>
+    <ul class="dropdown-secondary list-reset">
+        
+    </ul>
+</li>
+
+<li class="mobileMainEle marginr1 block fit  mobile-show"><a href="/news-and-events/news" class="ty6 white " target="_self">News</a>
+    <ul class="dropdown-secondary list-reset">
+        
+    </ul>
+</li>
+
+<li class="mobileMainEle marginr1 block fit  mobile-show"><a href="/news-and-events/events" class="ty6 white " target="_self">Events</a>
+    <ul class="dropdown-secondary list-reset">
+        
+    </ul>
+</li>
+
+<li class="mobileMainEle marginr1 block fit  mobile-show"><a href="/resources/resources" class="ty6 white " target="_self">Resources</a>
+    <ul class="dropdown-secondary list-reset">
+        
+    </ul>
+</li>
+
+        </ul>
+    </div>
+
+
+</header>
+
+
+
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$manScript', 'aspnetForm', ['tctl00$ctxM',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+        <div id="ctl00_ctxM">
+
+</div>
+        <span id="ctl00_lblText"></span>
+        
+    
+<div class="main-carousel">
+
+
+    
+<div class="main-carousel-item cover relative carousel-item-item_549" >
+    <div class="carousel-item">
+        <div class="carousel-image" ><img src="/SNOMED/media/SNOMED/header-images/search-2-header.jpg?ext=.jpg" class="right" /></div>
+    </div>
+    <div class="caption">
+        
+    <H1 class="ty1">SNOMED in Action</H1>
+        
+     </div>
+            
+    <style style="display: none">
+    .carousel-item-item_549
+        {
+            background-image: url("/SNOMED/media/SNOMED/header-images/search-2-header.jpg?ext=.jpg");
+        }
+</style>
+</div>
+
+</div>
+
+
+<div class="main-carousel-text clearfix light paddingy30 marginb1" id="SNOMED_in_Action_enables_information_sharing_among_implementers_about_their_SNOMED_CT_implementation_experiences_globally.">
+    <div class="container mx-auto">
+        <div class="unflex  light">
+            
+        <H1 class="blue mx-auto ty3 heading">SNOMED in Action enables information sharing among implementers about their SNOMED CT implementation experiences globally.</H1>
+            
+        <p class="mx-auto ty9 introbody">
+            Leverage learnings and register your implementation as part of SNOMED in Action.
+        </p>
+            
+        </div>
+    </div>
+</div>
+<div class="container mx-auto">
+<section class="search-case-studies paddingy1 marginb1 paddingl1  marginnr1 bg-deep-grey">
+        <h3 class="column one-third ty4 white marginnl1 ">Search case studies</h3>
+        <div class="column one-third paddingr1  force-zero-margin">
+            <label for="categories" class="ty10 white">Select an option</label>
+            <select name="ctl00$plcMain$ctl02$categories" id="ctl00_plcMain_ctl02_categories" class="ty10 js-case-studies-categories">
+	<option value="">Categories</option>
+	<option value="Allergies">Allergies</option>
+	<option value="Clinical decision support">Clinical decision support</option>
+	<option value="Clinical documentation">Clinical documentation</option>
+	<option value="Computerized physician order entry">Computerized physician order entry</option>
+	<option value="Diagnostic imaging">Diagnostic imaging</option>
+	<option value="e-Prescribing">e-Prescribing</option>
+	<option value="e-Referral">e-Referral</option>
+	<option value="Electronic health record">Electronic health record</option>
+	<option value="Electronic medical record">Electronic medical record</option>
+	<option value="Electronic patient record">Electronic patient record</option>
+	<option value="Emergency">Emergency</option>
+	<option value="General">General</option>
+	<option value="Health information exchange">Health information exchange</option>
+	<option value="Immunizations">Immunizations</option>
+	<option value="Laboratory">Laboratory</option>
+	<option value="Multiple domains">Multiple domains</option>
+	<option value="Personal health record">Personal health record</option>
+	<option value="Public health">Public health</option>
+	<option value="Registries">Registries</option>
+	<option value="Research">Research</option>
+	<option value="Synoptic reporting">Synoptic reporting</option>
+	<option value="Terminology tools &amp; services">Terminology tools &amp; services</option>
+
+</select>
+
+        </div>
+        <div class="column one-third paddingr1 force-zero-margin relative">
+            <label for="regions" class="ty10 white">Select an option</label>
+            <select name="ctl00$plcMain$ctl02$regions" id="ctl00_plcMain_ctl02_regions" class="ty10 js-case-studies-regions">
+	<option value="">Region</option>
+	<option value="Americas">Americas</option>
+	<option value="EMEA">EMEA</option>
+	<option value="Asia Pacific">Asia Pacific</option>
+
+</select>
+            <button class="cta grey" type="button" data-search-results="/snomed-ct/snomed-in-action/search-results"></button>
+        </div>
+    <div class="hidden error-message">Please select from the dropdowns above.</div>
+    <a class="SeeAllCaseStudies" href="/snomed-ct/snomed-in-action/search-results">Scan all case studies</a>
+</section>
+</div>
+<div class="container mx-auto">
+    <div class="LocationBlocks clearfix paddingb1 margint1">
+        
+<section class="column one-third">
+    <div class="topbar topbar-green bg-super-light-grey relative">
+        <h3 class="ty4 paddingx1 margin0">Americas</h3>
+        <img src="/SNOMED/media/SNOMED/locations/regions_map_americas.jpg?ext=.jpg"  alt="Americas" class="fit paddingx1 paddingb1" />
+
+        
+        <a href="/snomed-ct/snomed-in-action/search-results?region=Americas" class="ty6 align-right location-cta cta paddingx1 paddingy05" target="_self">Explore</a>
+        
+    </div>
+</section>
+
+<section class="column one-third">
+    <div class="topbar topbar-red bg-super-light-grey relative">
+        <h3 class="ty4 paddingx1 margin0">EMEA</h3>
+        <img src="/SNOMED/media/SNOMED/locations/regions_map_EMEA.jpg?ext=.jpg"  alt="EMEA" class="fit paddingx1 paddingb1" />
+
+        
+        <a href="/snomed-ct/snomed-in-action/search-results?region=EMEA" class="ty6 align-right location-cta cta paddingx1 paddingy05" target="_self">Explore</a>
+        
+    </div>
+</section>
+
+<section class="column one-third">
+    <div class="topbar topbar-yellow bg-super-light-grey relative">
+        <h3 class="ty4 paddingx1 margin0">Asia Pacific</h3>
+        <img src="/SNOMED/media/SNOMED/locations/regions_map_asia-pacific.jpg?ext=.jpg"  alt="Asia Pacific" class="fit paddingx1 paddingb1" />
+
+        
+        <a href="/snomed-ct/snomed-in-action/search-results?region=Asia%20Pacific" class="ty6 align-right location-cta cta paddingx1 paddingy05" target="_self">Explore</a>
+        
+    </div>
+</section>
+
+    </div>
+</div>
+
+<div class="clearfix container mx-auto casestudies margint1 ">
+    <section class="column">
+        <div class="casestudies-inner topbar topbar-blue bg-super-light-grey relative clearfix">
+            <h3 class="ty4 px2 ">Featured case studies</h3>
+            <div class="">
+                
+<div class="casestudy column one-third ">
+    <div class="CaseStudyItem">
+        <div class="relative ">
+            <img src="/SNOMED/media/SNOMED/case-studies/Case-Study-6.jpg?ext=.jpg" alt="feature title" class="fit" />
+            <p class="casestudy-text paddingx1 ty7">East London Integrated Care Programme</p>
+            <div class="item-link bg-blue">
+                <a href="/snomed-ct/case-studies/east-london-integrated-care-programme" class="ty6 white paddingx1 paddingr2 paddingy05 cta" target="_self">Read more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="casestudy column one-third ">
+    <div class="CaseStudyItem">
+        <div class="relative ">
+            <img src="/SNOMED/media/SNOMED/case-studies/Case-Study-10.jpg?ext=.jpg" alt="feature title" class="fit" />
+            <p class="casestudy-text paddingx1 ty7">Australian Medicines Terminology</p>
+            <div class="item-link bg-blue">
+                <a href="/snomed-ct/case-studies/australian-medicines-terminology" class="ty6 white paddingx1 paddingr2 paddingy05 cta" target="_self">Read more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="casestudy column one-third ">
+    <div class="CaseStudyItem">
+        <div class="relative ">
+            <img src="/SNOMED/media/SNOMED/case-studies/case-study_test_1.jpg?ext=.jpg" alt="feature title" class="fit" />
+            <p class="casestudy-text paddingx1 ty7">Implementing a single EHR system across different hospital sites...</p>
+            <div class="item-link bg-blue">
+                <a href="/snomed-ct/case-studies/hospital-management-tool-that-maintains-snomed-ct" class="ty6 white paddingx1 paddingr2 paddingy05 cta" target="_self">Read more</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="subscribe-panel marginb1">
+    <div class="container mx-auto">
+        <div class="unflex topbar topbar-red bg-super-light-grey">
+            
+            <h3 class="paddingl1 mx-auto ty4 heading">Register</h3>
+            
+            <p class="paddingl1 mx-auto ty9 introbody">
+                Register with us and submit your own case study.
+            </p>
+            
+            <div class="bg-medium-grey text-right paddingr2 paddingy05 relative">
+                
+                <a href="/snomed-ct/snomed-in-action/case-study-registration" class="cta white bg-medium-grey" target="_self">Register</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mx-auto">
+<div class="Features clearfix paddingb1">
+
+    
+<div class="FeatureBox column one-half">
+    <div class="FeatureItem relative ">
+        <img src="/SNOMED/media/SNOMED/feature-boxes/25301489_custom.jpg?ext=.jpg" alt="feature title" class="fit" />
+        <h3 class="ty2 white">Latest news</h3>
+        <div class="item-link bg-alpha80-light-blue">
+            <a href="/news-and-events/news" target="_self" class="ty8 deep-grey paddingl1 paddingr2 cta cta-blue">Read about our latest news, newsletters and events</a>
+        </div>
+    </div>
+</div>
+
+<div class="FeatureBox column one-half">
+    <div class="FeatureItem relative ">
+        <img src="/SNOMED/media/SNOMED/feature-boxes/FAQs.png?ext=.png" alt="feature title" class="fit" />
+        <h3 class="ty2 white">FAQs</h3>
+        <div class="item-link bg-alpha80-light-blue">
+            <a href="https://ihtsdo.freshdesk.com/support/home" target="_blank" class="ty8 deep-grey paddingl1 paddingr2 cta cta-blue">Answers to frequently asked questions about SNOMED International</a>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+
+        <div class="">
+            
+            
+            
+<div class="container mx-auto marginb1 margint1 height2 relative">
+    <a href="#top" id="back-to-top" class="back-to-top right">top</a>
+</div>
+<footer class="margint1 paddingy2 clearfix footer relative">
+    <div class="footer-inner container mx-auto unflex paddingx1">
+        <div class="feedback-social left mx-auto unflex fit">
+            <div class="left ">
+                <ul class="social list-reset">
+                    <li class="feedback-link inline-block"><a title="Feedback" class="pointer" href="/help-center/help-center"><img src="/assets/btn_feedback.svg" /></a></li>
+                    <li class="linkedin inline-block"><a title="LinkedIn" class="pointer" href="https://www.linkedin.com/company/ihtsdo/"><img src="/assets/icon_linked-in.svg" /></a></li>
+                    <li class="twitter inline-block"><a title="Twitter" class="pointer" href="https://twitter.com/SnomedCT?lang=en"><img src="/assets/icon_twitter.svg" /></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mx-auto unflex fit">
+            <ul class="footer-nav list-reset left sm-col sm-col-12 lg-col lg-col-6 padding0 margin0 marginb2 ty10">
+                
+                <li><a href="http://snomed.org/snomedtools-privacy" target="_blank" class="ty10">Privacy</a><span>|</span></li>
+                
+                <li><a href="/Sitemap" target="_self" class="ty10">Sitemap</a><span>|</span></li>
+                
+                <li><a href="/help-center/contact-us" target="_self" class="ty10">Contact us</a><span>|</span></li>
+                
+            </ul>
+            <div class="copyright right-align sm-col sm-col-12 lg-col lg-col-6 ty10">&copy; SNOMED International 2022</div>
+            <div class="ty11 relative bottom marginb2 fit">
+                <div class="footer-info left sm-col sm-col-12 lg-col lg-col-8 align-top">
+                    SNOMED International<br class="xs-hide" />
+Registered in England and Wales | Company Registration Number 9915820
+                </div>
+                <a href="http://www.nucleus.co.uk/" target="_blank" class="experience-by-nucleus right-align sm-col sm-col-12 lg-col lg-col-4 table-cell align-bottom ty11">Brand experience by Nucleus</a>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+        </div>
+        
+<div class="container fixed bottom marginy1 bg-dark-grey cookie-notice paddingy1">
+    <div class="">
+        This website uses cookies to improve user experience. By using our website you consent to all cookies in accordance with our <a href="http://snomed.org/snomedtools-privacy" target="_blank">Cookie Policy</a>.
+    </div>
+    <button class="ty2 cta agree-button relative">I agree</button>
+</div>
+
+    
+
+<script type="text/javascript">
+	//<![CDATA[
+var predictiveSearchObject_ctl00_header_search_SearchBox = new PredictiveSearchExtender('ctl00_header_search_SearchBox', 'ctl00_header_search_SearchBox_txtWord', 'ctl00_header_search_SearchBox_pnlPredictiveResultsHolder', 2, true, 'selectedResult', 'predictiveSearchResults');
+predictiveSearchObject_ctl00_header_search_SearchBox.CallPredictiveSearch = function(arg, context) { predictiveSearchObject_ctl00_header_search_SearchBox.RecieveSearchResults(callPredictiveSearch(arg), context);}
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+
+var callBackFrameUrl='/WebResource.axd?d=beToSAE3vdsL1QUQUxjWdYm9fInIfCeKdb0rJ9faepOZZT_X18UjFSZZ6tm1XPBcL-nn97adZiGPexnanU6THA2&t=637823365705833095';
+WebForm_InitCallback();Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.TextBoxWatermarkBehavior, {"ClientStateFieldID":"ctl00_header_search_SearchBox_txtWord_exWatermark_ClientState","id":"ctl00_header_search_SearchBox_txtWord_exWatermark","watermarkCssClass":" WatermarkText","watermarkText":"Search our organisation, products and services"}, null, null, $get("ctl00_header_search_SearchBox_txtWord"));
+});
+//]]>
+</script>
+</form>
+    <script type="text/javascript" src="/Scripts/combined/site_298C10C04C13DA92F64DBC17710D2FE4.js"></script>
+</body>
+</html>
+

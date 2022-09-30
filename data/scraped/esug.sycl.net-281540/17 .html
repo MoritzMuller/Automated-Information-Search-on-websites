@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+<html id="ctl00_html" lang="">
+<head id="ctl00_Head1"><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63110913-1', 'auto');
+  ga('send', 'pageview');
+
+</script><title>
+	Naturalliance, second edition - SYCL
+</title><meta name="Description" content="SYCL: Naturalliance, second edition" /><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgo=" /> <!-- to stop browsers reporting this missing -->
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" /><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" /><link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" /><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /><link rel="stylesheet" href="/styles/site-content.css" /><link rel="stylesheet" href="/styles/site.css?20220310" /><link rel="stylesheet" href="/styles/site-heading.css?20220310" /><link rel="stylesheet" href="/styles/content-templates.css" />
+<link rel="canonical" href="https://esug.sycl.net/6/10/naturalliance,-second-edition" /><link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" rel="stylesheet" type="text/css" /><script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script></head>
+<body>
+    <form method="post" action="/6/10/naturalliance,-second-edition" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTg0Mjk1MzgyOQ9kFgJmD2QWAgIBDxYCHgRsYW5nZRYEAgEPZBYCAgIPFgIeB2NvbnRlbnQFI1NZQ0w6IE5hdHVyYWxsaWFuY2UsIHNlY29uZCBlZGl0aW9uZAIDDxYCHgZhY3Rpb24FIy82LzEwL25hdHVyYWxsaWFuY2UsLXNlY29uZC1lZGl0aW9uFgICBQ8WAh4FY2xhc3MFEXBhZ2UgY2VudHJhbC1wYWdlFggCAQ9kFgZmDxYCHglpbm5lcmh0bWwFsws8ZGl2IGNsYXNzPSdjb250YWluZXInPjxkaXYgY2xhc3M9J21lbnUtYnV0dG9uLWNvbnRhaW5lcicgPg0KICAgICAgICA8YnV0dG9uIHR5cGU9J2J1dHRvbicgY2xhc3M9J21lbnUtYnV0dG9uJz4NCiAgICAgICAgICAgIDxzcGFuIGNsYXNzPSdzci1vbmx5Jz4NCiAgICAgICAgICAgICAgICA8c3Bhbj5Ub2dnbGUgbmF2aWdhdGlvbjwvc3Bhbj4NCiAgICAgICAgICAgIDwvc3Bhbj4NCiAgICAgICAgICAgIDxzcGFuIGNsYXNzPSdpY29uLWJhcic+PC9zcGFuPg0KICAgICAgICAgICAgPHNwYW4gY2xhc3M9J2ljb24tYmFyJz48L3NwYW4+DQogICAgICAgICAgICA8c3BhbiBjbGFzcz0naWNvbi1iYXInPjwvc3Bhbj4NCiAgICAgICAgPC9idXR0b24+DQogICAgPC9kaXY+PGRpdiBjbGFzcz0ndGl0bGUtYW5kLW1lbnUtY29udGFpbmVyJz4NCiAgICA8YSBjbGFzcz0ndGl0bGUtY29udGFpbmVyJyBocmVmPScvMS9vdXItbWlzc2lvbi1hbmQtb2JqZWN0aXZlcyc+DQogICAgICAgIDxoMT4NCiAgICAgICAgICAgIEV1cm9wZWFuIFN1c3RhaW5hYmxlIFVzZSBHcm91cA0KICAgICAgICA8L2gxPiANCiAgICA8L2E+DQogICAgICAgICAgICANCiAgICA8bmF2IGNsYXNzPSd0b3AtbWVudS1jb250YWluZXInPg0KICAgICAgICA8dWwgY2xhc3M9J3RvcC1tZW51JyA+PGxpPg0KICAgIDxhIGhyZWY9Jy8xL291ci1taXNzaW9uLWFuZC1vYmplY3RpdmVzJz4NCiAgICAgICAgSG9tZQ0KICAgIDwvYT4NCjwvbGk+DQo8bGk+DQogICAgPGEgaHJlZj0nLzIvZXN1Zy1vYmplY3RpdmVzJz4NCiAgICAgICAgQWJvdXQNCiAgICA8L2E+DQo8L2xpPg0KPGxpPg0KICAgIDxhIGhyZWY9Jy8xMC9lc3VnLWdlbmVyYWwtbWVldGluZ3MnPg0KICAgICAgICBNZWV0aW5ncw0KICAgIDwvYT4NCjwvbGk+DQo8bGk+DQogICAgPGEgaHJlZj0nLzQvcmVwb3J0cy1hbmQtbWVldGluZy1kb2N1bWVudHMnPg0KICAgICAgICBEb2N1bWVudHMNCiAgICA8L2E+DQo8L2xpPg0KPGxpPg0KICAgIDxhIGhyZWY9Jy83L2NvbnRhY3QtdXMnPg0KICAgICAgICBDb250YWN0IFVzDQogICAgPC9hPg0KPC9saT4NCjxsaT4NCiAgICA8YSBocmVmPScvMTQvcmVnaXN0ZXInPg0KICAgICAgICBSZWdpc3Rlcg0KICAgIDwvYT4NCjwvbGk+DQo8bGkgY2xhc3M9J3NvY2lhbC1tZWRpYS1idXR0b24nPg0KICAgIDxhIGhyZWY9J2h0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9FdXJvcGVhbi1TdXN0YWluYWJsZS1Vc2UtR3JvdXAtRVNVRy0xMzY3OTA5MDc2NjgxOTIxLycgPjxpIGNsYXNzPSdmYSBmYS1mYWNlYm9vayc+PC9pPjxzcGFuPkZhY2Vib29rPC9zcGFuPjwvYT4NCjwvbGk+DQo8L3VsPg0KICAgICAgICAgICAgPC9uYXY+DQogICAgICAgICAgICA8ZGl2IGNsYXNzPSdjbGVhcic+Jm5ic3A7PC9kaXY+DQogICAgICAgIDwvZGl2Pg0KICAgICAgICA8ZGl2IGNsYXNzPSdjbGVhcic+Jm5ic3A7PC9kaXY+DQogICAgPC9kaXY+ZAICDxYCHwQFsws8ZGl2IGNsYXNzPSdjb250YWluZXInPjxkaXYgY2xhc3M9J21lbnUtYnV0dG9uLWNvbnRhaW5lcicgPg0KICAgICAgICA8YnV0dG9uIHR5cGU9J2J1dHRvbicgY2xhc3M9J21lbnUtYnV0dG9uJz4NCiAgICAgICAgICAgIDxzcGFuIGNsYXNzPSdzci1vbmx5Jz4NCiAgICAgICAgICAgICAgICA8c3Bhbj5Ub2dnbGUgbmF2aWdhdGlvbjwvc3Bhbj4NCiAgICAgICAgICAgIDwvc3Bhbj4NCiAgICAgICAgICAgIDxzcGFuIGNsYXNzPSdpY29uLWJhcic+PC9zcGFuPg0KICAgICAgICAgICAgPHNwYW4gY2xhc3M9J2ljb24tYmFyJz48L3NwYW4+DQogICAgICAgICAgICA8c3BhbiBjbGFzcz0naWNvbi1iYXInPjwvc3Bhbj4NCiAgICAgICAgPC9idXR0b24+DQogICAgPC9kaXY+PGRpdiBjbGFzcz0ndGl0bGUtYW5kLW1lbnUtY29udGFpbmVyJz4NCiAgICA8YSBjbGFzcz0ndGl0bGUtY29udGFpbmVyJyBocmVmPScvMS9vdXItbWlzc2lvbi1hbmQtb2JqZWN0aXZlcyc+DQogICAgICAgIDxoMT4NCiAgICAgICAgICAgIEV1cm9wZWFuIFN1c3RhaW5hYmxlIFVzZSBHcm91cA0KICAgICAgICA8L2gxPiANCiAgICA8L2E+DQogICAgICAgICAgICANCiAgICA8bmF2IGNsYXNzPSd0b3AtbWVudS1jb250YWluZXInPg0KICAgICAgICA8dWwgY2xhc3M9J3RvcC1tZW51JyA+PGxpPg0KICAgIDxhIGhyZWY9Jy8xL291ci1taXNzaW9uLWFuZC1vYmplY3RpdmVzJz4NCiAgICAgICAgSG9tZQ0KICAgIDwvYT4NCjwvbGk+DQo8bGk+DQogICAgPGEgaHJlZj0nLzIvZXN1Zy1vYmplY3RpdmVzJz4NCiAgICAgICAgQWJvdXQNCiAgICA8L2E+DQo8L2xpPg0KPGxpPg0KICAgIDxhIGhyZWY9Jy8xMC9lc3VnLWdlbmVyYWwtbWVldGluZ3MnPg0KICAgICAgICBNZWV0aW5ncw0KICAgIDwvYT4NCjwvbGk+DQo8bGk+DQogICAgPGEgaHJlZj0nLzQvcmVwb3J0cy1hbmQtbWVldGluZy1kb2N1bWVudHMnPg0KICAgICAgICBEb2N1bWVudHMNCiAgICA8L2E+DQo8L2xpPg0KPGxpPg0KICAgIDxhIGhyZWY9Jy83L2NvbnRhY3QtdXMnPg0KICAgICAgICBDb250YWN0IFVzDQogICAgPC9hPg0KPC9saT4NCjxsaT4NCiAgICA8YSBocmVmPScvMTQvcmVnaXN0ZXInPg0KICAgICAgICBSZWdpc3Rlcg0KICAgIDwvYT4NCjwvbGk+DQo8bGkgY2xhc3M9J3NvY2lhbC1tZWRpYS1idXR0b24nPg0KICAgIDxhIGhyZWY9J2h0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9FdXJvcGVhbi1TdXN0YWluYWJsZS1Vc2UtR3JvdXAtRVNVRy0xMzY3OTA5MDc2NjgxOTIxLycgPjxpIGNsYXNzPSdmYSBmYS1mYWNlYm9vayc+PC9pPjxzcGFuPkZhY2Vib29rPC9zcGFuPjwvYT4NCjwvbGk+DQo8L3VsPg0KICAgICAgICAgICAgPC9uYXY+DQogICAgICAgICAgICA8ZGl2IGNsYXNzPSdjbGVhcic+Jm5ic3A7PC9kaXY+DQogICAgICAgIDwvZGl2Pg0KICAgICAgICA8ZGl2IGNsYXNzPSdjbGVhcic+Jm5ic3A7PC9kaXY+DQogICAgPC9kaXY+ZAIEDxYCHwQFsws8ZGl2IGNsYXNzPSdjb250YWluZXInPjxkaXYgY2xhc3M9J21lbnUtYnV0dG9uLWNvbnRhaW5lcicgPg0KICAgICAgICA8YnV0dG9uIHR5cGU9J2J1dHRvbicgY2xhc3M9J21lbnUtYnV0dG9uJz4NCiAgICAgICAgICAgIDxzcGFuIGNsYXNzPSdzci1vbmx5Jz4NCiAgICAgICAgICAgICAgICA8c3Bhbj5Ub2dnbGUgbmF2aWdhdGlvbjwvc3Bhbj4NCiAgICAgICAgICAgIDwvc3Bhbj4NCiAgICAgICAgICAgIDxzcGFuIGNsYXNzPSdpY29uLWJhcic+PC9zcGFuPg0KICAgICAgICAgICAgPHNwYW4gY2xhc3M9J2ljb24tYmFyJz48L3NwYW4+DQogICAgICAgICAgICA8c3BhbiBjbGFzcz0naWNvbi1iYXInPjwvc3Bhbj4NCiAgICAgICAgPC9idXR0b24+DQogICAgPC9kaXY+PGRpdiBjbGFzcz0ndGl0bGUtYW5kLW1lbnUtY29udGFpbmVyJz4NCiAgICA8YSBjbGFzcz0ndGl0bGUtY29udGFpbmVyJyBocmVmPScvMS9vdXItbWlzc2lvbi1hbmQtb2JqZWN0aXZlcyc+DQogICAgICAgIDxoMT4NCiAgICAgICAgICAgIEV1cm9wZWFuIFN1c3RhaW5hYmxlIFVzZSBHcm91cA0KICAgICAgICA8L2gxPiANCiAgICA8L2E+DQogICAgICAgICAgICANCiAgICA8bmF2IGNsYXNzPSd0b3AtbWVudS1jb250YWluZXInPg0KICAgICAgICA8dWwgY2xhc3M9J3RvcC1tZW51JyA+PGxpPg0KICAgIDxhIGhyZWY9Jy8xL291ci1taXNzaW9uLWFuZC1vYmplY3RpdmVzJz4NCiAgICAgICAgSG9tZQ0KICAgIDwvYT4NCjwvbGk+DQo8bGk+DQogICAgPGEgaHJlZj0nLzIvZXN1Zy1vYmplY3RpdmVzJz4NCiAgICAgICAgQWJvdXQNCiAgICA8L2E+DQo8L2xpPg0KPGxpPg0KICAgIDxhIGhyZWY9Jy8xMC9lc3VnLWdlbmVyYWwtbWVldGluZ3MnPg0KICAgICAgICBNZWV0aW5ncw0KICAgIDwvYT4NCjwvbGk+DQo8bGk+DQogICAgPGEgaHJlZj0nLzQvcmVwb3J0cy1hbmQtbWVldGluZy1kb2N1bWVudHMnPg0KICAgICAgICBEb2N1bWVudHMNCiAgICA8L2E+DQo8L2xpPg0KPGxpPg0KICAgIDxhIGhyZWY9Jy83L2NvbnRhY3QtdXMnPg0KICAgICAgICBDb250YWN0IFVzDQogICAgPC9hPg0KPC9saT4NCjxsaT4NCiAgICA8YSBocmVmPScvMTQvcmVnaXN0ZXInPg0KICAgICAgICBSZWdpc3Rlcg0KICAgIDwvYT4NCjwvbGk+DQo8bGkgY2xhc3M9J3NvY2lhbC1tZWRpYS1idXR0b24nPg0KICAgIDxhIGhyZWY9J2h0dHBzOi8vd3d3LmZhY2Vib29rLmNvbS9FdXJvcGVhbi1TdXN0YWluYWJsZS1Vc2UtR3JvdXAtRVNVRy0xMzY3OTA5MDc2NjgxOTIxLycgPjxpIGNsYXNzPSdmYSBmYS1mYWNlYm9vayc+PC9pPjxzcGFuPkZhY2Vib29rPC9zcGFuPjwvYT4NCjwvbGk+DQo8L3VsPg0KICAgICAgICAgICAgPC9uYXY+DQogICAgICAgICAgICA8ZGl2IGNsYXNzPSdjbGVhcic+Jm5ic3A7PC9kaXY+DQogICAgICAgIDwvZGl2Pg0KICAgICAgICA8ZGl2IGNsYXNzPSdjbGVhcic+Jm5ic3A7PC9kaXY+DQogICAgPC9kaXY+ZAIFD2QWAgIBDxYCHgRUZXh0BR1OYXR1cmFsbGlhbmNlLCBzZWNvbmQgZWRpdGlvbmQCBw9kFgQCAQ8WAh4HVmlzaWJsZWcWAgIBDxYCHgRocmVmBUYvL3d3dy5zeWNsLm5ldC9jZW50cmFsX2ltYWdlLzAwMDEwL0dsb2NhbFN5c3RlbV82MzY4Mzc3NTMxNTM0NjAwMDAuanBnZAIDDxYCHwUFui48cD48YSBocmVmPSJodHRwOi8vd3d3Lml1Y24ub3JnIiB0YXJnZXQ9Il9ibGFuayI+SVVDTjwvYT4gc3RhcnRlZCB0aGUgaWRlYSB0aGF0IHN1c3RhaW5hYmxlIHVzZSBvZiB3aWxkIGxpdmluZyByZXNvdXJjZXMgY2FuIGJlIGEgcG93ZXJmdWwgdG9vbCBmb3IgY29uc2VydmluZyBuYXR1cmUuIFRoZSBVbml0ZWQgTmF0aW9ucyA8YSBocmVmPSJodHRwczovL3d3dy5jYmQuaW50LyIgdGFyZ2V0PSJfYmxhbmsiPkNvbnZlbnRpb24gb24gQmlvbG9naWNhbCBEaXZlcnNpdHk8L2E+LCBhZ3JlZWQgaW4gMTk5MiwgZGVmaW5lcyBzdXN0YWluYWJsZSB1c2UgYW5kIG1lbnRpb25zIGl0IG1vcmUgdGhhbiBmaXZlIHRpbWVzIGFzIG9mdGVuIGFzIHByb3RlY3Rpb24gb2Ygc3BlY2llcyBhbmQgaGFiaXRhdHMuIEl0IHdhcyBpbXBsaWNpdCBpbiBDQkQncyZuYnNwOzxhIGhyZWY9Imh0dHBzOi8vd3d3LmNiZC5pbnQvZWNvc3lzdGVtL3ByaW5jaXBsZXMuc2h0bWwiIHRhcmdldD0iX2JsYW5rIj5NYWxhd2kgUHJpbmNpcGxlcyAodGhlIEVjb3N5c3RlbSBBcHByb2FjaDwvYT4sJm5ic3A7MTk5OCksIElVQ04mcnNxdW87cyA8YSBocmVmPSJodHRwczovL3d3dy5pdWNuLm9yZy9zaXRlcy9kZXYvZmlsZXMvaW1wb3J0L2Rvd25sb2Fkcy9wb2xpY3lfZW4ucGRmIiB0YXJnZXQ9Il9ibGFuayI+QW1tYW4gU3RhdGVtZW50IG9uIHN1c3RhaW5hYmxlIHVzZTwvYT4mbmJzcDsoMjAwMCksIGFuZCBDQkQncyZuYnNwOzxhIGhyZWY9Imh0dHBzOi8vd3d3LmNiZC5pbnQvc3VzdGFpbmFibGUvYWRkaXMuc2h0bWwiIHRhcmdldD0iX2JsYW5rIj5BZGRpcyBBYmFiYSBQcmluY2lwbGVzIGFuZCBHdWlkZWxpbmVzPC9hPiZuYnNwOygyMDA0KSwgdGhhdCBjb25zZXJ2YXRpb24gdGhyb3VnaCBzdXN0YWluYWJsZSB1c2UgbmVlZHMgZGV2b2x1dGlvbiBvZiBhZGFwdGl2ZSBtYW5hZ2VtZW50IHRvIHBlb3BsZSBhcyBjbG9zZSBhcyBwb3NzaWJsZSB0byBsb2NhbCBsZXZlbC4gVGhlc2UgZG9jdW1lbnRzLCBpbml0aWF0ZWQgYnkgSVVDTiZyc3F1bztzIFN1c3RhaW5hYmxlIFVzZSBJbml0aWF0aXZlLCByZWZsZWN0ZWQgYXdha2VuaW5nIGluIEFmcmljYSBvZiA8YSBocmVmPSIvc2l0ZV9kb3dubG9hZC8wMDA2NC9DaGlsZF9fX0NoaWxkXzIwMTVfQ29uc2VydmF0aW9uX21vdmVtZW50X1ppbWJhYndlXzYzNjA2NjY0MTYyMzg5MDUxNi5wZGYiIHRhcmdldD0iX2JsYW5rIj5Db21tdW5pdHkgQmFzZWQgTmF0dXJhbCBSZXNvdXJjZSBNYW5hZ2VtZW50PC9hPi4gJm5ic3A7PC9wPgo8cD4mbmJzcDs8L3A+CjxwPkluIGNvbnRyYXN0LCBFdXJvcGUgZm9jdXNzZWQgb24gdG9wLWRvd24gbWVhc3VyZXMgdG8gY29uc3RyYWluIHVzZSBvZiB3aWxkIHJlc291cmNlcywgd2l0aCBtb3JlIGFuZCBtb3JlIGxhbmQgdXNlZCBpbnRlbnNpdmVseSBmb3IgcGxhbnQgYW5kIGFuaW1hbCBjcm9wcyB0byBtZWV0IGNvbnN1bWVyIGRlbWFuZCBhbmQgRVUtc3Vic2lkeS4gQ2hhcnRlcnMgd2VyZSBkZXZlbG9wZWQgYnkgQmVybiBDb252ZW50aW9uIHRvIGFkdmlzZSBnb3Zlcm5tZW50cyBhbmQgc29jaWV0aWVzIG9uIGNvbnNlcnZhdGlvbiB0aHJvdWdoIDxhIGhyZWY9Ii9maWxlX2xpbmsvMDAwODcvQmVybkNvbnZlbnRpb25DaGFydGVyc0NvbWJpbmVkNF82MzY5MzE1NzI1MDkxMzIwMDAucGRmIiB0YXJnZXQ9Il9ibGFuayI+aHVudGluZywgcmVjcmVhdGlvbmFsIGZpc2hpbmcgYW5kIGdhdGhlcmluZyBmdW5naTwvYT4uIFRoZXJlIGlzIGEgZ3Jvd2luZyBpbmNsaW5hdGlvbiBmb3Igc3RhdGUgZnVuZHMgdG8gYmUgdXNlZCB0byBlbmNvdXJhZ2UgY29uc2VydmF0aW9uIGJ5IGZhcm1lcnMgYW5kIGZvcmVzdGVycywgaWYgb25seSB0byBtYWludGFpbiB3YXRlciwgYWlyIGFuZCBjbGltYXRlIHF1YWxpdHkuIEhvd2V2ZXIsIGNvbnNlcnZpbmcgbmF0dXJlIHdoaWxlIGdyb3dpbmcgY3JvcHMgZWZmaWNpZW50bHkgaXMgY29tcGxleC4gQWx0aG91Z2ggYSBjb29wZXJhdGlvbiBvZiBJVUNOIGFuZCBVSydzIDxhIGhyZWY9Imh0dHBzOi8vd3d3LmNlaC5hYy51ay8iIHRhcmdldD0iX2JsYW5rIj5DZW50cmUgZm9yIEVjb2xvZ3kgJmFtcDsgSHlkcm9sb2d5PC9hPiBhbmQgSVVDTiBzYXcgPGEgaHJlZj0iL3NpdGVfZG93bmxvYWQvMDAwNjQvUkstVkdDX0lubm92YXRpb25zXyhDb0UtVU5FUClfNjM2MDMzODU2OTUyNjkxMzYyLnBkZiIgdGFyZ2V0PSJfYmxhbmsiPmEgd2F5IHRvIG1lZXQgdGhpcyBjaGFsbGVuZ2U8L2E+IDE4IHllYXJzIGFnbywgdHdvIEVVLWZ1bmRlZCBwcm9qZWN0cyB3ZXJlIG5lZWRlZDxhIGhyZWY9Ii9zaXRlX2Rvd25sb2FkLzAwMDY0L1RFU1MtRm9yZXdvcmRQcmVmYWNlSW50cm9Db25jbHVzaW9uc182MzYyNTcwNzIyMTYzNzM0MzIucGRmIiB0YXJnZXQ9Il9ibGFuayI+IHRvIGRlc2lnbiBhIHN5c3RlbTwvYT4mbmJzcDsgdGhhdCBjb3VsZCBjb21iaW5lIHNjaWVuY2Ugd2l0aCBsb2NhbCBrbm93bGVkZ2UgdG8gc3VwcG9ydCBsYW5kLXVzZSBkZWNpc2lvbnMgdGhhdCB3b3VsZCBiZSBnb29kIGZvciBuYXR1cmUgYXMgd2VsbCBhcyBmb3IgbGl2ZWxpaG9vZHMuIFNhZGx5LCBiZWZvcmUgc2F0bmF2cyBwdXQgQUktYmFzZWQgZGVjaXNpb24gc3VwcG9ydCBldmVyeXdoZXJlLCByZXZpZXdlcnMgb2YgYmlkcyBpbiAyMDEyLTE0IGRlZW1lZCB0aGUgc3lzdGVtIHRvbyBhbWJpdGlvdXMgdG8gZGV2ZWxvcC4gSG93ZXZlciwgYXQgbGFzdCB0aGF0IGhhcyBjaGFuZ2VkLjwvcD4KPHA+Jm5ic3A7PC9wPgo8cD48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxNnB4OyI+PHN0cm9uZz5Ib3Jpem9uMjAyMCBpbiB0aGUgRXVyb3BlYW4gVW5pb25zJ3MgR3JlZW4gRGVhbDwvc3Ryb25nPjwvc3Bhbj48L3A+CjxwPiZuYnNwOzwvcD4KPHA+Vm9sdW50ZWVycyBpbiBJVUNOIENvbW1pc3Npb25zIGFyZSBkZWRpY2F0ZWQgdG8gbmF0dXJlIGNvbnNlcnZhdGlvbiBhbmQgY29udGludWVkIGRldmVsb3BtZW50IHRvd2FyZHMgY29tbXVuaXR5LWJhc2VkIG5hdHVyZSBjb25zZXJ2YXRpb24gYW55d2F5LiBXZSBkZXZpc2VkIGEgd2F5IHRvIHNwZWVkIHVwdGFrZSBvZiBhbiBldmVudHVhbCBlbnZpcm9ubWVudGFsIHN1cHBvcnQgc3lzdGVtLCBieSBnZXR0aW5nIHBlb3BsZSBhY3Jvc3MgRXVyb3BlIHRoaW5raW5nIG9mIHRoZSBjb21tdW5pdHktYmFzZWQgbWFwcGluZyB0aGF0IGl0IHdvdWxkIHJlcXVpcmUsIGFuZCBieSBzdXJ2ZXlpbmcgdGhlbSBhYm91dCB3aGF0IGl0IG5lZWRlZCB0byBkby4gVGhlIHJlc3VsdCwgaW4gMjAxMSwgd2FzIDxhIGhyZWY9Imh0dHA6Ly93d3cubmF0dXJhbGxpYW5jZS5ldSIgdGFyZ2V0PSJfYmxhbmsiPm5hdHVyYWxsaWFuY2UuZXU8L2E+LiBTaW5jZSB0aGVuIGl0IGhhcyBiZWNvbWUgZXZlciBtb3JlIHVyZ2VudCBmb3IgcnVyYWwgY29tbXVuaXRpZXMgd29ybGR3aWRlIHRvIGxlYXJuIGZhc3QgaG93IHRvIGJlbmVmaXQgc3VzdGFpbmFibHkgZnJvbSBuYXR1cmUsIHRvIGhlbHAga2VlcCBjbGltYXRlIGJlbmlnbiBhbmQgdG8gZWxlY3QgcG9saXRpY2lhbnMgc28gbWluZGVkLiBIb3dldmVyLCBpdCBoYXMgYWxzbyBiZWNvbWUgY2xlYXIgdGhhdCwgZ2l2ZW4gYXBwcm9wcmlhdGUgc29mdHdhcmUsIGRlZGljYXRlZCB2b2x1bnRlZXJzIGNvdWxkIHJ1biBuZXR3b3JrcyBmb3IgZ2xvYmFsLXdpdGgtbG9jYWwgYWN0aXZpdHkgdmVyeSBjaGVhcGx5LiBNdWx0aWxpbmd1YWwgbmV0d29ya3Mgd2VyZSBsYXVuY2hlZCBmb3IgVU5FUCdzIENvbnZlbnRpb24gb24gTWlncmF0b3J5IFNwZWNpZXMgYW5kIHRoZSBJbnRlcm5hdGlvbmFsIEFzc29jaWF0aW9uIGZvciBGYWxjb25yeSBhbmQgQ29uc2VydmF0aW9uIG9mIEJpcmRzIG9mIFByZXksIHRvIGVuY291cmFnZSBjb21tdW5pdHkgY29uc2VydmF0aW9uIG9mIDxhIGhyZWY9Imh0dHBzOi8vd3d3LnNha2VybmV0Lm9yZyIgdGFyZ2V0PSJfYmxhbmsiPlNha2VyIEZhbGNvbnM8L2E+Jm5ic3A7YW5kIDxhIGhyZWY9Imh0dHBzOi8vd3d3LnBlcmRpeG5ldC5vcmciIHRhcmdldD0iX2JsYW5rIj5HcmV5IFBhcnRyaWRnZXM8L2E+LjwvcD4KPHA+Jm5ic3A7PC9wPgo8cD5UaGVuLCBpbiBBcHJpbCAyMDE5LCZuYnNwOzxhIGhyZWY9Imh0dHA6Ly93d3cubmF0dXJhbGxpYW5jZS5vcmciIHRhcmdldD0iX2JsYW5rIj53d3cubmF0dXJhbGxpYW5jZS5vcmc8L2E+Jm5ic3A7d2FzIGxhdW5jaGVkIGZvciBJVUNOLCBhcyBhIGh1YiB0byBuZXR3b3JrIGluIDU0IGxhbmd1YWdlcyB3aXRoIGxvY2FsIGNvbW11bml0aWVzIHdvcmxkd2lkZS4gT25saW5lIGJ5IE9jdG9iZXIgMjAyMSB3ZXJlIDQyIGxhbmd1YWdlczogQWZyaWthYW5zLCBBbWhhcmljLCBBcmFiaWMsIEJlbmdhbGksIEJ1bGdhcmlhbiwgQ3JvYXRpYW4sIEN6ZWNoLCBEdXRjaCwgRW5nbGlzaCwgRXN0b25pYW4sIEZhcnNpLCBGaW5uaXNoLCBGcmVuY2gsIEdlcm1hbiwgR2VvcmdpYW4sIEdyZWVrLCA8c3Bhbj5IYXVzYSwmbmJzcDs8L3NwYW4+SGluZGksIEh1bmdhcmlhbiwgSXRhbGlhbiwgSmFwYW5lc2UsIEtobWVyLCBLb3JlYW4sIExpdGh1YW5pYW4sIE1hbGF5LCBNYW5kYXJpbiwgTW9uZ29saWFuLCBOZXBhbGksIE5vcndlZ2lhbiwgUG9saXNoLCBQb3J0dWd1ZXNlLCBSb21hbmlhbiwgUnVzc2lhbiwgU3BhbmlzaCwga2lTd2FoaWxpLCBTd2VkaXNoLCBUaGFpLCBUdXJraXNoLCBVa3JhaW5pYW4sIFVyZHUsIFZpZXRuYW1lc2UgYW5kIGlzaVp1bHUuPC9wPgo8cD4mbmJzcDs8L3A+CjxwPkF0IGxhc3QsIGluIGEgd29ybGQgd2hlcmUgPGEgaHJlZj0iaHR0cHM6Ly93d3cubmF0dXJhbGxpYW5jZS5vcmcvZW4vYnF4ZXB4Zl95cnhjcXdwX3pyeHNxd3AvY29uc2lkZXItY292aWQtMTkiIHRhcmdldD0iX2JsYW5rIj5uYXR1cmUgY29uc2VydmF0aW9uIHRvbyBpcyBwbGFndWVkIGJ5IENPVklELTE5PC9hPiwgRXVyb3BlYW4gQ29tbWlzc2lvbiBpc3N1ZWQgYSBjYWxsIGluIDIwMjEgZm9yIGJpZHMgdG8gdXAtc2NhbGUgc3VjY2Vzc2Z1bCBjb25zZXJ2YXRpb24gd29yayBmcm9tIGZhcm0gbGV2ZWwsIHRocm91Z2ggY29tbXVuaXRpZXMgdG8gbGFuZHNjYXBlcyBhcyBhIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lm5hdHVyYWxsaWFuY2Uub3JnL2VuL2JxeGVweGZfeXJ4Y3F3cF96cnhvcXdwL3NvbWUtc29sdXRpb25zIiB0YXJnZXQ9Il9ibGFuayI+TmF0dXJlLWJhc2VkIFNvbHV0aW9uPC9hPi4gTWVtYmVycyBvZiBhIHNtYWxsIGNvcmUgdGVhbSBiYXNlZCBpbiBHcmVlY2UgYW5kIFVLIHN1Ym1pdHRlZCBhIGJpZCwgd29ya2luZyB3aXRoIGNvbGxlYWd1ZXMgZnJvbSB0aGUgcHJldmlvdXMgYmlkcyBhbmQgZXhjaXRpbmcgbmV3IHBhcnRuZXJzLiBDb2xsZWFndWVzIGluJm5ic3A7PGEgaHJlZj0iaHR0cHM6Ly9lc3VnLnN5Y2wubmV0Ij5FdXJvcGVhbiBTdXN0YWluYWJsZSBVc2UgR3JvdXA8L2E+IGhhZCBhbHJlYWR5IHN0YXJ0ZWQgdG8gc2NhbGUgdXAgPGEgaHJlZj0iaHR0cHM6Ly9ub3J0aHNlYXJlZ2lvbi5ldS9wYXJ0cmlkZ2UvIiB0YXJnZXQ9Il9ibGFuayI+d29yayBvbiBmYXJtbGFuZDwvYT4sIG5vdGFibHkgdGhyb3VnaCA8YSBocmVmPSJodHRwczovL3d3dy5nd2N0Lm9yZy51ay9tZWRpYS82NTgwNDUvZmFybWVyLWNsdXN0ZXJzLWd1aWRlLnBkZiUyMCIgdGFyZ2V0PSJfYmxhbmsiPmZhcm1lci1jbHVzdGVyczwvYT4mbmJzcDtpbiBVSyBhbmQgPGEgaHJlZj0iaHR0cHM6Ly9tbW0uZmkvZW4vc290a2EtcHJvamVjdCIgdGFyZ2V0PSJfYmxhbmsiPmNyZWF0aW5nIG5ldyB3ZXRsYW5kPC9hPiZuYnNwO2luIEZpbmxhbmQuIFNhZGx5LCB0aGF0IGJpZCB3YXMgbm90IHN1Y2Nlc3NmdWwuIEhvd2V2ZXIsIGEgbmV3IGJpZCB0byBpbXByb3ZlIGVjb3N5c3RlbSBzZXJ2aWNlcyBpbiBjb2FzdGFsIHJlZ2lvbnMgaGFzIHNjb3JlZCAxMy41LzE1IGluIDIwMjIgYW5kIG1heSB0aGVyZWZvcmUgZmluZCBmdW5kaW5nLjwvcD5kAgkPZBYCAgEPFgIfBQW3ITxwPjxzdHJvbmc+PGEgaHJlZj0iaHR0cDovL3d3dy5zeWNsLm5ldC9maWxlX2xpbmsvMDAwODcvTmF0dXJhbGxpYW5jZShJVUNOKVBSLUp1bHkyMDIwXzYzNzMxMjkzOTg3MTM4MDAwMC5wZGYiIHRhcmdldD0iX2JsYW5rIj5MYXRlc3QgbmV3czwvYT4gb24gb3VyIG1haW5zdGF5IG5ldHdvcmtzPGEgaHJlZj0iaHR0cDovL3d3dy5uYXR1cmFsbGlhbmNlLm9yZyIgdGFyZ2V0PSJfYmxhbmsiPjxiciAvPjwvYT48L3N0cm9uZz48L3A+CjxwPiZuYnNwOzwvcD4KPHA+VGhlIHByaW5jaXBsZSBvZiB0aGUgc3lzdGVtIGlzIGEgbXVsdGlsaW5ndWFsIGh1YiAoPHN0cm9uZz48c3BhbiBzdHlsZT0iY29sb3I6ICNmZjAwMDA7Ij5yZWQ8L3NwYW4+PC9zdHJvbmc+KSB3aGljaCBleHBsYWlucyBnZW5lcmFsIHByaW5jaXBsZXMgZm9yIGNvbnNlcnZpbmcgdGhlIG5hdHVyYWwgd29ybGQgKGNsaWNrIHRoZSBmaWd1cmUgdG8gZXhwYW5kLCB1c2UmbmJzcDs8c3Ryb25nPiZsYXJyOzwvc3Ryb25nPiB0byByZXR1cm4gdG8gdGhpcyBwYWdlKS4gQnkgc2VsZWN0aW5nIGEgbGFuZ3VhZ2UgYW5kIGFyZWEgd2hlcmUgdGhleSBsaXZlLCB2aXNpdG9ycyBjYW4gY2xpY2sgdGhyb3VnaCB0byBhIHJlZ2lvbmFsIG9yIG5hdGlvbmFsIG1vbm9saW5ndWFsIHNhdGVsbGl0ZSAoPHNwYW4gc3R5bGU9ImNvbG9yOiAjMzM5OTY2OyI+PHN0cm9uZz5ncmVlbjwvc3Ryb25nPjwvc3Bhbj4pIHdoaWNoIGlzIHJpY2ggaW4ga25vd2xlZGdlIGZvciB0aGF0IGFyZWEgYW5kIGxpbmtzIHRvIGxvY2FsIHByb2plY3RzLiBBbGwgdGhlIHNhdGVsbGl0ZXMgYXJlIHBhcnQgb2YgYSBzaW5nbGUgbmV0d29yaywgc28gaXQgaXMgZWFzeSBmb3IgdGhlbSB0byBjaGFubmVsIGluZm9ybWF0aW9uICg8c3BhbiBzdHlsZT0iY29sb3I6ICNhMzAwYTM7Ij48c3Ryb25nPnB1cnBsZTwvc3Ryb25nPjwvc3Bhbj4pLCBhdCBmaXJzdCBvbiBzdXJ2ZXlzLCBidXQgbGF0ZXIgcG90ZW50aWFsbHkgYXMgZW52aXJvbm1lbnRhbCBkYXRhIGZvciBkZWNpc2lvbiBzdXBwb3J0IHRvIG1hbmFnZSBsYW5kIGFuZCBsaXZlbGlob29kcy48L3A+CjxwPiZuYnNwOzwvcD4KPHA+VGhlIG5ldHdvcmsgJm5ic3A7PHN0cm9uZz48YSBocmVmPSJodHRwOi8vd3d3Lm5hdHVyYWxsaWFuY2Uub3JnIiB0YXJnZXQ9Il9ibGFuayI+d3d3Lm5hdHVyYWxsaWFuY2Uub3JnPC9hPjwvc3Ryb25nPiZuYnNwOyB3b3VsZCBub3QgaGF2ZSBiZWVuIHBvc3NpYmxlIHdpdGhvdXQgdGhlIHN1cHBvcnQgb2YgdGhlIDxhIGhyZWY9Imh0dHBzOi8vaWFmLm9yZy9mYWxjb25yeS1hbmQtY29uc2VydmF0aW9uLyIgdGFyZ2V0PSJfYmxhbmsiPkludGVybmF0aW9uYWwgQXNzb2NpYXRpb24gZm9yIEZhbGNvbnJ5IGFuZCBDb25zZXJ2YXRpb24gb2YgQmlyZHMgb2YgUHJleTwvYT4gZm9yIGRldmVsb3BpbmcgPGEgaHJlZj0iaHR0cDovL3d3dy5zYWtlcm5ldC5vcmciIHRhcmdldD0iX2JsYW5rIj5TYWtlcm5ldDwvYT4gYW5kIDxhIGhyZWY9Imh0dHA6Ly93d3cucGVyZGl4bmV0Lm9yZyIgdGFyZ2V0PSJfYmxhbmsiPlBlcmRpeG5ldDwvYT4uIEl0IGRlcGVuZHMgY3J1Y2lhbGx5IG9uIFBhdHJvbnMgc2hvd24gYXQgPGEgaHJlZj0iaHR0cDovL2VzdWcuc3ljbC5uZXQvaG9tZS5hc3B4IiB0YXJnZXQ9Il9ibGFuayI+Ym90dG9tKHJpZ2h0KSBoZXJlPC9hPi4gTWFueSB0aGFua3MgYWxzbyBmb3IgZHJhZnRpbmcgYW5kIGNvbW1lbnRzIGZyb20gQWRyaWFuIExvbWJhcmQsIEFuZ2VsYSBBbmRyYWRlLCBEaWx5cyBSb2UsIEp1bGllIEV3YWxkLCBLYXJ0aWsgU2hhbmtlciwgTWFkZWxlaW5lIE55bWFuLCBNYXJpbmEgUm9zYWxlcyBCZW5pdGVzIGRlIEZyYW5jbywgTWF5YSBCYXNkZW8sIE1lZXJhIEFubmEgT29tZW4gYW5kIFNjb3R0IEJyYWluZXJkLCBhbmQgZm9yIGhlbHAgd2l0aCB0cmFuc2xhdGlvbiBhbmQgc2F0ZWxsaXRlcyBmcm9tIEFhbWlyIFJpendhbiBLaGFuLCBBYmRvbGxhaCBTYWxhcmksIEFkcmlhbiBMb21iYXJkLCBBa2Fua3NoYSBTaW5naCwgQWxlc3NhbmRyYSBPbGl2ZXRvLCBBbGV4YW5kcmEgS2FsYW5kZXJpc2h2aWxpLCBBbmEgTWFyJmlhY3V0ZTthIE1vcmFsZXMsIEFydHVuIEtvY2FtYW4sIEFzaWYgSXFiYWwsIEJoZWthIE54ZWxlLCBCb3JiJmFhY3V0ZTtsYSBHJm91bWw7bnllLCBEYW4gQ2VjY2hpbmksIERhc2hrYSBUc2VyZW5kZWxlZywgRWxsZW4gSGFnZW4sIEZhcm9vcSBLaGFuLCBGaW9uYSBMaXUsIEZyYW50aSZzY2Fyb247ZWsgVXJiYW4sIEdpb3RhIERpZ2tvZ2xvdSwgR2l1c2VwcGUgTWljYWxpLCBIZWlkaSBLciZ1dW1sO2dlciwgSWxhcmlhIENlcmxpLCBJb24gTmF2b2RhcnUsIElzcmFlbCBNYW5yaXF1ZSBTbGVpbWFuLCBKZW5uaWZlciBBaWxsb3VkLCBKdWxpYW4gTSZ1dW1sO2hsZSwgSnVsaXVzIEtvZW4sIEtlaXlhIE5ha2FqaW1hLCBLaXR0eSBNYWNwaGVyc29uLCBMb2F5IEZyb29raCwgTWFkZWxlaW5lIE55bWFuLCBNYXJpIEl2YXNrLCBNYXJpbmEgUm9zYWxlcyBCZW5pdGVzIGRlIEZyYW5jbywgTWF5YSBCYXNkZW8sIE1pa2hhZWwgUm9tYW5vdiwgTWlsZW5hIExlc25hLCBOdXJhIEFiYm91ZCwgJk91bWw7bWVyIEJvcm92YWxpLCBPc2F5b213YW5ibyBPc2FyZW5vdG9yLCBQZWRybyBBZm9uc28sIFBpZXQgV2l0LCBQcmFuYXMgTWllcmF1c2thcywgUmFtb25hIFNjaG1pZHQsIFJpY2NhcmRvIFNpbW9uY2luaSwgU2FoYXQgUmF0bXVhbmdraHdhbmcsIFM8c3Bhbj4mYWFjdXRlO25kb3IgQ3M8c3Bhbj4mYWFjdXRlO255aSwgPHNwYW4+U2FuamVldiBQb3VkZWwsJm5ic3A7PC9zcGFuPlNjb3R0IEJyYWluZXJkLCBTaW1vbiBQb3RpZXIsJm5ic3A7PC9zcGFuPjwvc3Bhbj5TaXRpIFN1cmlhd2F0aSBJc2EsIFNvbnlhIFpsYXRhbm92YSwgU290aXJpcyBTYXJkZWxpcywgU3J1biBCdW50aGFyeSwgU3lsdmlhIEthcGFuZ2EsIFRhaGlyIFJhc2hlZWQsIFRldGlhbmEgR2FyZGFzaHVrLCBUcmlldCBUcmFuLCBUc3lvbiBBc2ZhdywgViZlYWN1dGU7cm9uaXF1ZSBCbG9udHJvY2ssIFZpa3RvciAmU2Nhcm9uO2VncnQsIFlvbmctU2hpayBLaW0gYW5kIFplbm9uIFRlZGVya28uPC9wPgo8cD4mbmJzcDs8L3A+CjxwPjxzdHJvbmc+PGEgaHJlZj0iaHR0cDovL3d3dy5uYXR1cmFsbGlhbmNlLm9yZyIgdGFyZ2V0PSJfYmxhbmsiPk5hdHVyYWxsaWFuY2U8L2E+IHByb2dyZXNzPC9zdHJvbmc+PC9wPgo8cD48YSBocmVmPSJodHRwOi8vc3RhZ2luZy5uYXR1cmFsbGlhbmNlLm9yZyIgdGFyZ2V0PSJfYmxhbmsiPlNvZnR3YXJlIGluc3RhbGxlZCAmYW1wOyB0ZXN0ZWQ8L2E+PC9wPgo8cD48YSBocmVmPSJodHRwOi8vc3VtZS5zeWNsLm5ldC9maWxlX2xpbmsvMDAwODcvTmF0dXJhbGxpYW5jZTJ3b3JraW5nZHJhZnQyMDE5MDIwOSh2NClfNjM2ODUzMjE0Mjg1MzEyMDAwLnBkZiIgdGFyZ2V0PSJfYmxhbmsiPkh1YiBjb250ZW50IGRyYWZ0ZWQ8L2E+PC9wPgo8cD48YSBocmVmPSJodHRwOi8vZXN1Zy5zeWNsLm5ldC8xMC9lc3VnLWdlbmVyYWwtbWVldGluZ3MiIHRhcmdldD0iX2JsYW5rIj5MYXVuY2ggaW4gQ3JvYXRpYSBvbiAyMyBBcHJpbCAyMDE5PC9hPiZuYnNwOzwvcD4KPHA+PGEgaHJlZj0iaHR0cDovL3N1bWUuc3ljbC5uZXQvZmlsZV9saW5rLzAwMDg3L05hdHVyYWxsaWFuY2UyY3VsdHVyZXNfNjM2ODUxNzExODg5ODcyMDAwLnBuZyIgdGFyZ2V0PSJfYmxhbmsiPkxhbmd1YWdlcyBwbGFubmVkOiA1NDwvYT4mbmJzcDsoPGVtPm9ubGluZSA0MjwvZW0+KTwvcD4KPHA+PGEgaHJlZj0iaHR0cDovL3N1bWUuc3ljbC5uZXQvZmlsZV9saW5rLzAwMDg3L05hdHVyYWxsaWFuY2UyY3VsdHVyZXNfNjM2ODUxNzExODg5ODcyMDAwLnBuZyIgdGFyZ2V0PSJfYmxhbmsiPk5hdGlvbmFsL3JlZ2lvbmFsIHNpdGVzIHBsYW5uZWQ6IDcwPC9hPjwvcD4KPHA+KDxlbT5PbmxpbmUgMzAgc2F0ZWxsaXRlczogQXNpYSAoRU4pLCZuYnNwO0F1c3RyaWEsIEJyYXppbCwgQ2FuYWRhIChFTiksIENhbmFkYSAoRlIpLCBDaGluYSwgRU4oZGVmYXVsdCksJm5ic3A7RXN0b25pYSwgRmlubGFuZCwgRnJhbmNlLCBHZXJtYW55LCZuYnNwO0dyZWVjZSwgSXRhbHksJm5ic3A7SW5kaWEsIElyYW4sJm5ic3A7SmFwYW4sJm5ic3A7SHVuZ2FyeSwgTmlnZXJpYSwgTm9ydGggQWZyaWNhIChGUiksIFBvbGFuZCwgUG9ydHVnYWwsIFJvbWFuaWEsIFJ1c3NpYSwgU291dGhlcm4mbmJzcDtBZnJpY2EgKEVOKSwmbmJzcDtTcGFpbiwgU3BhbmlzaCBBbWVyaWNhLCZuYnNwO1VLLCBVa3JhaW5lLCBVU0EsIFdlc3QgQWZyaWNhIChGUik8L2VtPjwvcD5kZJSHMIqAiA5xdQdSBqEPBqEZI7l8DcpEvFHMYEOlOq1y" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=YPhrdVjOll-ojzSrqQ8AI1vshJMg0QaqNIubvghoNzFBbmXcNTy4OUyWPdd_YW-QzSgPnwW89ZDYT_l6468hKEO2gQBc-VdWJTgkgIh2P341&amp;t=637454068754849868" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=PSIKRv7J9WWp9Mt2BeMSPzsMfozUrS3aw-04ReZt7XvZeALXgdGVd125X1aH5XB-5uu__snjBd6jAZWzaGifsGjzEpjqdM8byLcf3L7ZPdmOgCgM9JhG79PwoG2_Giyba_En5vES350AUATb9A62v5J4Dr2ClUIfZhTjH31fJUAKrySUS0SG33ESb2gWYOtj0&amp;t=363be08" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=w8-YLKixNOFcY_IdozpwPdijc6xM-W9j1E23B2usqbELhc72dHEMbxOAPhPztvcSiTCK1a3IzEtQk8ZQIaW38MnEpLx_KZjBb5Kfmo4nkaYknGey0iXiKh4BHTxJocWBwGRrlq_Jdn87uZUcWhIFy7POAg6xOKkwNaDyyMO_Hlura8tjY2iAzMqRPzxMLZer0&amp;t=363be08" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../scripts/site.js?ts=20180529" type="text/javascript"></script>
+<script src="../../scripts/site-heading.js?ts=20180529" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="620F7EA6" />
+</div>
+
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$syclScriptManager', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+        
+
+        <div id="screen"></div>
+
+        <div id="ctl00_pageContainer" class="page central-page">
+
+            <div id="mainNavigation" class="sycl-navbar"><div class='container'><div class='menu-button-container' >
+        <button type='button' class='menu-button'>
+            <span class='sr-only'>
+                <span>Toggle navigation</span>
+            </span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+        </button>
+    </div><div class='title-and-menu-container'>
+    <a class='title-container' href='/1/our-mission-and-objectives'>
+        <h1>
+            European Sustainable Use Group
+        </h1> 
+    </a>
+            
+    <nav class='top-menu-container'>
+        <ul class='top-menu' ><li>
+    <a href='/1/our-mission-and-objectives'>
+        Home
+    </a>
+</li>
+<li>
+    <a href='/2/esug-objectives'>
+        About
+    </a>
+</li>
+<li>
+    <a href='/10/esug-general-meetings'>
+        Meetings
+    </a>
+</li>
+<li>
+    <a href='/4/reports-and-meeting-documents'>
+        Documents
+    </a>
+</li>
+<li>
+    <a href='/7/contact-us'>
+        Contact Us
+    </a>
+</li>
+<li>
+    <a href='/14/register'>
+        Register
+    </a>
+</li>
+<li class='social-media-button'>
+    <a href='https://www.facebook.com/European-Sustainable-Use-Group-ESUG-1367909076681921/' ><i class='fa fa-facebook'></i><span>Facebook</span></a>
+</li>
+</ul>
+            </nav>
+            <div class='clear'>&nbsp;</div>
+        </div>
+        <div class='clear'>&nbsp;</div>
+    </div></div>
+<div id="navTemplate1" class="sycl-navbar template normal"><div class='container'><div class='menu-button-container' >
+        <button type='button' class='menu-button'>
+            <span class='sr-only'>
+                <span>Toggle navigation</span>
+            </span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+        </button>
+    </div><div class='title-and-menu-container'>
+    <a class='title-container' href='/1/our-mission-and-objectives'>
+        <h1>
+            European Sustainable Use Group
+        </h1> 
+    </a>
+            
+    <nav class='top-menu-container'>
+        <ul class='top-menu' ><li>
+    <a href='/1/our-mission-and-objectives'>
+        Home
+    </a>
+</li>
+<li>
+    <a href='/2/esug-objectives'>
+        About
+    </a>
+</li>
+<li>
+    <a href='/10/esug-general-meetings'>
+        Meetings
+    </a>
+</li>
+<li>
+    <a href='/4/reports-and-meeting-documents'>
+        Documents
+    </a>
+</li>
+<li>
+    <a href='/7/contact-us'>
+        Contact Us
+    </a>
+</li>
+<li>
+    <a href='/14/register'>
+        Register
+    </a>
+</li>
+<li class='social-media-button'>
+    <a href='https://www.facebook.com/European-Sustainable-Use-Group-ESUG-1367909076681921/' ><i class='fa fa-facebook'></i><span>Facebook</span></a>
+</li>
+</ul>
+            </nav>
+            <div class='clear'>&nbsp;</div>
+        </div>
+        <div class='clear'>&nbsp;</div>
+    </div></div>
+<div id="navTemplate2" class="sycl-navbar template collapsed"><div class='container'><div class='menu-button-container' >
+        <button type='button' class='menu-button'>
+            <span class='sr-only'>
+                <span>Toggle navigation</span>
+            </span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+        </button>
+    </div><div class='title-and-menu-container'>
+    <a class='title-container' href='/1/our-mission-and-objectives'>
+        <h1>
+            European Sustainable Use Group
+        </h1> 
+    </a>
+            
+    <nav class='top-menu-container'>
+        <ul class='top-menu' ><li>
+    <a href='/1/our-mission-and-objectives'>
+        Home
+    </a>
+</li>
+<li>
+    <a href='/2/esug-objectives'>
+        About
+    </a>
+</li>
+<li>
+    <a href='/10/esug-general-meetings'>
+        Meetings
+    </a>
+</li>
+<li>
+    <a href='/4/reports-and-meeting-documents'>
+        Documents
+    </a>
+</li>
+<li>
+    <a href='/7/contact-us'>
+        Contact Us
+    </a>
+</li>
+<li>
+    <a href='/14/register'>
+        Register
+    </a>
+</li>
+<li class='social-media-button'>
+    <a href='https://www.facebook.com/European-Sustainable-Use-Group-ESUG-1367909076681921/' ><i class='fa fa-facebook'></i><span>Facebook</span></a>
+</li>
+</ul>
+            </nav>
+            <div class='clear'>&nbsp;</div>
+        </div>
+        <div class='clear'>&nbsp;</div>
+    </div></div>
+
+
+
+
+
+
+
+
+
+
+            <div class="container sycl-page-container" >
+
+                <div class="row">
+        
+                    <div class="col-sm-3" id="navigationContainer">
+                        
+
+<nav class="hidden-print hidden-xs affix-top" id="sidebarContainer" style="border:0px solid red;" >
+    <ul class="nav nav-sidebar" id="sidebar">
+        <li class="sidebar-element " >
+    <a href='/8/calendar'>
+        Calendar
+    </a>
+</li>
+<li class="sidebar-element " >
+    <a href='/9/development-of-our-portals'>
+        Our Portal Systems
+    </a>
+</li>
+<li class="sidebar-element " >
+    <a href='/3/268/news'>
+        News
+    </a>
+</li>
+<li class="sidebar-element " >
+    <a href='/11/current-projects-of-esug'>
+        Current Projects
+    </a>
+</li>
+<li class="sidebar-element " >
+    <a href='/5/useful-reading'>
+        Stories
+    </a>
+</li>
+<li class="sidebar-element " >
+    <a href='/13/work-on-conserving-by-using'>
+        Project History
+    </a>
+</li>
+<li class="sidebar-element " >
+    <a href='/6/3/nature-conservation-projects'>
+        Nature Actions
+    </a>
+</li>
+<li class="sidebar-element " >
+    <a href='/6/9/sustainable-use-and-management-of-ecosystems'>
+        IUCN-SUME page
+    </a>
+</li>
+<li class="sidebar-element active" >
+    <a href='/6/10/naturalliance,-second-edition'>
+        Naturalliance Page
+    </a>
+</li>
+
+    </ul>
+</nav>
+
+
+
+
+
+                    </div>
+            
+                    <div class="col-sm-6" id="centralContent">
+  
+                        <h2>
+    Naturalliance, second edition
+</h2>
+                        
+
+    
+        <div class="col-sm-5 col-xs-12 pull-right right-embedded-image-container" >
+            <a href="//www.sycl.net/central_image/00010/GlocalSystem_636837753153460000.jpg" id="ctl00_MainContentPlaceHolder_imageExpanded" onclick="expand(this);return false;">
+                <img id="ctl00_MainContentPlaceHolder_image" title="The networked sites for www.naturalliance.org" src="//www.sycl.net/central_image/00010/960/GlocalSystem_636837753153460000.jpg" alt="The networked sites for www.naturalliance.org" />
+            </a> 
+            
+        </div>
+    
+
+    <p><a href="http://www.iucn.org" target="_blank">IUCN</a> started the idea that sustainable use of wild living resources can be a powerful tool for conserving nature. The United Nations <a href="https://www.cbd.int/" target="_blank">Convention on Biological Diversity</a>, agreed in 1992, defines sustainable use and mentions it more than five times as often as protection of species and habitats. It was implicit in CBD's&nbsp;<a href="https://www.cbd.int/ecosystem/principles.shtml" target="_blank">Malawi Principles (the Ecosystem Approach</a>,&nbsp;1998), IUCN&rsquo;s <a href="https://www.iucn.org/sites/dev/files/import/downloads/policy_en.pdf" target="_blank">Amman Statement on sustainable use</a>&nbsp;(2000), and CBD's&nbsp;<a href="https://www.cbd.int/sustainable/addis.shtml" target="_blank">Addis Ababa Principles and Guidelines</a>&nbsp;(2004), that conservation through sustainable use needs devolution of adaptive management to people as close as possible to local level. These documents, initiated by IUCN&rsquo;s Sustainable Use Initiative, reflected awakening in Africa of <a href="/site_download/00064/Child___Child_2015_Conservation_movement_Zimbabwe_636066641623890516.pdf" target="_blank">Community Based Natural Resource Management</a>. &nbsp;</p>
+<p>&nbsp;</p>
+<p>In contrast, Europe focussed on top-down measures to constrain use of wild resources, with more and more land used intensively for plant and animal crops to meet consumer demand and EU-subsidy. Charters were developed by Bern Convention to advise governments and societies on conservation through <a href="/file_link/00087/BernConventionChartersCombined4_636931572509132000.pdf" target="_blank">hunting, recreational fishing and gathering fungi</a>. There is a growing inclination for state funds to be used to encourage conservation by farmers and foresters, if only to maintain water, air and climate quality. However, conserving nature while growing crops efficiently is complex. Although a cooperation of IUCN and UK's <a href="https://www.ceh.ac.uk/" target="_blank">Centre for Ecology &amp; Hydrology</a> and IUCN saw <a href="/site_download/00064/RK-VGC_Innovations_(CoE-UNEP)_636033856952691362.pdf" target="_blank">a way to meet this challenge</a> 18 years ago, two EU-funded projects were needed<a href="/site_download/00064/TESS-ForewordPrefaceIntroConclusions_636257072216373432.pdf" target="_blank"> to design a system</a>&nbsp; that could combine science with local knowledge to support land-use decisions that would be good for nature as well as for livelihoods. Sadly, before satnavs put AI-based decision support everywhere, reviewers of bids in 2012-14 deemed the system too ambitious to develop. However, at last that has changed.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px;"><strong>Horizon2020 in the European Unions's Green Deal</strong></span></p>
+<p>&nbsp;</p>
+<p>Volunteers in IUCN Commissions are dedicated to nature conservation and continued development towards community-based nature conservation anyway. We devised a way to speed uptake of an eventual environmental support system, by getting people across Europe thinking of the community-based mapping that it would require, and by surveying them about what it needed to do. The result, in 2011, was <a href="http://www.naturalliance.eu" target="_blank">naturalliance.eu</a>. Since then it has become ever more urgent for rural communities worldwide to learn fast how to benefit sustainably from nature, to help keep climate benign and to elect politicians so minded. However, it has also become clear that, given appropriate software, dedicated volunteers could run networks for global-with-local activity very cheaply. Multilingual networks were launched for UNEP's Convention on Migratory Species and the International Association for Falconry and Conservation of Birds of Prey, to encourage community conservation of <a href="https://www.sakernet.org" target="_blank">Saker Falcons</a>&nbsp;and <a href="https://www.perdixnet.org" target="_blank">Grey Partridges</a>.</p>
+<p>&nbsp;</p>
+<p>Then, in April 2019,&nbsp;<a href="http://www.naturalliance.org" target="_blank">www.naturalliance.org</a>&nbsp;was launched for IUCN, as a hub to network in 54 languages with local communities worldwide. Online by October 2021 were 42 languages: Afrikaans, Amharic, Arabic, Bengali, Bulgarian, Croatian, Czech, Dutch, English, Estonian, Farsi, Finnish, French, German, Georgian, Greek, <span>Hausa,&nbsp;</span>Hindi, Hungarian, Italian, Japanese, Khmer, Korean, Lithuanian, Malay, Mandarin, Mongolian, Nepali, Norwegian, Polish, Portuguese, Romanian, Russian, Spanish, kiSwahili, Swedish, Thai, Turkish, Ukrainian, Urdu, Vietnamese and isiZulu.</p>
+<p>&nbsp;</p>
+<p>At last, in a world where <a href="https://www.naturalliance.org/en/bqxepxf_yrxcqwp_zrxsqwp/consider-covid-19" target="_blank">nature conservation too is plagued by COVID-19</a>, European Commission issued a call in 2021 for bids to up-scale successful conservation work from farm level, through communities to landscapes as a <a href="https://www.naturalliance.org/en/bqxepxf_yrxcqwp_zrxoqwp/some-solutions" target="_blank">Nature-based Solution</a>. Members of a small core team based in Greece and UK submitted a bid, working with colleagues from the previous bids and exciting new partners. Colleagues in&nbsp;<a href="https://esug.sycl.net">European Sustainable Use Group</a> had already started to scale up <a href="https://northsearegion.eu/partridge/" target="_blank">work on farmland</a>, notably through <a href="https://www.gwct.org.uk/media/658045/farmer-clusters-guide.pdf%20" target="_blank">farmer-clusters</a>&nbsp;in UK and <a href="https://mmm.fi/en/sotka-project" target="_blank">creating new wetland</a>&nbsp;in Finland. Sadly, that bid was not successful. However, a new bid to improve ecosystem services in coastal regions has scored 13.5/15 in 2022 and may therefore find funding.</p>
+
+    
+
+  
+
+                    </div>
+
+                    <div class="col-sm-3" id="rightContent">
+                        
+
+    <p><strong><a href="http://www.sycl.net/file_link/00087/Naturalliance(IUCN)PR-July2020_637312939871380000.pdf" target="_blank">Latest news</a> on our mainstay networks<a href="http://www.naturalliance.org" target="_blank"><br /></a></strong></p>
+<p>&nbsp;</p>
+<p>The principle of the system is a multilingual hub (<strong><span style="color: #ff0000;">red</span></strong>) which explains general principles for conserving the natural world (click the figure to expand, use&nbsp;<strong>&larr;</strong> to return to this page). By selecting a language and area where they live, visitors can click through to a regional or national monolingual satellite (<span style="color: #339966;"><strong>green</strong></span>) which is rich in knowledge for that area and links to local projects. All the satellites are part of a single network, so it is easy for them to channel information (<span style="color: #a300a3;"><strong>purple</strong></span>), at first on surveys, but later potentially as environmental data for decision support to manage land and livelihoods.</p>
+<p>&nbsp;</p>
+<p>The network &nbsp;<strong><a href="http://www.naturalliance.org" target="_blank">www.naturalliance.org</a></strong>&nbsp; would not have been possible without the support of the <a href="https://iaf.org/falconry-and-conservation/" target="_blank">International Association for Falconry and Conservation of Birds of Prey</a> for developing <a href="http://www.sakernet.org" target="_blank">Sakernet</a> and <a href="http://www.perdixnet.org" target="_blank">Perdixnet</a>. It depends crucially on Patrons shown at <a href="http://esug.sycl.net/home.aspx" target="_blank">bottom(right) here</a>. Many thanks also for drafting and comments from Adrian Lombard, Angela Andrade, Dilys Roe, Julie Ewald, Kartik Shanker, Madeleine Nyman, Marina Rosales Benites de Franco, Maya Basdeo, Meera Anna Oomen and Scott Brainerd, and for help with translation and satellites from Aamir Rizwan Khan, Abdollah Salari, Adrian Lombard, Akanksha Singh, Alessandra Oliveto, Alexandra Kalanderishvili, Ana Mar&iacute;a Morales, Artun Kocaman, Asif Iqbal, Bheka Nxele, Borb&aacute;la G&ouml;nye, Dan Cecchini, Dashka Tserendeleg, Ellen Hagen, Farooq Khan, Fiona Liu, Franti&scaron;ek Urban, Giota Digkoglou, Giuseppe Micali, Heidi Kr&uuml;ger, Ilaria Cerli, Ion Navodaru, Israel Manrique Sleiman, Jennifer Ailloud, Julian M&uuml;hle, Julius Koen, Keiya Nakajima, Kitty Macpherson, Loay Frookh, Madeleine Nyman, Mari Ivask, Marina Rosales Benites de Franco, Maya Basdeo, Mikhael Romanov, Milena Lesna, Nura Abboud, &Ouml;mer Borovali, Osayomwanbo Osarenotor, Pedro Afonso, Piet Wit, Pranas Mierauskas, Ramona Schmidt, Riccardo Simoncini, Sahat Ratmuangkhwang, S<span>&aacute;ndor Cs<span>&aacute;nyi, <span>Sanjeev Poudel,&nbsp;</span>Scott Brainerd, Simon Potier,&nbsp;</span></span>Siti Suriawati Isa, Sonya Zlatanova, Sotiris Sardelis, Srun Bunthary, Sylvia Kapanga, Tahir Rasheed, Tetiana Gardashuk, Triet Tran, Tsyon Asfaw, V&eacute;ronique Blontrock, Viktor &Scaron;egrt, Yong-Shik Kim and Zenon Tederko.</p>
+<p>&nbsp;</p>
+<p><strong><a href="http://www.naturalliance.org" target="_blank">Naturalliance</a> progress</strong></p>
+<p><a href="http://staging.naturalliance.org" target="_blank">Software installed &amp; tested</a></p>
+<p><a href="http://sume.sycl.net/file_link/00087/Naturalliance2workingdraft20190209(v4)_636853214285312000.pdf" target="_blank">Hub content drafted</a></p>
+<p><a href="http://esug.sycl.net/10/esug-general-meetings" target="_blank">Launch in Croatia on 23 April 2019</a>&nbsp;</p>
+<p><a href="http://sume.sycl.net/file_link/00087/Naturalliance2cultures_636851711889872000.png" target="_blank">Languages planned: 54</a>&nbsp;(<em>online 42</em>)</p>
+<p><a href="http://sume.sycl.net/file_link/00087/Naturalliance2cultures_636851711889872000.png" target="_blank">National/regional sites planned: 70</a></p>
+<p>(<em>Online 30 satellites: Asia (EN),&nbsp;Austria, Brazil, Canada (EN), Canada (FR), China, EN(default),&nbsp;Estonia, Finland, France, Germany,&nbsp;Greece, Italy,&nbsp;India, Iran,&nbsp;Japan,&nbsp;Hungary, Nigeria, North Africa (FR), Poland, Portugal, Romania, Russia, Southern&nbsp;Africa (EN),&nbsp;Spain, Spanish America,&nbsp;UK, Ukraine, USA, West Africa (FR)</em></p>
+
+    
+
+  
+                    </div>
+
+                </div> 
+
+            </div>
+
+            
+
+
+<div class="container">
+
+    <div class="sycl-footer">
+
+        <div class="sycl-footer-left">
+
+            <ul class="sycl-footer-links text-muted">
+    
+                <li>
+                    Web site by <a href='http://www.sycl.net'>SYCL</a>
+                    </li>
+                <li>&middot;</li>
+                <li>
+                    Copyright &copy; Anatrack&nbsp;2022
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="sycl-footer-right">
+
+            <ul class="sycl-footer-links text-muted">
+                
+                <li>
+                    <a href="/16/terms-and-conditions" id="ctl00_sitefooter_termsLink">
+                        Terms & Conditions</a>
+                </li>
+                <li>&middot;</li>
+                <li>
+                    <a href="/17/privacy-policy" id="ctl00_sitefooter_privacyLink">
+                        Privacy Policy
+                    </a>
+                </li>
+                <li>&middot;</li>
+                <li>
+                    <a href="/7/contact-us" id="ctl00_sitefooter_contactLink">
+                        Contact Us</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="clear">&nbsp;</div>
+    </div>
+
+</div>
+
+
+            
+            
+ 
+        </div>
+
+    
+
+<script type="text/javascript">
+//<![CDATA[
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+    "palette": {
+        "popup": {
+            "background": "#e5e5e5",
+            "text": "#555"
+        },
+        "button": {
+            "background": "#ffffff",
+            "text": "#555"
+        }
+    },
+    "theme": "classic",
+    "position": "bottom",
+    "showLink": false,
+    "content": {
+        "message": "By using this site you agree to the placement of cookies on your computer in accordance with the terms of our privacy policy",
+        "dismiss": "OK"
+    }
+
+})
+});
+//]]>
+</script>
+</form>
+</body>
+</html>
+

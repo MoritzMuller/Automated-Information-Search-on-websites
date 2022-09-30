@@ -1,0 +1,526 @@
+<!DOCTYPE html> 
+<html lang="cs">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!--meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.classify.org/safesurf/" L gen true for "http://www.dub.cz" r (SS~~000 1))'/-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Tomáš Pfeiffer"/>
+<meta http-equiv="content-language" content="cs"/>
+<meta name="description" content=""/>
+<meta name="robots" content="ALL,FOLLOW" />
+<title>Ohlasy pacientů</title>
+<link rel="stylesheet" type="text/css" href="/styly2.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.1.2/jquery.bxslider.min.js"></script>
+<link href="/js/bxslider/bxslider.transparent.css" rel="stylesheet" >
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.12.1/simple-lightbox.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.12.1/simplelightbox.min.css" rel="stylesheet" type="text/css">
+<link rel="alternate" href="https://www.sanator.cz/cs/ohlasy-pacientu" hreflang="cs" /><link rel="alternate" href="https://www.sanator.cz/en/peoples-experience-with-biotronics" hreflang="en" /><meta property="og:site_name" content="SANATOR.CZ" >
+<meta property="og:url" content="https://www.sanator.cz/cs/ohlasy-pacientu" >
+<meta property="og:title" content="Ohlasy pacientů" >
+<meta property="og:description" content="" ><meta property="og:locale" content="cs_CZ" /><meta property="og:locale:alternate" content="en_GB" /><meta property="og:type" content="article" >
+<script type="text/javascript" src="/js/pocitadlo.php"></script>    
+<script type="text/javascript" src="/js/ga.js"></script>
+<style>
+.hl_nadpis{color:#440506; font-size: 40px; font-family: noticia text,serif; text_align: start; margin-top: 0px; padding: 0px;}
+.hl_nadpis_EN{font-size: 33px;}
+.hl_c{font-size: 30px;}
+.hl_podnadpis{font-size: 24px;  font-family: noticia text,serif; color: #440506; text_align: start; margin-top: 2px;}
+.hl_popis{font-size: 20px;  font-family: noticia text,serif; color: #440506; text_align: start; margin-top: 8px;}
+#logo_sanator{width:90px; height:134px;}
+#i_menu{display:none; float:right; margin: 20px 10px 10px 10px; cursor:pointer;}
+#m_social{display:none;}
+#m_menu{display:none;}
+
+@media screen and (max-width: 800px) {
+.hl_nadpis_CZ{font-size: 20px;} .hl_nadpis_EN{font-size: 18px;}
+.hl_c{font-size: 18px;}
+.hl_podnadpis{font-size: 12px;}
+.hl_popis{font-size: 10px;}
+#r_menu {display:none;}
+#i_menu {display:inline;}
+#m_social{display:inline-block;}
+#logo_sanator{width:68px; height:100px;}
+}
+@media screen and (min-width: 801px and max-width: 1000px) {
+.hl_nadpis_CZ{font-size: 30px;} .hl_nadpis_EN{font-size: 24px;}
+.hl_c{font-size: 24px;}
+.hl_podnadpis{font-size: 18px;}
+.hl_popis{font-size: 15px;}
+#r_menu {display:none;}
+#i_menu {display:inline;}
+#m_social{display:inline-block;}
+#logo_sanator{width:90px; height:134px;}
+}
+@media screen and (min-width: 1001px) {
+.hl_nadpis_CZ{font-size: 40px;} .hl_nadpis_EN{font-size: 33px;}
+.hl_c{font-size: 30px;}
+.hl_podnadpis{font-size: 24px;}
+.hl_popis{font-size: 20px;}
+#r_menu {display:inline-block;}
+#i_menu {display:none;}
+#m_social {display:none;}
+#logo_sanator{width:90px; height:134px;}
+}
+@media screen and (max-width: 980px) { .jen_pc{display:none;} }
+@media screen and (min-width: 981px) { .jen_mobil{display:none;} }
+
+.vlevo_nebo_nad{float: left; margin-right: 20px; margin-bottom:20px; margin-top: 0px;}
+@media screen and (max-width: 800px) { .vlevo_nebo_nad{margin-bottom:10px; float:none; margin-right: 0px; display: block;} }
+
+.vpravo_nebo_nad{float: right; margin-left: 20px; margin-bottom:20px; margin-top: 0px;}
+@media screen and (max-width: 800px) { .vpravo_nebo_nad{margin-bottom:10px; float:none; margin-left: 0px; display: block;}  }
+
+.m_zpet{text-align:left; position:fixed; bottom: 0px; padding:10px; left: 0px; background-color: #ffffff; border-top-right-radius: 20px; opacity: 0.8; filter: alpha(opacity=80);}
+
+.bx-wrapper {  background:rgba(0,0,0,0); width:1028px; max-width: 100%; border:0px; border-radius: 25px; margin:auto; text-align:center;  margin-bottom: 20px;}
+.slider img{border-radius: 25px; border:2px solid #25247b; width:1024px; max-width: 100%;}
+
+</style>
+<script type="text/javascript">
+var m_ukaz = ["leva_nabidka", "levy_znak", "prava_nabidka", "prazdny_obsah"];
+var m_skryj = ["znak_menu", "hlavicka_nadpis", "hl_obsah"];
+function zobraz_menu(){
+    document.getElementById("m_menu").style.display="inline-block";
+}    
+function schovej_menu(){
+    document.getElementById("m_menu").style.display="none";
+}  
+ $(document).ready(function() {
+   $(".slider").bxSlider({
+  auto: true,
+  autoControls: true,
+  stopAutoOnClick: true,
+  pager: true,
+  mode: "fade",
+  touchEnabled: false, //bugfix
+  });
+});
+</script>
+</head><body onload="" link="#053974" vlink="#053974" alink="#053974" id="h_body" class="C" style="background-color: #fff7aa;"   oncopy="return false" oncut="return false"   ><div class="nt"><header><div class="m_zpet jen_mobil"><a href="/cs/" class="B"><img src="/obr/home.png" width="21" height="20"/> ZPĚT</a></div><div class="C" style="width:100%! important; position:relative; max-width:980px;  display: block; margin: 0 auto;"><div id="m_menu" class="L" style="width:100% !important;"><div class="B" style="float:right; cursor:pointer; font-size:21px" onclick="schovej_menu();">X&nbsp;</div><nav id="m_nav"><div><ul>
+<li><a class="B dn" href="/cs/"><img src="/obr/home.png" width="21" height="20" alt="O nás " style="margin-right:9px;"/> O nás </a>
+<ul>
+	<li style=""><a class="dn" href="/cs/#o_nas"> O&nbsp;nás </a></li>
+	<li style=""><a class="dn" href="/cs/profesni-komora-sanator"> Profesní komora Sanátor </a></li>
+	<li style=""><a class="dn" href="/cs/josef-zezulka"> Josef Zezulka </a></li>
+	<li style=""><a class="dn" href="/cs/tomas-pfeiffer"> Tomáš Pfeiffer </a></li>
+</ul></li>
+<li><a class="B dn" href="/cs/aktivity">Aktivity </a></li>
+<li><a class="B dn" href="/cs/biotronika-josefa-zezulky">Biotronika Josefa Zezulky </a>
+<ul>
+	<li style=""><a class="dn" href="/cs/biotronika-josefa-zezulky"> Co je Biotronika Josefa Zezulky? </a></li>
+	<li style=""><a class="dn" href="/cs/onkologicka-prevence"> Onkologická prevence </a></li>
+	<li style=""><a class="dn" href="/cs/ohlasy-pacientu"> Ohlasy pacientů </a></li>
+	<li style=""><a class="dn" href="/cs/vyzkum-biotroniky"> Výzkum </a></li>
+</ul></li>
+<li><a class="B dn" href="/cs/knihovna">Knihovna </a>
+<ul>
+	<li style=""><a class="dn" href="/cs/videa"> Videa KoS </a></li>
+	<li style=""><a class="dn" href="/cs/alternativni-medicina-cam-ve-svete"> Publikace Kos </a></li>
+	<li style=""><a class="dn" href="/cs/zezulkova-biotronika-online-kniha"> Dílo Josefa Zezulky </a></li>
+	<li style=""><a class="dn" href="/cs/zahranicni-publikace-josefa-zezulky"> Zahraniční publikace díla J.Zezulky </a></li>
+</ul></li>
+<li><a class="B dn" href="/cs/kontakt">Kontakt </a>
+</li>
+      </ul></div></nav><hr /></div><form class="m0" style="display:inline;" action="/cs/hledani" method="post"><div class="L F2"><div style="float:right;" class="F1"><a href="/cs/ohlasy-pacientu" class="F1 m0"><img class="kulate inB" src="/vlajky/vlajka-cz.gif" alt="česky" title="česky" width="26" border="0" style="margin: 1px 5px 0px 5px;"/></a><a href="/en/peoples-experience-with-biotronics" class="F1 m0"><img class="kulate inB" src="/vlajky/vlajka-en.gif" alt="english" title="english" width="26" border="0" style="margin: 1px 5px 0px 5px;" /></a><input id="hledani" class="oble inB" name="s" value="Hledej" type="text" style="width:90px; border:0px; text-align:center; margin: 0px 5px 0px 5px;" /></div></div><div class="clear"></div></form><img id="i_menu" src="/obr/i-menu.png" width="40" height="40" onclick="zobraz_menu();" /><div style="float:left;"><a href="/cs/"><img id="logo_sanator" src="/obr/logo-sanator.png" width="90" height="134" alt="Ohlasy pacientů" style="margin-right:19px;" ></a></div><h1  class="L m0 hl_nadpis hl_nadpis_CZ">Sanátor - svaz&nbsp;biotroniků Josefa&nbsp;Zezulky&nbsp;<span class="hl_c" >©</span></h1><h2 class="m0 hl_podnadpis" >KoS - Komora Sanátor</h2><h3 class="m0 hl_popis" >Oficiální stránky oboru&nbsp;Biotronika a filosofie&nbsp;Bytí Josefa&nbsp;Zezulky</h3><img src="/znak-40.png" class="jen_pc" style="position:absolute; top:70px; right:30px;" /></div><div class="clear"></div><div id="r_menu" style="max-width:980px; width:100%!important;"><div style="margin-top: 46px; margin-bottom: 0px;"><hr class="hrb m0" style="margin: 2px 0px 2px 0px; padding: 0px;" /></div><nav id="r_nav"><ul>
+<li style="margin: 0px 0px 0px 0px; padding: 0px 0px 10px 0px;"><a style="margin:0px; 0px 0px 10px 0px;" href="/cs/"><img src="/obr/home.png" width="21" height="20" alt="O nás " style="margin-right:9px;"/> O nás </a>
+<ul>
+	<li style="margin:0px 14px 0px 14px; padding:0px;"><a style="margin:0px; padding:0px;" href="/cs/#o_nas"> O&nbsp;nás </a></li>
+	<li style="margin:0px 14px 0px 14px; padding:0px;"><a style="margin:0px; padding:0px;" href="/cs/profesni-komora-sanator"> Profesní komora Sanátor </a></li>
+	<li style="margin:0px 14px 0px 14px; padding:0px;"><a style="margin:0px; padding:0px;" href="/cs/josef-zezulka"> Josef Zezulka </a></li>
+	<li style="margin:0px 14px 0px 14px; padding:0px;"><a style="margin:0px; padding:0px;" href="/cs/tomas-pfeiffer"> Tomáš Pfeiffer </a></li>
+</ul></li>
+<li style="margin:0px 0px 0px 30px; padding: 0px 0px 10px 0px;"><a style="margin:0px; 0px 0px 10px 0px;" href="/cs/aktivity">Aktivity </a></li>
+<li style="margin:0px 0px 0px 30px; padding: 0px 0px 10px 0px;"><a style="margin:0px; 0px 0px 10px 0px;" href="/cs/biotronika-josefa-zezulky">Biotronika Josefa Zezulky </a>
+<ul>
+	<li style="margin:0px 14px 0px 14px; padding:0px;"><a style="margin:0px; padding:0px;" href="/cs/biotronika-josefa-zezulky"> Co je Biotronika Josefa Zezulky? </a></li>
+	<li style="margin:0px 14px 0px 14px; padding:0px;"><a style="margin:0px; padding:0px;" href="/cs/onkologicka-prevence"> Onkologická prevence </a></li>
+	<li style="margin:0px 14px 0px 14px; padding:0px;"><a style="margin:0px; padding:0px;" href="/cs/ohlasy-pacientu"> Ohlasy pacientů </a></li>
+	<li style="margin:0px 14px 0px 14px; padding:0px;"><a style="margin:0px; padding:0px;" href="/cs/vyzkum-biotroniky"> Výzkum </a></li>
+</ul></li>
+<li style="margin:0px 0px 0px 30px; padding: 0px 0px 10px 0px;"><a style="margin:0px; 0px 0px 10px 0px;" href="/cs/knihovna">Knihovna </a>
+<ul>
+	<li style="margin:0px 14px 0px 14px; padding:0px;"><a style="margin:0px; padding:0px;" href="/cs/videa"> Videa KoS </a></li>
+	<li style="margin:0px 14px 0px 14px; padding:0px;"><a style="margin:0px; padding:0px;" href="/cs/alternativni-medicina-cam-ve-svete"> Publikace Kos </a></li>
+	<li style="margin:0px 14px 0px 14px; padding:0px;"><a style="margin:0px; padding:0px;" href="/cs/zezulkova-biotronika-online-kniha"> Dílo Josefa Zezulky </a></li>
+	<li style="margin:0px 14px 0px 14px; padding:0px;"><a style="margin:0px; padding:0px;" href="/cs/zahranicni-publikace-josefa-zezulky"> Zahraniční publikace díla J.Zezulky </a></li>
+</ul></li>
+<li style="margin:0px 0px 0px 30px; padding: 0px 0px 10px 0px;"><a style="margin:0px; 0px 0px 10px 0px;" href="/cs/kontakt">Kontakt </a>
+</li>
+        <li style="margin:0px; padding:0px;"><a
+        class="m0" href="https://www.facebook.com/tomaspfeiffer.cz"
+        target="_blank"><img style="margin:0px 0px 0px 9px; padding:0px;" src="/obr/fb24.png" title="Facebook" /></a><a
+        class="m0" href="https://twitter.com/tomaspfeiffer"
+        target="_blank"><img style="margin:0px 0px 0px 9px; padding:0px;" src="/obr/tw24.png" title="Twitter" /></a><a
+        class="m0" href="https://www.youtube.com/user/spolecnavec"
+        target="_blank"><img style="margin:0px 0px 0px 9px; padding:0px;" src="/obr/yt24.png" title="YouTube" /></a><a
+        class="m0" href="https://www.instagram.com/pfeiffer.tomas/"
+        target="_blank"><img style="margin:0px 0px 0px 9px; padding:0px;" src="/obr/ig24.png" title="Instagram" /></a><a
+        class="m0" href="https://www.linkedin.com/in/tomaspfeiffer"
+        target="_blank"><img style="margin:0px 0px 0px 9px; padding:0px;" src="/obr/li24.png" title="LinkedIn" /></a></li>
+      </ul></nav><hr class="hrb m0" style="margin: 2px 0px 0px 0px; padding: 0px;" /></div><div style="width:100% !important; max-width:980px;" class="C" id="m_social"><hr class="hrN" /><a
+        class="m0" href="https://www.facebook.com/tomaspfeiffer.cz"
+        target="_blank"><img style="margin:0px 0px 0px 9px; padding:0px;" src="/obr/fb24.png" title="Facebook" /></a><a
+        class="m0" href="https://twitter.com/tomaspfeiffer"
+        target="_blank"><img style="margin:0px 0px 0px 9px; padding:0px;" src="/obr/tw24.png" title="Twitter" /></a><a
+        class="m0" href="https://www.youtube.com/user/spolecnavec"
+        target="_blank"><img style="margin:0px 0px 0px 9px; padding:0px;" src="/obr/yt24.png" title="YouTube" /></a><a
+        class="m0" href="https://www.instagram.com/pfeiffer.tomas/"
+        target="_blank"><img style="margin:0px 0px 0px 9px; padding:0px;" src="/obr/ig24.png" title="Instagram" /></a><a
+        class="m0" href="https://www.linkedin.com/in/tomaspfeiffer"
+        target="_blank"><img style="margin:0px 0px 0px 9px; padding:0px;" src="/obr/li24.png" title="LinkedIn" /></a></div></header><div class="J" style="width:100% !important; max-width:980px;  display: block; margin: 0 auto; padding: 0px;"><article><h1>Ohlasy pacientů</h1>14. 4. 2021<div>Dobrý den pane Pfeiffer, p. B. má kardio vyšetřeni v pořádku, jen nevýznamná slabá nedomykavost chlopní. Další ECHO za 2 roky. Plíce na RTG se stále lepší. Stíny po covidu na plicích lehce přetrvávají. Kyslík potřebuje jen jednou denně asi 5-10 min, budeme snižovat a vysazovat. Nohy jsou oteklé méně. Ještě má jet do lázní. Těšíme se, až Vám budeme moci osobně poděkovat. Přejeme Vám hezké dny. V. J.</div><div class="clear"></div><hr/>28. 2. 2021<div>Dobrý den pane Pfeiffere,
+
+za sebe a manželku děkuji za každodenní požehnání biotronikou. Velmi nám oběma pomáhá nejen zdravotně, ale nabíjí nás i psychicky. Je v dnešním světě jednou z mála skutečných jistot.
+Chci Vám také sdělit, že díky Vašemu působení mi po osmi letech konečně zmizela necitlivost v levé noze po provedené endoprotéze kyčle. Rovněž s krční páteří je to mnohem lepší. Ještě jednou díky a přejeme hodně sil do další Vaší práce,... <br/><a href="?id=764#764" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>23. 2. 2021<div>Dobrý den, pane Pfeiffer, touto cestou bych Vám moc ráda poděkovala za Vaše duchovní působení a velmi přínosné online přednášky. K večerním působením se ladíme téměř každý večer a někdy i naše dvě děti (děti samozřejmě dobrovolně :-) ), nyní se k působení ladí i náš pejsek, který měl problémy s tlapičkou. Měl natržený křížový kolenní vaz a pan doktor mu dal 14 dnů na "zotavenou", pokud by se noha nezlepšila musel by na operaci, a tak jsme zkusili... <br/><a href="?id=763#763" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>23. 2. 2021<div>Před časem jsem u Vás prosila o posilu 80letého tatínka, který měl těžký opakovaný zánět žlučníku. Nakonec jej museli operovat, zhubl asi 20 kg, téměř nejedl, 23.12. nám ho dali víceméně ležícího domů. Ke všemu dostal od spoluležícího Corona virus. Celou dobu měl zájem o působení v 21 h a já jsem mu do nemocnice volala, protože ztrácel pojem o čase. Několikrát jsme oba byli  přesvědčeni, že se rána nedožije. V předchozích desítkách let se k biotronice... <br/><a href="?id=762#762" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>19. 11. 2020<div>Dobrý den, pane Pfeiffer,
+
+     na Vašich webových stránkách dub.cz jsem si přečetla výzvu " Pomozte zachovat biotroniku i pro své děti " a ráda bych i já něčím malým při spěla pro zachování a rozvoj tohoto oboru.
+     I když nevím, jestli bude mé sdělení pro Vás dostatečně vyhovující, přesto se s Vámi podělím o jeden můj silný zážitek, který se odehrál před více jak 20 lety v Brně.
+     Byla neděle, poledne a na silnicích byl v tu dobu minimální... <br/><a href="?id=743#743" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>10. 8. 2020<div>Vážený  pane Pfeiffer, máme jen výborné zkušenosti s biotronikou, já i moje rodina. Co víc. NIKDY SE ZA LÉČBU NEPLATÍ. Případně jen za hezké ubytování. Léčba bez bolestí. Prostě, u mne krvácení a vše se vyléčilo bez lékaře a operace, manžel, chronické potíže s dýcháním , dlouhodobé bolesti zad, byl už na předoperačním pokoji, nemělo tak být, jezdil na biotronické léčení a tak bych mohla pokračovat, moje maminka po operaci rakoviny, měla dostat 22 ozářek,... <br/><a href="?id=742#742" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>25. 7. 2020<div>Dobrý den pane Pfeiffer. Moc Vám děkuji za to, co pro nás děláte. Každý večer se připojuji k Vašemu působení v 21 hodin. Hodně mi pomáháte. Cítím se mnohem lépe než před Vašim působením. Ještě jednou děkuji, že se nám takto obětujete a přeji Vám vše jen dobré.
+M.P.</div><div class="clear"></div><hr/>18. 4. 2020<div>Dobrý den,
+po nehodě na motorce mám 20 let problémy s páteří... po několikátém působení panem Tomášem Pfeifferem, přes počítač, mizí mé bolestí páteře... Moc děkuji, za toto léčivé působení, které mi opravdu pomáhá... děkuji, děkuji, děkuji. M. V.</div><div class="clear"></div><hr/>15. 4. 2020<div>Dobrý večer, pane Pfeiffere, chci Vám velmi poděkovat, opravdu bylo dnešní působení velmi silné. Cítila jsem s Vámi spojení ze srdce k srdci, což jindy nebývá. Připojuji se k Vám a Vaší pomoci asi 14 dnů, pokaždé působení vnímám jinak. Jsem Vám vděčná a posílám peněžní dar vašemu fondu.
+
+Děkuji
+V.J.</div><div class="clear"></div><hr/>9. 4. 2020<div>Dobrý den.
+V dubnu roku 2015 mi byla lékařkou sdělena dg. polypy v obou dutinách nosních. Tak jsem téhož roku na podzim nastoupila léčbu u p. Pfeiffera. Byl to odpočinkový týden ve velmi příjemném prostředí. Léčivé energie jsem pociťovala docela silně. Zvláště první den po působení a odpočinku na lůžku brněním v celém těle, hlavně na páteři. V dalších dnech léčby přišla bolest nosních dutin. Na léčbu jsem docházela 1x za rok. V r.2017 dle rtg. byla... <br/><a href="?id=736#736" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>9. 4. 2020<div>Dobrý den,
+děkujeme za možnost každodenního živého biotronického posílení ve 21 h. v TV BIOVID v současné krizové době. Díky tomu máme sílu lépe zvládnout i tento náročný čas (je to i sdělení rodiny, přátel). Přejeme Vám Boží milost a podporu. L. K.</div><div class="clear"></div><hr/>25. 3. 2020<div>K Výzvě :
+Oznamuji, že jsem včera 24.3.2020 shlédla ve 21 hod. 5 minutové energetické působení biotronika T. Pfeiffera.
+V průběhu působení byly cítit vlny energie, která rozpohybovala mé tělo dopředu a dozadu, dále v oblasti nosních dutin (kde byla rýma) začalo cosi pracovat, ráno druhý den byla rýma menší a lépe se mi dýchalo.  Dále přes oblast štítné žlázy, která byla v minulosti chirurgicky odstraněna pro benigní útvar v průběhu působení probíhaly... <br/><a href="?id=734#734" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>15. 2. 2020<div>Dobrý den pane doktore Pfeiffre, v roce 2000 jste mi pomohl od nemoci rukou, v roce 2014 jste mi pomohl od bolesti v křížové části páteře, všechno to beru jako Boží zázrak, v roce 2014 jsem prošla veškeré vyšetření a nic nepomohlo až Vaše seance, dnes bych Vás ráda poprosila 
+o pomoc pravého ramene, opět lékaři si nevědí rady a bolest trvá od 
+08.01.2019, byla jsem na Vaší přednášce v Ostravě v roce 2019, ale orodovala jsem za někoho jiného. Předem děkuji.
+S... <br/><a href="?id=733#733" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>4. 1. 2020<div>Z TV vysílání se ztratily esoterické pořady, které pomáhaly spoustě lidí. Seance byla jedním z nich. Proč? Od 14-ti let mne trápily bolesti hlavy. Při sledování Seancí jsem bolesti neměla. Pak opět znovu začaly. Kdyby pořad nebyl stažen, byla bych zdravější. Nyní mám spoustu zdrav. probl.. Proč brát lidem naději, šanci na uzdravení?? U působení pana Pfeiffera cítím energii a jsem uklidněna, léčím se a stabilizuji. Musím podotknout, že jsem se po panu Pfeifferovi... <br/><a href="?id=732#732" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>4. 10. 2019<div>Dobrý den,
+rád bych se rovněž podělil o svoji zkušenost. Poté co jsem každý den běhal asi dva týdny jsem se jednou vrátil s bolestí kolene. Od té chvíle jsem nemohl téměř chodit. Každý krok byl doslova martyriem. Nesnáším nemocnice a tak jsem čekal skoro dva měsíce jestli to rozchodím;. Když už jsem se smířil s tím, že mě čeká návštěva lékaře a zřejmě operace, řekl jsem si, že dám ještě šanci Biotronice na přednášce pana Pfeiffera. Dva dny po působení... <br/><a href="?id=730#730" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>15. 3. 2019<div>Vážený pane Pfeiffere,
+děkuji Vám za Vaše působení na lidi. Těšila jsem se vždy na Vaši Seanci, pomáhala mi se zklidnit a načerpat sílu do dalšího bytí. Ráda jsem využívala i aktivizace časopisu Meduňka. Spaním na " Meduňce" jsem si pomáhala s problémy s páteří.
+Děkuji Vám za vše.
+J.D.</div><div class="clear"></div><hr/>28. 11. 2018<div>Dobrý den,
+chci se podělit o mou zkušenost z TV z pořadu Seance.
+Zrovna jsem byla po operaci štítné žlázy, když tento pořad začínal, doktoři mi dávali všelijaké tabletky, ale tyto na mě působily velmi zle, nic nepomáhalo a najednou jsem uviděla tento pořad v televizi, byla jsem zvědavá, nic jsem neočekávala, sedla jsem si a čekala, pak se to stalo, cítila jsem, že mi tepe a jakoby cuká v tom místě, kde jsem měla vyoperovanou štítnou žlázu. Bylo to zvláštní,... <br/><a href="?id=728#728" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>2. 8. 2018<div>Dobrý den, 
+dávám svůj hlas panu Tomáši Pfeifferovi. Jeho biotronické působení je pokaždé ozdravný zážitek. Jsem proto, abychom se mohli vrátit k přírodě a nemuseli užívat tolik chemických léků. 
+Přeju si, aby i naše nová generace žila v čistotě v souladu s přírodou a tak chránila naši krásnou zemi. 
+S přátelským pozdravem J.K.</div><div class="clear"></div><hr/>15. 2. 2018<div>Milý pane Pfeiffer, nebýt biotroniky a dalších alternativních "nemedicínských" oborů jako je homeopatie, moxování, akupunktura a v nedávné době i autopatie, už bych dávno ve své hmotné schránce nebyl. Zopakuji to ještě jednou - už bych dávno  nebyl! Mělo se to tak samozřejmě stát, ale sděluji Vám tuto svoji zkušenost sloužící mimo jiné i k mému vlastnímu rozvoji, abych potvrdil, že jde o velmi důležitý nástroj, který je třeba využívat, šířit a doslova... <br/><a href="?id=722#722" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>14. 11. 2017<div>V sobotu jsem si při chalupářské činnosti přivodila takové namožení krční páteře, které se projevilo poměrně značnou bolestí včetně bolesti hlavy. Věděla jsem, že nejde o žádný úraz a tak jsem trpně čekala, až si to tělo postupně vyřeší. Třetí den stále takřka bez úlevy. Na přednášku jsem zavítala pro možnost prožít ten čas alespoň přínosně a zajímavě. To bylo vše. Žádné očekávání. Mínila jsem, že můj stav ani do oboru biotroniky primárně... <br/><a href="?id=721#721" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>12. 3. 2017<div>Vážený pane  Pfeiffer, po letech jsem dostala na Vás kontakt od své přítelkyně, která mě k Vám poprvé přivedla před zhruba 15 lety na léčení. Byla jsem na Vaší klinice dvakrát a vždy mi to velice pomohlo. Někdo by řekl, stal se zázrak. Bohužel mě život zavál daleko a už 13 let žiji v neustálém stresu, který jistě moc nepřidá  mému zdraví. Zas mám zdravotní potíže a vím, že bych opravdu opět moc potřebovala Vaše působení. Bohužel nemohu přijet. Doporučuji... <br/><a href="?id=717#717" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>7. 2. 2017<div>Dobrý den, v sobotu 4. února 2017 jsem byl poprvé na přednášce biotronika pana Tomáše Pfeiffera. Měl jsem dlouhodobě trávicí potíže, které jsem léčil jak se dalo ale nic nepomáhalo. V neděli jsem už mohl jíst a žaludek a celý trávicí trakt začal zase fungovat. Tímto bych chtěl moc poděkovat, biotronika opravdu funguje. Teď pracuju na tom, abych si tento stav udržel. 
+S pozdravem, B. N.</div><div class="clear"></div><hr/>6. 2. 2017<div>Bylo jaro, ale na mě přišla starost z objevu bulky v prsu. Za nějaký čas se rozpustily moje naděje, že si s tím tělo poradí. Blížil se termín objednané návštěvy u lékaře. Ještě tomu předcházel 30.březen s Vaším 
+přímým působením. Neupínala jsem se k představě jeho léčebného účinku. Přes noc ale bylo znát, že se něco děje a mění. Nechala jsem ale místo v klidu a tak až další den jsem nejdřív nechtěla ani uvěřit a pak zajásala. Tu radost z díky... <br/><a href="?id=711#711" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>2. 2. 2017<div>S Biotronikou a panem Pfeiferem jsem se poprvé setkal téměř před 20-ti lety. Jsem povahou konzervativní a nedůvěřivý. Postupně jsem studoval, poznával, chápal a cítil...
+Pan Pfeifer svým přístupem a léčbou pomohl mě osobně i mnohým mým známým. A to nejen zdravotně, ale i pohledem logiky a filosofie. 
+Vnímám jako velký dar to, že jsem potkal jeho i Biotroniku.
+Energii, kterou vyzařoval ze svých rukou, jsem cítil.
+Žádám ostatní, aby před svým hodnocením v... <br/><a href="?id=709#709" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>19. 9. 2016<div>Dobrý den,
+léčím se s Sjögrenovým syndromem, při pravidelném sledování biotronického působení pana Tomáše Pfeiffra se můj zdravotní stav zlepšil natolik, že mi byl vysazen lék Medrol,  který jsem dlouhodobě užívala. Potvrzují to i hodnoty krevních testů při kontrolních vyšetřeních. Dále se mi zanítila piha, okolí zčervenalo, začalo svědit a rozšiřovalo se. Po biotronickém působení zanícení úplně vymizelo. Za vše moc děkuji panu Pfeifrovi a moc bych... <br/><a href="?id=678#678" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>5. 2. 2016<div>Jsem věrná posluchačka pana biotronika Tomáše Pfeiffera, již potřetí se těším na horu Říp, kdo tam nebyl nepochopí. Týden jsem byla i v biotronickém centru v Praze. Měla jsem představy, ale má zkušenost předčila očekávání. Přístup personálu i samí dobří lidé z celé republiky. To byl můj nejlepší vánoční dárek, který jsem si mohla nadělit. Jsem 32 roků vdova. Navštěvuji pravidelně přednášky ve Valašském Meziříčí. Všem vřele doporučuji. M. H.</div><div class="clear"></div><hr/>3. 2. 2016<div>Dobrý den.
+Pan Tomáš Pfeiffer pomohl přes televizní pořad Seance mé mamince, která se neúspěšně několik let léčila u lékařů na opakované záněty ledvin. Po několika zhlédnutí působení pana Pfeiffera přes televizní obrazovku, její potíže ustaly. Stejnou zkušenost s náhlým vyléčením vleklých zdravotních potíží měl i maminčin bratr, takteréž přes pořad Seance s p. Pfeifferem.
+Je velká škoda, že tak kvalitní osobnost již nemůže v televizi pomáhat lidem. Věříme, že se toto změní.
+V.Z.</div><div class="clear"></div><hr/>1. 12. 2015<div>Mé zkušenosti s biotronikou? Jen dobré.
+V roce 2008 jsem si přivodila  vyhřezlé plotýnky. Nemohla jsem pořádně chodit, měla jsem poškozeny nervy na noze.
+Po týdnu u p. Pfeiffera se  mě sestra na rehabilitaci,ve které jsem následně ještě pokračovala, ptala: Co jste dělala? Protože odezva reboxu, na který dříve noha neragovala,byla tak veliká. Tzn., nemohlo se jednat o žádné placebo, že bych si snad něco vsugerovala, že se cítím líp, také doktor, po vyšetření,... <br/><a href="?id=629#629" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>6. 10. 2015<div>Vážený pane Pfeiffře,
+Na přednášce v TV Biovid 5.10.2015 - 28.05min. zazněla otázka na Karpální tunely.
+Jestli dovolíte, ráda bych sdělila svoji zkušenost.
+Uvedený problém mě trápil roky, hlavně v noci mi ruce brněly a mrtvily. Všimla jsem si, že problém byl vždy větší, když jsem povečeřela klobásu. Jednou jsem dokonce velkou část noci prochodila, stále třepala rukama a myslela  si, že už mi nikdy neožijí.
+Před dvěma roky jsem   (Vaším přičiněním)... <br/><a href="?id=604#604" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>6. 10. 2015<div>Dobrý den,
+projevily se u mne potíže s karpálními tunely. Bolesti, křeče a brnění v rukou byly hlavně v noci nesnesitelné. Pak z ničeho nic tyto potíže ustaly. Nedokázala jsem si to vysvětlit. Až na přednášce 5.10.2015 se objevil dotaz na léčení těchto potíží biotronikou a tu mi náhle svitlo. Jsem totiž pravidelnou účastnicí sobotních působení. Je to zázrak a nevím jak poděkovat, tak moc a moc děkuji.
+Co se týče samotného působení, vždy se děje něco... <br/><a href="?id=602#602" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>12. 9. 2015<div>Dobrý den.
+Léčbu biotronikou jsem zatím neměla možnost vyzkoušet,ale velmi ráda bych vyzkoušet chtěla působení biotronickým duchovním působením.
+Prosím o zachování a rozvoj tohoto oboru pro budoucí potřebné.
+
+J. J.</div><div class="clear"></div><hr/>7. 9. 2015<div>Dobrý den. Měla jsem řadu let možnost pravidelně docházet na přednášky pana Pfeiffera a jednou jsem byla na léčení celý týden po infekční mononukleóze po 14ti denní hospitalizaci v nemocnici. Po dobu těch cca 10ti let jsem byla zdravotně naprosto v pořádku, zvládala jsem fyzicky i psychicky náročné zaměstnání, neměla jsem ATB ani pracovní neschopnost. Po porodu dcery bohužel nemám čas se účastnit přednášek a velice se mi zhoršila nemocnost, několikrát do... <br/><a href="?id=600#600" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>16. 8. 2015<div>Již deset let jsem onkologickou pacientkou. Díky opakovanému biotronickému působení pana Pfeiffera jsem schopna se svým onemocněním stále bojovat a moje poslední laboratorní výsledky i vyšetření pozitronovou emisní tomografií jsou optimistické. Díky biotronickému působení, které mi dodalo potřebnou energii, jsem byla schopna lépe snášet chirurgické zákroky,chemoterapie i ozařování. Za možnost absolvovat biotronická působení jsem velmi vděčná a přála bych... <br/><a href="?id=599#599" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>18. 7. 2015<div>dobrý den, 
+velice si cením hlavně léčebných  účinků vodnářského zvonu, myslím, že návštěva Vašeho koncertu je velice prospěšná, sklidńující, posilující.
+Doma si často k Vašemu biotronickému působení pustím CD vodnářského zvonu, myslím že tato kombinace mne velice posiluje. 
+
+Tímto Vám děkuji. S Serdecznym Pozdrowienim R. T.  18.7.2015 </div><div class="clear"></div><hr/>3. 7. 2015<div>Dobrý den, rád bych se podělil o 2 nedávné pozitivní zkušenosti s biotronikem Tomášem Pfeifferem.  V listopadu 2014 jsem onemocněl Meningitidou a měl jsem mnoho dní téměř nepřetržité velmi prudké bolesti hlavy. Ani silná analgetika ve velkých dávkách příliš nezabírala, nešlo spát.  Po asi 3 týdnech došlo k působení na dálku. „Přítomnost“ biotronika jsem vnímal téměř fyzicky. Bolesti okamžitě ustoupily. Po druhém působení došlo k ústupu onemocnění... <br/><a href="?id=572#572" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>22. 6. 2015<div>Dobrý den, v sobotu 20. 6. jsem měla od rána silnou rýmu, bylo to už velmi vyčerpávající, k večeru jsem šla na přednášku a už během Vašeho působení jsem cítila úlevu a pak za několik minut po působení, mi rýma úplně přestala. VELMI Vám děkuji, bylo to naprosto úžasné! 
+
+S pozdravem J.K. </div><div class="clear"></div><hr/>10. 6. 2015<div>Dobrý den,
+chtěl bych se taky podělit s naší zkušeností s biotronickým působením.
+Naše dcera v 8 měsících onemocněla nemocí HUS (Hemolyticko-uremický syndrom), kdy došlo k selhání ledvin a stav byl velmi vážný. Celé to pětikilové klubíčko bylo udržováno v umělém spánku, ledviny stály a my malí lidé neměli v rukávu nic až na modlitbu. Kolem Anetky, ze které trčely jen samé hadičky,  pobíhal zdravotní personál a naprosto úžasný pan doktor, který... <br/><a href="?id=569#569" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>7. 5. 2015<div>Dobrý den,
+mám vlastní zkušenost s přijímáním Vaší energie na TV Nova před téměř 21lety. Narodil se mi 29.6.1994 syn a byli jsme v nemocnici na oddělení, kde se léčil z novorozenecké žloutenky. Poslední jsme na oddělení přišli a první jsme odešli. Nevím přesně, kolik nás tam bylo /asi 5 nebo 6/a kolik maminek kojilo/stejně jako já/ a kolik ne. Lékař říkal, že můj syn je adaptabilní. Já ale myslím, že syn se tak brzy vyléčil i díky Vašemu působení.... <br/><a href="?id=565#565" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>28. 2. 2015<div>Chtěla bych poděkovat Biotronice, která mne zachránila před operací a jejími následky. Po úraze na lyžích, natržených vazech v koleni mne lékaři bez ultrazvukového vyšetření chtěli poslat automaticky na operaci. Sdělili, že vždy už to bude bolet, že i když se to zoperuje, tak pacienti problémy mají, ale že nic lepšího je nenapadá. Požádala jsem je, abych nešla na sál ihned, ale ještě jsem dostala čas. V této době jsem se dostala k léčbě pana Tomáše Pfeiffera.... <br/><a href="?id=561#561" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>1. 2. 2015<div>Dobrý den,v době před působením v rámci televizního pořadu Seance na TV Nova jsem měl časté silné bolesti v oblasti bederní páteře, které se přes opakovanou léčbu klasickou medicínou neustále vracely. Pak jsem pravidelně sledoval tyto seance na Nově s působením přes televizní obrazovku a moje problémy odezněly. Od působení na TV Nova již uplynulo mnoho let a nemusel jsem od té doby bolesti páteře řešit. Snažím se navštěvovat přednášky v Soukenické a rovněž... <br/><a href="?id=557#557" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>25. 1. 2015<div>Dobrý den pane Pfeiffere,
+
+ráda bych opětovně poděkovala Vám i Biotronice za pomoc. 
+Tentokrát se musím podělit o zcela čerstvý objev. S velkým údivem jsem zjistila, že se mi rovná páteř.
+Pro někoho to bude asi znít divně, ale je to tak. :-))
+Od dětství byla moje páteř, už na pohled značně vybočená, dávno jsem se s tím smířila. A najednou, tahle úžasná změna, bez lékařských zákroků a cvičení.
+Slova nedokáží vyjádřit díky za všechno, co pro lidi děláte.
+
+S přáním všeho dobrého, E.P.</div><div class="clear"></div><hr/>25. 1. 2015<div>Dobrý den,
+
+zasílám dvě pozitivní zkušenosti s biotronickou léčbou dcerky a maminky.
+
+
+
+Po narození dcerky byla zjištěna vrozená luxace levé kyčle, v nemocnici nasazena horizontální trakce a asi po týdnu částečné zlepšení a propuštění domů -nasazena léčba pomocí  Frejkové peřinky. Na pravidelných kontrolách se stav zásadně nezlepšoval, poprosil jsem p.Tomáše Pfeiffera o pomoc působením na dálku. Na další kontrole několik týdnů po tomto lékař... <br/><a href="?id=555#555" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>30. 12. 2014<div>Pane Pfeiffere, o adventu jsem klopýtla na schodech a vyrobila jsem si veliký a bolestivý výron v nártu nohy. Lékařka odhadovala uzdravování na několik týdnů, ale po několika Vašich působení na dálku se opět vejdu do boty a mohu chodit. Několik týdnů se nekonalo. Moc děkuji a přeji úspěšný rok 2015. 
+J.</div><div class="clear"></div><hr/>19. 12. 2014<div>Dobrý den,
+
+Sestra je již 11 let léčena biotronikou léčitelem p. Pfeifferem.
+Léčba je úspěšná, hovoří za to výsledky.
+Sestra chodí do zaměstnání, částečný invalidní důchod jí byl před několika lety odebrán. Důvodem byla skutečnost, že pacient nemá žádné potíže.
+Diagnóza, která ji byla před 11 lety oznámena, se jmenuje roztroušená skleróza.
+Tímto moc děkuji za sestru, za svou rodinu biotronice a panu Pfeifferovi, který díky ní pomáhá lidem... <br/><a href="?id=559#559" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>19. 12. 2014<div>Vážený pane Pfeiffere, 
+
+ráda bych se připojila k těm mnoha poděkováním psaným i nepsaným, za Vaší pomoc, především v době, kdy mi hrozila ztráta dítěte a to několikrát. Díky biotronice a Vaší laskavé péči jsem donosila syna v pořádku a jsme dosud zdraví, jsem Vám nesmírně vděčna za život syna. 
+
+Děkuji Vám a přeji Vám, celé vaší rodině a přátelům vše dobré, také pracovní úspěchy, ať se Vám daří! 
+
+MUDr. A. D.</div><div class="clear"></div><hr/>13. 12. 2014<div>Vážený pane Pfeiffre, tímto Vám chci poděkovat za uzdravení mé maminky J. K., které proběhlo během vašeho působení v televizním pořadu Seance na TV Nova. Maminka byla sledována gynekologem pro nález dvou děložních myomů, z nichž jeden byl velikosti dětské pěsti. Byla jí doporučena operace. Po sledování Vašeho pořadu došlo k výraznému zmenšení a posléze k úplnému zmizení myomů (omlouvám se, ale maminka již nemá k dispozici lékařské zprávy). Ještě... <br/><a href="?id=552#552" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>25. 11. 2014<div>Krásný dobrý večer,
+ 
+tímto mailem bych se ráda připojila k výzvě za zachování biotroniky.
+ 
+Nyní jsem necelý měsíc po biotronickém působení pana Tomáše Pfeiffera, kterého jsem vyhledala v zoufalé situaci. I přes své mládí, je mi 25 let, jsem více jak dva roky trpěla chronickou únavou, která dle výsledků různých testů neměla zjevnou příčinu. Kromě únavy mě trápila od rané dospělosti také endometrioza, podstoupila jsem dva zákroky operativní, prošla... <br/><a href="?id=551#551" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>19. 11. 2014<div>Dobrý den, chtěl bych se vrátit k působení T.Pfeiffera v Seancích na TV Nova. Byl jsem v této době po rozvodu a psychicky úplně na dně. Těšil jsem se na tyto seance, protože mi dodávaly chuť do života, naplňovaly mě energií, začal jsem přemýšlet o životě úplně jinak. V posledních letech sleduji jeho přednášky v Univerzitě Bytí. Podle mého názoru je to velmi moudrý muž, jeho přednášky pomáhají orientovat v životě, nacházet souvislosti i tam, kde by to... <br/><a href="?id=550#550" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>19. 11. 2014<div>Dobrý den všem. V roce 1994 mi bylo 37 let, měla jsem sedavé zaměstnání a trápila mne bolest v pravém kyčli při vstávání a sedání. V kyčli to vrzalo. Tehdy jsem se seznámila s Biotronikou, začala jsem chodit na přednášky a přestala jíst maso. Během snad týdnů mne bolest v kyčli přešla a nikdy se již nevrátila! 
+
+V letech 2006, 2007 a 2008 jsem se vždy na jaře zotavovala týden v BCSP po vyčerpání z namáhavé práce účetní na městském úřadě. Vždy... <br/><a href="?id=554#554" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>13. 11. 2014<div>Vážený pane Pfeiffere,
+
+opět mohu potvrdit účinnost biotroniky. Před dvěma lety jsem byla u Vás v biotronickém centru kvůli problémům se štítnou žlázou. Po tehdejším pobytu se činnost štítné žlázy upravila a při odběru TSH byly naměřeny normální hodnoty. (Viz. Dopis společně s lékařskými zprávami uvedený zde 19. 7. 2014)
+
+Letos po kontrolních odběrech vystoupaly hodnoty TSH na téměř dvojnásobek normy. Po čtyřdenním pobytu (musela jsem v pátek do... <br/><a href="?id=549#549" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>5. 11. 2014<div>Dobrý den, díky biotronickému působení přes televizní obrazovku, ale v té době také působení přes obálku časopisu Meduňka a osobní návštěvou přednášky pana Tomáše Pfeiffera v Kulturním domě na Smíchově se mi, podle mého názoru, zapouzdřil karcinom prsu  (vždy po působení byl útvar po hmatu jakoby menší nebo skoro nehmatný - v té době jsem nebyla ještě v péči lékařů - následná léčba se obešla bez ozařování i bez chemoterapie) a hned po prvním... <br/><a href="?id=546#546" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>5. 11. 2014<div>Dobrý večer pane Peiffer. Již delší dobu uvažuji, jak podpořit Vaši snahu pomoci  nemocným lidem a nedopustit, aby byl vydán zákaz ze strany ministerstva zdravotnictví. Tak si dovolím alespoň něco napsat o sobě. První moje zkušenost s Vaší pomocí byla v roce přibližně 2000. Je to již velice dávno. Jmenovala jsem se *****. Měla jsem velké problémy se slinivkou břišní a dvakrát jsem po týdnu - přibližně v měsíční pauze byla Vámi léčena. V toto období jsem... <br/><a href="?id=548#548" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>4. 11. 2014<div>Dobrý den,
+
+děkuji biotronice a jejímu nositeli za uzdravení mé babičky z rakoviny plic (chemoterapií způsobenou leukemii) a po deseti letech i z rakoviny prsu, dále děkuji za léčbu mých poškozených vazů v kotníku bez navržené operace doktory. Po 15 letech nevím, jaký kotník to byl, ještě jednou moc děkuji a přeji všem moc úspěchů.
+J. P.</div><div class="clear"></div><hr/>31. 10. 2014<div>Často využívám působeni v sobotu 21h. Už mnoho let. Vždy s velkým úspěchem a prospěchem.
+J. K.</div><div class="clear"></div><hr/>21. 10. 2014<div>Dobrý den všem. V roce 1994 mi bylo 37 let, měla jsem sedavé zaměstnání a trápila mne bolest v pravém kyčli při vstávání a sedání. V kyčli to vrzalo. Tehdy jsem se seznámila s Biotronikou, začala jsem chodit na přednášky a přestala jíst maso. Během snad týdnů mne bolest v kyčli přešla a nikdy se již nevrátila! 
+
+V letech 2006, 2007 a 2008 jsem se vždy na jaře zotavovala týden v BCSP po vyčerpání z namáhavé práce účetní na městském úřadě. Vždy... <br/><a href="?id=539#539" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>4. 10. 2014<div>Dobrý večer, dobrý den! 
+
+     Mé zkušenosti ze Seance na TV Nova byly krátké, ale moc příjemné. I když jsem nebyla nemocná, pomáhalo mi to zklidnění a působení. Člověk je bytost složitá, ale někdy stačí opravdu jen málo ... třeba i to, že někdo pro někoho chce dobře ... už to vědomí pomáhá. Díky moc! 
+M. O. </div><div class="clear"></div><hr/>3. 10. 2014<div>Dobrý den, chodívám na přednášky p. Pfeiffera ve Zlíně a domů odcházím přímo nabitá energií, kterou nám předává. Několikrát jsem byla v Praze u p. Pfeiffera pro sníženou imunitu a bolesti kloubů. Po léčbě bolesti ustoupily a já nemusela jíst léky na bolesti. Věřím v biotronické působeni a tímto moc děkuji p. Pfeifferovi za pomoc, kterou nezištně poskytuje lidem, kteří jeho pomoc vyhledávají, za léčbu, která mne i členům mé rodiny, kteří se u něj... <br/><a href="?id=533#533" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>19. 9. 2014<div>Dobrý den,
+v příloze zasílám svou osobní zkušenost s biotronickou léčbou.
+Počátkem roku 2013 mi byl na obličeji diagnostikován zhoubný nádor-melanom v počátečním stadiu (lentigo maligna melanom) velikosti 7x4 mm. Bylo indikováno chirurgické odstranění nádoru se zajišťovacím lemem 1 cm s následným překrytím defektu kožním štěpem-tzn. tkání odebranou z jiného místa na těle.
+Během zpracovávání vzorku na histologii a následného čekání na termín operace... <br/><a href="?id=530#530" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>16. 9. 2014<div>Dobrý den všem. Přednášky biotroniky navštěvuji již 20 roků. Na tu první si stále dobře pamatuji, neboť jsem v té době trpěla ekzémem a žádná medicína nezabírala. A právě po prvním působení pana Pfeiffera začal ekzém nenávratně mizet. Tímto moje důvěra v biotroniku a pana Tomáše Pfeiffera byla potvrzena. A jak šel čas dál, stále byla a je potřeba využívat jejich znalostí pro moji rodinu i blízké okolí.  Proto tímto podporuji biotronickou léčbu a... <br/><a href="?id=529#529" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>15. 9. 2014<div>Dobrý den, 
+mé zkušenosti s biotronikou a panem Tomášem Pfeifferem jsou jen ty nejlepší. Pan Pfeiffer se ochotně, bezzištně a trpělivě věnuje lidem, kteří jeho pomoc vyhledají. Tímto mu chci moc poděkovat. Velice si vážím toho, co pro nás všechny dělá.
+Skoro čtyři roky se léčím s roztroušenou sklerózou. Pan Pfeiffer mi pomohl při atakách a vždy jsem po týdnu odcházela "po vlastních" a plna energie. Dle poslední magnetické rezonance je nález již 3 roky stacionární.</div><div class="clear"></div><hr/>9. 9. 2014<div>Dobrý den,
+
+před 8mi lety mi byla zjištěna mutace genu BRCA1. Před 4 lety mi začala růst v prsu bulka, která se velmi rychle zvětšovala. Lékaři chtěli přistoupit k operaci. Po 5ti denním léčení v sanatoriu na Soukenické ulici mi bulka přestala růst a od té doby má stále stejné rozměry. Není tedy třeba přistoupit k operaci, můj stav je teď velmi dobrý.
+
+Chtěla bych tímto velmi poděkovat panu Pfeifferovi za pomoc. 
+
+Jemu i celému personálu jsem vděčná... <br/><a href="?id=527#527" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>7. 9. 2014<div>Dobrý den,
+chtěl bych sdělit své zkušenosti s biotronikou a panem Pfeifferem.
+Psal se myslím konec roku 1988 a začátek roku 1989. Před rokem jsem měl vcelku vážnou autonehodu, která se obešla bez tehdy vážnějších problémů.
+
+Uplynul cca jeden rok a nastaly u mě problémy, typu že se mi na krku objevily velké boule. Občas jsem ztrácel periferní vidění a někdy jsem měl problémy s viděním celkově.
+Psal se rok 1988 a 89 a přes svého obvodového lékaře na Praze... <br/><a href="?id=526#526" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>2. 9. 2014<div>Také bych se ráda podělila o své zkušenosti s Biotronikou a za vše poděkovala. Když mi bylo 10 let, napadl mne vlčák a udělal mi svými tesáky hluboké šrámy těsně nad a pod mým pravým okem, které bylo nutno sešít (ale pejsky mám pořád ráda). Po ošetření v nemocnici mne rodiče několikrát vezli na léčbu k panu Pfeifferovi. Také jsme docházeli na léčebná působení na přednáškách. Rány se začaly velmi rychle hojit a dnes jsou téměř neznatelné. Když mi... <br/><a href="?id=525#525" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>30. 8. 2014<div>Dobrý den,
+
+V úvodu bych rád uvedl, že pocházím z doktorské rodiny, medicíny si velmi vážím, mnohokrát mi pomohla a pomáhá stále. Stejně tak si vážím Biotroniky a biotronika  sanátora Tomáše Pfeiffera (dále T.P.), s kterým mám opakovanou velmi dobrou zkušenost osobní, v okruhu rodiny i přátel.  Uvedu několik příkladů, kdy u nás došlo k biotronickému působení T.P.  s pozitivním výsledkem:
+
+V roce 1998 jsem byl při operaci břišní kýly infikován zlatým... <br/><a href="?id=523#523" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>22. 8. 2014<div>Dobrý den, s biotronikou mám jen výborné zkušenosti a jsem ráda, že pan Pfeiffer se tomuto oboru nezištně věnuje. Pomohl mému synovi, který se narodil předčasně ve 30. týdnu v roce 1997. Brzy po narození syn onemocněl RS virózou, ležel tři týdny na oddělení ARO v přímém ohrožení života. Lékaři mu prakticky nedávali žádnou šanci přežít, často nás večer volali, ať se přijedeme se synem rozloučit, že zřejmě nedožije rána. Pan Pfeiffer mu v té době... <br/><a href="?id=520#520" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>21. 8. 2014<div>Dobrý den, tímto se připojuji ke kladným ohlasům s biotronickým působením, které probíhalo v pořadu Seance na TV Nova a na rozhlasové stanici Frekvence 1. S biotronikou jsem se setkávala na přednáškách a také při léčbě v biotronickém centru. Opakovanými pobyty se předešlo dvěma chirurgickým zákrokům. Pokud k pravidelným pobytům docházelo, zdravotní stav se stabilizoval. Za to bych chtěla panu Tomáši Pfeifferovi poděkovat.
+
+V. P.</div><div class="clear"></div><hr/>16. 8. 2014<div>Dobrý den pane Pfeiffer,
+
+velice ráda se připojím ke kladnému hodnocení Vašeho působení. Ať to bylo v 90.létech v TV nebo v rozhlase s Vítkem Pokorným. Nejdříve se mi dostaly do ruky brožurky od pana Zezulky a krátce nato jsem Vás uviděla v TV. Od té doby hltala každé Vaše slovo, psala dotazy do rozhlasu, chodila na přednášky v Brně, zajímala mě filozofie pana Zezulky. Když jste otvíral centrum v Praze, tak jsem samozřejmě nechyběla. Vaše činnost je bezesporu... <br/><a href="?id=517#517" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>7. 8. 2014<div>Vážený pane Pfeiffer,
+
+koncem února tohoto roku jsem poprvé navštívila Vaši přednášku ve Zlíně, o které jsem se dozvěděla z plagátu. Byla jsem mile překvapená, že jste mluvil o tématu, jež mne vždy zajímalo. Od tohoto dne jsem pravidelně navštěvovala Vaše přednášky ve Zlíně, v Kroměříži a v Brně. Můj špatný zdravotní stav se začal pozvolna měnit k lepšímu a opět jsem měla jiskřičku naděje, že budu moci žít a ne přežívat. 
+Od roku 1980 trpím... <br/><a href="?id=516#516" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>4. 8. 2014<div>Vážený pane Pfeiffer,
+
+děkuji a jsem moc vděčná, že se mohu od roku 1993 s Biotronikou a s Vámi setkávat na přednáškách a posléze i při léčení v Biotronickém centru. 
+Zkušenosti s léčením Biotronikou panem Pfeifferem mám od roku 2000, kdy jsem vážně onemocněla, a to jen POZITIVNÍ.
+Biotronikou jste již pomohl celé mé rodině přímo, nebo i na dálku až za oceán.
+Moc si Vážím Vašeho vždy laskavého a lidského přístupu. Upřímně děkuji za možnost... <br/><a href="?id=514#514" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>2. 8. 2014<div>Dobrý den, s biotronikou mám jen kladné zkušenosti.
+
+V roce 2003 jsem měla potíže s karpálním tunelem na obou rukách. Po vyšetření na neurologii mě byla doporučena operace. Po léčbě biotronikou jsem nemusela na operaci a dodnes jsem bez potíží. 
+Dále máme dobrou zkušenost s léčbou mého vnuka. Ve dvou letech onemocněl 
+laringitídou. Měl takové záchvaty, že musel být ihned odvezen do nemocnice k hospitalizaci. Po biotronické léčbě už nikdy záchvaty neměl... <br/><a href="?id=513#513" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>1. 8. 2014<div>Zdravím, chci připojit své info o působení přes televizní pořady pana Tomáše Pfeiffera.
+
+I když je to již značně dávno co televize vysílala seance pana Pfeiffera, mohu na 100% potvrdit že seance byly účinné alespoň na mne. To že první vjem bylo přijímání tepla, jen tak letícího z obrazovky, mohli pochybovači zdůvodnit. Když však přišlo brnění a "lechtání" právě probíhajících obtíží přihlížejících, bylo zajímavé jak reagovali. Jelikož se vším... <br/><a href="?id=512#512" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>1. 8. 2014<div>Tomáši, k těmto kulatinám bych se nedokutálela, kdyby nebylo Vás.
+Moje lodička už nabírala vodu pod jezem, když jste ji odtud vyvedl, a tak pořád ještě pluje.
+Těch několik kostrbatých slov asi nevyjádří mou nekonečnou vděčnost a lásku - vždyť to nejdůležutější je nevyslovitelné...
+Díky za poznání, že život má smysl, i když někdy bolí.
+Díky za divokou řeku, kde si to každodenně zkouším.
+Díky!!!
+M.K. 31.3.2013
+
+Carcinom prsu u 39-leté ženy.
+Biotronický... <br/><a href="?id=515#515" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>29. 7. 2014<div>Dobrý den, má léčebná zkušenost s biotronikou je velmi pozitivní. Pan Tomáš Pfeiffer mi pomohl s těmito problémy - chronický zánět žaludku, bolesti páteře, tetanie - únava, poruchy soustředění, bolest hlavy, závratě, pocit nedostatku vzduchu, brnění končetin, třes, svalové křeče. 
+
+Lékařské zprávy jsem předávala průběžně v době léčení.
+
+Již několik let jsem bez uvedených potíží, moc děkuji za možnost léčby. 
+
+A.D.</div><div class="clear"></div><hr/>29. 7. 2014<div>Vážený pane Pfeiffer, chodím na Vaše přednášky pokud jste v Hradci Králové, jsem účastník Seance na TV Nova, kde jste působil přes obrazovku. Pocit Vašeho působení osobního či z obrazovky je pro mne úžasný v tom, že jsem cítila lehkost bytí a odcházela se šťastným úsměvem. Podporuji tímto zachování biotroniky. Přeji mnoho úspěchů. Děkuji Vám 
+
+I.K.</div><div class="clear"></div><hr/>22. 7. 2014<div>Dobrý den všem.
+
+Velmi rád se připojuji k ostatním, abych svou zkušeností s biotronikou dosvědčil její skutečné uzdravující účinky. Nejprve jsem byl biotronikou ošetřen po operaci sítnice, následně došlo k rychlému zhojení, až se můj lékař divil, že to snad není ani možné, jak rychle odezněly následky operačního zákroku. Dále mi p. Pfeiffer vyléčil artrózu pravé kyčle. Byly dny, kdy jsem musel lézt doslova po čtyřech a ani to někdy nešlo, nedokázal... <br/><a href="?id=508#508" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>19. 7. 2014<div>Vážený pane Pfeiffere,
+
+jsem velmi vděčná a děkuji za to, že se mohu setkávat s biotronikou a s Vámi. Nepoznala jsem jiného takového člověka, který by natolik nezištně věnoval celý svůj život práci pro druhé. 
+Poprvé jsem využila Vaší léčebné síly v pořadu Seance TV Nova. Tehdy jsem měla zdravotní problémy, odborná lékařka – neuroložka uvažovala v mém případě o demyelinizačním onemocnění typu RS. Sledovala jsem v té době pravidelně Váš... <br/><a href="?id=509#509" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>15. 7. 2014<div>Dobrý den, v prvé řadě bych nejprve chtěl říci: Děkuji Vám pane Pfeiffere - děkuji Vám za nás všechny, jimž již drahně let pomáháte v naprosté nezištnosti a skromnosti překonávat naše, často ty nejtěžší, dlouhodobé a standardními léčebnými metodami neřešitelné, zdravotní potíže a nemoci. Bez jakýchkoli finančních nároků za léčbu samotnou! Vždyť jste vždy zdůrazňoval, že léčebné působení musí být zcela nezištnou činností - darmo vzal -... <br/><a href="?id=507#507" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>14. 7. 2014<div>Dobrý den - po porodu v r.1984 jsem začala trpět bolestmi v podbřišku. Bolesti s přibývajícím věkem nabývaly na intenzitě, v té době provedená obvyklá vyšetření byla negativní.
+V r.2003 po gynekologickém vyšetření ultrazvukem nalezeny 2 cysty a následně navržena hormonální léčba, kterou jsem odmítla. Poprosila jsem p.Pfeiffera o léčbu biotronikou. Pan Pfeiffer rovněž vyslovil podezření na endometritidu. Absolvovala jsem několik léčebných působení a byla... <br/><a href="?id=506#506" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>12. 7. 2014<div>Dobrý den, můj rok nar. je 1958, před 14 lety jsem zničeho nic měla nehybné
+obě ruce, nemohla jsem se v ruce udržet hrnek s čajem či s kávou, měla jsem 
+problém i s utřením zadku s prominutím, po návštěvě p.DR.Pfeiffra, který měl zrovna přednášku v Opavě, jsem na druhý den nevěděla, že jsem tento problém měla, byl to pro mne zázrak, když na to vzpomínám a mohu vám říct, mám jeho časopisy s fotografii a když vysílá tak si sednu a přijímám od něj léčebnou... <br/><a href="?id=504#504" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>12. 7. 2014<div>Vážený pane Pfeiffre,
+
+velmi Vám děkuji za vše, co pro nás všechny děláte, ať už se jedná o přednášky Duchovní univerzity Bytí, koncerty Společná věc, léčbu v BCSP a další Vaše aktivity. Vždy je vše z Vaší strany nezištné, plné lásky k lidem a nechybí ani humor. 
+
+Biotronikou jste velmi pomohl celé naší rodině. Nezištně jste mnohokrát léčil nejen mě, ale i mé děti, manžela a rodiče. Já i má dcera jsme měly tak velké zdravotní problémy, že... <br/><a href="?id=503#503" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>5. 7. 2014<div>Pane Pfeiffre, děkujeme. Děkuji za léčbu mojí, mé maminky, manžela, dcery, vnoučat, zetě a jeho maminky, sestry manžela. Pomáháte po duševní stránce i fyzicky adresně přímo, nebo na dálku, ale i všem, kteří přicházejí na Vaše přednášky a koncerty, či jinak se osobně s Vámi setkají. Jsou to někdy i drobné změny, které si mnozí ani hned neuvědomíme, protože nestojíte s nataženou rukou, očekávaje odměnu, ale tiše pomáháte tam, kde vidíte potřebu. A... <br/><a href="?id=500#500" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>4. 7. 2014<div>Také já se chci připojit ke kladným ohlasům BIOTRONIKY a tímto i moc poděkovat p. T. Pffeifrovi. 
+
+V roce 2006 zněla moje diagnóza HYPERTYREÓZA s tox. mnohouzl. str. Měla jsem dost potíží. Užívala jsem carbimazol 8x a vasocardin 2x denně. Byla mi doporučena operace nebo léčba radiojódem.
+
+Po biotronické léčbě vymizely potíže. Lečba radiojódem ani operace již nebyly potřeba.  Na kontroly na Endokrinologii chodím pravidelně. Nemusím už brát žádné léky.
+
+J.H.</div><div class="clear"></div><hr/>3. 7. 2014<div>Dobrý den, s biotronikou jsem se poprvé setkala v pořadu Seance na televizi Nova, dívala jsem se ze zvědavosti a velmi mě překvapilo když jsem časem zjistila, že se mě ztrácí křečové žíly, které mě již delší dobu hodně trápily, každý den jsem musela nosit gumové punčochy, paní doktorka mě předepisovala anavenol ale ten mě vůbec nepomáhal. Po Seancích se mě žíly téměř úplně ztratily a jsem od té doby bez potíží. 
+Po nějaké době mě začal bolet... <br/><a href="?id=502#502" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>1. 7. 2014<div>Dobrý den. 
+
+S Biotroniku a panem Zezulkou jsem se poprvé setkala jako dítě:
+
+Pamatuji si na článek v novinách , dvoustrana. Pamatuji si, že mluvil o novém léčitelském oboru . Prožila jsem obrovskou radost. Ne ve slovech, ale v emoci jsem si uvědomovala silnou potenci spojení medicíny s biotronikou, o které se psalo.
+Pamatuji si iniciály J. Z. a pamatuji si, jak mě trápilo, že nevím o něm více, ale věřila jsem, že tak úžasná věc se brzy projeví a bude se o ní... <br/><a href="?id=498#498" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>30. 6. 2014<div>Ráda bych touto cestou poděkovala panu T. Pfeifferovi, který mi v roce 2004 pomohl BIOTRONIKOU vyléčit refluxní chorobu jícnu. Do té doby jsem půl roku užívala léky bez výrazného zlepšení. Po týdenní léčbě v Soukenické jsem již žádné léky nepotřebovala a od té doby jsem bez jakýchkoliv potíží a bez léků :o). 
+
+Také můj nevlastní otec, (kterému byl opakovaně operován karcinom na močovém měchýři) jezdí pravidelně minimálně jednou za rok na léčení... <br/><a href="?id=497#497" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>29. 6. 2014<div>Vážený pane Pfeiffere, rád bych Vám z celého srdce poděkoval a podpořil Vás ve Vašich aktivitách. Jste pro mne významnou autoritou v oblasti biotronického působení a v oblasti filosofie Bytí Josefa Zezulky.
+
+Jak řekl Malý Princ; Co je důležité je očím neviditelné; Biotronika, (přesto, že působí neviditelně pro část přístrojů a část vědců) již mnohokrát prokázala své výsledky při vyléčení či zlepšení zdravotního stavu pacientů, často s velmi těžkými... <br/><a href="?id=496#496" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>28. 6. 2014<div>Dobrý deň,
+
+musím reagovať, nakoľko mám pocit, že nám chcú siahnuť na možnosť voľby. Bez voľby sme žili dlhé roky a bolo by hrozné vrátiť sa zase o 25 rokov spať.
+
+Pred 2 rokmi mi vyoperovali AC na dělohe, následne radioterapia a vedela som, že nemožem pre seba spraviť nič lepšie než absolvovať  očistný  pobyt u p. Pfeiffra. Absolvovala som 3 pobyty, ktoré mali pre moje zdravie, psychiku obrovský význam. Je jasné, že by pragmatici  význam posobenie spochybnili,... <br/><a href="?id=494#494" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>27. 6. 2014<div>Jsem velmi neukázněný pacient, a proto nevím, jestli vám mé svědectví pomůže. Předem uvádím, že všechna svá rozhodnutí jsem dělala z vlastní vůle, a ne na doporučení kohokoli jiného. V roce 2004 jsem prožívala složitou osobní situaci, která se dá shrnout pod hesla - přetížení a stres v práci i doma. Začala se mi objevovat svíravá bolest na prsou a jednou jsem padla a nemohla dál. Jen přesvědčení, že vegetarián přece nemůže mít nemocné srdce, mně po... <br/><a href="?id=488#488" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>26. 6. 2014<div>Dobrý den, pan Pfeiffer pomohl mnohokrát celé mé rodině, mně pomohl s těmito nemocemi: chronický zánět ledvin a ledvinové kaménky, chronický únavový syndrom, po jediné léčbě zmizelo znaménko, které jsem měla na pravém boku a již se nikdy neobjevilo, zcela zmizela bulka na prsu,upravily se cytologické stěry. Mám od narození ledvinové kaménky a díky jeho léčbě jsem již několik let zcela bez zánětů a kaménky vycházejí bez koliky!
+
+Moje mladší dcera měla... <br/><a href="?id=487#487" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>26. 6. 2014<div> Dobrý den.
+
+ Rád bych poděkoval panu Tomáši Pfeifferovi za pomoc při zdravotních problémech. 
+ Biotronikou mi pomohl zejména po operaci hlavy - chirurgickém odstranění nádoru. 
+ Pomocí Biotroniky se podařilo obnovit funkci nervu, který ovládá svaly v obličeji a byl při chirurgickém zákroku   narušen.
+
+                                                            J.M.</div><div class="clear"></div><hr/>26. 6. 2014<div>Biotronika mi velmi pomohla a pomáhá nejvíce asi v oblasti poznávání a pochopení života, ale i v oblasti praktického každodenního života. Našel jsem zde lidský laskavý přístup, opravdovou nezištnou snahu pomoci, smysl pro humor, kvalitní odpovědi na mnoho otázek o životě, které jsou předkládány. Biotronika potěšila často mé srdce, což je někdy důležitější než jen léčba těla, a dala i důležité rady do života, které se mi osvědčily. Dlouho hledáme např.... <br/><a href="?id=485#485" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>26. 6. 2014<div>Moje zkušenosti s biotronickou léčbou.
+
+Poděkování p. Pfeifferovi a apelace na ministra zdravotnictví p. Němečka a další osoby a instituce odpovědné za zdraví občanů České republiky.
+
+Poprvé jsem se s panem Tomášem Pfeifferem setkala přes TV obrazovku. Jeho působení mi dodávalo nejen vitalitu, ale i zvláštní pocit harmonie. V roce 2003 jsem byla operována kvůli útvaru na děloze. Jsem velmi vděčná panu Tomáši Pfeifferovi, že mě ještě před operací přijal... <br/><a href="?id=483#483" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>26. 6. 2014<div>Svoboda rozhodování je cenný poklad, který nám demokracie přinesla. 
+
+Chraňme si jej a on ochrání nás.
+
+Dobrý den, před 10 lety jsem měla nález na čípku na hranici zhoubného bujení. Po operaci a odebrání nezdravé tkáně mi přišla lékařka blahopřát, že mě další následná léčba minula jen zázrakem, ale ať předpokládám, že do roka se může stav s největší pravděpodobností opakovat. No a díky panu Pfeiferovi mám výsledky dodnes v pořádku. Při... <br/><a href="?id=481#481" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>25. 6. 2014<div>Dobrý den. S Biotronikou se setkávám od roku 1993, kdy jsem sledovala pořad Seance v televizi, později rozhlasové vysílání a sobotní působení. To vše mi velice pomohlo se zdravotními problémy psychickými i onkologickými. Díky panu Zezulkovi a panu Pfeifferovi a filozofii, kterou nám z Boží vůle přinášejí se můj život celkově změnil k lepšímu. Za všechno moc děkuji.
+
+A. P.</div><div class="clear"></div><hr/>25. 6. 2014<div>Dobrý den, 
+
+i já se připojuji k ohlasům léčení biotronickou léčbou s velice kladným výsledkem.
+
+Byla jsem léčena několika lékaři, měla jsem na pravé noze otevřený bércový vřed 15 měsíců. Až po léčbě u Tomáše Pfeiffera se rána zahojila. Po roce se mi opět rána otevřela, ale tentokrát jinde. Po půl roce chození k lékařům jsem byla opět uzdravena biotronickou léčbou u pana Tomáše Pfeiffera. Moc děkuji za uzdravení i za učení pana Josefa Zezulky... <br/><a href="?id=479#479" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>25. 6. 2014<div>V roce 2005 jsem byla na léčení u pana Pfeiffera. Trpěla jsem opakovanými záněty zvukovodu, kdy jsem přibližně rok a půl měla každý druhý měsíc nasazená antibiotika, protože kapky již nezabíraly. Po ukončení léčby jsem po celých devět let, tedy až dosud, neměla zánět zvukovodu ani jednou. Jen asi 2x takový jakoby náběh, ale vždy to hned skončilo. Jsem za vyléčení velmi vděčná. 
+
+Další zkušenost mám s léčením po porodu císařským řezem v roce... <br/><a href="?id=474#474" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>25. 6. 2014<div>Vážený pane Pfeiffře,
+
+Vaše seance na TV Nova jsme pravidelně sledovali s celou rodinou a s mojí pětaosmdesátiletou maminkou. Na vysílání jsme se těšili, i když jsme všichni byli poměrně zdrávi. Vaše působení nám přinášelo pohodu, klid, pocit získané energie a harmonizaci rodinných vztahů. Bylo nám  líto, když bylo působení zrušeno.
+
+Nyní využívám působení po internetu a doporučuji všem známým.
+
+Mnohokrát Vám za Vaši nezištnou pomoc děkuji... <br/><a href="?id=472#472" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>25. 6. 2014<div>Děkuji Vám, že jste mi biotronickou léčbou pomohl prodloužit život s AIDS. Navzdory, že české zdravotnictví léčbu odmítlo, žiju s touto nemocí čtrnáctým rokem.</div><div class="clear"></div><hr/>25. 6. 2014<div>Vážený pane Pfeiffere, 
+je to už deset let co jsem díky vašemu biotronickému působení zdravá.  V roce 1997 mi byla diagnostikována autoimunní hyperfunkce štítné žlázy – Morbus Graves Basedowi. Projevovalo se to kolapsovými stavy, srdeční arytmií, endokrinní orbitopatií, nespavostí, únavou, nervozitou, velkým úbytkem váhy a  vypadáváním vlasů. Laboratorní výsledky jsem měla hodně vysoké viz přiložená lékařská zprava. Byla jsem léčena na endokrinologii,... <br/><a href="?id=465#465" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>24. 6. 2014<div>Vážený pane Pfeifer. Využívám této možnosti k tomu, abych Vám a celému kolektivu nemocnice University Bytí poděkovala za vše, co jste pro mě, pro mé zdraví POMOCÍ BIOTRONIKY a pro mé duchovní poznání udělali.
+
+                                   Děkuji moc.        J.V.     </div><div class="clear"></div><hr/>24. 6. 2014<div>Mé zkušenosti s biotronickou léčbou jsou velmi pozitivní. Přikládám výsledkové protokoly.Po zjištění dobře diferencovaného endometroidního adenokarcinomu jsem byla na léčbě u p. Tomáše Pfeiffera. Výsledek operace byl pozitivní.
+
+PS: V dalším zprávě Vám pošlu dva výsledkové protokoly.
+
+E. B.</div><div class="clear"></div><hr/>24. 6. 2014<div>Dobrý den,
+
+v roce 2002 jsem onemocněla infekčním zašednutím rohovky, ztrácela jsem rychle ostrost zraku a to tak, že jsem v krátké době ani se 4 dioptriemi nepřečetla největší písmena, měla jsem to štěstí, že jsem se dostala na biotronické léčení k p.Pfeifferovi, když jsem po odléčení přišla ke své paní doktorce na kontrolu, přiznala jsem, že jsem byla u léčitele, na paní doktorce bylo vidět, že je docela zvědavá jak to dopadlo, když mne prohlédla,... <br/><a href="?id=458#458" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>24. 6. 2014<div>Dobrý den, 
+
+Biotronika v zastoupení pana Tomáše Pfeiffera pomohla mému synovi.
+
+Syn ***** ***** narozen ***** byl léčen Tomášem Pfeifferem před 13 lety. Jeho problém byly silné bolesti hlavy spojené se zvracením, které přicházely několikrát týdně po dobu půl roku. Synovi bylo tehdy 10 let a v rodině jeho otce byly po generace problémy se silnými migrénami.  Obrátila jsem se nejdříve na lékaře, který nenalezl příčinu a dal mu pouze léky na tlumení bolesti.... <br/><a href="?id=457#457" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>24. 6. 2014<div>Moje zkušenosti jsou pouze s televizním pořadem Seance na Nově, a to velice pozitivní. Škoda, že to tenkrát tak brzy skončili vysílat. Vždy mi to dodalo energii do dalších dní a cítila jsem se velice osvěžená a nabitá, plná síly. Jsem ráda, že mohu aspoň touto cestou poděkovat. Děkuji. 
+
+V. Č.</div><div class="clear"></div><hr/>23. 6. 2014<div>Vážení přátelé,
+
+před lety jsem měla artrózu v kolenou, která mne dost trápila, protože jsem se ještě v pokročilém věku snažila pomáhat nemocným lidem. Došlo to tak daleko, že jsem se pro bolest nemohla postavit na nohy a skončila jsem na invalidním vozíku. Díky pomoci pana Tomáše Pfeiffera, který mne biotronicky léčil, 
+jsem se znovu začala dobře pohybovat a mohla dále pomáhat druhým lidem, za což jsem mu byla velmi vděčná. 
+Ještě dnes, v mých 84... <br/><a href="?id=459#459" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>23. 6. 2014<div>Pomoc matce.
+
+Když bylo mé matce 80 let, padla ve svém bytě na zem a nemohla se hýbat, 
+jen trochu pohybovala pravou rukou. Jakmile se vrátil bratr domů, odnesl ji do
+postele a zavolal záchranku. Pan doktor ji prohlédl a řekl, že je pravděpodobně 
+dehydrovaná a zesláblá (protože měla ten den střevní potíže) a odjel. Trochu
+fungující rukou s vypětím sil vymačkala telefonní číslo a zavolala mi, že se jí zdá,
+že měla mozkovou příhodu. Kontaktovala jsem pana... <br/><a href="?id=471#471" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>23. 6. 2014<div>S biotronickou léčbou jsem se setkala již jako ditě v pořadu TV NOVA Seance na Nově a také působení přes radio Frekvence 1. Vždy jsem cítila příjemné teplo po celém těle a vždy jsem se poté cítila lépe-plná léčivé energie. Poprvé jsem byla na léčení u pana Pfeiffera v B.C.S.P v Praze v roce 2005 s diagnózou dysplazií kyčlí a skolióza pateře. Měla jsem tehdy velké bolesti kyčlí, protože mám v kyčelním kloubu kratší krčky. Ortopedka mi hrozila, že v budoucnu... <br/><a href="?id=447#447" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>23. 6. 2014<div>Dobrý den,
+
+v roce 2012 - 2013 mi začala velmi otékat pravá noha a to tak, že jsem se nemohla vejít do boty. Noha nevypadala vůbec hezky, špatně se mi chodilo a také začala být horká a dělat se na ní velké červené fleky. Procházela jsem medicínským vyšetřením, kde se nic nedařilo zjistit. Jelikož dlouhá léta znám pana Pfeiffera, tak jsem ho poprosila, jestli by nebyla možná pomoc - již jsem začala mít o nohu strach. Byla jsem na týdenním pobytu 2x. Poprvé mi... <br/><a href="?id=446#446" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>23. 6. 2014<div>Dobrý den,
+s dovolením předkládám zprávu a doklady, kdy mě bylo pomoženo biotronickou léčbou panem Tomášem Pfeifferem. 
+V dubnu 2002 mě byl zjištěn velký polyp v pravém uchu před bubínkem a též jsem měl výtok z ucha. V květnu 2002 jsem se dostal na léčbu k panu T. Pfeifferovi na pět dnů. Dne 26. 6. 2002 jsem byl vyšetřen na vstupní léčbu v ambulanci*******. Při tomto vyšetření nebyl zjištěn žádný polyp a pan ******* mě sdělil, že kdybych tam polyp měl,... <br/><a href="?id=456#456" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>23. 6. 2014<div>Asi v září 2004 mě začalo bolet levé rameno a úplně se zhoršil pohyb, zamrzlo. Téměř rok byla léčba u lékařů. Dne 8. 8. 2005 mě pan doktor z ortopedie napsal, že je zamrzlé levé rameno a že je stav trvalý, není schopna fyzické zátěže. Šla jsem na léčbu k panu Tomáši Pfeifferovi biotronickým působením. Pomalu se dařilo rameno uvolňovat a několik roků do dneška mám rameno úplně v pořádku a pohyblivé. Ráda osobně předvedu pohyblivost ramena, když bude... <br/><a href="?id=455#455" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>23. 6. 2014<div>Dobrý den, vážení,
+v dubnu 1991 mě byla udělána operace z důvodu zhoubného nádoru v levém prsu. Následovalo ozařování. Asi půl roku po ozařování se pomalu začal můj zdravotní stav zhoršovat. Lékař mě žádný lék nedal, i když byly jasné potíže. Hledala jsem jinde a dostala jsem se do biotronické léčby k panu T. Pfeifferovi. V tu dobu jsem měla otoky na nohách, rukách, krku i na víčkách a bolesti v celém těle. Nebudu to dále podrobně rozepisovat. U pana... <br/><a href="?id=454#454" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>23. 6. 2014<div>Dobrý den,
+měla jsem na děloze asi 15 roků myom, který se pomalu během této doby zvětšoval na velikost asi 12 cm. Byla jsem léčena jen biotronicky u pana Tomáše Pfeiffera a přikládám doklad, kdy myom zcela zmizel.
+Děkuji z celého srdce panu T. Pfeifferovi a Biotronice za obrovskou pomoc.
+
+J. R.</div><div class="clear"></div><hr/>22. 6. 2014<div>Dobrý den,
+
+jmenuji se ***** ***** a má zkušenost s panem Pfeifferem je následující: V roce 2011 jsem měla křeč kosterního svalstva, která se projevovala tak, že jsem nemohla na stolici, a když ano, tak s velkou bolestí a krvácením. Lékaři mi doporučili operaci. Na předoperačním vyšetření jsem musela podepsat papír, ve kterém stálo, že může dojít k protržení stěn tlustého střeva a tím k trvalému bočnímu vývodu. Nemusím popisovat jak je člověku, který... <br/><a href="?id=444#444" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>22. 6. 2014<div>Pravidelně jsem se účastnila pořadu Seance na TV Nova a díky působení pana Pfeifera přes televizní obrazovku mne na více než rok přestala bolet krční páteř a přestaly mi brnět ruce. V součastnosti využívám každou sobotu biotronického působení na www.dub.cz a díky tomu mne opět přestala bolet krční páteř a nebrní mi ruce. Pevně věřím, že Biotronické působení je velmi prospěšné a účinné. Upřimně panu Pfeiferovi z celého srdce děkuji! B. E.</div><div class="clear"></div><hr/>21. 6. 2014<div>Za asi 2 roky, co navštěvuji vaše přednášky, jsem nepotřeboval vaši léčbu, ale děkuji za dodání neuvěřitelné dávky energie.
+
+H.A.</div><div class="clear"></div><hr/>21. 6. 2014<div>Dobrý den,
+
+chtěla bych se podělit o zkušenost s léčbou Biotronikou, která umožnila mé babičce ***** *****, narozené ***** pomoci a jakoby se znovu narodit.
+Paní ***** byla ve velmi těžkém stavu, rakovina byla v celém těle, v kostech a v těle bylo velké množství metastáz. Prošla veškerou léčbou, kterou dnešní medicína nabízí a výsledek byl takový, že lékaři již vše vyčerpali, stav byl tak špatný, že s tím nebylo možné po stránce medicínské nic dělat.
+Babičce... <br/><a href="?id=441#441" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>20. 6. 2014<div>Vážený pane Pfeiffere,
+
+                                   s Biotroniku se setkáváme už od roku 1994, kdy byla založena Univerzita.  Vaše léčebné působení využívá  naše rodina všude tam, kde je příležitost, jak v televizním působení pořadu Seance, v  Biotronickém centru v Soukenické a také při působení na dálku .
+      Maminka absolvovala opakovaně týdenní  léčebnou  kůru a ta jí vždy jakoby nastartovala k dalšímu aktivnímu žití, až do věku 89 let.... <br/><a href="?id=470#470" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>19. 6. 2014<div>Jmenuji se ***** ***** a u pana Pfeiffera jsem byla se svou vnučkou *****  *****, která měla podstoupit operaci ucha z důvodu nedoslýchavosti. Operace byla již objednaná a měli ji voperovávat trubičky ve fakultní nemocnici *****. Na přednášce pana Pfeiffera jsme se zeptali, zda by mohl pomoci. Měli jsme velké štěstí, že bylo volné místo z důvodu odřeknutí pobytu jiné klientky, a tak jsme se dostali těsně před operací na biotronické působení do Prahy. Po tomto pobytu,... <br/><a href="?id=440#440" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>19. 6. 2014<div>SETKÁNÍ S BIOTRONIKOU
+
+   S biotronikou jsem se setkala poprvé v roce 1994, a to díky pořadu vysílaném televizí Nova. Pořad se tehdy jmenoval Seance. V pořadu vystupoval biotronik Tomáš Pfeiffer, který veřejnost seznámil s biotronickou léčbou jako s nemedicínským oborem, který dokáže léčit choroby s bioenergetickou nedostatečností. Například rakovinu, roztroušenou sklerozu a další... Už tenkrát jsem se dozvěděla velmi zajímavé a potřebné informace o této... <br/><a href="?id=439#439" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>19. 6. 2014<div>Mám autoimunitní onemocnění, působení pana Tomáš Pfeiffra sleduji od samého počátku a moc mi pomáhá léčivá energie, kterou pan Pfeiffer vysílá. Škoda, že bylo zrušeno biotronické působení v televizním vysílání. Byla bych moc ráda, kdyby biotronická léčba byla pro nemocné více dostupnější.
+
+Moc děkuji.   V. M.</div><div class="clear"></div><hr/>19. 6. 2014<div>Dobrý den,
+
+pane Pfeiffere, skoro každou sobotu večer se připojuji k vysílání energie přes internet nebo přes obrázek v časopise. Vždy pociťuji příval energie a brnění v rukou. Často se stává, že tu energii i vidím ve formě světle šedého až nafialovělého mohutného oblaku, těžko se to definuje slovy.
+
+Vím, že máte nad sebou mohutnou ochranu a věřím, že i ta pomůže.
+
+S úctou k Vám a panu J. Zezulkovi                  J. J.</div><div class="clear"></div><hr/>18. 6. 2014<div>Dobrý den,
+
+chci tímto vyjádřit podporu pro p.T.Pfeiffera a p.J.Zezulku, našel jsem v tomto biotronickém směru pravdu, nenašel jsem nic co by bylo v rozporu s touto dobou, či něčím jiným, našel jsem zde soulad a velikou podporu v této velmi náročné době. Pokud bude mít tento sympatický směr od kohokoliv podporu, jsem mu za to také vděčný, jako mnoho jiných lidí tápajících po této pomoci, nebo po uzdravení.
+
+I. H.</div><div class="clear"></div><hr/>18. 6. 2014<div>Dobrý den, mám dobrou zkušenost s biotronickou léčbou. Pomohla mi v posílení ledvin a celého organismu. Působení na dálku na mě též dobře účinkuje. Několikrát mi zklidnilo zánětlivá onemocnění.
+
+A. J.</div><div class="clear"></div><hr/>18. 6. 2014<div>Dobrý den pane Pfeiffere, ráda bych Vám poděkovala za Vaši práci. Filosofie Pravdy a Bytí přinesená do našich krajů panem Zezulkou je velkým dílem. Jsem Vám velmi vděčná, že navazujete  na jeho odkaz a šíříte dále. Studuji knihy pana Zezulky, poslouchám Vaše přednášky, díky současným možnostem techniky tímto mohu z vážných důvodů studovat z domova. Podepsanou petici posílám poštou. Dovolte mi ještě jednou, prosté a upřímné - děkuji Vám. 
+ L. V.</div><div class="clear"></div><hr/>18. 6. 2014<div>Kompletně vymizely velké bradavice umístěné v lůžku nehtu (prostředník a prsteník pravé ruky), které se nedařilo jinak odstranit tzn. běžným medicínským postupem. Stalo se tak po návštěvě koncertu DUB v Písku cca před dvěma lety. Za toto jsem velmi vděčný, neboť bradavice byly velké a bolestivé na dotyk.
+
+M.B</div><div class="clear"></div><hr/>18. 6. 2014<div>Pacient: ***** *****, nar. *****
+Zdravotní problém: vlčí zrno (chalazion) na dolním levém víčku zevnitř
+
+Dcera měla asi od konce června 2013 vlčí zrno (chalazion) zevnitř na dolním víčku levého oka, velikost cca 9 mm. Od srpna 2013 byla v péči oční lékařky,  předepsané kapky, masti však byly zcela bez efektu, vlčí zrno se neztrácelo, naopak se zvětšovalo.
+Po  vyšetření  u  další  oční  lékařky  nám  bylo  doporučeno  jako  jediné  řešení  odstranění
+abscedujícího... <br/><a href="?id=452#452" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>18. 6. 2014<div>Vážený pane Pfeiffere,
+
+mnohokrát děkuji za možnost léčit se Biotronikou. Pravidelně k Vám beru na léčení svou dceru ***** *****. Jako malá se u Vás léčila s lymfangiomem na krku, který ji chtěli operovat na plastické chirurgii ve *****, po Vašem působení nádor ustoupil a operace se nekonala. Dále má moje dcera Astma bronchiale, po týdnu léčení v BCSP problémy prokazatelně ustupují a následující měsíc je dítě bez potíží, které se pak postupně zase stupňují.... <br/><a href="?id=431#431" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>17. 6. 2014<div>Vážený pane Pfeiffer, 
+poslala jsem vám dnes doporučený dopis jako odpověď na vaši výzvu. Doufám, že pošta ještě funguje normálně a poslaná zpráva vám bude co platná při řešení situace do které vás dohnali a že biotronika bude moct dále pomáhat všem potřebným mezi které se řadíme i my.
+                                                            Vaši vděční pacienti N.</div><div class="clear"></div><hr/>17. 6. 2014<div>Dobrý den, rád bych se podělil o své osobní zkušenosti - mí blízcí rodinní příslušníci navštěvovali pana Pfeiffra v Praze za účelem léčení astmatu a rakovinu prsu. Výsledky byly neklamné - rakovina zmizela a neobjevují se příznaky ani po 8 letech pravidelných kontrol u lékaře a astma bylo u otce i dcery velice hodně potlačeno, což se běžnými lékařskými postupy nedařilo docílit. Metody pana Pfeiffra jsou velice příjemné, radí také při prevenci jak nemocem... <br/><a href="?id=428#428" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>16. 6. 2014<div>Zkušenosti mojí rodiny s biotronikou jsou docela veliké. Bylo nám pomoženo velmi. Děly se doslova zázraky. Mamince se zúžil páteřní kanál. Byla v nemocnici. Mněla hrozné bolesti. Pomalu nemohla ani chodit. Zhubla se na 35 kg. V nemocnici dávány jen léky proti bolesti a kapačky a poslána domů ve špatném stavu. Díky biotronice a p. Pfeifferovi se podařilo bolesti odstranit, její váha se znormalizovala a maminka chodí i bez hůlky. Dále jí pomohla biotronika i u cukrovky.... <br/><a href="?id=425#425" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>15. 6. 2014<div>JÁ  MÁM  S  BIOTRONIKOU   JEN  TY  NEJLEPŠÍ   ZKUŠENOSTI  . VELMI  RÁD  JEZDÍM  NA  PŘEDNÁŠKY  PANA  PFEIFFERA  A  TAKÉ    NA  LÉČENÍ  K  NĚMU  DO  PRAHY  DO  CENTRA  SOCIÁLNÍ  POMOCI . JSEM  VELICE  RÁD ,  ŽE  JE  TADY  A  JEHO  PRÁCE  JE  PŘÍNOSEM  PRO  VŠECHNY !! PŘEJI   VŠEM,  KTEŘÍ   BUDOU  ROZHODOVAT  O  LÉČITELÍCH   ZDRAVÝ  ROZUM  A  ÚSUDEK !! 
+                                                                                       L.R.</div><div class="clear"></div><hr/>15. 6. 2014<div>Vážený pane Pfeiffer,
+                 doslechl jsem se, že se chystá jakási akce proti léčitelům a alternativní medicíně - vůbec. Připouštim, že může být celá řada chytráků, prohlašujících se za léčitele, ale jde jim pouze o peníze.
+Mezi tyto lidi ale Vy nepatříte. Slyšel jsem na několika Vašich přednáškách, že pravý léčitel peníze za léčení nebere. Něco jiného je, dobrovolná, podpora za cestovné, nebo za perfektní ubytování v biotronickém... <br/><a href="?id=448#448" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>15. 6. 2014<div>Dobrý den,
+
+zkušenosti s léčebnou Biotronikou máme jen pozitivní, dokladem toho je to, že manželka opakovaně absolvuje týdenní pobyty na Soukenické, nevynecháme ani jednu přednášku pana T.Pfeiffra, každou sobotu ve 21.00  se účastníme jeho Biotronického působení.
+Takže co k tomu ještě dodat.
+MUDr. E.Š.</div><div class="clear"></div><hr/>14. 6. 2014<div>Dobrý den!
+
+Rád bych sdělil touto cestou mé zkušenosti s biotronikou.
+
+Pan Pfeiffer vždy ochotně a bez nároku na jakýkoli honorář pomáhá svým léčebným působením, ačkoli je dle mého názoru velice vytížen.
+
+Pravidelně se zúčastňuji jeho posilujících seancí, protože na mě mají velice pozitivní vliv z hlediska zdravotního. Mám náročné zaměstnání a často se u mě projevovaly potíže, způsobené stresem, psychosomatické. Podotýkám, že je mi nyní... <br/><a href="?id=418#418" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>14. 6. 2014<div> Vážený pane Pfeiffře.
+  
+  V listopadu 2012 jsem byla na biopsii uzlu na štítné žláze a následně mi MUDr.***** z endokrinologie v *****   sdělila, abych se už psychicky připravovala na operaci na jaře 2013.
+  První, co mě napadlo - že do jara je času dost a že musím udělat vše pro to, aby operace nebyla.
+  Vzpomněla jsem si na Vaše televizní působení a hledala Vás na internetu.
+  Protože bylo před 21.12.2012, řekla jsem si, že počkám, až jak to dopadne.
+ ... <br/><a href="?id=445#445" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>13. 6. 2014<div>Dobrý večer - chtěla by jen připomenout  rok 1998, kdy pan T. Pfeifer působil na mého syna ***** ***** po bouračce s autem - kdy  doktoři dopustili, že mu tříštivá zlomenina (bérec) špatně srostla. Samozřejmě musili nohu znovu zlomit a pomocí hřebu a šroubů kosti přiložili k sobě, ale bohužel noha byla hodně křivá (svědci). Po působení pana T. Pfeiffera se noha narovnala ale tímto působením došlo ke zkřivení šroubů - což doktora tak šokovalo, že to dal... <br/><a href="?id=417#417" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>14. 3. 2014<div>Biotronické působení dne 1.3.2014 ve 21 hod. *
+
+Vážený pane Pfeiffer,
+právě jsem ukončila moje první pozorování Vaší fotografie. Několik vteřin před 21. hodinou jsem spatřila kolem Vaší hlavy žlutozlatě zářivou auru, která měnila svoji intenzitu, šířku a místo. Nejdříve začala na levé straně hlavy (tedy na obrázku vpravo), potom "přeskočila" na druhou stranu. Zůstávala na místě jen krátkou dobu a potom změnila opět místo v rámci hlavy - také nahoře... <br/><a href="?id=340#340" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>5. 3. 2014<div>Vážený pane Pfeiffer. Již je to dávno, co jsem pravidelně usedala před televizní obrazovku s přáním vyléčit bolest v pravé kyčli. Byla mi třemi lékaři diagnostikována artróza třetího stupně. Včetně RTG snímků. Bolest ustala a já jsem podle známého “sejde z očí, sejde z mysli” zapomněla. Asi po deseti letech jsem začala chodit na revmatologii s bolestí kloubu na ruce. Paní doktorka mi řekla, že to bude artróza. Řekla jsem ji, že je to možné, že ji mám... <br/><a href="?id=338#338" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>14. 2. 2014<div>Pozerám všetky Vaše prednášky. Cítim z nich toľko láskavosti, slobody. Ďakujem :-). Je to pre mňa vždy zážitok :-).
+O.</div><div class="clear"></div><hr/>10. 12. 2013<div>Dobrý den!
+
+Pane Pfeiffere, v první řadě Vám chci poděkovat za výrazné posílení organismu díky Vašemu působení. Jelikož uvádíte, že Vás zajímá zpětná vazba Vašeho působení, zde ji tedy máte: Vaše energie je velice aktivní sama o sobě, pozoruji okamžitě změnu chování i na svém okolí. Lidé jsou okamžitě přátelštější. Je mi jasné, že si jistě část energie stahují pro sebe, což ale nevadí. Toto působení je stejně výrazné i na dálku. Vaše... <br/><a href="?id=335#335" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>6. 5. 2013<div>Vážený pane Pfeiffere,
+
+vzpomínám na 6. květen 1991. Pro mne to nebyl obyčejný den, ale den životního štěstí. Opravdu mi změnil celý můj život a proto na tento den nikdy nezapomenu.
+
+V 17.40 hod. je ten čas, kdy jsem Vás poprvé uviděla, poprvé se s Vámi setkala, seznámila a kdy jste mne poprvé léčil. Nyní stojím před Vámi se srdíčkem na dlani a děkuji Vám za krásných, Pánem Bohem požehnaných 22 roků, o které jste mi prodloužil život bez pomoci lékařů.
+
+Milý... <br/><a href="?id=461#461" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>14. 5. 2012<div>Svědectví. Naděje pro ty, kteří se nedostanou na léčbu...
+
+Měl jsem díru v uchu, tedy perforaci bubínku, a po několika měsících marného čekání na samovolné zahojení jsem přeci jen musel jít na operaci, kde mi bubínek chirurgicky záplatovali. A po týdnu, když mi sundávali obvaz, paní doktorka kouká a spráskne ruce a smutně říká "Ono se to nepovedlo..! Vznikl tam zánět a je tam zase díra!" A nenápadně řekla že to znamená další operací...
+No propadl jsem... <br/><a href="?id=300#300" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>30. 1. 2011<div>Vážený pane Pfeiffere,
+
+děkuji za pomoc působením na dálku dcerce ***** ***** nar. *****.
+
+Nyní výrazné zlepšení levé nožičky (displazie kyčelního kloubu), výrazné zlepšení i pohybu nožkou. Zůstává nález na pravé nožičce - přikládám lékařskou zprávu:
+
+Ortop.vyšetření 26.1.:
+V kyčlích pohyb stabilní, bez omezení,Ortolani,Palmen negat.,
+SONO vyš.:Grafova klasifikace 1.sin gr IB.1.dx gr IIa+
+TH Frejkova peřinka i na den, ko za 2t.
+
+Přikládám... <br/><a href="?id=466#466" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>9. 12. 2010<div>Včera mě bylo dost mizerně a Vaše působení mě moc pomohlo, díky.
+J.B.</div><div class="clear"></div><hr/>2. 1. 2007<div>Vážený pane Pfeiffer,
+
+dovolte mi, abych Vám touto cestou poděkoval za pomoc, kterou jste mi poskytl při mém onemocnění.
+
+Před rokem (2.1.2006) mi byla diagnostikována revmatoidní artritida. Měl jsem dvě možnosti - buď akceptovat léčbu doporučenou revmatologem, tj. razantní léčbu s vedlejšími účinky, která by mohla pozastavit postup nemoci, nebo využít biotroniku.
+
+Rozhodl jsem se pro biotroniku a obrátil jsem se na Vás o pomoc. Po opakovaném pobytu v Praze (celkem... <br/><a href="?id=468#468" class="B I">Číst dále...</a></div><div class="clear"></div><hr/>2. 6. 2006<div>Vážený pane Pfeiffere!
+
+Přijměte prosím touto písemnou formou poděkování za zdraví,které se mi Vaší léčbou dostalo. Přijměte poděkování za Vaši obětavost a lásku s jakou jste ke mně přistupoval.
+
+Uvádím stručný popis nemoci:
+
+V únoru 2005 mi bylo lékaři, na základě vyšetření CT, diagnostikováno postižení plic mnohačetnými ložisky, které měly charakter metastáz. ( V roce 1993 částečná operace pravého prsu, v roce 1996 rovněž operace pravého... <br/><a href="?id=469#469" class="B I">Číst dále...</a></div><div class="clear"></div><hr/></article><script>$(function(){ var $gallery = $("a.gal").simpleLightbox({alertError: false, disableRightClick: true}); }); 
+$(function(){ var $gallery2 = $(".gallery a").simpleLightbox({alertError: false, captions: true, disableRightClick: true, animationSpeed: 0, animationSlide: false, captionPosition: "outside", widthRatio:0.8, heightRatio: 0.8, }); }); </script><footer><div class="F3 C">&nbsp;<br/>&copy; Tomáš Pfeiffer. Všechna práva vyhrazena.</div><div class="F2 C">Jakékoliv další šíření obsahu webové stránky, zejména formou kopírování či dalšího zpracování bez předchozího písemného souhlasu jsou zakázány.<br/>&nbsp;</div></footer></div></body></html>

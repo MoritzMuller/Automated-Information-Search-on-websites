@@ -1,0 +1,125 @@
+<html>
+	<head>
+		<!DOCTYPE html>
+<!--[if !IE]><!--><html lang="it"><!--<![endif]-->
+<!--[if IE 9]><html lang="it" id="ie9"><![endif]-->
+<!--[if IE 8]><html lang="it" id="ie8"><![endif]-->
+<!--[if IE 7]><html lang="it" id="ie7"><![endif]-->
+<!--[if lte IE 6]><html lang="it" id="ie6"><![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Assofin Extranet</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/vnd.microsoft.icon" />
+		
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet" />
+		<link rel='stylesheet' href="/assets/bootstrap-3.3.6/css/bootstrap.min.css" />
+		<link rel='stylesheet' href="/assets/css/extranet_login.css" />
+	</head>
+	<body>
+		<script src="/assets/js/jquery-1.12.3.min.js"></script>
+		<script src="/assets/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="text-center" >
+						<div class="spacer" style="height:50px;"></div>
+						<img src="/assets/img/logo_extranet.png" alt="Logo Assofin" />
+					</div>
+				</div>
+			</div>
+			
+			<div class="clearfix"></div>
+			<div class="spacer" style="height:140px;"></div>
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="box-container-extranet" style="margin:auto;">
+						<div class="green-box text-white text-center" style="height:50px;width:625px;font-size:36px;line-height:1.3em;">
+							EXTRANET LOGIN
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="clearfix"></div>
+			<div class="spacer" style="height:30px;"></div>
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-bottom:0;">
+					<div class="box-container-extranet" style="margin:auto;">
+						<div style="padding:0 10px;">
+							<div class="text-grey input-form-title">USERNAME</div>
+							<input id="user" name="user" class="input-form" type="text" style="width:50%;" /><br />
+							
+							<div class="spacer" style="height:10px;"></div>
+							
+							<div class="text-grey input-form-title">PASSWORD</div>
+							<input id="password" name="password" class="input-form" type="password" style="width:50%;" />
+							
+							<div id="error-box" class="text-red" style="height:45px;line-height:3em;"></div>
+							
+							<span class="try-login input-form-button-grey">LOGIN</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="clearfix"></div>
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="box-container-extranet" style="margin:auto;">
+						<hr class="green-hr" style="margin-top:5px;" />
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="box-container-extranet" style="margin:auto;">
+						<div class="text-grey text-right" style="font-size:18px;">
+							Il browser deve avere i cookies abilitati
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<script>
+			$(document).ready(function(){
+					$(".try-login").on('click',function(ev){
+							//var user = $("input#user").val().trim();
+							//var password = $("input#password").val().trim();
+							var user = $("input#user").val();
+							//user = user.trim();
+							var password = $("input#password").val();
+							//password = password.trim();
+							
+							if(user.length <= 0 || password.length <= 0) {
+								$("#error-box").html("Username o Password errate");
+							} else {
+								$.ajax({
+											url: 'https://doc.assofin.it/Main/login',
+											type: 'POST', 
+											data: 'user=' + user + '&password=' + password 
+										}).done(function(data){
+											if(data != undefined && data != null && parseInt(data) == 1) {
+												location.href = "https://doc.assofin.it/Main/Home";
+											} else {
+												$("#error-box").html("Username o Password errate");
+											}
+										}).error(function(data){
+											$("#error-box").html("Username o Password errate");
+										});
+							}
+						});
+				});
+		</script>
+	</body>
+</html>
+

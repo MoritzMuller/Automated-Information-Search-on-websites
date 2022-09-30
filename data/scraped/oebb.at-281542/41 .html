@@ -1,0 +1,77 @@
+<!DOCTYPE html><html><head><meta http-equiv=X-UA-Compatible content="IE=edge"><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2"><meta id=MsApplicationTileImage name=msapplication-TileImage content="img/customer/apple-touch-icon-144x144-precomposed.png?v=1655378349776"><title>ÖBB</title><link id=HFS_AppleTouchIconPrecomposed144 rel=apple-touch-icon-precomposed sizes=144x144 href="img/customer/apple-touch-icon-144x144-precomposed.png?v=1655378349776"><link id=HFS_AppleTouchIconPrecomposed114 rel=apple-touch-icon-precomposed sizes=114x114 href="img/customer/apple-touch-icon-114x114-precomposed.png?v=1655378349776"><link id=HFS_AppleTouchIconPrecomposed72 rel=apple-touch-icon-precomposed sizes=72x72 href="img/customer/apple-touch-icon-72x72-precomposed.png?v=1655378349776"><link id=HFS_AppleTouchIconPrecomposed57 rel=apple-touch-icon-precomposed href="img/customer/apple-touch-icon-57x57-precomposed.png?v=1655378349776"><link id=HFS_ShortcutIcon196 rel="shortcut icon" sizes=196x196 href="img/customer/touch-icon-196x196.png?v=1655378349776"><link id=HFS_ShortcutIcon rel="shortcut icon" href="img/customer/apple-touch-icon.png?v=1655378349776"><link rel=manifest href="manifest.json?v=1655378349776"><link rel=preload href=css/leaflet/leaflet.min.css as=style><link rel=preload href=css/fonts/roboto-v18-latin-500.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=css/fonts/roboto-v18-latin-700.woff2 as=font type=font/woff2 crossorigin><script type=text/javascript src="js/hafas_lib_core.js?v=1655378349776" defer></script><script type=text/javascript>
+    var path = 'js/';
+
+    // intentional redundancy
+    // this way the script can load before core was loaded
+
+
+    function getURLParameter(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+    }
+
+    function isValidVirtualClient(vc){
+      return new RegExp("vs_[^<>]*$","g").test(vc);
+    }
+
+    var subPath = getURLParameter("L");
+    var embedConfig = true;
+    if(subPath) {
+      if(!isValidVirtualClient(subPath)){
+        embedConfig = false;
+      }
+      //subPath = stripScripts(subPath);
+      path = 'customer/' + subPath + '/js/';
+    }
+    if(embedConfig) {
+      if(subPath) {
+        document.write('<script type="text\/javascript" src="' + path + 'metadata.js?v=1655378349776"><\/script>');
+        <!-- Binde die tracking.js en, wenn das tracking in der config auf true steht -->
+        
+          document.write('<script type="text\/javascript" src="' + path + 'hafas_webapp_tracking.js?v=1655378349776" defer><\/script>');
+        
+      }else{
+        document.write('<script type="text\/javascript" src="metadata.js?v=1655378349776"><\/script>');
+        <!-- Binde die tracking.js en, wenn das tracking in der config auf true steht -->
+        
+          document.write('<script type="text\/javascript" src="js/hafas_webapp_tracking.js?v=1655378349776" defer><\/script>');
+        
+      }
+      document.write('<script type="text\/javascript" src="' + path + 'hafas_webapp_config.js?v=1655378349776" defer><\/script>');
+    }
+  </script><script type=text/javascript src="js/hafas_webapp_application.js?v=1655378349776" defer></script><script src=js/external/qrcode.min.js type=text/javascript></script></head><body class=lyr onload="Hafas.Core.init(); Hafas.Core.initHead({cssBasePath: 'css/', imgBasePath:'img/',version:'1655378349776'});"><style>
+.lyr_splashScreen {
+  font-family: sans-serif;
+  font-size: 14px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  color: #e20020;
+  opacity: 1;
+  text-align: center;
+}
+
+.lyr_splashScreen .lyr_atomSpinner:not(:required):before {
+  width: 96px;
+  height: 96px;
+  margin-left: -48px;
+  border-top: 2px solid #e2002a;
+}
+
+.lyr_statusWrapper {
+  height: 150px;
+}
+</style><div id=HFS_Splashscreen class=lyr_splashScreen><h1 id=HFS_SplashTitle><img height=36 src=img/customer/oebb_logo.svg style=margin-right:20px;> <img height=36 src=img/customer/Scotty_Schriftzug.svg></h1><div class=lyr_statusWrapper><div id=HFS_SplashProgress></div><div class=lyr_atomSpinner></div></div></div><div id=HFS_WebApp data-hfs-content=webapp data-iframe-height=webapp class=lyr_wrapApplication></div><div id=DynamicTemplates hidden></div><script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(function (registrations) {
+    for (var i = 0, size = registrations.length; i < size; i++)
+      var _reg = registrations[i].unregister()
+  })
+}
+</script></body></html>
