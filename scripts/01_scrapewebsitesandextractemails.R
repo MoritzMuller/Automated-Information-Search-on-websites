@@ -47,4 +47,5 @@ for(i in 1:nrow(folders.website)){
   , warning = function(e){cat("Warning: ", conditionMessage(e), "\n")})
 }
 
-save(recommended.emails, file="data/smpl_emails")
+#save(recommended.emails, file="data/smpl_emails")
+load(file="data/smpl_emails")
