@@ -9,7 +9,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 # Load Libraries
-NOTE: Data is in the RProject "sampling", just tranferred this here after running all below in the other project folder!
 ```{r}
 library(stringr)
 library(tidyverse)
